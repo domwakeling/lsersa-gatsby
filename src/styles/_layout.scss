@@ -1,0 +1,146 @@
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-only {
+    @media (min-width: 600px) and (max-width: 899px) { @content; }
+}
+@mixin for-tablet-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-desktop-only {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-tablet-down {
+    @media (max-width: 899px) { @content; }
+}
+
+.layout {
+    border: 2px dashed $color_g700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include for-tablet-down() {
+        width: 100%;
+    }
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto 220px;
+    
+    @include for-tablet-down() {
+        display: block;
+    }
+}
+
+.right-column {
+    @include for-tablet-down() {
+        display: none;
+    }
+}
+
+.row {
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    clear: both;
+
+    @include for-desktop-only() {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.banner {
+    padding-top: 1.0rem;
+    padding-bottom: 1.0rem;
+    margin-bottom: 1.0rem;
+}
+
+.header-no-hero {
+    @include for-tablet-down() {
+        margin-top: 1.0rem;
+    } 
+}
+
+.tablet-down {
+    @include for-desktop-only() {
+        display: none;
+    }
+}
+
+.right-column-race {
+    width: 220px;
+    float: right;
+    @include for-tablet-down() {
+        display: none;
+    }
+}
+
+.column-container {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+
+    @include for-tablet-down() {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.aspect-ratio-box {
+    height: 0;
+    overflow: hidden;
+    padding-top: 40%;
+    position: relative;
+}
+
+.aspect-ratio-box-inside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color_p300;
+}
+
+.hero-shade {
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
+}
+
+.hero-text {
+    position: absolute;
+    left: 1.0rem;
+    top: 1.0rem;
+    width: 75%;
+    font-size: 8.0rem;
+    font-weight: 500;
+    margin-top: 0;
+    padding-top: 0;
+    overflow-wrap: normal;
+    line-height: 1.0;
+    padding-bottom: 1.0rem;
+    border-bottom: 10px solid #fff;
+    color: #fff;
+    letter-spacing: -.1rem;
+
+    @include for-tablet-only {
+        font-size: 7.0rem;
+        border-bottom-width: 8px;
+    }
+
+    @include for-phone-only {
+        font-size: 5.0rem;
+        border-bottom-width: 7px;
+    }
+
+    p {
+        margin: 0;
+    }
+}

@@ -1,0 +1,142 @@
+#main-nav {
+    border-bottom: 1px solid $color_p100;
+    background-color: $color_p300;
+    padding: 0.3rem 0;
+    margin-bottom: 1.0rem;
+    box-shadow: 0 0.4rem 0.8rem 0.2rem rgba(0,0,0,0.25);
+    color: $color_p900 !important;
+    min-height: 60px;
+    
+    // no gap between navbar and content if the hero image is full-width
+    @include for-tablet-down {
+        margin-bottom: 0;
+    }
+
+    ul {
+        padding-left: 0;
+
+        li {
+            list-style: none;
+            display: inline;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+
+            &:first-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+
+    ul.navlink-desktop {
+        @include for-tablet-down {
+            display: none;
+        }
+    }
+
+    a {
+        color: $color_p900;
+        text-decoration: none;
+    }
+
+    a.brand {
+        float: left;
+
+        span.brand-text {
+            font-size: 3.0rem;       
+            font-weight: 500;
+            padding-right: 15px;
+            position: relative;
+            letter-spacing: -0.05rem;
+
+            @include for-tablet-down {
+                top: 10px;
+            }
+
+            @include for-desktop-only {
+                bottom: 7px;
+            }
+        }
+    }
+
+    .brand-image {
+        margin-bottom: 0px;
+        float: left;
+        width: 35px;
+        height: auto;
+        position: relative;
+        margin-right: 5px;
+
+        @include for-tablet-down {
+            top: 5px;
+        }
+    
+        @include for-desktop-only {
+            bottom: 10px;
+        }
+    }
+
+    #menu-responsive {
+        // display off in all cases to start with
+        display: none;
+        // will have .menu-show class applied if menu is open
+        &.menu-show {
+            // restrict to tablet-down in case we resize with the menu open
+            @include for-tablet-down {
+                clear: both;
+                position: absolute;
+                top: 65px;
+                // position: fixed;
+                display: block;
+                width: 110%;
+                background-color: $color_p300;
+                padding-left: 1.0rem;
+                left: 0;
+                border-top: 1px solid $color_p700;
+                z-index: 1000;
+                ul {
+                    margin-bottom: 0px;
+                    a {
+                        float: none;
+                        display: block;
+                        text-align: left;
+                        padding-top: 0.4em;
+                        padding-bottom: 0.4em;
+                        line-height: 1.0rem;
+                        border-bottom: 1px solid $color_p900;
+                        &:last-child {
+                            border-bottom: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // hamburger is referenced as class icon
+    .icon {
+        width: 40px;
+        padding: 1px 8px;
+        background-color: $color_p300;
+        border: 1px solid $color_p900;
+        border-radius: 4px 4px 4px 4px;
+        float: right;
+        display: block;
+        margin-top: 1.0rem;
+        // recognise when mouse hovers over the button
+        &:hover {
+            background-color: lighten($color_primary, 10%);
+        }
+        // don't show at all on a wide screen
+        @include for-desktop-only {
+            display: none;
+        }
+        // the horizontal bars that make it a burger
+        .icon-bar {
+            background-color: $color_p900;
+            border-radius: 2px 2px 2px 2px;
+            height: 2px;
+            margin: 6px 0;
+            width: 100%;
+        }
+    }
+}

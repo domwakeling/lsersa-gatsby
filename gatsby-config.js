@@ -5,5 +5,17 @@ module.exports = {
     siteMetadata: {
         siteUrl: `https://www.yourdomain.tld`,
     },
-    plugins: [],
+    plugins: [
+        `gatsby-plugin-sass`,
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/src/images`,
+                name: 'images'
+            }
+        }
+    ],
 }

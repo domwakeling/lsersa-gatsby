@@ -1,0 +1,26 @@
+table {
+
+    tr {
+        border-top: 1px solid $color_p700;
+
+        &:nth-child(even) {
+            background-color: $color_g900;
+        }
+
+        td {
+            padding: 0.5rem 1.0rem;
+            white-space: nowrap;
+
+        }
+
+        td.subtitle {
+            font-weight: 600px;
+            font-size: 1.9rem;
+        }
+    }
+}
+
+.table-responsive-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}

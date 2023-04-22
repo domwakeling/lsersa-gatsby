@@ -1,0 +1,28 @@
+.sponsor-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2.0rem;
+    row-gap: 2.0rem;
+
+    @include for-tablet-down {
+        grid-template-columns: 1fr;
+    }
+}
+
+.sponsor-card {
+    padding: 1.0rem;
+    border-radius: 1.0rem;
+    background-color: white;
+    box-shadow: transparentize($color_p300, 0.8) 0px 2px 4px -1px,
+        transparentize($color_p300, 0.8) 0px 4px 5px 0px,
+        transparentize($color_p300, 0.8) 0px 1px 10px 0px;
+    width: calc(50% - 30px);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    float: left;
+
+    @include for-tablet-down {
+        width: calc(100% - 20px);
+    }
+}

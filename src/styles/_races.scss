@@ -1,0 +1,19 @@
+a.year-lozenge-wrap {
+    text-decoration: none;
+
+    .year-lozenge {
+        padding: 0.6rem 1.0rem 0.5rem;
+        margin: 0.25rem 0.5rem;
+        background-color: $color_p300;
+        color: $color_p900;
+        border-radius: 0.5rem;
+        border: 0;
+        display: inline-block;
+        min-width: 40px;
+        text-align: center;
+
+        &:hover {
+            background-color: $color_p500;
+        }
+    }
+}

@@ -1,0 +1,216 @@
+// $color_primary: #6286f2;
+// $color_primary: lighten(rgb(2, 3, 236), 15%);
+$color_primary: #2a45de;
+// $color_complementary: darken(saturate(#FCDA3D, 25%), 5%);
+$color_complementary: #F2BA00;
+
+$color_p100: darken($color_primary, 45%);
+$color_p300: darken($color_primary, 18%);
+$color_p500: $color_primary;
+$color_p700: lighten($color_primary, 25%);
+$color_p900: lighten($color_primary, 45%);
+
+$color_c100: darken(saturate($color_complementary, 20%), 30%);
+$color_c300: darken($color_complementary, 18%);
+$color_c500: lighten($color_complementary, 5%);
+$color_c700: lighten($color_complementary, 28%);
+$color_c900: lighten($color_complementary, 48%);
+
+$color_g100: desaturate($color_p100, 100%);
+$color_g300: desaturate($color_p300, 100%);
+$color_g500: desaturate($color_p500, 100%);
+$color_g700: desaturate($color_p700, 100%);
+$color_g900: desaturate($color_p900, 100%);
+
+.bg-p100 {
+    background-color: $color_p100 !important;
+}
+.bg-p300 {
+    background-color: $color_p300 !important;
+}
+.bg-p500 {
+    background-color: $color_p500 !important;
+}
+.bg-p700 {
+    background-color: $color_p700 !important;
+}
+.bg-p900 {
+    background-color: $color_p900 !important;
+}
+.col-p100 {
+    color: $color_p100 !important;
+}
+.col-p300 {
+    color: $color_p300 !important;
+}
+.col-p500 {
+   color: $color_p500 !important;
+}
+.col-p700 {
+    color: $color_p700 !important;
+}
+.col-p900 {
+    color: $color_p900 !important;
+}
+
+.bg-c100 {
+    background-color: $color_c100 !important;
+}
+.bg-c300 {
+    background-color: $color_c300 !important;
+}
+.bg-c500 {
+    background-color: $color_c500 !important;
+}
+.bg-c700 {
+    background-color: $color_c700 !important;
+}
+.bg-c900 {
+    background-color: $color_c900 !important;
+}
+.col-c100 {
+    color: $color_c100 !important;
+}
+.col-c300 {
+    color: $color_c300 !important;
+}
+.col-c500 {
+   color: $color_c500 !important;
+}
+.col-c700 {
+    color: $color_c700 !important;
+}
+.col-c900 {
+    color: $color_c900 !important;
+}
+
+.bg-g100 {
+    background-color: $color_g100 !important;
+}
+.bg-g300 {
+    background-color: $color_g300 !important;
+}
+.bg-g500 {
+    background-color: $color_g500 !important;
+}
+.bg-g700 {
+    background-color: $color_g700 !important;
+}
+.bg-g900 {
+    background-color: $color_g900 !important;
+}
+.col-g100 {
+    color: $color_g100 !important;
+}
+.col-g300 {
+    color: $color_g300 !important;
+}
+.col-g500 {
+   color: $color_g500 !important;
+}
+.col-g700 {
+    color: $color_g700 !important;
+}
+.col-g900 {
+    color: $color_g900 !important;
+}
+
+.banner.col-p100 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_p100 !important;
+    }
+}
+
+.banner.col-p300 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_p300 !important;
+    }
+}
+
+.banner.col-p500 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_p500 !important;
+    }
+}
+
+.banner.col-p700 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_p700 !important;
+    }
+}
+
+.banner.col-p900 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_p900 !important;
+    }
+}
+
+.banner.col-c100 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_c100 !important;
+    }
+}
+
+.banner.col-c300 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_c300 !important;
+    }
+}
+
+.banner.col-c500 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_c500 !important;
+    }
+}
+
+.banner.col-c700 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_c700 !important;
+    }
+}
+
+.banner.col-c900 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_c900 !important;
+    }
+}
+
+.banner.col-g100 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_g100 !important;
+    }
+}
+
+.banner.col-g300 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_g300 !important;
+    }
+}
+
+.banner.col-g500 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_g500 !important;
+    }
+}
+
+.banner.col-g700 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_g700 !important;
+    }
+}
+
+.banner.col-g900 {
+    h1, h2, h3, h4, h5, h6 {
+        color: $color_g900 !important;
+    }
+}
+
+.color-test-swab {
+    border-radius: 5px;
+    padding: 5px 5px;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: 10px 5px;
+    display: inline-block;
+}
