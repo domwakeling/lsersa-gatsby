@@ -46,8 +46,8 @@ const Layout = ({ children, location }) => {
             /> */}
             <Navbar />
             {/* <ToastContainer align="right" position="top" /> */}
-            <div className="container">
                 <div id="content">
+            <div className="container">
                     {children}
                     {/* <Copyright who="Bowles Ski Racing Club" /> */}
                 </div>

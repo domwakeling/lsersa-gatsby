@@ -39,14 +39,14 @@ const Footer = () => {
                         <GatsbyImage
                             image={imgData.filter(node => /fb/.test(node.path))[0].image}
                             alt="Facebook"
-                            style={{ width: "50px", height: "auto" }}
+                            className="social-media-icon"
                         />
                     </a>
                     <a href="https://www.instagram.com/lsersa_uk/" style={{ textDecoration: "none" }} target="_insta">
                         <GatsbyImage
                             image={imgData.filter(node => /inst/.test(node.path))[0].image}
                             alt="Instagram"
-                            style={{ width: "50px", height: "auto" }}
+                            className="social-media-icon"
                         />
                     </a>
                 </div>
