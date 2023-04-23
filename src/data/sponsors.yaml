@@ -1,22 +1,3 @@
--   name: Maison Sport
-    url: https://maisonsport.com/
-    img: sponsors/maisonsport.png
-    target: _maisonsport
-    copy: >
-        <p>Maison Sport is the industry leading booking platform for ski and snowboard
-            lessons. The founding team are all ex-British ski team members and fully
-            qualified ski instructors. Maison Sport currently operates in over 420 resorts
-            across Europe and has over 1,000 highly rated, independent instructors on their
-            platform, as well as ski school group lessons in many of Europe's most
-            popular resorts.</p>
-        <p>Maison Sport offers private lessons with independent instructors, as well as high
-            quality ski school group lessons for adult and children, which have a maximum of
-            just 6 skiers per group. Maison Sport provides its' customers with the
-            ability to choose their instructor based off individual instructor profiles
-            and trusted reviews left by previous customers. Find out more by visiting
-            <a href="https://maisonsport.com/" target="_maisonsport">their website</a>
-            today!</p>
-
 -   name: Huski
     url: http://www.hu.ski/
     img: sponsors/huski.png
@@ -43,6 +24,25 @@
         <p>Contact us via <a href="https://www.hu.ski/" target="_huski">our webstite</a>,
             <a href="mailto:orders@hu.ski">email us</a> or call Phone: +33 (0)47 904 1536</p>
 
+-   name: Maison Sport
+    url: https://maisonsport.com/
+    img: sponsors/maisonsport.png
+    target: _maisonsport
+    copy: >
+        <p>Maison Sport is the industry leading booking platform for ski and snowboard
+            lessons. The founding team are all ex-British ski team members and fully
+            qualified ski instructors. Maison Sport currently operates in over 420 resorts
+            across Europe and has over 1,000 highly rated, independent instructors on their
+            platform, as well as ski school group lessons in many of Europe's most
+            popular resorts.</p>
+        <p>Maison Sport offers private lessons with independent instructors, as well as high
+            quality ski school group lessons for adult and children, which have a maximum of
+            just 6 skiers per group. Maison Sport provides its' customers with the
+            ability to choose their instructor based off individual instructor profiles
+            and trusted reviews left by previous customers. Find out more by visiting
+            <a href="https://maisonsport.com/" target="_maisonsport">their website</a>
+            today!</p>
+
 -   name: Precise Racing
     url: http://preciseracing.co.uk/
     img: sponsors/precise.png
@@ -53,22 +53,6 @@
         <p>Alongside their snow-training programme they also offer a number of open training
             camps at various locations in the UK, and run the Kent and Surrey school ski
             championships.</p>
-
--   name: Racer Ready
-    url: https://www.racer-ready.co.uk/
-    img: sponsors/racerready.png
-    target: _racer
-    copy: >
-        <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
-            sport. They cover from grassroots up to the Olypmic Games and have been doing
-            this since 2000.</p>
-        <p>Racer Ready provide pictures from many racers through both summer and winter
-            through their <a href="https://racerready.zenfolio.com/"
-            target="_racerready">picture website</a>. Pictures can be bought as single
-            shots, or you can take a monthly subscription that allows access to all pictures
-            in the folder for personal use. The monthly subscription also gives access to
-            the news website - see <a href="https://www.racer-ready.co.uk/join-us"
-            target="_racer">the website</a> for more details.</p>
 
 -   name: Fidelity Integrated Systems
     url: http://www.fidelityintegrated.com/
@@ -105,3 +89,19 @@
             a leading Human Recovery innovator in elite sport.</p>
         <p>You can contact her at
             <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
+
+-   name: Racer Ready
+    url: https://www.racer-ready.co.uk/
+    img: sponsors/racerready.png
+    target: _racer
+    copy: >
+        <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
+            sport. They cover from grassroots up to the Olypmic Games and have been doing
+            this since 2000.</p>
+        <p>Racer Ready provide pictures from many racers through both summer and winter
+            through their <a href="https://racerready.zenfolio.com/"
+            target="_racerready">picture website</a>. Pictures can be bought as single
+            shots, or you can take a monthly subscription that allows access to all pictures
+            in the folder for personal use. The monthly subscription also gives access to
+            the news website - see <a href="https://www.racer-ready.co.uk/join-us"
+            target="_racer">the website</a> for more details.</p>

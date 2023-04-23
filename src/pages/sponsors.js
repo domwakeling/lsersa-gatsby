@@ -4,6 +4,7 @@ import sponsordata from '../data/sponsors.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from "../components/utility/SponsorParser.jsx";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 const SponsorsPage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -33,7 +34,8 @@ const SponsorsPage = () => {
             <div className="row">
                 <h1 className="header-no-hero underlined">Our Sponsors</h1>
                 <p>Many thanks to our sponsors, who help us to run the Summer Race Series.</p>
-                <div className="grid" data-masonry='{ "itemSelector": ".sponsor-card", "gutter": 20 }'>
+                <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
+                    <Masonry gutter={20}>
                     {
                         sponsordata.map((item, idx) => (
                             <div className="sponsor-card" key={`sponsor-page-${idx}`}>
@@ -49,7 +51,8 @@ const SponsorsPage = () => {
                             </div>
                         ))
                     }
-                </div>
+                    </Masonry>
+                </ResponsiveMasonry>
             </div>
         </Layout>
     )
