@@ -19,6 +19,15 @@ const DownloadItem = ({ filetype, filename, filelink }) => {
         case 'excel':
             fileImgUrl = "/excel_download.png";
             break;
+        case 'DOC':
+            fileImgUrl = "/word_download.png";
+            break;
+        case 'DOCX':
+            fileImgUrl = "/word_download.png";
+            break;
+        case 'word':
+            fileImgUrl = "/word_download.png";
+            break;
         default:
             fileImgUrl = "/pdf_download.png";
     }
