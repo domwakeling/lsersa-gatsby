@@ -9,7 +9,7 @@ const RaceYearList = ({ year }) => {
                 raceData.map((item, idx) => (
                     <Link
                         className="year-lozenge-wrap"
-                        for={ idx === 0 ? "/races/" : `/races/${item.year}/`}
+                        to={ idx === 0 ? "/races/" : `/races/${item.year}/`}
                         key={idx}
                     >
                         <div
@@ -20,21 +20,6 @@ const RaceYearList = ({ year }) => {
                     </Link>        
                 ))
             }
-            {/* {% for year in races %}
-            {% if loop.first %}
-            <a className="year-lozenge-wrap" href="/races/">
-                <div className="year-lozenge">
-                    {{ year.year }}
-                </div>
-            </a>
-            {% else %}
-            <a className="year-lozenge-wrap" href="/races/{{ year.year }}/">
-                <div className="year-lozenge">
-                    {{ year.year }}
-                </div>
-            </a>
-            {% endif %}
-            {% endfor %} */}
         </>
     )
 }
