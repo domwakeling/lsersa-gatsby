@@ -4,6 +4,7 @@ import Layout from "../components/Layout.jsx";
 import sponsordata from '../data/sponsors.yaml';
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Favicon from "../components/head/Favicon.jsx";
 
 const HomePage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -62,4 +63,8 @@ const HomePage = () => {
 
 export default HomePage
 
-export const Head = () => <title>Home | LSERSA</title>
+export const Head = () => (
+    <Favicon> 
+        <title>Home | LSERSA</title>
+    </Favicon>
+);

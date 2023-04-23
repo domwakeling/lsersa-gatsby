@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/Layout";
+import Favicon from "../components/head/Favicon";
 
 const NotFoundPage = () => {
     return (
@@ -16,4 +17,8 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => <title>Not found</title>
+export const Head = () => (
+    <Favicon>
+        <title>Not found</title>
+    </Favicon>
+);

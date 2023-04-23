@@ -4,7 +4,8 @@ import sponsordata from '../data/sponsors.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from "../components/utility/SponsorParser.jsx";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Favicon from "../components/head/Favicon.jsx";
 
 const SponsorsPage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -60,4 +61,8 @@ const SponsorsPage = () => {
 
 export default SponsorsPage
 
-export const Head = () => <title>Sponsors | LSERSA</title>
+export const Head = () => (
+    <Favicon>
+        <title>Sponsors | LSERSA</title>
+    </Favicon>
+);

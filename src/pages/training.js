@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
+import Favicon from "../components/head/Favicon.jsx";
 
 const TrainingPage = () => {
     return (
@@ -20,4 +21,8 @@ const TrainingPage = () => {
 
 export default TrainingPage
 
-export const Head = () => <title>Training | LSERSA</title>
+export const Head = () => (
+    <Favicon>
+        <title>Training | LSERSA</title>
+    </Favicon>
+);

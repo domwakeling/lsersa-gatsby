@@ -3,6 +3,7 @@ import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import Favicon from "../components/head/Favicon.jsx";
 
 const AboutPage = () => {
     // query to get all logos with their relative path
@@ -83,4 +84,8 @@ const AboutPage = () => {
 
 export default AboutPage
 
-export const Head = () => <title>About | LSERSA</title>
+export const Head = () => (
+    <Favicon>
+        <title>About | LSERSA</title>
+    </Favicon>
+);
