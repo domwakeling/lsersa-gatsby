@@ -7,7 +7,6 @@ const TrainingPage = () => {
         <Layout>
             <Hero
                 text="Training"
-                text2="2023"
                 imageUrl="hero/trophies.png"
                 imageAlt="End of year trophies"
             />
