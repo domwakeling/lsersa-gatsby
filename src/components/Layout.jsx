@@ -36,7 +36,6 @@ const Layout = ({ children, location }) => {
                     lang: 'en',
                 }}
             >
-                <link rel="icon" href={fav} sizes="32x32" type="image/png" />
                 <script
                     src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign">
                 </script>
@@ -46,15 +45,11 @@ const Layout = ({ children, location }) => {
             /> */}
             <Navbar />
             {/* <ToastContainer align="right" position="top" /> */}
-                <div id="content">
-            <div className="container">
+            {/* <div id="content"> */}
+                {/* <div className="container"> */}
                     {children}
-                    {/* <Copyright who="Bowles Ski Racing Club" /> */}
-                </div>
-                {/* <div id="right-column"> */}
-                    {/* <MenuRight location={location} /> */}
                 {/* </div> */}
-            </div>
+            {/* </div> */}
             <Footer />
         </>
     );

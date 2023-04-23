@@ -32,28 +32,30 @@ const SponsorsPage = () => {
 
     return (
         <Layout>
-            <div className="row">
-                <h1 className="header-no-hero underlined">Our Sponsors</h1>
-                <p>Many thanks to our sponsors, who help us to run the Summer Race Series.</p>
-                <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
-                    <Masonry gutter={20}>
-                    {
-                        sponsordata.map((item, idx) => (
-                            <div className="sponsor-card" key={`sponsor-page-${idx}`}>
-                                <div className="sponsor-logo-grid-item">
-                                    <a href="{{ item.url }}" target="{{ item.target }}">
-                                        <GatsbyImage
-                                            image={imgData.filter(node => node.path === item.img)[0].image}
-                                            alt={item.name}
-                                        />
-                                    </a>
+            <div className="container">
+                <div className="row">
+                    <h1 className="header-no-hero underlined">Our Sponsors</h1>
+                    <p>Many thanks to our sponsors, who help us to run the Summer Race Series.</p>
+                    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
+                        <Masonry gutter={20}>
+                        {
+                            sponsordata.map((item, idx) => (
+                                <div className="sponsor-card" key={`sponsor-page-${idx}`}>
+                                    <div className="sponsor-logo-grid-item">
+                                        <a href="{{ item.url }}" target="{{ item.target }}">
+                                            <GatsbyImage
+                                                image={imgData.filter(node => node.path === item.img)[0].image}
+                                                alt={item.name}
+                                            />
+                                        </a>
+                                    </div>
+                                    <SponsorParser rawHTML={item.copy} />
                                 </div>
-                                <SponsorParser rawHTML={item.copy} />
-                            </div>
-                        ))
-                    }
-                    </Masonry>
-                </ResponsiveMasonry>
+                            ))
+                        }
+                        </Masonry>
+                    </ResponsiveMasonry>
+                </div>
             </div>
         </Layout>
     )

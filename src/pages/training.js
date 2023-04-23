@@ -6,14 +6,16 @@ import Favicon from "../components/head/Favicon.jsx";
 const TrainingPage = () => {
     return (
         <Layout>
-            <Hero
-                text="Training"
-                imageUrl="hero/trophies.png"
-                imageAlt="End of year trophies"
-            />
-            <div className="row">
-                <h1>Training</h1>
-                <p>A page</p>
+            <div className="container">
+                <Hero
+                    text="Training"
+                    imageUrl="hero/trophies.png"
+                    imageAlt="End of year trophies"
+                />
+                <div className="row">
+                    <h1>Training</h1>
+                    <p>A page</p>
+                </div>
             </div>
         </Layout>
     )

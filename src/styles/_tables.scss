@@ -10,7 +10,6 @@ table {
         td {
             padding: 0.5rem 1.0rem;
             white-space: nowrap;
-
         }
 
         td.subtitle {
@@ -23,4 +22,16 @@ table {
 .table-responsive-container {
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+a.race-link {
+    display: inline-block;
+    background-color: $color_p300;
+    color: $color_p900;
+    text-decoration: none;
+    padding: 0.3rem 0.75rem 0.1rem;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+    min-width: 90px;
+    border-radius: 0.75rem;
 }

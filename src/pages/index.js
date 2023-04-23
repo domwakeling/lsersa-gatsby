@@ -5,6 +5,7 @@ import sponsordata from '../data/sponsors.yaml';
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Favicon from "../components/head/Favicon.jsx";
+import PanelCard from "../components/PanelCard.jsx";
 
 const HomePage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -31,30 +32,66 @@ const HomePage = () => {
     
     return (
         <Layout>
-            <Hero text="WELCOME" text2="TO LSERSA" />
-            <div className="row">
-                <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
-                <p>Regional Race Training is held at Chatham on Saturday mornings (9-11am).</p>
-                <p>Welcome to the London & South East Regional Snowsports Assocation, LSERSA. We are a regional
-                    association affiliated with Snowsport England, the national governing body.</p>
-                <p>In addition to providing Regional Race Training and organising the LSERSA Summer Race Series, our
-                    aim is to encourage participation in all snowsports.</p>
-                <br />
+            <div className="container">
+                <Hero text="WELCOME" text2="TO LSERSA" />
+                <div className="row">
+                    <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
+                    <p>Welcome to the London & South East Regional Snowsports Assocation, LSERSA. We are a regional
+                        association affiliated with Snowsport England, the national governing body.</p>
+                    <p>In addition to providing Regional Race Training and organising the LSERSA Summer Race Series, our
+                        aim is to encourage participation in all snowsports.</p>
+                </div>
             </div>
-            <div className="row">
-                <hr />
-                <h2>Thankyou to our sponsors</h2>
-                <div className="sponsor-logo-grid">
-                    {sponsordata.map((item, idx) => (
-                        <div className="sponsor-logo-grid-item" key={`sponsor-body-${idx}`} >
-                            <a href={item.url} target={item.target}>
-                                <GatsbyImage
-                                    image={imgData.filter(node => node.path === item.img)[0].image}
-                                    alt={item.name}
-                                />
-                            </a>
+
+            <div className="banner col-p900 bg-p300">
+                <div className="container">
+                    <div className="row">
+                        <h2>What would you like to do?</h2>
+                        <div className="panel-container">
+                            <PanelCard url="/training/">
+                                <h3>Booking</h3>
+                                <p>Book your place on the next Regional Training session</p>
+                            </PanelCard>
+                            <PanelCard url="/clubs/">
+                                <h3>Clubs</h3>
+                                <p>Find out more about the Snowsports clubs in our region</p>
+                            </PanelCard>
+                            <PanelCard url="/races/">
+                                <h3>Races</h3>
+                                <p>Find out more about local dry-slope races</p>
+                            </PanelCard>
+                            <PanelCard url="/committee/">
+                                <h3>The Committee</h3>
+                                <p>Find out more about the LSERSA committee</p>
+                            </PanelCard>
+                            <PanelCard url="/sponsors/">
+                                <h3>Sponsors</h3>
+                                <p>Find out more about our sponsors</p>
+                            </PanelCard>
+                            <PanelCard url="/about/">
+                                <h3>About</h3>
+                                <p>More information about LSERSA</p>
+                            </PanelCard>
                         </div>
-                    ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row">
+                    <h2>Thankyou to our sponsors</h2>
+                    <div className="sponsor-logo-grid">
+                        {sponsordata.map((item, idx) => (
+                            <div className="sponsor-logo-grid-item" key={`sponsor-body-${idx}`} >
+                                <a href={item.url} target={item.target}>
+                                    <GatsbyImage
+                                        image={imgData.filter(node => node.path === item.img)[0].image}
+                                        alt={item.name}
+                                    />
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </Layout>

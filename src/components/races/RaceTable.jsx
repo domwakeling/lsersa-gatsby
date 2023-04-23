@@ -14,7 +14,9 @@ const RaceElement = ({ item }) => {
                         <td style={{ minWidth: "200px" }}>{race.date}</td>
                         <td style={{ minWidth: "100px" }}>
                             {race.url ? (
-                                <a href={race.url} target="_offsite">{race.status}</a>
+                                <a className="race-link" href={race.url} target="_offsite">
+                                    {race.status}
+                                </a>
                             ) : (
                                 race.status
                             )}
@@ -27,7 +29,9 @@ const RaceElement = ({ item }) => {
                     <tr key={idx}>
                         <td colSpan="3">{overallItem.name}</td>
                         <td>
-                            <a href={overallItem.url} target="_offsite">Result</a>
+                            <a className="race-link" href={overallItem.url} target="_offsite">
+                                Result
+                            </a>
                         </td>
                     </tr>
                 ))

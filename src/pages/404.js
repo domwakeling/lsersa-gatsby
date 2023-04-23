@@ -6,11 +6,13 @@ import Favicon from "../components/head/Favicon";
 const NotFoundPage = () => {
     return (
         <Layout>
-            <h1>Page not found</h1>
-            <p>Sorry 😔, we couldn’t find what you were looking for.</p>
-            <p>
-                <Link to="/">Go home</Link>.
-            </p>
+            <div className="container">
+                <h1>Page not found</h1>
+                <p>Sorry 😔, we couldn’t find what you were looking for.</p>
+                <p>
+                    <Link to="/">Go home</Link>.
+                </p>
+            </div>
         </Layout>
     )
 }
