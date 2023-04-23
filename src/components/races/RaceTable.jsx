@@ -22,6 +22,16 @@ const RaceElement = ({ item }) => {
                     </tr>
                 ))
             }
+            {
+                item.overall && item.overall.map((overallItem, idx) => (
+                    <tr key={idx}>
+                        <td colSpan="3">{overallItem.name}</td>
+                        <td>
+                            <a href={overallItem.url} target="_offsite">Result</a>
+                        </td>
+                    </tr>
+                ))
+            }
         </>
     )
 }
