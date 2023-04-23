@@ -4,6 +4,7 @@ import Hero from "../components/Hero.jsx";
 import raceData from '../data/races.yaml';
 import RaceTable from "../components/races/RaceTable.jsx";
 import RaceYearList from "../components/races/RaceYearList.jsx";
+import DownloadItem from "../components/DownloadItem.jsx";
 
 const RacesPage = () => {
     return (
@@ -61,6 +62,10 @@ const RacesPage = () => {
                     events.</p>
                 <p>Age groups for the current, previous and following year are available on{' '}
                     <a href="https://gbski.com/lists.php#ages" target="_gbski">GBSki.com</a>.</p>
+                <p><b>Downloads</b></p>
+                <div>
+                    <DownloadItem filelink="/race_rules_2023.pdf" filename="LSERSA race rules" filetype="PDF" />
+                </div>
 
                 <br />
                 <hr />
