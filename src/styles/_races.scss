@@ -11,9 +11,15 @@ a.year-lozenge-wrap {
         display: inline-block;
         min-width: 40px;
         text-align: center;
+        cursor: pointer;
 
         &:hover {
             background-color: $color_p500;
         }
+    }
+
+    .year-lozenge.this-year {
+        background-color: $color_c500;
+        color: $color_c100;
     }
 }

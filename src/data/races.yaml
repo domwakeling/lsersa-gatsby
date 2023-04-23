@@ -1,0 +1,581 @@
+-   year: 2023
+    events:         
+    -   series: LSERSA Summer Series
+        races:        
+        -   name: Race 1
+            venue: Chatham
+            date: Saturday 27th May
+            url: https://www.skiresults.co.uk/events/1315
+            status: Entries
+        -   name: Race 2
+            venue: Brentwood
+            date: Saturday 17th June
+            url: https://www.skiresults.co.uk/events/1316
+            status: Entries
+        -   name: Race 3
+            venue: Bowles
+            date: Saturday 2nd September
+            url: https://www.skiresults.co.uk/events/1317
+            status: Entries
+        -   name: Race 4
+            venue: Aldershot
+            date: Sunday 24th September
+            url: https://www.skiresults.co.uk/events/1318
+            status: Entries
+        -   name: Race 5
+            venue: Chatham
+            date: Saturday 7th October
+            url: https://www.skiresults.co.uk/events/1319
+            status: Entries
+            
+    -   series: Club Nationals
+        races:        
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Saturday 10th June
+            url: https://gbski.com/competition.php?ID=1249
+            status: More info
+        -   name: Precise Club National
+            venue: Chatham
+            date: Sunday 11th June
+            url: https://gbski.com/competition.php?ID=1250
+            status: More info
+
+    -   series: eola GBR Outdoor Series
+        races: 
+        -   name: Race 4
+            venue: Chatham
+            date: Saturday 1st July
+            url: https://gbski.com/competition.php?ID=1255
+            status: More info
+        -   name: Race 5
+            venue: Chatham
+            date: Sunday 2nd July
+            url: https://gbski.com/competition.php?ID=1255
+            status: More info
+
+    -   series: School Competitions
+        races: 
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 7th May
+            url: https://preciseracing.co.uk/kent-schools-championship/
+            status: More info
+        -   name: London Schools
+            venue: Welwyn
+            date: Weekend 24th &amp; 25th June
+            url: http://lssr.mailchimpsites.com/
+            status: More info
+        -   name: ESSKIA Regional Qualifer (South East)
+            venue: Chatham
+            date: Sunday 17th September
+            url: https://esskia.org/
+            status: More info
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 12th November
+            url: https://preciseracing.co.uk/surrey-schools-championships/
+            status: More info
+
+    -   series: Regional Competitions
+        races:        
+        -   name: Tri-Regional
+            venue: tbc
+            date: tbc
+            url: null
+            status: Info to follow
+
+    -   series: Other Competitions
+        races:        
+        -   name: Night Race
+            venue: Chatham
+            date: Saturday 4th November
+            url: null
+            status: Entry information to follow
+               
+-   year: 2022
+    events: 
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/
+        races: 
+        -   name: Race 1
+            venue: Chatham
+            date: Saturday 28th May
+            url: https://www.skiresults.co.uk/events/1184
+            status: Results
+        -   name: Race 2
+            venue: Welwyn
+            date: Saturday 11th June
+            url: https://www.skiresults.co.uk/events/1182
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 16th July
+            url: https://www.skiresults.co.uk/events/1190
+            status: Results
+        -   name: Race 4
+            venue: Aldershot
+            date: Sunday 4th September
+            url: https://www.skiresults.co.uk/events/1183
+            status: Results
+        -   name: Race 5
+            venue: Chatham
+            date: Saturday 15th October
+            url: https://www.skiresults.co.uk/events/1168
+            status: Results
+
+    -   series: Club Nationals
+        races: 
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Saturday 9th June
+            url: https://gbski.com/competition.php?ID=1023
+            status: Results
+
+    -   series: All England
+        races: 
+        -   name: All England Champs
+            venue: Chatham
+            date: Saturday 27th August
+            url: https://gbski.com/competition.php?ID=1032
+            status: Results
+        -   name: All England Inter-Club
+            venue: Chatham
+            date: Sunday 28th August
+            url: https://gbski.com/competition.php?ID=1033
+            status: Results
+
+    -   series: School Competitions
+        races: 
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 8th May
+            url: 
+            status: 
+        -   name: London Schools
+            venue: Welwyn
+            date: Weekend 18th &amp; 19th June
+            url: 
+            status: 
+
+    -   series: Regional Competitions
+        races:        
+        -   name: Tri-Regional
+            venue: 
+            date: 
+            url:
+            status:
+
+    -   series: Other Competitions
+        races:        
+        -   name: Night Race
+            venue: Chatham
+            date: Saturday 5th November
+            url: https://skiresults.co.uk/events/1187
+            status: Results
+
+-   year: 2021
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/2191
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/2192
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/2144
+        races:
+        -   name: Race 1
+            venue: Chatham
+            date: Saturday 22nd May
+            url: https://www.skiresults.co.uk/events/1134
+            status: Results
+        -   name: Race 2
+            venue: Chatham
+            date: Saturday 19th June
+            url: https://www.skiresults.co.uk/events/1135
+            status: Results
+        -   name: Race 3
+            venue: Chatham
+            date: Saturday 4th September
+            url: https://www.skiresults.co.uk/events/1163
+            status: Results
+        -   name: Race 4
+            venue: Chatham
+            date: Saturday 18th September
+            url: https://www.skiresults.co.uk/events/1165
+            status: Results
+        -   name: Race 5
+            venue: Chatham
+            date: Saturday 9th October
+            url: https://www.skiresults.co.uk/events/1164
+            status: Results
+
+    -   series: Club Nationals
+        races:
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Sunday 18th July
+            url: https://gbski.com/competition.php?ID=862
+            status: Results
+    
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 3rd October
+            url: 
+            status: 
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 21st June
+            url: 
+            status: 
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 14th November
+            url: 
+            status: 
+
+-   year: 2020
+
+-   year: 2019
+    events: 
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/2004
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/2005
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/2003
+        races:
+        -   name: Race 1
+            venue: Chatham
+            date: Saturday 27th April
+            url: https://skiresults.co.uk/events/1006
+            status: Results
+        -   name: Race 2
+            venue: Welwyn
+            date: Saturday 8th June
+            url: https://skiresults.co.uk/events/1007
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 20th July
+            url: https://skiresults.co.uk/events/1008
+            status: Results
+        -   name: Race 4
+            venue: Aldershot
+            date: Sunday 8th September
+            url: https://skiresults.co.uk/events/1009
+            status: Results
+        -   name: Race 5
+            venue: Chatham
+            date: Sunday 29th September
+            url: https://skiresults.co.uk/events/1010
+            status: Results
+
+    -   series: Club Nationals
+        races:
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Saturday 15th June
+            url: https://gbski.com/competition.php?ID=587
+            status: Results
+        -   name: Bromley Club National
+            venue: Chatham
+            date: Sunday 16th June
+            url: https://gbski.com/competition.php?ID=589
+            status: Results
+
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 12th May
+            url: 
+            status: 
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 23rd June
+            url: 
+            status: 
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 22nd September
+            url: 
+            status: 
+
+    -   series: Regional Competitions
+        races:
+        -   name: Inter Regional
+            venue: Gloucester
+            date: Sunday 7th July
+            url: https://gbski.com/racedocs/2019/C598/9308/RES9308%20Interregional%202019%20results.pdf
+            status: Results on GBSKI
+        -   name: Southern England Championships
+            venue: Chatham
+            date: Saturday 12th October
+            url: https://skiresults.co.uk/events/1004
+            status: Ski Results link
+        -   name: Tri-Regional
+            venue: Chatham
+            date: Sunday 13th October
+            url: https://skiresults.co.uk/events/1005/
+            status: Ski Results link
+
+-   year: 2018
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/1862
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/1863
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/1842
+        races:
+        -   name: Race 1
+            venue: Chatham
+            date: Sunday 29th April
+            url: https://skiresults.co.uk/events/895
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Saturday 2nd June
+            url: https://skiresults.co.uk/events/896
+            status: Results
+        -   name: Race 3
+            venue: Welwyn
+            date: Sunday 10th June
+            url: https://skiresults.co.uk/events/897
+            status: Results
+        -   name: Race 4
+            venue: Aldershot
+            date: Sunday 2nd September
+            url: https://skiresults.co.uk/events/898
+            status: Results
+        -   name: Race 5
+            venue: Chatham
+            date: Saturday 13th October
+            url: https://skiresults.co.uk/events/899
+            status: Results
+
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 6th May
+            url: 
+            status: 
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 24th June
+            url: 
+            status: 
+        -   name: ESSKIA Regional
+            venue: Various
+            date: Sunday 16th September
+            url:
+            status:
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 30th September
+            url: 
+            status: 
+
+    -   series: Regional Competitions
+        races:
+        -   name: Tri-Regional
+            venue: Chatham
+            date: Sunday 14th October
+            url: https://skiresults.co.uk/events/900/
+            status: Results
+
+-   year: 2017
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/1714
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/1715
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/1693
+        races:
+        -   name: Race 1
+            venue: Welwyn
+            date: Saturday 29th April
+            url: http://www.skiresults.co.uk/events/797
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Sunday 7th May
+            url: http://www.skiresults.co.uk/events/811
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 17th June
+            url: http://www.skiresults.co.uk/events/825
+            status: Results
+        -   name: Race 4
+            venue: Aldershot
+            date: Sunday 2nd July
+            url: http://www.skiresults.co.uk/events/836
+            status: Results
+        -   name: Race 5
+            venue: Welwyn
+            date: Sunday 8th October
+            url: http://www.skiresults.co.uk/events/858
+            status: Results
+
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Brentwood
+            date: Saturday 6th May
+            url:
+            status:
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 18th June
+            url:
+            status:
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 1st October
+            url:
+            status:
+
+    -   series: Regional Competitions
+        races:
+        -   name: Tri-Regional
+            venue: Welwyn
+            date: Saturday 14th October
+            url:
+            status:
+
+-   year: 2016
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/1608
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/1609
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/1607
+        races:
+        -   name: Race 1
+            venue: Brentwood
+            date: Sunday 8th May
+            url: http://www.skiresults.co.uk/events/464
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Sunday 19th June
+            url: http://www.skiresults.co.uk/events/463
+            status: Results
+        -   name: Race 3
+            venue: Aldershot
+            date: Sunday 3rd July
+            url: http://www.skiresults.co.uk/events/462
+            status: Results
+        -   name: Race 4
+            venue: Welwyn
+            date: Sunday 10th July
+            url: http://www.skiresults.co.uk/events/461
+            status: Results
+        -   name: Race 5
+            venue: Brentwood
+            date: Sunday 16th October
+            url: http://www.skiresults.co.uk/events/460
+            status: Results
+    
+    -   series: School Competitions
+        races:
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 20th March
+            url:
+            status:
+        -   name: Kent Schools
+            venue: Brentwood
+            date: Saturday 7th May
+            url:
+            status:
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 12th June
+            url:
+            status:
+
+-   year: 2015
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/892
+        -   name: Overall Fastest Male
+            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/893
+        -   name: Overall Club
+            url: http://www.skiresults.co.uk/series/lsersa-club-performances/ranking/1348
+        races:
+        -   name: Race 1
+            venue: Aldershot
+            date: Sunday 19th April
+            url: http://www.skiresults.co.uk/events/304
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Saturday 16th May
+            url: http://www.skiresults.co.uk/events/2
+            status: Results
+        -   name: Race 3
+            venue: Welwyn
+            date: Sunday 28th June
+            url: http://www.skiresults.co.uk/events/410
+            status: Results
+        -   name: Race 4
+            venue: Brentwood
+            date: Sunday 6th September
+            url: http://www.skiresults.co.uk/events/411
+            status: Results
+        -   name: Race 5
+            venue: Brentwood
+            date: saturday 10th October
+            url: http://www.skiresults.co.uk/events/412
+            status: Results
+    
+    -   series: School Competitions
+        races:
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 14th June
+            url:
+            status:
+        -   name: Kent Schools
+            venue: Brentwood
+            date: Saturday27th June
+            url:
+            status:
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 4th October
+            url:
+            status:
+    
+    -   series: Regional Competitions
+        races:        
+        -   name: Tri-Regional
+            venue: Brentwood
+            date: Saturday 17th October
+            url: http://www.srsa.org.uk/uploads/2015TriRegionResults.pdf
+            status: Results
