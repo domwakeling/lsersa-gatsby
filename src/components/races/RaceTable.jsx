@@ -12,15 +12,29 @@ const RaceElement = ({ item }) => {
                         <td style={{ minWidth: "160px" }}>{race.name}</td>
                         <td style={{ minWidth: "160px" }}>{race.venue}</td>
                         <td style={{ minWidth: "200px" }}>{race.date}</td>
-                        <td style={{ minWidth: "100px" }}>
-                            {race.url ? (
-                                <a className="race-link" href={race.url} target="_offsite">
-                                    {race.status}
-                                </a>
-                            ) : (
-                                race.status
-                            )}
-                        </td>
+                        { (race.mens === undefined) && (
+                            <td colSpan="2" style={{ minWidth: "100px" }}>
+                                {race.url ? (
+                                    <a className="race-link" href={race.url} target="_offsite">
+                                        {race.status}
+                                    </a>
+                                ) : (
+                                    race.status
+                                )}
+                            </td>
+                        )}
+                        { (race.mens !== undefined) && (
+                            <>
+                                <td>
+                                    <a className="race-link" href={race.ladies} style={{ marginRight: "1.0rem"}}>
+                                        Ladies
+                                    </a>
+                                    <a className="race-link" href={race.mens}>
+                                        Mens
+                                    </a>
+                                </td>
+                            </>
+                        )}
                     </tr>
                 ))
             }
@@ -28,7 +42,7 @@ const RaceElement = ({ item }) => {
                 item.overall && item.overall.map((overallItem, idx) => (
                     <tr key={idx}>
                         <td colSpan="3">{overallItem.name}</td>
-                        <td>
+                        <td colSpan="2">
                             <a className="race-link" href={overallItem.url} target="_offsite">
                                 Result
                             </a>

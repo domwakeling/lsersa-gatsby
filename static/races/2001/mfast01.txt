@@ -1,0 +1,74 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2001 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                         Bromley  Sunday 26th August
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                     AL     WY     CH     BR     Avge
+
+  1  Ed Drake               98.68  96.89 100.00  97.56    98.74
+  2  Ben Clark              97.89  96.58    -    98.63    97.70
+  3  Tom Plank              97.23  94.47  99.66  94.53    97.14
+  4  Paul Telling           91.76  86.38    -    93.40    90.51
+  5  Jack Buchanan          85.08  54.31  90.19  90.86    88.71
+  6  David Grout              -    85.01  89.94  91.01    88.65
+  7  Des Pirkoffer          91.28  84.07    -    87.29    87.54
+  8  Jack Evans             87.36  82.01  85.30  83.09    85.25
+  9  Mike Colyer            81.83  83.38  86.04  84.80    84.74
+ 10  Andrew Rowe            79.00  84.46  85.36  79.37    83.06
+ 11  Andy Proudlove           -    79.67  85.33  83.48    82.83
+ 12  Josh Doughty           77.44  76.14  83.46  86.46    82.45
+ 13  Daniel Curtis          82.01  79.17  85.26    -      82.15
+ 14  Robert Buchanan        80.39  72.90  77.04  82.89    80.11
+ 15  Joe Ogden              79.90  77.64    -    81.09    79.54
+ 16  Ben Lowes              69.61  72.64  85.11    -      75.79
+ 17  Anthony Hudson         68.47    -    79.91  73.17    73.85
+ 18  Matthew Davey          75.09  72.29    -    74.05    73.81
+ 19  Max Scofield           71.24  64.42  70.53  73.36    71.71
+ 20  Jonathan Allingham       -    68.03  76.67  69.31    71.33
+ 21  Lloyd Papantoniou      65.46  61.73  69.07  79.42    71.32
+ 22  Keith Birchell         65.10  60.52  65.73  71.95    67.59
+ 23  Sam Wrench             62.94    -    69.25  70.48    67.56
+ 24  Neil Roberts             -    59.86  70.37  69.45    66.56
+ 25  Kyle Mortimer          65.04  60.39  71.87    -      65.77
+ 26  Philip Telling         60.53  55.36  61.43  62.12    61.36
+ 27  Christopher Dixon      60.59  54.83  47.26  68.57    61.33
+ 28  Joseph Kirton          54.27    -    62.55  63.54    60.12
+ 29  Tom Barley             45.49    -    67.51  64.08    59.02
+ 30  Michael Brain          49.52    -    69.10  56.55    58.39
+ 31  David Windsor          55.60  57.28  61.62    -      58.17
+ 32  Christopher Holly      38.51  66.58  68.63    -      57.91
+ 33  Keith Brown            59.09  55.28  59.31    -      57.89
+ 34  Philip Baker           58.66  51.54  57.48    -      55.89
+ 35  Ben Parker             45.73    -    57.01  61.97    54.90
+ 36  James Defries          59.63  34.95  42.52  56.50    52.88
+ 37  Thomas Kirton          48.19  40.98  52.74  52.30    51.08
+ 38  Nicholas Crawford      62.03  33.90  57.10    -      51.01
+ 39  Jack Hickey            44.46    -    46.26  54.30    48.34
+ 40  William Defries          -    34.50  51.18  54.15    46.61
+ 41  David Askew            35.26  13.06  44.70  35.14    38.37
+ 42  Joshua Goodman         31.83    -    35.55  44.57    37.32
+ 43  Christopher Holdswort    -    26.65  30.40  28.69    28.58
+ 44  Remy Holmes           -56.20 -25.52  63.33    -      -6.13
+
+
+

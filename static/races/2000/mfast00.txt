@@ -1,0 +1,95 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2000 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                 Hillingdon (at Chatham)  Sunday 8th October
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                   BR     BE     WY     AL     CH     HI     Avge
+
+  1  Marc Telling         97.71    -      -   100.00 100.00  95.06    99.24
+  2  Stefan Elton        100.00    -    99.41    -      -    97.96    99.12
+  3  Aaron Colyer         94.03  91.16  98.94  98.43  93.46    -      97.13
+  4  Ben Clark            93.75    -      -    96.57  95.69  92.48    95.34
+  5  Edward Drake         92.98  93.21    -    95.96  96.09  93.69    95.25
+  6  Iain Mantell         95.42  91.28  98.12    -      -      -      94.94
+  7  Kristian Talbot      94.94  91.20    -      -    95.21    -      93.78
+  8  Tom Plank            94.42  91.16    -      -      -    93.51    93.03
+  9  Tristan Lamb         95.51  85.95    -      -    92.42  91.11    93.01
+ 10  Alexander Pace       87.68  81.61  93.34  91.35  90.63    -      91.77
+ 11  James Drake            -    86.11    -    90.68  89.82    -      88.87
+ 12  Ben Wheeler          87.45  83.86    -      -    91.00  85.45    87.97
+ 13  Brett Haney            -    80.58  93.59    -    84.63  85.24    87.82
+ 14  Paul Telling         82.20    -      -    89.11  88.14  82.87    86.71
+ 15  Andy Proudlove       79.24    -    88.17  80.01  79.81  77.21    82.66
+ 16  Peter Wheelan          -    78.57    -      -    85.34  82.80    82.24
+ 17  Jack Buchanan        79.43  66.42  87.35  79.45  77.11    -      82.08
+ 18  Stuart Beattie       80.57  78.53  70.51  85.18    -    74.24    81.43
+ 19  Alex Casey           84.06    -      -      -    80.42  77.79    80.75
+ 20  Richard Howgate      73.22  74.07  82.92  77.26  81.83  75.35    80.67
+ 21  David Grout          78.23  76.87    -      -    85.24    -      80.12
+ 22  Paul Bunton          77.23  66.81  85.22  76.59  72.23  68.83    79.68
+ 23  Alexander Dow        79.67  73.40  83.76    -      -      -      78.94
+ 24  Robert Buchanan      72.46  67.17  79.03  77.93  79.71    -      78.89
+ 25  Andrew Rowe          77.71  76.32    -    80.52  70.41  73.63    78.18
+ 26  Alex Makonnen          -    87.10    -    93.94  49.85    -      76.96
+ 27  Jack White           71.55  59.87  73.63    -    78.29  78.68    76.87
+ 28  Daniel Curtis        69.64  69.10  77.42  77.48  73.44  70.19    76.12
+ 29  Joe Ogden            59.28    -    77.07    -    69.97  74.20    73.75
+ 30  Drew Macey             -      -      -    69.01  73.74  78.47    73.74
+ 31  James Ridgley        59.81  70.80  79.52  70.47  69.06  69.83    73.60
+ 32  Sam Beattie          65.30    -    79.10  73.50    -    64.03    72.63
+ 33  Owen Morgan          60.81    -      -      -    77.15  78.50    72.15
+ 34  Gregory Pearce       46.21  67.80  68.41    -    78.19    -      71.47
+ 35  Aaron Tipping        70.02  66.42    -      -   -70.74  76.71    71.05
+ 36  Keith Birchell       70.26  64.72  72.94  64.23  65.02  66.82    70.01
+ 37  Trevor Nagler        70.79  62.23    -      -    68.59  69.15    69.51
+ 38  Jack Evans             -      -    84.77    -    40.61  76.93    67.44
+ 39  Benjamin Lowes       30.26  61.29    -    62.89  67.85  70.87    67.20
+ 40  Jonathan Allingham   63.44    -    72.07  61.03  57.90  61.34    65.62
+ 41  Daniel Ridgley       55.51  49.72  69.37  61.31  64.95  60.77    65.21
+ 42  Max Scofield         51.69  40.21  63.83  60.47  57.47  57.69    60.66
+ 43  Chris Wane           69.93    -    43.95    -      -    65.32    59.73
+ 44  Lloyd Papantoniou    43.63  40.37  70.56    -    58.24    -      57.48
+ 45  Chris Dixon          44.15  45.11  61.95    -    53.05  52.81    55.94
+ 46  Doug Cooper            -      -    57.84  53.45  52.98  53.92    55.07
+ 47  Thomas White         48.26    -    51.60    -    54.10  46.79    51.32
+ 48  Ben Franklin         42.15  19.42    -      -    51.33  56.18    49.89
+ 49  Adam Kent            47.30  37.53  55.83    -    35.89  44.29    49.14
+ 50  Philip Telling        1.38  41.00    -    54.74  48.47  43.03    48.75
+ 51  Neil Roberts           -      -    45.88    -    46.92  51.31    48.03
+ 52  Philip Baker           -      -    51.60  47.78  43.88    -      47.75
+ 53  Kyle Mortimer        44.53  39.50    -    48.46  40.04  48.15    47.05
+ 54  Paul Iliffe            -    53.63    -    15.44    -    66.07    45.05
+ 55  David Windsor          -    28.97  45.41  39.02  30.43  38.59    41.01
+ 56  Cavan O'Regan          -      -    63.58    -    -2.73  56.75    39.20
+ 57  Remy Holmes            -    17.21    -      -    40.24  48.69    35.38
+ 58  William Defries      16.32   5.52    -      -    30.23  37.05    27.87
+ 59  Michael Brain        30.41    -      -      -    26.59  25.47    27.49
+ 60  Sam Wrench          -10.69    -      -      -    35.79  42.24    22.45
+ 61  Oliver Finn-Kelcey  -11.41 -103.39 51.28    -      -    26.05    21.97
+ 62  Tom Henrick          55.08  51.89    -      -      -   -78.36     9.54
+ 63  James Defries        -5.63    -      -      -    12.50  19.67     8.85
+ 64  Keith Brown         -81.19  31.02    -      -      -    44.03    -2.05
+ 65  Michael Cumberlidge    -      -      -  -285.23  47.25  54.78   -61.07
+
+
+

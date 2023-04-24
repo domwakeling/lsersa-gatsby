@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Favicon from "../components/head/Favicon.jsx";
 import PanelCard from "../components/PanelCard.jsx";
+import { Link } from "gatsby";
 
 const HomePage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -32,7 +33,24 @@ const HomePage = () => {
     
     return (
         <Layout>
-            <div className="container">
+        <div className="container">
+                <div style={{
+                    position: "absolute",
+                    top: "100px",
+                    width: "300px",
+                    padding: "0.5rem",
+                    borderRadius: "1.0rem",
+                    left: "calc(50% - 150px)",
+                    backgroundColor: "red",
+                    color: "white",
+                    zIndex: "10000",
+                    fontSize: "2.5rem",
+                    fontFamily: "Roboto"
+                }} >
+                    <Link to="/todo/" style={{ textDecoration: "none", color: "white"}}>
+                        PLEASE CHECK THE TO-DO TO SEE IF YOU CAN HELP FINISH THE SITE
+                    </Link>
+                </div>
                 <Hero text="WELCOME" text2="TO LSERSA" />
                 <div className="row">
                     <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>

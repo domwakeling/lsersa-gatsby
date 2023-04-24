@@ -22,7 +22,7 @@ const RaceArchivePage = ({ pageContext }) => {
 
                     <div className="right-column-race">
                         <h2 className="as-h3" style={{ textAlign: "center" }}>Archives</h2>
-                        <div style={{ width: "150px", margin: "auto" }}>
+                        <div style={{ width: "150px", margin: "0 auto 1.0rem" }}>
                             <RaceYearList year={pageContext.year} />
                         </div>
                     </div>

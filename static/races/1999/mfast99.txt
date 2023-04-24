@@ -1,0 +1,84 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            1999 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                       
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                   BR     HI     AL     WY     CH     Avge
+
+  1  Edward Drake         89.84 100.00    -      -    98.48    96.10
+  2  Sam Reymond          94.74  60.27    -    93.24  95.09    94.36
+  3  Kristian Talbot        -      -    91.24  91.46 100.00    94.24
+  4  Iain Mantell         86.21  96.62  88.82    -    95.18    93.54
+  5  Alex Makonnen        86.43  98.08  85.86    -    95.00    93.17
+  6  Aaron Colyer         89.20  94.38  85.71  86.49  95.28    92.95
+  7  James Bennett        81.58  94.82  84.23    -    94.75    91.27
+  8  James Drake          81.90  93.97    -      -    97.51    91.13
+  9  Karl Christy         88.29  97.07  81.54  81.69  84.71    90.02
+ 10  David Makonnen         -    97.25  82.96  87.55    -      89.25
+ 11  Andrew Wheble        84.57  95.96  86.29    -      -      88.94
+ 12  Michael Shnaps       84.85  95.05  80.85    -      -      86.92
+ 13  Alex Casey           84.48    -    82.38    -    88.81    85.23
+ 14  Dean Rawlings-Brown  81.49  92.96    -    81.15    -      85.20
+ 15  Ben Wheeler          78.36    -    81.75  80.32  88.03    83.37
+ 16  Brett Haney          83.62    -    74.68  76.38  88.59    82.86
+ 17  Peter Whelan         70.01  87.19 -35.92  73.85  83.34    81.46
+ 18  Nathan Rowley        83.76    -    73.31  78.00  81.38    81.05
+ 19  Alexander Pace       73.32  81.00  68.78  71.27  84.99    79.77
+ 20  Stuart Beattie       73.77    -    76.48  73.78  87.50    79.25
+ 21  Andy Proudlove       75.95  81.60  70.62  77.95    -      78.50
+ 22  James Struthers      75.59    -    76.05    -    79.42    77.02
+ 23  Paul Bunton          72.46  82.08  69.67  68.41  74.79    76.44
+ 24  Richard Howgate        -    79.87  68.72    -    79.14    75.91
+ 25  Andrew Rowe          66.83    -    67.99    -    83.77    72.86
+ 26  James Ridgley        68.01  70.02  49.37  69.44  77.59    72.35
+ 27  Liam Bromley         68.97    -    76.21  69.62    -      71.60
+ 28  Joel Wyatt             -    77.50  68.30  67.15    -      70.98
+ 29  Keith Birchell       70.60  64.88    -    63.56  76.59    70.69
+ 30  Silvester Muhlhaus   70.37    -    67.09    -    74.20    70.55
+ 31  Jason Christy        66.15  75.86  56.49  61.09    -      67.70
+ 32  Jamie Alldridge      60.66  60.68    -    69.39  69.32    66.46
+ 33  Ben Davies           57.71  70.09  51.27  59.05  66.30    65.15
+ 34  Chris John             -    68.48  59.07  66.92    -      64.82
+ 35  Doug Cooper          61.30  72.10  49.37  53.92  60.65    64.68
+ 36  Jonathan Allingham   47.55  75.95 -31.49    -    67.92    63.81
+ 37  Daniel Ridgley       42.97  68.00  52.32  59.54  63.79    63.78
+ 38  Sam Beattie          59.85  67.40  41.09  50.13  60.02    62.42
+ 39  Benjamin Lowes       51.59  61.69  51.37  48.48  70.66    61.31
+ 40  Daniel Curtis        45.46  57.46 -20.09  53.61  66.89    59.32
+ 41  Nathan Lambert       21.01  54.53    -    55.85  62.26    57.55
+ 42  Gregory Pearce       53.58    -      -    57.17  58.97    56.57
+ 43  David Copper         52.59  47.96  47.42  50.77  66.12    56.49
+ 44  Jack White             -    38.59    -    56.63  72.24    55.82
+ 45  Aaron Tipping        55.22    -      -    41.57  70.16    55.65
+ 46  Kristian Horne         -    52.89  36.34  43.91    -      44.38
+ 47  Adam Kent            38.29  43.67  35.55    -    48.71    43.56
+ 48  Kyle Mortimer        27.27    -      -    45.23  47.25    39.92
+ 49  Bryan Lambert         6.62    -    32.70  42.88  37.77    37.78
+ 50  Jonathan Fabian      18.24  31.59  24.63  27.13  53.96    37.56
+ 51  Sebastian Muhlhaus   50.18    -      -    44.56   7.40    34.05
+ 52  Martin Ellis         27.99  38.28    -    14.16  28.47    31.58
+ 53  Keith Brown            -    52.35  -5.21    -    42.12    29.76
+ 54  Alex Shaw            29.95  -6.00  27.64  16.92    -      24.83
+ 55  Peter Copper         24.59    -     8.91  14.03  23.75    20.79
+ 56  Paul Iliffe           0.27  63.33 -137.61   -      -     -24.67
+

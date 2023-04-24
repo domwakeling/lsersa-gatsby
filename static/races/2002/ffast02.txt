@@ -1,0 +1,65 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2002 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                         Chatham  Sunday 13th October
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     AL     BW     WY     BR     CH     Avge
+
+  1  Anouska Callander      96.97  90.19  89.78 100.00 100.00    98.99
+  2  Nicola Wilson            -   100.00  93.03  98.88    -      97.30
+  3  Amanda Alldridge       94.68  82.78  85.14  94.01  98.29    95.66
+  4  Emma Yates             92.19    -    81.41  89.67  92.74    91.53
+  5  Kirstie Bilton         81.74  84.14  81.02  92.69  97.24    91.36
+  6  Katherine Earl         91.55  80.48  83.22    -    98.49    91.09
+  7  Kirsty Stevens         76.37    -    78.24  88.95  94.68    87.29
+  8  Sophie Drake           79.35  74.89  54.61  88.23  91.92    86.50
+  9  Frankie Simonds        80.18  87.80    -    90.44    -      86.14
+ 10  Carole Brooks          81.25  71.19  43.51  88.55  88.30    86.03
+ 11  Lois Parmenter         81.45  80.01  74.67  82.68  87.50    83.88
+ 12  Alessia Thomas-Jackso    -    80.20  71.32  80.92  87.93    83.01
+ 13  Danielle Freeze        77.98    -      -    80.55  78.22    78.92
+ 14  Kelly-Dee Spillett     77.05  62.22    -    75.77  82.52    78.45
+ 15  Emily Evans              -    67.76  66.64  83.21  83.97    78.31
+ 16  Amy Baker              74.51    -    64.14  79.51  77.85    77.29
+ 17  Charlotte Evans          -    76.96  68.13  84.73 -222.40    76.61
+ 18  Ali Jubb                 -    65.84  67.54  78.30  77.46    74.43
+ 19  Alex Askew               -      -    60.32  79.91  79.99    73.41
+ 20  Rebecca Holly            -    52.23  62.70  74.89  76.06    71.22
+ 21  Perri Mortimer         68.12  49.27    -    76.30  69.11    71.18
+ 22  Nicole McQuade           -    63.35 -37.64  76.94  70.79    70.36
+ 23  Melissa Dale           67.48  61.76  56.92  72.20  68.86    69.51
+ 24  Kirsty Dixon           68.60    -      -    68.30  64.76    67.22
+ 25  Sophie Fraser-Hafter   62.11  60.21    -    59.38  74.27    65.53
+ 26  Harriet Morson         59.81    -    53.12  67.58  62.03    63.14
+ 27  Eloise Greenhalgh        -    42.61    -    65.73  70.25    59.53
+ 28  Darlene Tipping        56.54  43.17    -    28.49  59.66    53.13
+ 29  Natalia Harte          10.84  57.39   0.96 -45.24  81.27    49.83
+ 30  Sarah Crawford           -    29.38  33.52  58.34  55.65    49.17
+ 31  Caroline Croft           -    46.55  43.40    -    48.96    46.30
+ 32  Rebecca Masterman      46.92 -57.39  33.75    -    51.47    44.05
+ 33  Sophie Simonds          6.49  21.96    -    48.49  42.81    37.76
+ 34  Ellie Steward          41.75    -      -    32.74  33.50    36.00
+ 35  Giulia Harte             -     8.31 -42.53 -126.60  50.30     5.36
+
+
+
