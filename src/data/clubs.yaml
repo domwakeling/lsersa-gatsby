@@ -23,12 +23,13 @@
             is to have fun!</p>
 
 -   name: Chatham
-    url: https://www.facebook.com/ChathamRaceClub/?locale=en_GB
+    url: https://chathamraceclub.com/
     img: clubs/chatham.png
     target: _chatham
     copy: >
-        <p>Chatham Race Club is based at Chatham Ski Centre, and encourages skiers of all levels
-            and ages.</p>
+        <p>Chatham Race Club is an open and friendly club that competes in ski racing events starting
+            from local Regional level up to and including the National GBR Series. Our members span
+            all age groups from the Under 10s right through to the Over 30s "Masters" categories.</p>
 
 -   name: Folkestone
     url: https://folkestoneskirace.wixsite.com/folkestoneskirace
