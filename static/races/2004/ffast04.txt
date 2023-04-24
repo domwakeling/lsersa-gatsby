@@ -1,0 +1,61 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2004 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                       Aldershot  Sunday 26th September
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     BR     BW     WY     CH     AL     Avge
+
+  1  Nicola Wilson            -   100.00  99.98  99.75    -      99.91
+  2  Anouska Callander     100.00  98.01 100.00    -    95.92    99.34
+  3  Christina Pennock      97.31    -      -   100.00 100.00    99.10
+  4  Katherine Earl         97.52  97.84  99.21  99.37  96.73    98.80
+  5  Charlotte Evans        88.46  91.26  95.35  95.45  97.96    96.25
+  6  Kirstie Bilton         98.16  94.53    -    93.96  93.61    95.55
+  7  Kathryn Barber         87.48  84.28  89.60  95.61  97.05    94.08
+  8  Mary Ondrusz           89.10    -    91.80    -    91.36    90.75
+  9  Danielle Freeze        86.15  88.92  90.77  90.58  89.80    90.38
+ 10  Stacey Luck            85.94  88.96  88.97  89.98  91.84    90.26
+ 11  Gemma Duckett          83.03  84.99  90.79    -    94.42    90.07
+ 12  Emily Evans            88.63  87.99    -    89.47  91.73    89.95
+ 13  Kirsty Stevens           -    90.55  88.81  87.26    -      88.87
+ 14  Lois Parmenter         92.86  86.23    -    85.24    -      88.11
+ 15  Katy Lamb              87.61    -    88.78  85.08  87.33    87.91
+ 16  Natalia Harte          82.48    -    90.25    -    89.05    87.26
+ 17  Melissa Dale           78.08  84.55  80.81  69.46  89.48    84.95
+ 18  Georgia Luck           76.20  81.37  85.79  82.86  85.13    84.60
+ 19  Charlotte Jesse        82.01  78.76  90.28    -    46.81    83.68
+ 20  Rachelle Rogers        84.44    -    83.52  82.30  79.92    83.42
+ 21  Alexandra Askew        79.32  83.49    -    76.95  81.27    81.36
+ 22  Amy Bryant             78.85  76.38  79.93  81.57  80.46    80.65
+ 23  Mikki Thompson         74.44  68.92    -    79.89    -      74.42
+ 24  Stephanie Gibb         68.89  70.46  77.87  66.14    -      72.41
+ 25  Raessa Qureshi         68.80  62.43  66.56  67.69  69.73    68.74
+ 26  Amy Young              70.81    -      -    66.99  67.85    68.55
+ 27  Giulia Harte           66.32  61.59  65.62    -    64.41    65.45
+ 28  Kate Hamilton          70.68  57.92  64.78  58.43    -      64.63
+ 29  Ellie Steward          56.07  58.76  60.48  65.03  65.16    63.56
+ 30  Alice MacAulay         73.21    -      -    62.41  31.19    55.60
+ 31  Annabel Kirton         -7.65    -      -    46.70  50.46    29.83
+
+
+

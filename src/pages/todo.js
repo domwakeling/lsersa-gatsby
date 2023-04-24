@@ -17,8 +17,8 @@ const ToDoPage = () => {
                         <li>Training page</li>
                         <li>What training is organised, other than slalom?</li>
                         <li>Add committee, meeting minutes, historical etc</li>
-                        <li>Race results 2003 through 2014 ...</li>
-                        <li>Kent schools? Results ...</li>
+                        <li>Race results 2006 through 2014 ...</li>
+                        <li>Kent schools? Results ... starting 2002, not sure when until (link to results on SkiResults?)</li>
                         <li>London schools? Results ...</li>
                         <li>Confirm race rules policy is OK</li>
                         <li>Any other policies or documents we should add?</li>

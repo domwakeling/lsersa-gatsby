@@ -1,0 +1,103 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2005 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                      Wycombe Summit  Sunday 2nd October
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                     CH     BR     AL     BW     WY     Avge
+
+  1  TELLING Marc          100.00 100.00 100.00 100.00  99.86   100.00
+  2  PAPANTONIOU Lloyd      95.81  99.38    -    99.45 100.00    99.61
+  3  GREENWOOD James        92.58  94.26  98.93  99.40    -      97.53
+  4  TELLING Paul           96.20  95.40  96.10    -    95.98    96.10
+  5  WYATT Joel             95.95  96.23    -      -    92.97    95.05
+  6  CURTIS Daniel          92.22  93.13    -    90.63  90.10    91.99
+  7  CUMBERLIDGE Michael    92.29  93.13  90.45    -    88.92    91.96
+  8  JESSE Ben              91.12  89.51  94.66  78.31    -      91.76
+  9  CALVERT Peter          85.65    -    95.60    -    88.30    89.85
+ 10  ALLINGHAM Jonathan     79.87  88.32  91.89    -    87.71    89.31
+ 11  TELLING Philip         82.49  85.68  93.34  85.27    -      88.10
+ 12  KIRTON Tom             84.09  86.15    -    87.93  83.03    86.06
+ 13  GAMBRILL James         82.60  86.15  88.62    -    81.34    85.79
+ 14  ASKEW David            80.04  85.84  86.86  84.37  83.24    85.69
+ 15  JESSE Zak                -    81.96  85.10  86.97  84.83    85.64
+ 16  CROWTHER Christopher   84.52  79.07  89.13  81.81  82.41    85.35
+ 17  BAKSH Peter            80.61  86.25    -    86.22    -      84.36
+ 18  DIXON Christopher      82.39  86.61    -      -    83.66    84.22
+ 19  CROWTHER James         82.78  85.99    -    82.87  77.29    83.88
+ 20  BUNTON Paul            81.50  84.70  82.84  79.81  82.48    83.34
+ 21  CLOKE Henry            74.93  83.62  82.34  82.41  78.29    82.79
+ 22  BARTLETT John          77.10  81.96  81.27  82.72    -      81.98
+ 23  HARRIS George          80.82  80.83  82.53    -    79.43    81.39
+ 24  PRESSLAND Steven       72.30  82.53  82.02    -    78.84    81.13
+ 25  BARBER Toby            75.96  81.81  80.96  78.01  77.74    80.26
+ 26  MOSS Maximillian       77.38  78.97  80.01  79.06  77.04    79.35
+ 27  PICKFORD Chris           -    79.59    -    78.51  79.74    79.28
+ 28  DAVIES Peter           72.16  75.87  83.16    -    77.91    78.98
+ 29  WEIR Fraser            73.12  80.62  81.77    -      -      78.50
+ 30  PROUDLOVE Andy         78.87  79.12  77.00  74.80    -      78.33
+ 31  GIBB Jim               71.02  79.59  80.58  72.55  73.96    78.04
+ 32  FAIL Robert            69.39  76.18  74.61  77.00    -      75.93
+ 33  FITCH Alistair           -    77.31  75.30  73.15  74.00    75.54
+ 34  GIBB James             73.44  76.33    -    67.54  73.27    74.35
+ 35  SEYMOUR Colin          70.88  75.35  74.86  69.79    -      73.70
+ 36  BRAIN Michael          67.90  80.16    -    67.84  72.65    73.57
+ 37  WESTON Graham          76.07  76.80    -      -    67.52    73.46
+ 38  WILKINS James          71.95  75.87  71.09    -    70.64    72.97
+ 39  SIEBER James           57.60  75.35  65.93    -    75.87    72.38
+ 40  KIESSLING Liam         73.65  77.05    -      -    65.96    72.22
+ 41  CAREW Laurie           78.16  78.09    -      -    57.24    71.16
+ 42  EVERITT Simon            -    71.11  72.41    -    68.32    70.61
+ 43  SKOCZEK Stefan         64.10  72.61  64.05  69.39  69.15    70.38
+ 44  SEYMOUR Luke           58.88  71.16  69.26  65.78  63.64    68.74
+ 45  CARPENTER Piers        65.16  69.35    -      -    71.02    68.51
+ 46  GORDON Philip          68.86  71.37  64.86  63.83  60.25    68.36
+ 47  O'KEEFE Josh           71.95  71.06    -    61.52    -      68.18
+ 48  FITZPATRICK Alex       64.49  74.11    -      -    62.43    67.01
+ 49  EASTON Ben               -    68.79  64.36    -    65.93    66.36
+ 50  DALE Nathan            59.69  59.74  71.40  62.93  62.40    65.57
+ 51  DAVIES Brian             -    66.10  64.80    -    65.13    65.34
+ 52  GUTTRIDGE Christopher  67.08  64.96  55.37    -    63.37    65.14
+ 53  AMOS Aaron             64.84  66.72    -    62.12    -      64.56
+ 54  WEST Rhys              66.62    -    64.36  57.52  60.32    63.77
+ 55  DEAKIN Will              -    65.06  57.39    -    58.52    60.32
+ 56  YATES Nick             55.97  61.76  53.05  59.22  57.72    59.57
+ 57  THOMPSON William       56.18  62.95    -    43.79  54.36    57.83
+ 58  MILES Jordan           59.84  51.42  50.03  59.72  52.80    57.45
+ 59  QURESHI Rumaan         52.24  59.74  57.51  38.28  54.85    57.37
+ 60  MILLER Alec            58.27  57.88    -      -    55.23    57.13
+ 61  SOUTHALL Frazer        50.82  64.03  47.45  49.75  56.27    57.04
+ 62  GREENE Kieran          42.12  65.12    -    10.02  62.71    56.65
+ 63  CARPENTER Alasdair       -    57.11  46.13    -    59.83    54.36
+ 64  GILL Andrew              -      -    53.49  51.30  57.27    54.02
+ 65  OWENS Matt             68.50    -    62.60    -    28.81    53.30
+ 66  SACHINIS Stavros         -    62.84  40.98    -    54.64    52.82
+ 67  CALVERT John           53.20    -    46.01    -    55.26    51.49
+ 68  WEIR Russell           46.02  54.47  45.51    -    50.80    50.43
+ 69  YATES Tom                -    71.73  59.65  13.88    -      48.42
+ 70  SOUTHALL Kieran        32.00  53.33  37.84  41.23  43.46    46.01
+ 71  BRYANT Tom             28.66  54.37  36.83  46.24    -      45.81
+ 72  COUSINS Nicholas       35.76  46.36    -      -    47.51    43.21
+ 73  GOWER Rory              6.53  46.87  21.50    -    41.34    36.57
+
+
+
