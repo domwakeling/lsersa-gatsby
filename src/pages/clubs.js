@@ -34,23 +34,25 @@ const ClubsPage = () => {
         <Layout>
             <div className="container">
                 <Hero
-                    text="Local"
-                    text2="Clubs"
+                    text="LOCAL"
+                    text2="CLUBS"
                     imageUrl="hero/trophies.png"
                     imageAlt="End of year trophies"
                 />
                 <div className="row">
                     <h1>Clubs</h1>
+                    <p style={{ fontSize: "2.4rem" }}>
+                        The following regional clubs are affiliated to LSERSA through Snowsports
+                        England:
+                    </p>
                     {
                         clubsData.map((club, idx) => (
                             <div className="club-container" key={idx}>
-                                {/* add a link to the image once all urls are set */}
                                 <div className="image-container">
                                     <GatsbyImage
                                         image={imgData.filter(node => node.path === club.img)[0].image}
                                         alt={club.name}
                                         className="club-image"
-                                        // layout="fixed"
                                         width="200"
                                         height="150"
                                     />
@@ -58,6 +60,9 @@ const ClubsPage = () => {
                                 <div className="club-info">
                                     <h2 className="as=h3">{club.name}</h2>
                                     <SponsorParser rawHTML={club.copy} />
+                                    <a className="club-link" href={club.url} target={club.target}>
+                                        More info
+                                    </a>
                                 </div>
                             </div>
                         ))

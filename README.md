@@ -5,7 +5,7 @@
 - [x] footer not fixed to bottom on smaller pages
 - [x] gatsby build setting for netlify
 - [x] social icons touching bottom edge of screen, need padding
-- [ ] check how menu looks on both phones and ipad (some weirdness going on?)
+- [x] check how menu looks on both phones and ipad (some weirdness going on?)
 - [x] fix masonry on the sponsors page (npm package?)
 - [x] race pages => automate archive
 - [x] race pages => automate current year
@@ -17,7 +17,7 @@
 - [ ] training page => any info on other training? Telemark, Skiercross?
 - [ ] region page => committee
 - [x] clubs page
-- [ ] add blurb and links for clubs
+- [x] add blurb and links for clubs
 - [ ] do we also want to put in slopes?
 - [x] add favicon
 - [ ] sponsor carousel

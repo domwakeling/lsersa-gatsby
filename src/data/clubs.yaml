@@ -1,41 +1,97 @@
 -   name: Bromley
-    url:
+    url: https://bromleyskiraceclub.co.uk/
     img: clubs/bromley.png
     target: _bromley
     copy: >
-        <p>Blurb to follow.</p>
+        <p>Bromley Race Club was formed in 1993. The club has grown from its small beginnings to
+            being one of the largest and most successful Race Clubs in the South East. All the
+            children are encouraged to start competing at a local and school level as soon as they
+            join the club, with the long term goals of racing regionally and nationally. Many of the
+            racers also progress to winter races in Europe on snow.</p>
+        <p>The Squad currently train every Saturday at Chatham Ski Centre, following the closure of
+            Bromley Ski Centre in 2016.</p>
 
 -   name: Bowles Ski Racing Club
     url: https://www.bowlesskiracingclub.org.uk/
     img: clubs/bowles.png
     target: _bowles
     copy: >
-        <p>Blurb to follow.</p>
+        <p>The club is based at Bowles Residential Outdoor Centre in Eridge Green, Kent, and meets
+            every Friday evening for two hours of slalom ski race training starting at 5:30pm.</p>
+        <p>The club is open to racers of all ages, and not all members compete. They also hold a
+            monthly "Over the Hill" training session for parents of racers. The most important thing
+            is to have fun!</p>
 
 -   name: Chatham
-    url:
+    url: https://www.facebook.com/ChathamRaceClub/?locale=en_GB
     img: clubs/chatham.png
     target: _chatham
     copy: >
-        <p>Blurb to follow.</p>
+        <p>Chatham Race Club is based at Chatham Ski Centre, and encourages skiers of all levels
+            and ages.</p>
 
 -   name: Folkestone
-    url:
+    url: https://folkestoneskirace.wixsite.com/folkestoneskirace
     img: clubs/folkestone.png
     target: _folkestone
     copy: >
-        <p>Blurb to follow.</p>
+        <p>Folkestone are a small friendly club based at Folkestone Sports Centre Trust. The club is
+            open to skiers from aged 4 to adult and a range of abilities. As long as you can
+            snow-plough turn and use the Poma lift you are welcome to join.</p>
+
+-   name: Impulse Racing
+    url: https://www.impulse-racing.co.uk/
+    img: clubs/impulse.png
+    target: _impulse
+    copy: >
+        <p>Impulse Racing are an alpine training organisation based in the UK, running lessons,
+            sessions, days and courses for Adults, children and schools.</p>
+
+-   name: London Region Nordic Ski Club
+    url: https://londonnordic.org.uk/
+    img: clubs/lrnsc.png
+    target: _lrnsc
+    copy: >
+        <p>LRNSC aim to encourage participation in cross country skiing at all levels. They promote
+            roller skiing from their base at Hillingdon Cycle Circuit (and also organise sessions in
+            the Cambridge area) and also organise cross-country skiing on snow.</p>
+
+-   name: Precise Racing
+    url: https://preciseracing.co.uk/
+    img: clubs/precise.png
+    target: _precise
+    copy: >
+        <p>Precise Racing offer an elite snow-training programme that has been carefully planned to
+            suit enthusiastic young skiers with their development, supported by a professional
+            structure.</p>
 
 -   name: Sandown Park
-    url:
+    url: https://www.spsrc.org/
     img: clubs/sprc.png
     target: _sprc
     copy: >
-        <p>Blurb to follow.</p>
+        <p>Sandown Park Ski Race Club is an alpine ski race club dedicated to supporting young
+            athletes through participation in competitive ski racing.</p>
+        <p>As a friendly and welcoming member run club, we focus on our athletes and their welfare and development.</p>
 
--   name: SSCD
-    url:
+-   name: Southern Ski Club for the Disabled
+    url: http://sscd.org.uk/
     img: clubs/sscd.png
     target: _sscd
     copy: >
-        <p>Blurb to follow.</p>
+        <p>Whether the skier is blind, paraplegic, has MS or special learning needs ... SSCD can
+            provide an adaptive means that makes it possible to give skiers a sense of achievement
+            along with independence and self-confidence.</p>
+        <p>Skiing is also an opportunity to develop the self-confidence that comes with the shared
+            experience of participating in a sport. Based over 40 years of helping people with
+            disabilities, the Southern Ski Club for the Disabled is here to help them learn and
+            enjoy skiing.</p>
+
+-   name: Tonicity
+    url: http://tonicitysports.com/ski-club/
+    img: clubs/tonicity.png
+    target: _tonicity
+    copy: >
+        <p>Tonicity Sports are an inclusive ski club affiliated with Snowsport England. Whether
+            you want to be a ski racer or just improve your technique ready for you next holiday,
+            Tonicity sports is a ski club accessible to everyone.</p>

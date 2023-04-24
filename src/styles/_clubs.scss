@@ -17,4 +17,17 @@
     .club-info {
         color: $color_p100;
     }
+
+    a.club-link {
+        display: inline-block;
+        background-color: $color_p300;
+        color: $color_p900;
+        text-decoration: none;
+        padding: 0.4rem 1.0rem 0.2rem;
+        border-radius: 0.75rem;
+
+        &:hover {
+            background-color: $color_p500;
+        }
+    }
 }

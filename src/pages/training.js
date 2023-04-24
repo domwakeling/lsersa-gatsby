@@ -8,7 +8,7 @@ const TrainingPage = () => {
         <Layout>
             <div className="container">
                 <Hero
-                    text="Training"
+                    text="TRAINING"
                     imageUrl="hero/trophies.png"
                     imageAlt="End of year trophies"
                 />
