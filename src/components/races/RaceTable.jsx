@@ -44,7 +44,7 @@ const RaceElement = ({ item }) => {
                         <td colSpan="3">{overallItem.name}</td>
                         <td colSpan="2">
                             <a className="race-link" href={overallItem.url} target="_offsite">
-                                Result
+                                Results
                             </a>
                         </td>
                     </tr>

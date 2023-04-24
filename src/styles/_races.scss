@@ -10,6 +10,8 @@ a.year-lozenge-wrap {
         border: 0;
         display: inline-block;
         min-width: 40px;
+        border: 1px solid $color_p300;
+
         text-align: center;
         cursor: pointer;
 
@@ -21,5 +23,6 @@ a.year-lozenge-wrap {
     .year-lozenge.this-year {
         background-color: $color_c500;
         color: $color_c100;
+        border: 1px solid $color_c100;
     }
 }
