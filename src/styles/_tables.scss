@@ -34,4 +34,8 @@ a.race-link {
     margin-bottom: 0.15rem;
     min-width: 90px;
     border-radius: 0.75rem;
+
+    &:hover {
+        background-color: $color_p500;
+    }
 }

@@ -7,11 +7,13 @@ const NotFoundPage = () => {
     return (
         <Layout>
             <div className="container">
-                <h1>Page not found</h1>
-                <p>Sorry 😔, we couldn’t find what you were looking for.</p>
-                <p>
-                    <Link to="/">Go home</Link>.
-                </p>
+                <div className="row">
+                    <h1>Page not found</h1>
+                    <p>Sorry 😔, we couldn’t find what you were looking for.</p>
+                    <p>
+                        <Link to="/">Go home</Link>.
+                    </p>
+                </div>
             </div>
         </Layout>
     )

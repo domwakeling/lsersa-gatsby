@@ -1,0 +1,20 @@
+.club-container {
+    border-top: 4px solid $color_p300;
+    padding: 1.0rem 0 1.0rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    column-gap: 1.0rem;
+
+    @include for-tablet-down() {
+        grid-template-columns: 20% 1fr;
+    }
+
+    .club-image {
+        color: $color_p100;
+        width: 100%;
+    }
+
+    .club-info {
+        color: $color_p100;
+    }
+}

@@ -1,10 +1,17 @@
 -   text: Home
     link: /
+
 -   text: Races
     link: /races/
+
 -   text: Training
     link: /training/
+
+-   text: Clubs
+    link: /clubs/
+
 -   text: Sponsors
     link: /sponsors/
+
 -   text: About
     link: /about/
