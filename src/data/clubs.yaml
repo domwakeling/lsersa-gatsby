@@ -1,4 +1,15 @@
--   name: Bromley
+-   name: Bowles Ski Racing Club
+    url: https://www.bowlesskiracingclub.org.uk/
+    img: clubs/bowles.png
+    target: _bowles
+    copy: >
+        <p>The club is based at Bowles Residential Outdoor Centre in Eridge Green, Kent, and meets
+            every Friday evening for two hours of slalom ski race training starting at 5:30pm.</p>
+        <p>The club is open to racers of all ages, and not all members compete. They also hold a
+            monthly "Over the Hill" training session for parents of racers. The most important thing
+            is to have fun!</p>
+
+-   name: Bromley Ski Race Club
     url: https://bromleyskiraceclub.co.uk/
     img: clubs/bromley.png
     target: _bromley
@@ -11,18 +22,7 @@
         <p>The Squad currently train every Saturday at Chatham Ski Centre, following the closure of
             Bromley Ski Centre in 2016.</p>
 
--   name: Bowles Ski Racing Club
-    url: https://www.bowlesskiracingclub.org.uk/
-    img: clubs/bowles.png
-    target: _bowles
-    copy: >
-        <p>The club is based at Bowles Residential Outdoor Centre in Eridge Green, Kent, and meets
-            every Friday evening for two hours of slalom ski race training starting at 5:30pm.</p>
-        <p>The club is open to racers of all ages, and not all members compete. They also hold a
-            monthly "Over the Hill" training session for parents of racers. The most important thing
-            is to have fun!</p>
-
--   name: Chatham
+-   name: Chatham Race Club
     url: https://chathamraceclub.com/
     img: clubs/chatham.png
     target: _chatham
@@ -31,7 +31,7 @@
             from local Regional level up to and including the National GBR Series. Our members span
             all age groups from the Under 10s right through to the Over 30s "Masters" categories.</p>
 
--   name: Folkestone
+-   name: Folkestone Ski Club
     url: https://folkestoneskirace.wixsite.com/folkestoneskirace
     img: clubs/folkestone.png
     target: _folkestone
@@ -66,7 +66,7 @@
             suit enthusiastic young skiers with their development, supported by a professional
             structure.</p>
 
--   name: Sandown Park
+-   name: Sandown Park Race Club
     url: https://www.spsrc.org/
     img: clubs/sprc.png
     target: _sprc
@@ -88,7 +88,7 @@
             disabilities, the Southern Ski Club for the Disabled is here to help them learn and
             enjoy skiing.</p>
 
--   name: Tonicity
+-   name: Tonicity Sports
     url: http://tonicitysports.com/ski-club/
     img: clubs/tonicity.png
     target: _tonicity

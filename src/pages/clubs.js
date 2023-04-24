@@ -41,7 +41,7 @@ const ClubsPage = () => {
                 />
                 <div className="row">
                     <h1>Clubs</h1>
-                    <p style={{ fontSize: "2.4rem" }}>
+                    <p style={{ fontSize: "2.0rem" }}>
                         The following regional clubs are affiliated to LSERSA through Snowsports
                         England:
                     </p>

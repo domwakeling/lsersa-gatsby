@@ -46,31 +46,31 @@ const HomePage = () => {
             <div className="banner col-p900 bg-p300">
                 <div className="container">
                     <div className="row">
-                        <h2>What would you like to do?</h2>
+                        <h2>More about ...</h2>
                         <div className="panel-container">
                             <PanelCard url="/training/">
                                 <h3>Booking</h3>
-                                <p>Book your place on the next Regional Training session</p>
+                                <p>Regional Training session</p>
                             </PanelCard>
                             <PanelCard url="/clubs/">
                                 <h3>Clubs</h3>
-                                <p>Find out more about the Snowsports clubs in our region</p>
+                                <p>Afiliated clubs</p>
                             </PanelCard>
                             <PanelCard url="/races/">
                                 <h3>Races</h3>
-                                <p>Find out more about local dry-slope races</p>
+                                <p>Race calendar & results</p>
                             </PanelCard>
                             <PanelCard url="/committee/">
-                                <h3>The Committee</h3>
-                                <p>Find out more about the LSERSA committee</p>
+                                <h3>Region</h3>
+                                <p>The committee</p>
                             </PanelCard>
                             <PanelCard url="/sponsors/">
                                 <h3>Sponsors</h3>
-                                <p>Find out more about our sponsors</p>
+                                <p>More about our sponsors</p>
                             </PanelCard>
                             <PanelCard url="/about/">
                                 <h3>About</h3>
-                                <p>More information about LSERSA</p>
+                                <p>More about us</p>
                             </PanelCard>
                         </div>
                     </div>
