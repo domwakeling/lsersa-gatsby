@@ -1,0 +1,98 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2008 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                     Bromley  Sunday 14th September 2008
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                     AL     BW     SO     WE     BR     Avge
+
+  1  CURTIS Daniel            -   100.00 100.00  88.03  95.45    98.48
+  2  GREENWOOD James          -    97.06  96.75    -    94.40    96.07
+  3  CROWTHER James         93.38  95.61  96.20  89.99  91.40    95.06
+  4  HICKEY Jack            94.80    -    97.90    -    91.40    94.70
+  5  MORGAN Freddie         93.81  92.48    -    95.45  94.05    94.44
+  6  GOODMAN Josh           93.44  92.44  94.50  85.20  90.75    93.46
+  7  ASKEW David            90.72  93.52  93.35    -    87.06    92.53
+  8  DEAKIN Will            92.20  91.76  93.50    -    89.31    92.49
+  9  CASTLE Alex            90.72  93.75    -      -    89.36    91.27
+ 10  SIEBER James           88.55  88.04  87.79  82.38  87.16    88.13
+ 11  CROWTHER Christopher   89.17  11.91  87.34    -    86.91    87.81
+ 12  DAVIES Peter             -    85.46  90.40  85.15  87.41    87.75
+ 13  GREENE Kieran          81.93  85.10  86.69  39.13  85.11    85.63
+ 14  BRAIN Michael            -    82.56  83.94  75.77  84.61    83.70
+ 15  SEYMOUR Luke             -    81.93  84.49  82.04  82.96    83.16
+ 16  WILLOWS Laurence       82.98  75.59  83.34  76.39  83.01    83.11
+ 17  GIBB James               -    87.59    -    80.36  78.21    82.06
+ 18  NAYLER Graham          82.98  82.25  80.04    -    71.21    81.76
+ 19  BUNTON Paul            82.86  79.39    -    72.22  81.66    81.30
+ 20  SYMONS Daniel          82.12    -    79.79    -    79.81    80.57
+ 21  MILLER Alec            81.13  72.51  79.84    -    78.66    79.88
+ 22  DAVIES Brian           76.49  81.11  80.79  66.24  76.26    79.46
+ 23  LEWIS Charley          79.64    -      -    74.57  84.16    79.46
+ 24  SOUTHALL Frazer        77.41  22.33  83.64  67.86  75.21    78.76
+ 25  WEIR Russell           78.84  72.60    -      -    76.11    75.85
+ 26  PROUDLOVE Andy         79.58  73.51  73.04    -    72.11    75.37
+ 27  OWENS Timothy          71.60  70.70    -    63.89  73.16    71.82
+ 28  WILLIAMS Jamie         32.24  71.38    -    66.48  77.11    71.65
+ 29  FENWICK Mitchell       66.83  70.79  74.54  64.46  69.42    71.58
+ 30  THOMPSON William       73.02    -      -    50.24  82.11    68.46
+ 31  WELLER Mark            92.39    -      -    24.47  87.81    68.22
+ 32  SEYMOUR Colin            -    66.53    -    65.09  72.76    68.13
+ 33  GIBBINS Joseph         60.09  57.93  74.34  61.35  64.67    66.79
+ 34  BROWN Jack             76.18    -      -    49.04  72.41    65.88
+ 35  CHAPMAN Euan           60.46  63.00  66.23  56.23  65.92    65.05
+ 36  SOUTHALL Kieran        60.27  52.08  63.48  51.87  65.92    63.22
+ 37  HONEY Jack             64.73    -      -    59.63  64.17    62.84
+ 38  HICKEY Niall           52.35  55.21  68.58  42.72  64.67    62.82
+ 39  WHEELHOUSE Charles     60.40  57.88  61.98  18.87  64.97    62.45
+ 40  WHEELER William          -    58.88    -    56.51  71.76    62.38
+ 41  BUSHNELL Alan          88.43   9.47    -      -    81.71    59.87
+ 42  TAYLOR Edward          47.52    -    61.73  -9.34  63.37    57.54
+ 43  MILETIC Benjamin       60.33  50.23    -    48.85  59.77    56.78
+ 44  GANDER Oscar           56.31  51.86  61.18    -      -      56.45
+ 45  BRADFORD-SMITH George  57.55  51.00    -      -    59.62    56.06
+ 46  SOUTHALL Merrick       53.09  47.64  52.43  41.00  60.67    55.40
+ 47  WALKER Joshua            -    46.42  57.98 -87.55  59.22    54.54
+ 48  HILLIARD Jack          52.41  50.05    -    38.94  53.22    51.89
+ 49  BARBER Toby              -     5.34    -    66.33  83.56    51.74
+ 50  OWENS Christopher      53.77  50.36    -    42.48  49.68    51.27
+ 51  DEIGHTON Oliver          -      -    55.93  39.32  58.52    51.26
+ 52  OWENS Andrew           50.56  47.15    -      -    55.32    51.01
+ 53  MARSH Joshua             -    45.79  62.23  41.71  -4.60    49.91
+ 54  HILLIARD Nigel         43.75  40.94    -   -99.66  50.32    45.01
+ 55  OWENS Matt             67.51   8.83    -    53.69    -      43.34
+ 56  GANDER Theo            43.75  36.41  48.67    -      -      42.95
+ 57  HONEY David            41.09    -      -    29.74  50.22    40.35
+ 58  BROWN Thomas           37.44    -      -    25.91  46.78    36.71
+ 59  BAKER Adam               -    35.19    -    23.42  50.42    36.34
+ 60  SHEMMANS Jake          26.92  11.14  30.07  11.02  33.03    30.01
+ 61  DEIGHTON Harry           -      -    35.12   8.48  45.63    29.74
+ 62  KEMPSTER Cameron         -   -88.13  32.12  19.01  33.33    28.15
+ 63  BAKER Daniel           26.86   6.25    -    19.78  36.83    27.82
+ 64  MACLIVER Alex          21.66  24.68    -      -    35.43    27.26
+ 65  KANDLER Benjamin       13.00   8.02    -    18.77    -      13.26
+ 66  BRADFORD-SMITH Jack    18.01 -64.49    -      -    62.27     5.26
+ 67  MANNING Liam             -    -7.38    -     2.39  17.14     4.05
+ 68  DENDLE George            -   -21.60 -35.22 -16.28   6.70   -10.40
+
+
+

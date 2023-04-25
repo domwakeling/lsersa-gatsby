@@ -1,0 +1,69 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2008 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                     Bromley  Sunday 14th September 2008
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     AL     BW     SO     WE     BR     Avge
+
+  1  EVANS Charlotte          -   100.00 100.00    -   100.00   100.00
+  2  HATHWAY Ellen          95.42  97.89  98.71  92.40  95.69    97.43
+  3  LUCK Georgia           97.04  95.48  98.01    -    94.01    96.85
+  4  LUCK Stacey           100.00    -      -    92.95  95.14    96.03
+  5  FREEZE Danielle        96.20    -      -    96.18  92.51    94.96
+  6  SYMONS Rachel          93.35  89.89  94.22  89.25  91.96    93.18
+  7  ASKEW Alexandra          -    94.08  89.32    -    93.42    92.27
+  8  AVERY Naomi              -    89.35  93.48    -    91.05    91.30
+  9  MACAULAY Alice         91.51  90.22  90.85  87.13  88.19    90.86
+ 10  BOZIER Hannah          88.16  89.15  93.02  81.95  88.06    90.11
+ 11  HARDAWAY Chelsea       85.75    -    89.00    -    88.83    87.86
+ 12  YOUNG Amy              88.21  84.22    -    85.26  88.10    87.19
+ 13  DAVIES Jenny           85.03  85.17  87.98  82.58  83.79    86.06
+ 14  VALE Nicola            77.93  83.84  88.21    -    84.74    85.60
+ 15  HAMILTON Caroline      85.03  79.58    -    81.05  87.42    84.50
+ 16  PITCHER Claudia        80.45  83.47    -    78.89  84.74    82.89
+ 17  RUMENS Jackie          82.51  78.25    -    85.00    -      81.92
+ 18  STEWARD Ellie            -    80.78  86.18  76.13  77.02    81.33
+ 19  COOPER Yasmin          73.69  74.03  83.91  78.80  80.65    81.12
+ 20  PICKUP Rebecca         74.36  75.06  80.72  68.31  84.51    80.10
+ 21  WILLIAMS Beth          74.30  74.65  80.58  80.16  79.43    80.06
+ 22  CUTHBERT Amy           77.04  81.48  78.73  74.81  79.93    80.05
+ 23  HATHWAY Isabella       76.59  78.96  79.20    -    80.97    79.71
+ 24  MEAD Darcie              -    75.81  81.69    -    73.30    76.93
+ 25  RUMENS Danielle        76.76  74.48    -    74.89    -      75.38
+ 26  OWENS Laura            69.72  72.54    -      -    73.89    72.05
+ 27  CUTHBERT Sarah         70.61  70.13  71.34  70.90    -      70.95
+ 28  MILLS Emma               -    68.31  66.57    -    74.25    69.71
+ 29  LAKE Gracie            61.45    -    71.06    -    71.12    67.88
+ 30  YOUNG Ella             64.69  60.85    -    48.56  62.94    62.83
+ 31  LEWINGTON Caitlin      61.12  55.84  63.48 -11.64  61.04    61.88
+ 32  RUMENS Stephanie       63.85  59.07    -    58.79    -      60.57
+ 33  VALE Lauren            58.60  54.27  63.43  39.42  59.45    60.49
+ 34  SHEMMANS Charlotte     60.95  53.15  48.17  49.96  55.18    56.43
+ 35  BANGER Indiya            -    49.79  53.63    -    54.00    52.47
+ 36  DENNING Clare          70.28    -    56.40   3.91    -      43.53
+ 37  GRIFFITHS Nia          38.60    -      -    43.88  47.64    43.37
+ 38  ANTHONY Janet            -    52.40    -    25.83  51.68    43.30
+ 39  SHEMMANS Maddy         30.11  25.31  36.85  25.96  49.50    38.82
+
+
+

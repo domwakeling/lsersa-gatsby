@@ -580,7 +580,65 @@
             url: http://www.srsa.org.uk/uploads/2015TriRegionResults.pdf
             status: Results
 
-# TO DO: 2014 through 2008
+# TO DO: 2014 through 2009
+
+-   year: 2008
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2008/ffast08.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2008/mfast08.txt
+        -   name: Age Groups
+            url: /resources/races/2008/point08.txt
+        -   name: Overall Club
+            url: /resources/races/2008/club08.txt
+        races:
+        -   name: Race 1
+            venue: Aldershot
+            date: Sunday 20th April
+            url: /resources/races/2008/1_aldershot.pdf
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Sunday 25th May
+            url: /resources/races/2008/2_brentwood.pdf
+            status: Results
+        -   name: Race 3
+            venue: Southampton
+            date: Sunday 1st July
+            url: /resources/races/2008/3_southampton.pdf
+            status: Results
+        -   name: Race 4
+            venue: Welwyn
+            date: Sunday 29th June
+            url: /resources/races/2008/4_welwyn.pdf
+            status: Results
+        -   name: Race 5
+            venue: Bromley
+            date: Sunday 14th September
+            url: /resources/races/2008/5_bromley.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Sunday 8th June
+            url: /resources/races/2008/08bromcnres2.pdf
+            status: Results
+        -   name: Wycombe Club National
+            venue: Wycombe
+            date: Saturday 19th July
+            url: /resources/races/2008/08welwyn2res.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Brentwood
+            date: Saturday 4th October
+            url: /resources/races/2008/tri-regional.pdf
+            status: Results
 
 -   year: 2007
     events:
