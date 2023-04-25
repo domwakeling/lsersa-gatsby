@@ -34,12 +34,12 @@
             venue: Chatham
             date: Saturday 10th June
             url: https://gbski.com/competition.php?ID=1249
-            status: More info
+            status: GBSki website
         -   name: Precise Club National
             venue: Chatham
             date: Sunday 11th June
             url: https://gbski.com/competition.php?ID=1250
-            status: More info
+            status: GBSki website
 
     -   series: eola GBR Outdoor Series
         races: 
@@ -47,12 +47,12 @@
             venue: Chatham
             date: Saturday 1st July
             url: https://gbski.com/competition.php?ID=1255
-            status: More info
+            status: GBSki website
         -   name: Race 5
             venue: Chatham
             date: Sunday 2nd July
             url: https://gbski.com/competition.php?ID=1255
-            status: More info
+            status: GBSki website
 
     -   series: School Competitions
         races: 
@@ -632,7 +632,6 @@
             date: Saturday 16th July 
             url: /races/2005/wyccnresults.pdf
             status: Results
-
 
 -   year: 2004
     events:
