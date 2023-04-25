@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
-import Favicon from "../components/head/Favicon.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx";
 
 const CommitteePage = () => {
     return (
@@ -24,7 +24,7 @@ const CommitteePage = () => {
 export default CommitteePage
 
 export const Head = () => (
-    <Favicon>
+    <HeaderComponent>
         <title>Committee | LSERSA</title>
-    </Favicon>
+    </HeaderComponent>
 );

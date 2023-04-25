@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
 import Hero from "../components/Hero.jsx";
-import Favicon from "../components/head/Favicon.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import clubsData from '../data/clubs.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
@@ -76,7 +76,7 @@ const ClubsPage = () => {
 export default ClubsPage
 
 export const Head = () => (
-    <Favicon>
+    <HeaderComponent>
         <title>Clubs | LSERSA</title>
-    </Favicon>
+    </HeaderComponent>
 );

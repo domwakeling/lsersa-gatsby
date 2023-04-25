@@ -4,7 +4,7 @@ import Hero from "../../components/Hero.jsx";
 import raceData from '../../data/races.yaml';
 import RaceTable from "../../components/races/RaceTable.jsx";
 import RaceYearList from "../../components/races/RaceYearList.jsx";
-import Favicon from '../../components/head/Favicon.jsx';
+import HeaderComponent from '../../components/head/HeaderComponent.jsx';
 
 const RaceArchivePage = ({ pageContext }) => {
     const raceDataYear = raceData.filter(item => item.year === pageContext.year)[0];
@@ -56,9 +56,9 @@ const RaceArchivePage = ({ pageContext }) => {
 }
 
 export const Head = ({ pageContext }) => (
-    <Favicon>
+    <HeaderComponent>
         <title>{pageContext.year} Races | LSERSA</title>)
-    </Favicon>
+    </HeaderComponent>
 )
 
 export default RaceArchivePage;

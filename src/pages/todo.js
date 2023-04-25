@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
-import Favicon from "../components/head/Favicon.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx";
 
 const ToDoPage = () => {
     return (
@@ -33,7 +33,7 @@ const ToDoPage = () => {
 export default ToDoPage
 
 export const Head = () => (
-    <Favicon>
+    <HeaderComponent>
         <title>ToDo | LSERSA</title>
-    </Favicon>
+    </HeaderComponent>
 );

@@ -3,7 +3,9 @@
  */
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+        title: 'London & South East Regional Snowsports Assocaetion',
+        description: 'Website for LSERSA, the London & South East Regional Snowsports Assocaetion',
+        siteUrl: `http://lsersa.org/`,
     },
     plugins: [
         `gatsby-plugin-sass`,

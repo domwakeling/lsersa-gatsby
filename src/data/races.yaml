@@ -60,22 +60,22 @@
             venue: Chatham
             date: Sunday 7th May
             url: https://preciseracing.co.uk/kent-schools-championship/
-            status: More info
+            status: Precise Racing website
         -   name: London Schools
             venue: Welwyn
             date: Weekend 24th & 25th June
             url: http://lssr.mailchimpsites.com/
-            status: More info
+            status: LSSE website
         -   name: ESSKIA Regional Qualifer (South East)
             venue: Chatham
             date: Sunday 17th September
             url: https://esskia.org/
-            status: More info
+            status: ESSKIA website
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 12th November
             url: https://preciseracing.co.uk/surrey-schools-championships/
-            status: More info
+            status: Precise Racing website
 
     -   series: Regional Competitions
         races:        

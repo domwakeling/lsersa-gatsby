@@ -5,7 +5,7 @@ import raceData from '../data/races.yaml';
 import RaceTable from "../components/races/RaceTable.jsx";
 import RaceYearList from "../components/races/RaceYearList.jsx";
 import DownloadItem from "../components/DownloadItem.jsx";
-import Favicon from "../components/head/Favicon.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx";
 
 const RacesPage = () => {
     return (
@@ -133,7 +133,7 @@ const RacesPage = () => {
 export default RacesPage
 
 export const Head = () => (
-    <Favicon>
+    <HeaderComponent>
         <title>{raceData[0].year} Races | LSERSA</title>)
-    </Favicon>
+    </HeaderComponent>
 );

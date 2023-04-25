@@ -4,7 +4,7 @@ import Layout from "../components/Layout.jsx";
 import sponsordata from '../data/sponsors.yaml';
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Favicon from "../components/head/Favicon.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { Link } from "gatsby";
 
@@ -119,7 +119,7 @@ const HomePage = () => {
 export default HomePage
 
 export const Head = () => (
-    <Favicon> 
+    <HeaderComponent> 
         <title>Home | LSERSA</title>
-    </Favicon>
+    </HeaderComponent>
 );
