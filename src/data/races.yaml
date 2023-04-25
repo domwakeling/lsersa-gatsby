@@ -580,57 +580,154 @@
             url: http://www.srsa.org.uk/uploads/2015TriRegionResults.pdf
             status: Results
 
-# TO DO: 2014 through 2006
+# TO DO: 2014 through 2008
+
+-   year: 2007
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2007/ffast07.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2007/mfast07.txt
+        -   name: Age Groups
+            url: /resources/races/2007/point07.txt
+        -   name: Overall Club
+            url: /resources/races/2007/club07.txt
+        races:
+        -   name: Race 1
+            venue: Bromley
+            date: Sunday 22nd April
+            url: /resources/races/2007/1_bromley.pdf
+            status: Results
+        -   name: Race 2
+            venue: Aldershot
+            date: Sunday 13th May
+            url: /resources/races/2007/2_aldershot.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 30th June
+            url: /resources/races/2007/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Welwyn
+            date: Sunday 8th July
+            url: /resources/races/2007/4_welwyn.pdf
+            status: Results
+        -   name: Race 5
+            venue: Bromley
+            date: Sunday 23rd September
+            url: /resources/races/2007/5_bromley.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Sunday 29th April
+            url: /resources/races/2007/07bromcnresults.pdf
+            status: Results
+        -   name: Wycombe Club National
+            venue: Wycombe
+            date: Sunday 10th June
+            url: /resources/races/2007/07wyccnresults.pdf
+            status: Results
+
+-   year: 2006
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2006/ffast06.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2006/mfast06.txt
+        -   name: Age Groups
+            url: /resources/races/2006/point06.txt
+        -   name: Overall Club
+            url: /resources/races/2006/club06.txt
+        races:
+        -   name: Race 1
+            venue: Chatham
+            date: Sunday 29th April
+            url: /resources/races/2006/1_chatham.pdf
+            status: Results
+        -   name: Race 2
+            venue: Aldershot
+            date: Sunday 18th June
+            url: /resources/races/2006/2_aldershot.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 8th July
+            url: /resources/races/2006/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Bromley
+            date: Saturday 26th August
+            url: /resources/races/2006/4_bromley.pdf
+            status: Results
+        -   name: Race 5
+            venue: Bromley
+            date: Sunday 24th September
+            url: /resources/races/2006/5_bromley.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Sunday 30th April
+            url: /resources/races/2006/bromcn2006results.pdf
+            status: Results
 
 -   year: 2005
     events:
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2005/ffast05.txt
+            url: /resources/races/2005/ffast05.txt
         -   name: Overall Fastest Male
-            url: /races/2005/mfast05.txt
+            url: /resources/races/2005/mfast05.txt
         -   name: Age Groups
-            url: /races/2005/point05.txt
+            url: /resources/races/2005/point05.txt
         -   name: Overall Club
-            url: /races/2005/club05.txt
+            url: /resources/races/2005/club05.txt
         races:
         -   name: Race 1
             venue: Chatham
             date: Sunday 17th April
-            url: /races/2005/1_chatham.pdf
+            url: /resources/races/2005/1_chatham.pdf
             status: Results
         -   name: Race 2
             venue: Bromley
             date: Sunday 12th June
-            url: /races/2005/2_bromley.pdf
+            url: /resources/races/2005/2_bromley.pdf
             status: Results
         -   name: Race 3
             venue: Aldershot
             date: Sunday 24th July
-            url: /races/2005/3_aldershot.pdf
+            url: /resources/races/2005/3_aldershot.pdf
             status: Results
         -   name: Race 4
             venue: Brentwood
             date: Sunday 28th August
-            url: /races/2005/4_brentwood.pdf
+            url: /resources/races/2005/4_brentwood.pdf
             status: Results
         -   name: Race 5
             venue: Wycombe
             date: Sunday 2nd October
-            url: /races/2005/5_wycombe.pdf
+            url: /resources/races/2005/5_wycombe.pdf
             status: Results
     -   series: Club Nationals
         races:
         -   name: Bromley Club National
             venue: Bromley
             date: Sunday 1st May
-            url: /races/2005/brom_cn2005res.pdf
+            url: /resources/races/2005/brom_cn2005res.pdf
             status: Results
         -   name: Wycombe Club National
             venue: Wycombe
             date: Saturday 16th July 
-            url: /races/2005/wyccnresults.pdf
+            url: /resources/races/2005/wyccnresults.pdf
             status: Results
 
 -   year: 2004
@@ -638,50 +735,50 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2004/ffast04.txt
+            url: /resources/races/2004/ffast04.txt
         -   name: Overall Fastest Male
-            url: /races/2004/mfast04.txt
+            url: /resources/races/2004/mfast04.txt
         -   name: Age Groups
-            url: /races/2004/point04.txt
+            url: /resources/races/2004/point04.txt
         -   name: Overall Club
-            url: /races/2004/club04.txt
+            url: /resources/races/2004/club04.txt
         races:
         -   name: Race 1
             venue: Bromley
             date: Sunday 25th April
-            mens: /races/2004/1_bromley_mens.txt
-            ladies: /races/2004/1_bromley_ladies.txt
+            mens: /resources/races/2004/1_bromley_mens.txt
+            ladies: /resources/races/2004/1_bromley_ladies.txt
         -   name: Race 2
             venue: Brentwood
             date: Saturday 15th May
-            mens: /races/2004/2_brentwood_mens.txt
-            ladies: /races/2004/2_brentwood_ladies.txt
+            mens: /resources/races/2004/2_brentwood_mens.txt
+            ladies: /resources/races/2004/2_brentwood_ladies.txt
         -   name: Race 3
             venue: Wycombe
             date: Sunday 18th July
-            mens: /races/2004/3_wycombe_mens.txt
-            ladies: /races/2004/3_wycombe_ladies.txt
+            mens: /resources/races/2004/3_wycombe_mens.txt
+            ladies: /resources/races/2004/3_wycombe_ladies.txt
         -   name: Race 4
             venue: Chatham
             date: Sunday 29th August
-            mens: /races/2004/4_chatham_mens.txt
-            ladies: /races/2004/4_chatham_ladies.txt
+            mens: /resources/races/2004/4_chatham_mens.txt
+            ladies: /resources/races/2004/4_chatham_ladies.txt
         -   name: Race 5
             venue: Aldershot
             date: Sunday 26th September
-            mens: /races/2004/5_aldershot_mens.txt
-            ladies: /races/2004/5_aldershot_ladies.txt
+            mens: /resources/races/2004/5_aldershot_mens.txt
+            ladies: /resources/races/2004/5_aldershot_ladies.txt
     -   series: Club Nationals
         races:
         -   name: Wycombe Club National
             venue: Wycombe
             date: Saturday 29th May
-            url: /races/2004/wyccnres.pdf
+            url: /resources/races/2004/wyccnres.pdf
             status: Results
         -   name: Chatham Club National
             venue: Chatham
             date: Saturday 19th June
-            url: /races/2004/chtcnres.pdf
+            url: /resources/races/2004/chtcnres.pdf
             status: Results
 
 -   year: 2003
@@ -689,50 +786,50 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2003/ffast03.txt
+            url: /resources/races/2003/ffast03.txt
         -   name: Overall Fastest Male
-            url: /races/2003/mfast03.txt
+            url: /resources/races/2003/mfast03.txt
         -   name: Age Groups
-            url: /races/2003/point03.txt
+            url: /resources/races/2003/point03.txt
         -   name: Overall Club
-            url: /races/2003/club03.txt
+            url: /resources/races/2003/club03.txt
         races:
         -   name: Race 1
             venue: Wycombe
             date: Sunday 27th April
-            mens: /races/2003/1_wycombe_mens.txt
-            ladies: /races/2003/1_wycombe_ladies.txt
+            mens: /resources/races/2003/1_wycombe_mens.txt
+            ladies: /resources/races/2003/1_wycombe_ladies.txt
         -   name: Race 2
             venue: Brentwood
             date: Sunday 1st June
-            mens: /races/2003/2_brentwood_mens.txt
-            ladies: /races/2003/2_brentwood_ladies.txt
+            mens: /resources/races/2003/2_brentwood_mens.txt
+            ladies: /resources/races/2003/2_brentwood_ladies.txt
         -   name: Race 3
             venue: Wycombe
             date: Sunday 27th July
-            mens: /races/2003/3_wycombe_mens.txt
-            ladies: /races/2003/3_wycombe_ladies.txt
+            mens: /resources/races/2003/3_wycombe_mens.txt
+            ladies: /resources/races/2003/3_wycombe_ladies.txt
         -   name: Race 4
             venue: Chatham
             date: Sunday 31st August
-            mens: /races/2003/4_chatham_mens.txt
-            ladies: /races/2003/4_chatham_ladies.txt
+            mens: /resources/races/2003/4_chatham_mens.txt
+            ladies: /resources/races/2003/4_chatham_ladies.txt
         -   name: Race 5
             venue: Aldershot
             date: Sunday 21st September
-            mens: /races/2003/5_aldershot_mens.txt
-            ladies: /races/2003/5_aldershot_ladies.txt
+            mens: /resources/races/2003/5_aldershot_mens.txt
+            ladies: /resources/races/2003/5_aldershot_ladies.txt
     -   series: Club Nationals
         races:
         -   name: Wycombe Club National
             venue: Wycombe
             date: Saturday 3rd May
-            url: /races/2003/wyccnres.pdf
+            url: /resources/races/2003/wyccnres.pdf
             status: Results
         -   name: Chatham Club National
             venue: Chatham
             date: Saturday 5th July
-            url: /races/2003/chtcnres.pdf
+            url: /resources/races/2003/chtcnres.pdf
             status: Results
 
 -   year: 2002
@@ -740,45 +837,45 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2002/ffast02.txt
+            url: /resources/races/2002/ffast02.txt
         -   name: Overall Fastest Male
-            url: /races/2002/mfast02.txt
+            url: /resources/races/2002/mfast02.txt
         -   name: Age Groups
-            url: /races/2002/point02.txt
+            url: /resources/races/2002/point02.txt
         -   name: Overall Club
-            url: /races/2002/club02.txt
+            url: /resources/races/2002/club02.txt
         races:
         -   name: Race 1
             venue: Aldershot
             date: Sunday 28th April
-            mens: /races/2002/1_aldershot_mens.txt
-            ladies: /races/2002/1_aldershot_ladies.txt
+            mens: /resources/races/2002/1_aldershot_mens.txt
+            ladies: /resources/races/2002/1_aldershot_ladies.txt
         -   name: Race 2
             venue: Brentwood
             date: Sunday 26th May
-            mens: /races/2002/2_brentwood_mens.txt
-            ladies: /races/2002/2_brentwood_ladies.txt
+            mens: /resources/races/2002/2_brentwood_mens.txt
+            ladies: /resources/races/2002/2_brentwood_ladies.txt
         -   name: Race 3
             venue: Wycombe
             date: Saturday 8th June
-            mens: /races/2002/3_wycombe_mens.txt
-            ladies: /races/2002/3_wycombe_ladies.txt
+            mens: /resources/races/2002/3_wycombe_mens.txt
+            ladies: /resources/races/2002/3_wycombe_ladies.txt
         -   name: Race 4
             venue: Bromley
             date: Sunday 21st July
-            mens: /races/2002/4_bromley_mens.txt
-            ladies: /races/2002/4_bromley_ladies.txt
+            mens: /resources/races/2002/4_bromley_mens.txt
+            ladies: /resources/races/2002/4_bromley_ladies.txt
         -   name: Race 5
             venue: Chatham
             date: Sunday 13th October
-            mens: /races/2002/5_chatham_mens.txt
-            ladies: /races/2002/5_chatham_ladies.txt
+            mens: /resources/races/2002/5_chatham_mens.txt
+            ladies: /resources/races/2002/5_chatham_ladies.txt
     -   series: Club Nationals
         races:
         -   name: Chatham Club National
             venue: Chatham
             date: Saturday 4th May
-            url: /races/2002/chtcnres.pdf
+            url: /resources/races/2002/chtcnres.pdf
             status: Results
         
 
@@ -787,45 +884,45 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2001/ffast01.txt
+            url: /resources/races/2001/ffast01.txt
         -   name: Overall Fastest Male
-            url: /races/2001/mfast01.txt
+            url: /resources/races/2001/mfast01.txt
         -   name: Age Groups
-            url: /races/2001/point01.txt
+            url: /resources/races/2001/point01.txt
         -   name: Overall Club
-            url: /races/2001/club01.txt
+            url: /resources/races/2001/club01.txt
         races:
         -   name: Race 1
             venue: Aldershot
             date: Sunday 29th April
-            mens: /races/2001/1_aldershot_mens.txt
-            ladies: /races/2001/1_aldershot_ladies.txt
+            mens: /resources/races/2001/1_aldershot_mens.txt
+            ladies: /resources/races/2001/1_aldershot_ladies.txt
         -   name: Race 2
             venue: Wycombe
             date: Sunday 20th May
-            mens: /races/2001/2_wycombe_mens.txt
-            ladies: /races/2001/2_wycombe_ladies.txt
+            mens: /resources/races/2001/2_wycombe_mens.txt
+            ladies: /resources/races/2001/2_wycombe_ladies.txt
         -   name: Race 3
             venue: Chatham
             date: Sunday 1st July
-            mens: /races/2001/3_chatham_mens.txt
-            ladies: /races/2001/3_chatham_ladies.txt
+            mens: /resources/races/2001/3_chatham_mens.txt
+            ladies: /resources/races/2001/3_chatham_ladies.txt
         -   name: Race 4
             venue: Bromley
             date: Sunday 26th August
-            mens: /races/2001/4_bromley_mens.txt
-            ladies: /races/2001/4_bromley_ladies.txt
+            mens: /resources/races/2001/4_bromley_mens.txt
+            ladies: /resources/races/2001/4_bromley_ladies.txt
     -   series: Club Nationals
         races:
         -   name: Chatham Club National
             venue: Chatham
             date: Saturday 5th May
-            url: /races/2001/chatcn.pdf
+            url: /resources/races/2001/chatcn.pdf
             status: Results
         -   name: Wycombe Club National
             venue: Wycombe
             date: Saturday 21st July
-            url: /races/2001/wyccn.pdf
+            url: /resources/races/2001/wyccn.pdf
             status: Results
 
 -   year: 2000
@@ -833,124 +930,124 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/2000/ffast00.txt
+            url: /resources/races/2000/ffast00.txt
         -   name: Overall Fastest Male
-            url: /races/2000/mfast00.txt
+            url: /resources/races/2000/mfast00.txt
         -   name: Age Groups
-            url: /races/2000/point00.txt
+            url: /resources/races/2000/point00.txt
         -   name: Overall Club
-            url: /races/2000/club00.txt
+            url: /resources/races/2000/club00.txt
         races:
         -   name: Race 1
             venue: Bromley
             date: Sunday 30th April
-            mens: /races/2000/1_bromley_mens.txt
-            ladies: /races/2000/1_bromley_ladies.txt
+            mens: /resources/races/2000/1_bromley_mens.txt
+            ladies: /resources/races/2000/1_bromley_ladies.txt
         -   name: Race 2
             venue: Beckton
             date: Sunday 18th June
-            mens: /races/2000/2_beckton_mens.txt
-            ladies: /races/2000/2_beckton_ladies.txt
+            mens: /resources/races/2000/2_beckton_mens.txt
+            ladies: /resources/races/2000/2_beckton_ladies.txt
         -   name: Race 3
             venue: Wycombe
             date: Saturday 15th July
-            mens: /races/2000/3_wycombe_mens.txt
-            ladies: /races/2000/3_wycombe_ladies.txt
+            mens: /resources/races/2000/3_wycombe_mens.txt
+            ladies: /resources/races/2000/3_wycombe_ladies.txt
         -   name: Race 4
             venue: Aldershot
             date: Sunday 27th August
-            mens: /races/2000/4_aldershot_mens.txt
-            ladies: /races/2000/4_aldershot_ladies.txt
+            mens: /resources/races/2000/4_aldershot_mens.txt
+            ladies: /resources/races/2000/4_aldershot_ladies.txt
         -   name: Race 5
             venue: Chatham
             date: Sunday 24th September
-            mens: /races/2000/5_chatham_mens.txt
-            ladies: /races/2000/5_chatham_ladies.txt
+            mens: /resources/races/2000/5_chatham_mens.txt
+            ladies: /resources/races/2000/5_chatham_ladies.txt
         -   name: Race 6
             venue: Hillingdon (at Chatham)
             date: Sunday 8th October
-            mens: /races/2000/6_hillingdon_mens.txt
-            ladies: /races/2000/6_hillingdon_ladies.txt
+            mens: /resources/races/2000/6_hillingdon_mens.txt
+            ladies: /resources/races/2000/6_hillingdon_ladies.txt
 
 -   year: 1999
     events:
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/1999/ffast99.txt
+            url: /resources/races/1999/ffast99.txt
         -   name: Overall Fastest Male
-            url: /races/1999/mfast99.txt
+            url: /resources/races/1999/mfast99.txt
         -   name: Age Groups
-            url: /races/1999/point99.txt
+            url: /resources/races/1999/point99.txt
         -   name: Overall Club
-            url: /races/1999/club99.txt
+            url: /resources/races/1999/club99.txt
         races:
         -   name: Race 1
             venue: Bromley
             date: Sunday 2nd May
-            mens: /races/1999/1_bromley_mens.txt
-            ladies: /races/1999/1_bromley_ladies.txt
+            mens: /resources/races/1999/1_bromley_mens.txt
+            ladies: /resources/races/1999/1_bromley_ladies.txt
         -   name: Race 2
             venue: Hillingdon
             date: Saturday 22nd May
-            mens: /races/1999/2_hillingdon_mens.txt
-            ladies: /races/1999/2_hillingdon_ladies.txt
+            mens: /resources/races/1999/2_hillingdon_mens.txt
+            ladies: /resources/races/1999/2_hillingdon_ladies.txt
         -   name: Race 3
             venue: Aldershot
             date: Sunday 20th June
-            mens: /races/1999/3_aldershot_mens.txt
-            ladies: /races/1999/3_aldershot_ladies.txt
+            mens: /resources/races/1999/3_aldershot_mens.txt
+            ladies: /resources/races/1999/3_aldershot_ladies.txt
         -   name: Race 4
             venue: Wycombe
             date: Sunday 11th July
-            mens: /races/1999/4_wycombe_mens.txt
-            ladies: /races/1999/4_wycombe_ladies.txt
+            mens: /resources/races/1999/4_wycombe_mens.txt
+            ladies: /resources/races/1999/4_wycombe_ladies.txt
         -   name: Race 5
             venue: Chatham
             date: Sunday 19th September
-            mens: /races/1999/5_chatham_mens.txt
-            ladies: /races/1999/5_chatham_ladies.txt
+            mens: /resources/races/1999/5_chatham_mens.txt
+            ladies: /resources/races/1999/5_chatham_ladies.txt
 
 -   year: 1998
     events:
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: /races/1998/ffast98.txt
+            url: /resources/races/1998/ffast98.txt
         -   name: Overall Fastest Male
-            url: /races/1998/mfast98.txt
+            url: /resources/races/1998/mfast98.txt
         -   name: Age Groups
-            url: /races/1998/point98.txt
+            url: /resources/races/1998/point98.txt
         -   name: Overall Club
-            url: /races/1998/club98.txt
+            url: /resources/races/1998/club98.txt
         races:
         -   name: Race 1
             venue: Bromley
             date: Sunday 17th May
-            mens: /races/1998/1_bromley_mens.txt
-            ladies: /races/1998/1_bromley_ladies.txt
+            mens: /resources/races/1998/1_bromley_mens.txt
+            ladies: /resources/races/1998/1_bromley_ladies.txt
         -   name: Race 2
             venue: Hillingdon
             date: Sunday 7th June
-            mens: /races/1998/2_hillingdon_mens.txt
-            ladies: /races/1998/2_hillingdon_ladies.txt
+            mens: /resources/races/1998/2_hillingdon_mens.txt
+            ladies: /resources/races/1998/2_hillingdon_ladies.txt
         -   name: Race 3
             venue: Beckton (at Hillingdon)
             date: Sunday 21st June
-            mens: /races/1998/3_beckton_mens.txt
-            ladies: /races/1998/3_beckton_ladies.txt
+            mens: /resources/races/1998/3_beckton_mens.txt
+            ladies: /resources/races/1998/3_beckton_ladies.txt
         -   name: Race 4
             venue: Wycombe
             date: Sunday 12th July
-            mens: /races/1998/4_wycombe_mens.txt
-            ladies: /races/1998/4_wycombe_ladies.txt
+            mens: /resources/races/1998/4_wycombe_mens.txt
+            ladies: /resources/races/1998/4_wycombe_ladies.txt
         -   name: Race 5
             venue: Aldershot
             date: Sunday 30th August
-            mens: /races/1998/5_aldershot_mens.txt
-            ladies: /races/1998/5_aldershot_ladies.txt
+            mens: /resources/races/1998/5_aldershot_mens.txt
+            ladies: /resources/races/1998/5_aldershot_ladies.txt
         -   name: Race 6
             venue: Chatham
             date: Sunday 27th September
-            mens: /races/1998/6_chatham_mens.txt
-            ladies: /races/1998/6_chatham_ladies.txt
+            mens: /resources/races/1998/6_chatham_mens.txt
+            ladies: /resources/races/1998/6_chatham_ladies.txt

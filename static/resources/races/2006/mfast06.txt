@@ -1,0 +1,97 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2006 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                     Bromley  Sunday 24th September 2006
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Male Skier - Overall
+
+Pos  Name                     CH     AL     BP     BR     BY     Avge
+
+  1  TELLING Marc             -    99.83 100.00 100.00    -      99.94
+  2  PAPANTONIOU Lloyd     100.00    -    99.46  96.56  96.20    98.67
+  3  CURTIS Daniel          90.01  95.45  96.38  96.51  98.92    97.27
+  4  LAMB Tristan             -    95.98    -    92.60  97.79    95.46
+  5  BAKSH Peter              -    80.35  86.00  88.74  93.53    89.42
+  6  ALLINGHAM Jonathan     79.09  91.43    -    88.37  86.84    88.88
+  7  CROWTHER James         37.83  87.46  88.81  90.01  84.17    88.76
+  8  TELLING Philip         80.25  92.01  88.76  65.22  84.17    88.31
+  9  ASKEW David            20.51  86.71  84.65    -    88.18    86.51
+ 10  GALLINGTON Toby          -    84.90    -    83.88  85.61    84.80
+ 11  PORTER Ben             80.09  83.73  84.59  83.67  85.87    84.73
+ 12  GHISLANZONI Giacomo      -    82.39    -    82.77  86.64    83.93
+ 13  GAMBRILL James           -    83.32    -    82.66  84.38    83.46
+ 14  CROWTHER Christopher   79.62  80.82  81.89  83.72  84.12    83.24
+ 15  SIEBER James           72.03  80.87  82.00    -    83.97    82.28
+ 16  KIESSLING Liam         76.99  80.35    -    82.08  81.24    81.23
+ 17  MOSS Maximillian       79.05    -    80.22  79.44  82.99    80.88
+ 18  BUNTON Paul            32.77  75.92  77.84  82.40  81.29    80.51
+ 19  ABELA Corey            73.99  72.59  83.24  83.99    -      80.41
+ 20  BARBER Toby            73.39    -    79.84  79.76  81.55    80.38
+ 21  SIMPSON Christopher    66.13  84.43    -    80.71  75.49    80.21
+ 22  MORGAN Freddie         72.03  81.46  77.84    -    81.29    80.20
+ 23  WEIR Fraser            69.76  85.25  80.54    -      -      78.52
+ 24  DEAKIN Will            63.00  72.48    -    79.97  81.19    77.88
+ 25  GOODMAN Josh           58.37  69.27  75.14  76.11  80.94    77.39
+ 26  DAVIES Peter           76.46  79.48  75.73    -      -      77.22
+ 27  DAVIES Brian           56.64  76.03  76.81    -    76.52    76.45
+ 28  GHISLANZONI Fabrizio   62.87  74.87    -    78.01  76.00    76.29
+ 29  PROUDLOVE Andy         68.70  74.17  73.57  74.79  79.91    76.29
+ 30  CARPENTER Piers        63.30    -    73.30  74.21  80.11    75.87
+ 31  SHAH Sawan             70.10    -      -    73.10  81.76    74.98
+ 32  FAIL Robert            68.10    -    77.24    -    78.88    74.74
+ 33  OWENS Timothy            -    75.98    -    74.63  73.38    74.66
+ 34  PORTER Tobias          66.40  68.34  72.38  73.73  76.77    74.29
+ 35  SEYMOUR Luke           63.77  72.89  71.46  72.67  77.24    74.27
+ 36  YATES Tom              66.20  74.99  55.62  76.37  71.12    74.16
+ 37  GIBB James             71.50    -    71.78  73.26  76.93    73.99
+ 38  PICKFORD Chris         65.57    -    75.41    -    79.50    73.49
+ 39  SEYMOUR Colin          40.23  70.44  72.81  76.85  66.34    73.37
+ 40  GIBB Jim               63.47    -      -    79.49  76.98    73.31
+ 41  TAYLOR Laurie            -    62.39  68.76  74.26  75.90    72.97
+ 42  YATES Nick             66.77    -    69.24  78.01    -      71.34
+ 43  WEST Rhys                -    70.96  69.73  66.49  69.94    70.21
+ 44  OWENS Matt             59.81  64.26  68.65    -    73.64    68.85
+ 45  GREENE Kieran          62.37    -    71.35    -    69.22    67.65
+ 46  SOUTHALL Frazer        59.67  66.76  66.86  67.97  66.60    67.20
+ 47  EVERITT Simon          62.94  67.70  67.62    -      -      66.09
+ 48  FITZPATRICK Alex       57.91  63.67    -      -    73.48    65.02
+ 49  SYMONS Daniel          57.51  62.04  60.43 -61.21  70.30    64.26
+ 50  NAYLER Graham            -    55.98  67.03  66.49  59.04    64.19
+ 51  DALE Nathan            63.20  59.48 -73.14  65.12  63.46    63.93
+ 52  PLAYLE Joshua          56.41  64.66    -      -    68.29    63.12
+ 53  SOUTHALL Kieran         6.29  48.16  57.24  60.57  62.08    59.96
+ 54  BUSHNELL Allan           -    48.34  56.11    -    72.76    59.07
+ 55  DAVEY William          48.48    -      -    64.27  63.67    58.81
+ 56  MILLER Alec            44.19  55.98  54.81  55.60  64.34    58.64
+ 57  AMOS John              40.63  51.37  53.03  66.91    -      57.10
+ 58  QURESHI Rumaan         50.42  51.55  55.03  50.00  61.41    55.99
+ 59  WEIR Russell           40.03  56.85  63.35    -      -      53.41
+ 60  COOPER Doug            36.63  37.78  47.78  51.00  53.08    50.62
+ 61  SIMPSON Brian          28.74  43.62  40.81  50.48  49.08    47.72
+ 62  LAWRENCE Ned           24.84  44.66  53.08    -      -      40.86
+ 63  DAVEY Nicholas         13.92    -      -    51.69  52.16    39.26
+ 64  BARRY Alex             33.10    -      -    40.64  36.38    36.71
+ 65  SOUTHALL Merrick       29.74  31.20  31.14  39.64  28.93    33.99
+ 66  AITCHINSON Cameron     26.97  28.51    -    40.86    -      32.11
+ 67  SEYMOUR Thomas         21.68  -2.45   8.27  37.10  30.47    29.75
+
+
+

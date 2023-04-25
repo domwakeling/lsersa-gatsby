@@ -1,0 +1,84 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2006 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                     Bromley  Sunday 24th September 2006
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     CH     AL     BP     BR     BY     Avge
+
+  1  EVANS Charlotte       100.00 100.00    -   100.00 100.00   100.00
+  2  THOMAS-JACKSON Alessi  98.13    -   100.00    -    98.73    98.95
+  3  BARBER Kathryn         94.27    -    98.25  94.98  98.21    97.15
+  4  LUCK Stacey            88.74  96.60    -    97.09  96.47    96.72
+  5  CALLENDAR Anouska      93.68  95.70    -    97.42  91.33    95.60
+  6  EVANS Emily            95.53  93.47  92.62  92.26  94.58    94.52
+  7  HARTE Natalia          92.63    -    92.52  94.65  95.10    94.13
+  8  FREEZE Danielle        90.85  90.07  93.69  94.55  92.60    93.61
+  9  ASKEW Alexandra        89.68  91.24  93.44    -    96.04    93.57
+ 10  LUCK Georgia           92.69    -    91.99  92.45  94.39    93.18
+ 11  DALE Melissa           88.45  90.07  92.76  92.59    -      91.81
+ 12  MURPHY Alice             -    87.31  91.69  93.50    -      90.83
+ 13  THOMPSON Mikki         80.76    -    85.82  91.59  88.12    88.51
+ 14  GREENHALGH Eloise        -    82.69  90.29    -    90.90    87.96
+ 15  LLEWELLYN Joanna         -    84.01    -    90.11  89.44    87.86
+ 16  SYMONS Rachel          82.84 -52.84  82.37  90.54  82.52    85.30
+ 17  MACAULAY Alice         72.95  83.70  86.21  84.04  81.06    84.65
+ 18  AVERY Naomi              -    84.65  84.22    -    78.37    82.41
+ 19  YOUNG Amy              73.22  79.98  85.67    -    79.92    81.86
+ 20  HAMILTON Caroline      75.61  74.35  76.98  80.55  82.19    79.91
+ 21  HARTE Giulia           73.63    -    75.57  80.51  82.75    79.61
+ 22  DENDLE Mollie          75.12  76.63  81.25    -      -      77.67
+ 23  STEWARD Ellie          66.05  67.23    -    79.41  78.98    75.21
+ 24  GOODMAN Tiffany        49.01  69.78  79.07  75.01    -      74.62
+ 25  QURESHI Raessa         66.78  66.81  71.25  74.92  75.97    74.04
+ 26  PRENDERLEITH Lucy      55.47  61.98  74.21    -    80.35    72.18
+ 27  WILLIS Katie           70.00  72.97  67.07    -    70.59    71.19
+ 28  MURPHY Emily           68.30  63.25    -      -    81.06    70.87
+ 29  RUMENS Danielle        65.06  53.37    -    74.30  69.32    69.56
+ 30  CUTHBERT Amy             -    58.95  65.86  69.66  70.88    68.80
+ 31  KOCK Evie              44.36  49.44  75.38    -    80.07    68.29
+ 32  TAYLOR Abigail           -    60.06  77.80  63.83  59.19    67.23
+ 33  WEGLARZ Natasha          -    56.40  69.55  75.01    -      66.99
+ 34  PHILLIPS Victoria        -    55.34  71.64    -    73.19    66.72
+ 35  DAVIES Jenny           61.02  65.48  68.72    -    65.83    66.68
+ 36  DI FRANCO Caroline       -    59.27  70.47  67.51    -      65.75
+ 37  RUMENS Stephanie       62.28  57.36    -    68.80  61.26    64.11
+ 38  PITCHER Jessica          -    54.97  65.66    -    59.10    59.91
+ 39  PICKFORD Helena        55.88    -    59.74    -    63.85    59.82
+ 40  STEPHEN Lucy           55.06  51.57  60.51    -    62.06    59.21
+ 41  MCGURK Rosie             -    55.07  61.58  59.34    -      58.67
+ 42  SIMPSON Emma           49.74    -      -    62.26  59.47    57.15
+ 43  PITCHER Cladia           -    47.69  55.95    -    57.78    53.81
+ 44  CUTHBERT Sarah           -    42.43  44.44  57.81  55.80    52.68
+ 45  YOUNG Ella             29.68  45.46  45.41  50.26  56.27    50.66
+ 46  ANTHONY Janet          35.99  40.95  40.46  49.93  49.20    46.69
+ 47  MILLS Emma               -    33.94  45.12    -    51.27    43.44
+ 48  TAYLOR Alice           58.63    -    55.37    -     8.44    40.81
+ 49  AMOS Nicolette         20.53   6.90  21.18  43.53  41.00    35.23
+ 50  OWENS Laura              -    12.90  39.00    -    53.20    35.04
+ 51  FINLAY Rachel          27.98  31.49  33.32    -      -      30.93
+ 52  BANGER Indiya            -    30.27    -    34.45  26.77    30.50
+ 53  FOULSHAM Meghan          -    14.39  24.62  37.41    -      25.48
+ 54  MEAD Darcie              -    42.80 -22.15  47.87    -      22.84
+
+
+
