@@ -580,8 +580,105 @@
             url: http://www.srsa.org.uk/uploads/2015TriRegionResults.pdf
             status: Results
 
-# TO DO: 2014 through 2011
+-   year: 2014
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2014/ffast14.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2014/mfast14.txt
+        -   name: Age Groups
+            url: /resources/races/2014/point14.txt
+        -   name: Overall Club
+            url: /resources/races/2014/club14.txt
+        races:
+        -   name: Race 1
+            venue: Aldershot
+            date: Sunday 4th May
+            url: /resources/races/2014/1_aldershot.pdf
+            status: Results
+        -   name: Race 2
+            venue: Welwyn
+            date: Sunday 6th July
+            url: /resources/races/2014/2_welwyn.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Sunday 13th July
+            url: /resources/races/2014/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Bowles
+            date: Sunday 7th September
+            url: /resources/races/2014/4_bowles.pdf
+            status: Results
+        -   name: Race 5
+            venue: Welwyn
+            date: Sunday 19th October
+            url: /resources/races/2014/5_welwyn.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Saturday 12th May
+            url: 
+            status: 
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Welwyn
+            date: Saturday 18th October
+            url:  /resources/races/2014/tri-regional.pdf
+            status: Results
 
+
+-   year: 2013
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2013/ffast13.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2013/mfast13.txt
+        -   name: Age Groups
+            url: /resources/races/2013/point13.txt
+        -   name: Overall Club
+            url: /resources/races/2013/club13.txt
+        races:
+        -   name: Race 1
+            venue: Bowles
+            date: Sunday 4th May
+            url: /resources/races/2013/1_bowles.pdf
+            status: Results
+        -   name: Race 2
+            venue: Aldershot
+            date: Sunday 26th May
+            url: /resources/races/2013/2_aldershot.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Sunday 30th June
+            url: /resources/races/2013/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Welwyn
+            date: Sunday 7th July
+            url: /resources/races/2013/4_welwyn.pdf
+            status: Results
+        -   name: Race 5
+            venue: Bromley
+            date: Sunday 21st July
+            url: /resources/races/2013/5_bromley.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Welwyn
+            date: Saturday 12th October
+            url: /resources/races/2013/tri-regional.pdf
+            status: Results
 
 -   year: 2012
     events:

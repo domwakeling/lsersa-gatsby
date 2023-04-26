@@ -1,0 +1,93 @@
+             LONDON & SOUTH EAST REGIONAL SNOWSPORTS ASSOCIATION
+                            2013 SUMMER RACE LEAGUE
+
+
+                              FASTEST FEMALE SKIER 2013
+
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the best values (up to 4).
+
+   A racer must have at least 4 finishes to be ranked on the list.
+
+Males and females are treated separately.
+
+
+                              Fastest Female Skier
+
+Pos  Name                         BO     AL     BW     WE     BR     Avge
+
+  1  LEWINGTON Caitlin         100.00    -   100.00  97.78  88.57   96.59
+  2  BOTY Carys                   -    88.53  91.77  96.30  86.12   90.68
+  3  TAPSELL Charlotte            -    77.01  96.46  92.92  86.45   88.21
+  4  FOSTER Sophie                -    85.34  90.66  92.31  83.63   87.99
+  5  HILLIARD Charlotte         85.56  76.95  82.27  75.15  81.42   81.55
+  6  CLARKE Holly               78.20  77.42  80.95  80.87  79.30   79.83
+  7  BOTY Nia                     -    73.46  81.46  87.04  72.38   78.59
+  8  VERNON Rebecca             66.24  71.63  80.09  67.01  64.36   71.24
+  9  HODGSON Ellen              56.46    -    78.26  75.11  62.38   68.05
+ 10  WILLOWS April              64.78  54.55  68.29  60.80  59.57   63.36
+ 11  ABRISHAMI Shania           50.11  31.21  39.47  47.02    -     41.95
+
+     BOZIER Hannah                -   100.00    -      -      -    100.00
+     EVANS Emily                  -      -      -      -   100.00  100.00
+     DAVIES Jenny                 -    99.82    -      -      -     99.82
+     VALE Nikkie                  -    97.87    -   100.00    -     98.94
+     FREEZE Danielle            98.93    -      -      -      -     98.93
+     HATHWAY Isabella             -    98.23    -      -      -     98.23
+     USHER Annie                  -    96.99    -      -      -     96.99
+     KEYS Georgia               95.51    -      -      -      -     95.51
+     VALE Lauren                  -    91.78  94.46  96.13    -     94.13
+     MOORE Danica               93.82  85.17  90.24    -      -     89.74
+     HUGHES Rachel                -    91.19    -    88.40  88.98   89.52
+     KAHVE Lucy                   -    89.01    -      -      -     89.01
+     TREW Isobel                  -      -      -    90.29  87.41   88.85
+     VEGTING Amelia               -    88.77    -      -      -     88.77
+     HUFF Sarah                   -    90.31  87.08    -      -     88.70
+     TREW Eleanor                 -      -      -    86.34  85.34   85.84
+     YOUNG Ella                   -    82.68    -      -      -     82.68
+     MIDSON Poppy               83.99  75.65    -    84.41    -     81.35
+     HYDE Augusta                 -    74.94    -    87.49    -     81.22
+     SCRANAGE-HARRISON Eleanor    -      -    80.14    -      -     80.14
+     FOSTER Olivia                -      -      -      -    78.15   78.15
+     GEORGEL Fran               76.07    -      -      -      -     76.07
+     WHITMARSH-ALI Megan          -      -      -    74.25  77.55   75.90
+     HINTON Georgina            73.15    -      -      -      -     73.15
+     MIDSON Molly                 -      -    73.44    -    72.06   72.75
+     MEYLER Anna                  -    71.87    -      -      -     71.87
+     TURNER Morgan                -      -      -      -    66.53   66.53
+     VICKERS Katie              65.39    -      -      -      -     65.39
+     WEEKS Ella                 65.67  58.98    -      -      -     62.33
+     WEEKS Georgia              65.17  53.90    -      -      -     59.53
+     ELPHICK Alex                 -      -    56.18    -      -     56.18
+     ATKINSON Molly               -      -      -    48.21  55.05   51.63
+     SMITH Lynn                 57.75  45.39    -      -      -     51.57
+     WEBER Jana                   -    48.23  48.68    -      -     48.45
+     HINTON Tilly               44.66    -      -    51.46    -     48.06
+     BRZESKA Wanda                -      -    49.66  43.36  49.56   47.53
+     ADDISON Kirsten              -    45.86    -      -      -     45.86
+     DAVEY Annabelle              -      -      -      -    45.78   45.78
+     BREEN Kate                   -    41.49    -      -      -     41.49
+     TAYLOR Ellie                 -    41.37    -      -      -     41.37
+     THOMPSON Tilly               -     2.78    -    74.37    -     38.58
+     RENDELL Callie               -    36.64    -      -      -     36.64
+     LOWETH Sophie                -    32.86    -      -      -     32.86
+     LEWIS Bethany                -    30.44    -      -      -     30.44
+     DEFRIEND Faye                -      -    25.75    -      -     25.75
+     CONVEY Rosie                 -    18.91    -    29.99    -     24.45
+     HEATON Isla                  -    19.68    -      -      -     19.68
+     BARFOOT Natalia              -    15.48    -      -      -     15.48
+     HADLEY Sophie                -    10.46    -      -      -     10.46
+     VERNON Charlotte             -     6.32    -      -     1.80    4.06
+     SCOTT Lily                   -      -      -      -    -2.90   -2.90
+     HIGGS Eira-Mia               -      -    -4.05    -      -     -4.05
+     HUGHES Alexandra             -   -38.65 -22.51    -      -    -30.58
+     BUNTON Aimee                 -      -      -      -   -41.86  -41.86
+
+

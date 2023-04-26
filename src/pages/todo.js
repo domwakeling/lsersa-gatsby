@@ -17,7 +17,7 @@ const ToDoPage = () => {
                         <li>Training page</li>
                         <li>What training is organised, other than slalom?</li>
                         <li>Add committee, meeting minutes, historical etc</li>
-                        <li>Race results 2013 and 2014 ...</li>
+                        <li>Results for CN's, Tri-Regional etc (links or copies)</li>
                         <li>Kent schools? Results ... starting 2002, not sure when until (link to results on SkiResults?)</li>
                         <li>London schools? Results ...</li>
                         <li>Surrey schools? Results ...</li>
