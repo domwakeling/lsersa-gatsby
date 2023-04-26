@@ -1,28 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
 import sponsordata from '../data/sponsors.yaml';
-import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from "../components/utility/SponsorParser.jsx";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
+import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
 
 const SponsorsPage = () => {
-    // query to get all sponsor images with their relative path - matching the img value in yaml
-    const imgQueryData = useStaticQuery(graphql`
-        query FindSponsorImages {
-            allFile(
-                filter: {sourceInstanceName: {eq: "images"}, relativePath: {regex: "/sponsors/"}}
-            ) {
-                nodes {
-                    relativePath
-                    childImageSharp {
-                        gatsbyImageData(width: 200, formats: [WEBP, PNG])
-                    }
-                }
-            }
-        }`
-    );
+    const imgQueryData = useSponsorImages();
 
     // map each image so we have the relative path and gatsby image data
     const imgData = imgQueryData.allFile.nodes.map(node => ({

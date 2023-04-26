@@ -2,28 +2,14 @@ import React from "react"
 import Hero from "../components/Hero.jsx";
 import Layout from "../components/Layout.jsx";
 import sponsordata from '../data/sponsors.yaml';
-import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { Link } from "gatsby";
+import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
 
 const HomePage = () => {
-    // query to get all sponsor images with their relative path - matching the img value in yaml
-    const imgQueryData = useStaticQuery(graphql`
-        query FindSponsorImages {
-            allFile(
-                filter: {sourceInstanceName: {eq: "images"}, relativePath: {regex: "/sponsors/"}}
-            ) {
-                nodes {
-                    relativePath
-                    childImageSharp {
-                        gatsbyImageData(width: 200, formats: [WEBP, PNG])
-                    }
-                }
-            }
-        }`
-    );
+    const imgQueryData = useSponsorImages();
 
     // map each image so we have the relative path and gatsby image data
     const imgData = imgQueryData.allFile.nodes.map(node => ({
@@ -33,7 +19,7 @@ const HomePage = () => {
     
     return (
         <Layout>
-        <div className="container">
+            <div className="container">
                 <div style={{
                     position: "absolute",
                     top: "100px",
@@ -54,10 +40,11 @@ const HomePage = () => {
                 <Hero text="WELCOME" text2="TO LSERSA" />
                 <div className="row">
                     <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
-                    <p>Welcome to the London & South East Regional Snowsports Assocation, LSERSA. We are a regional
-                        association affiliated with Snowsport England, the national governing body.</p>
-                    <p>In addition to providing Regional Race Training and organising the LSERSA Summer Race Series, our
-                        aim is to encourage participation in all snowsports.</p>
+                    <p>Welcome to the London & South East Regional Snowsports Assocation, LSERSA. We
+                        are a regional association affiliated with Snowsport England, the national
+                        governing body.</p>
+                    <p>In addition to providing Regional Race Training and organising the LSERSA
+                        Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
             </div>
 
