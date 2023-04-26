@@ -1,0 +1,128 @@
+             LONDON & SOUTH EAST REGIONAL SNOWSPORTS ASSOCIATION
+                            2012 SUMMER RACE LEAGUE
+
+
+                              FASTEST MALE SKIER 2012
+
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the best values (up to 4).
+
+   A racer must have at least 4 finishes to be ranked on the list.
+
+Males and females are treated separately.
+
+
+                              Fastest Male Skier
+
+Pos  Name                         BO     BW     BR     AL     WE     Avge
+
+  1  GREENE Kieran              96.59    -    91.19  97.46  86.95   93.05
+  2  CHAMPION Ben               91.76  92.55  91.29    -    79.97   88.89
+  3  NAYLER Graham              84.52  92.44  83.70  89.37  66.35   87.51
+  4  PENNING-LAMBERT Joshua     87.71    -    86.44  90.73  85.07   87.49
+  5  DAVEY Joseph               87.07  88.85  81.64  85.29  86.90   87.03
+  6  BUNTON Paul                86.93  86.76  86.39  86.89  75.83   86.74
+  7  BOTY Harry                 82.81  81.81  83.26  87.66    -     83.89
+  8  SOUTHALL Kieran            84.45  84.89  84.58  80.39  72.08   83.58
+  9  McDONALD-PROCTOR Richard   76.70  90.46  79.00  86.18    -     83.09
+ 10  PROUDLOVE Andy             83.10  84.47  79.34  80.92  74.34   81.96
+ 11  OWENS Timothy                -    85.57  79.25  82.58  77.76   81.29
+ 12  TUCK Greg                    -    83.12  84.39  81.45  74.72   80.92
+ 13  BIGGS Saul                 75.99  82.18    -    81.93  78.86   79.74
+ 14  GILLETT James              78.48    -    77.39  81.57  78.86   79.08
+ 15  ROBERTSON Ewan             71.80  83.69  80.08  78.20    -     78.44
+ 16  SOUTHALL Merrick           79.62  79.89    -    82.04  70.92   78.12
+ 17  HILLIARD Jack              82.39    -    80.62  79.50  64.81   76.83
+ 18  TREW Richard               70.60  77.38    -    77.91  73.13   74.76
+ 19  ABRISHAMI Diaco            74.50  82.13  71.95    -    64.71   73.32
+ 20  FOWLES James               72.09    -    74.60  75.31  70.39   73.10
+ 21  DAVEY Nicholas             68.32    -    72.93  73.66  73.38   72.07
+ 22  SMITH Euan                 63.92  69.72  73.18  70.94  69.52   70.84
+ 23  HILLIARD Nigel             73.93    -    68.67  63.20  59.12   66.23
+ 24  SMITH Nathan               65.34  64.77  64.86    -    64.08   64.76
+ 25  FOWLES Luke                60.51  65.76  61.87  59.01  63.26   62.85
+ 26  OWENS Andrew                 -    66.91  65.35  61.61  56.14   62.50
+ 27  CLARKE Callum              69.96  34.76  72.93    -    70.25   61.97
+ 28  GEORGEL Robbie             65.91    -    67.84  55.64  51.71   60.28
+ 29  WILLIAMS-GRAVENER David    61.51  57.79  64.76    -    54.21   59.57
+ 30  BAILLIE Rory                 -    53.93  57.37  57.59  54.21   55.78
+ 31  CURTIS Nathan              50.57  56.38  57.32    -    52.34   54.15
+ 32  SMITH Anthony              40.34  57.06  55.60  50.62  50.36   53.41
+ 33  McDONALD-PROCTOR William   49.01  51.07  50.61  48.20  51.71   50.60
+ 34  GREENE Casey                8.24  56.64    -    50.50  58.06   43.36
+ 35  TANDY Joshua               41.26  44.35  45.13  34.61  36.83   41.89
+ 36  MILLER-HASTINGS Frankie    70.95  16.00    -    -5.26  47.71   33.67
+ 37  BUNTON Ryan                -0.85  30.33  36.47  22.15  34.76   30.93
+
+     SIEBER James                 -      -      -      -   100.00  100.00
+     BAKSH Peter                  -      -   100.00    -      -    100.00
+     WILLOWS Laurence             -   100.00  95.20 100.00    -     98.40
+     SYMONS Daniel             100.00    -    95.40    -      -     97.70
+     MOSS Maximillian             -      -    95.89    -      -     95.89
+     THOMPSON William             -      -    90.36    -      -     90.36
+     FLUCK Ben                    -      -    86.78    -    91.19   88.99
+     BINGHAM Jonathan             -    87.81    -      -      -     87.81
+     SOUTHALL Frazer              -      -      -    88.36  84.02   86.19
+     CASE Toby                  81.46    -    86.25    -    83.29   83.67
+     OUDKERK Richard              -      -      -    81.39    -     81.39
+     BINGHAM Nicholas             -    80.67    -      -      -     80.67
+     BROWN Thomas               79.76  81.50    -      -      -     80.63
+     DENNISON Harry               -    81.92  77.63    -      -     79.77
+     OLIVER Mark                84.80    -      -      -    72.36   78.58
+     GASKIN Sam                   -      -      -      -    78.57   78.57
+     MURCH Tim                  79.40    -    82.13    -    74.05   78.53
+     GIBBS James                  -      -      -    78.44    -     78.44
+     OWENS Christopher            -    80.67  79.64    -    73.76   78.02
+     HINTON Sam                   -      -      -      -    77.76   77.76
+     RHODES Morgan              77.70    -      -      -      -     77.70
+     WADDUP Jamie                 -      -      -      -    75.35   75.35
+     MILLER Alec                  -    75.98  75.09  73.66    -     74.91
+     THOMAS David                 -      -      -      -    74.15   74.15
+     RHODES Austin              73.22    -      -      -      -     73.22
+     PATIENCE Callum              -      -      -      -    72.85   72.85
+     EVERITT Simon                -      -    72.44    -      -     72.44
+     DAVIES Morgan                -      -    71.95    -      -     71.95
+     FLUCK Adam                 68.25  72.33  72.49    -      -     71.02
+     ATTREE Nick                  -      -      -    70.70    -     70.70
+     BAKER Daniel                 -      -      -    69.40    -     69.40
+     ACOMB Alexander              -    69.83    -    66.75    -     68.29
+     LEAVER Tom                 66.05  67.59    -      -      -     66.82
+     MEAD Tom                     -      -    70.68  61.19    -     65.94
+     MUNDAY Thomas                -      -      -    65.62    -     65.62
+     SLATER Billy                 -      -    67.06    -    60.13   63.60
+     OLIVER Jamie                 -      -    61.53    -      -     61.53
+     DENDLE George                -    46.22  75.33    -      -     60.78
+     BUNTON Harry                 -      -    59.23    -      -     59.23
+     LUTTERLOCH Edward          71.59    -      -    65.92  38.85   58.79
+     ACOMB James                  -      -      -    54.58    -     54.58
+     BOUCHER Matthew              -      -    60.40  46.13  55.13   53.89
+     STUART Oliver                -      -      -      -    50.89   50.89
+     WILMOT Jack                51.70    -    49.98    -      -     50.84
+     GIBBS Jack                   -      -      -    49.44    -     49.44
+     MCLEISH James                -    49.09    -      -      -     49.09
+     MILNER Archie                -      -    63.49  73.66   8.91   48.68
+     PUGH Cameron                 -      -    51.54  45.13    -     48.33
+     BROWN Jamie                  -      -    45.42    -      -     45.42
+     COOPER Doug                  -    46.01  46.50    -    43.72   45.41
+     WESTON Ryan                  -      -    48.95  43.35  39.24   43.85
+     HALES Theo                 39.49    -      -      -      -     39.49
+     LEWIS Sunny                34.45    -      -      -      -     34.45
+     PRIOR Brecon               31.82    -    33.58    -      -     32.70
+     CAMPBELL Stephen             -      -      -      -    29.37   29.37
+     AMATO Anthony                -      -    10.47    -    45.45   27.96
+     BARFOOT Joshua               -      -      -    27.94    -     27.94
+     STONER Nicholas              -      -      -      -    22.92   22.92
+     SULEYMAN Ata              -33.10  59.15    -      -      -     13.02
+     RICKERD Jack                 -      -      -     8.21    -      8.21
+     BROWN Ben                    -      -     7.15    -      -      7.15
+     BLEWETT Kian              -15.98    -    -0.98    -      -     -8.48
+     LAUGHLAND Max            -173.01    -      -      -      -   -173.01
+
+
