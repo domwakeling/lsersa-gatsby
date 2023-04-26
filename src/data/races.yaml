@@ -65,7 +65,7 @@
             venue: Welwyn
             date: Weekend 24th & 25th June
             url: http://lssr.mailchimpsites.com/
-            status: LSSE website
+            status: LSSR website
         -   name: ESSKIA Regional Qualifer (South East)
             venue: Chatham
             date: Sunday 17th September
@@ -580,7 +580,118 @@
             url: http://www.srsa.org.uk/uploads/2015TriRegionResults.pdf
             status: Results
 
-# TO DO: 2014 through 2009
+# TO DO: 2014 through 2011
+
+-   year: 2010
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2010/ffast10.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2010/mfast10.txt
+        -   name: Age Groups
+            url: /resources/races/2010/point10.txt
+        -   name: Overall Club
+            url: /resources/races/2010/club10.txt
+        races:
+        -   name: Race 1
+            venue: Welwyn
+            date: Saturday 8th May
+            url: /resources/races/2010/1_welwyn.pdf
+            status: Results
+        -   name: Race 2
+            venue: Bowles
+            date: Sunday 23rd May
+            url: /resources/races/2010/2_bowles.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 5th June
+            url: /resources/races/2010/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Bromley
+            date: Saturday 10th July
+            url: /resources/races/2010/4_bromley.pdf
+            status: Results
+        -   name: Race 5
+            venue: Aldershot
+            date: Sunday 3rd October
+            url: /resources/races/2010/5_aldershot.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Saturday 17th April
+            url: /resources/races/2010/10bromcnres.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Brentwood
+            date: Saturday 16th October
+            url: /resources/races/2010/tri-regional.pdf
+            status: Results
+
+-   year: 2009
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2009/ffast09.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2009/mfast09.txt
+        -   name: Age Groups
+            url: /resources/races/2009/point09.txt
+        -   name: Overall Club
+            url: /resources/races/2009/club09.txt
+        races:
+        -   name: Race 1
+            venue: Welwyn
+            date: Saturday 30th April
+            url: /resources/races/2009/1_welwyn.pdf
+            status: Results
+        -   name: Race 2
+            venue: Aldershot
+            date: Sunday 14th June
+            url: /resources/races/2009/2_aldershot.pdf
+            status: Results
+        -   name: Race 3
+            venue: Brentwood
+            date: Saturday 20th June
+            url: /resources/races/2009/3_brentwood.pdf
+            status: Results
+        -   name: Race 4
+            venue: Welwyn
+            date: Sunday 12th July
+            url: /resources/races/2009/4_welwyn.pdf
+            status: Results
+        -   name: Race 5
+            venue: Bromley
+            date: Sunday 13th September
+            url: /resources/races/2009/5_bromley.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Sunday 19th April
+            url: /resources/races/2009/09bromcnres.pdf
+            status: Results
+        -   name: Wycombe Club National
+            venue: Wycombe
+            date: Saturday 6th June
+            url: /resources/races/2009/09welwyn2res.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Brentwood
+            date: Saturday 17th October
+            url: /resources/races/2009/tri-regional.pdf
+            status: Results
 
 -   year: 2008
     events:

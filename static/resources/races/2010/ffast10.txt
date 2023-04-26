@@ -1,0 +1,85 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2010 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                         Aldershot  Sunday 3rd October
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes to be ranked.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     WE     BO     BW     BR     AL     Avge
+
+  1  EVANS Emily           100.00 100.00 100.00    -      -     100.00
+  2  EVANS Charlotte        95.64  99.07    -   100.00    -      98.23
+  3  SYMONS Rachel            -      -    96.23  97.10 100.00    97.78
+  4  GOODMAN Tiffany        94.73    -      -    96.76  92.86    94.78
+  5  USHER Annie            80.98    -    79.22  93.90  91.53    88.80
+  6  WILLIAMS Beth          89.99    -    86.66  89.70  85.96    88.78
+  7  VALE Nicola            85.48  84.24    -    96.57    -      88.76
+  8  DAVIES Jenny           86.15  81.18  87.97    -    89.95    88.02
+  9  ROTA Morgan            83.63    -    82.50  88.92  85.65    86.07
+ 10  HOMMEL Klara           81.02    -    81.05  89.70  86.38    85.71
+ 11  LEWINGTON Caitlin        -    76.00    -    83.60  77.06    78.88
+ 12  WOODWARD Lucy            -    69.08    -    73.73  72.46    71.76
+ 13  KEYS Georgia           66.79  71.61  67.96  74.84  63.50    71.47
+ 14  WOODWARD Sarah           -    68.82    -    74.02  68.52    70.45
+ 15  KRAHELSKI Alicja       64.80  70.08    -      -    75.00    69.96
+ 16  VALE Lauren            66.79  66.49  59.93  74.46  67.92    69.72
+ 17  STANDEN Katie            -    64.56    -    59.02  72.88    65.49
+ 18  HILLIARD Charlotte     56.12  60.97  51.33  67.39  54.06    61.49
+ 19  BOTY Carys             56.93  59.44  54.57  58.59  61.14    59.72
+ 20  STEPHEN Lucy             -    59.51  54.13    -    52.36    55.33
+ 21  MOORE Danica             -    49.40  40.79  58.64    -      49.61
+ 22  PRITCHARD-DENYER Sask  42.13    -    43.26  51.28    -      45.55
+ 23  DEIGHTON Avelline      33.92  35.57  35.67  51.19  37.89    41.58
+ 24  BOTY Nia               15.94  35.11    -    31.01    -      27.35
+ 25  ASHMAN Olivia          11.10  13.16 -12.03  16.79 -72.34    13.68
+
+     BOZIER Hannah          90.23    -    93.91    -      -      92.07
+     PRETTY Antonia           -      -      -      -    90.13    90.13
+     COOPER Yasmin          87.67    -      -      -      -      87.67
+     FORBES Hannah            -      -      -      -    87.59    87.59
+     FREEZE Danielle          -      -    85.36    -      -      85.36
+     DENNY-BROWNE Anah      84.63    -      -      -      -      84.63
+     HATHWAY Isabella       80.60    -      -      -      -      80.60
+     STEWARD Ellie            -      -      -    78.71    -      78.71
+     BEE Anastasia          77.37    -      -      -      -      77.37
+     CUTHBERT Sarah         74.91    -      -      -      -      74.91
+     BEE Tatijana           68.88    -      -      -      -      68.88
+     MILES Alison           67.69    -      -      -      -      67.69
+     OWENS Laura              -    71.61  63.70    -      -      67.66
+     DANBURY Hannah         65.32    -      -      -      -      65.32
+     SPRANGER Amy           64.85    -      -      -      -      64.85
+     SNOW Elise             63.71    -      -      -      -      63.71
+     HEYMOZ Yvette          60.44    -      -      -      -      60.44
+     VALENZUELA Erin        59.63    -      -      -      -      59.63
+     FARRANT Ruby             -      -    56.31    -      -      56.31
+     MOOR Danica              -      -      -      -    49.27    49.27
+     TREW Eleanor             -      -      -    50.90  47.58    49.24
+     HUGHES Rachel            -      -      -      -    43.40    43.40
+     LUPTON Pip               -    38.10    -      -      -      38.10
+     TREW Isobel              -      -      -      -    36.62    36.62
+     HUFF Sarah               -      -      -      -    27.54    27.54
+     DAVEY Caitlin            -      -      -      -    20.58    20.58
+     NEWSUM Jenny             -      -    14.69    -      -      14.69
+     ALLEN Charlotte        13.19    -      -      -      -      13.19
+     TURNER Morgan            -      -      -     7.74    -       7.74
+
+
+

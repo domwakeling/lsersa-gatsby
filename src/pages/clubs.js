@@ -61,7 +61,7 @@ const ClubsPage = () => {
                                     <h2 className="as=h3">{club.name}</h2>
                                     <SponsorParser rawHTML={club.copy} />
                                     <a className="club-link" href={club.url} target={club.target}>
-                                        More info
+                                        Visit site
                                     </a>
                                 </div>
                             </div>
