@@ -582,6 +582,113 @@
 
 # TO DO: 2014 through 2011
 
+
+-   year: 2012
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2012/ffast12.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2012/mfast12.txt
+        -   name: Age Groups
+            url: /resources/races/2012/point12.txt
+        -   name: Overall Club
+            url: /resources/races/2012/club12.txt
+        races:
+        -   name: Race 1
+            venue: Bowles
+            date: Saturday 28th April
+            url: /resources/races/2012/1_bowles.pdf
+            status: Results
+        -   name: Race 2
+            venue: Brentwood
+            date: Saturday 9th June
+            url: /resources/races/2012/2_brentwood.pdf
+            status: Results
+        -   name: Race 3
+            venue: Bromley
+            date: Saturday 23rd June
+            url: /resources/races/2012/3_bromley.pdf
+            status: Results
+        -   name: Race 4
+            venue: Aldershot
+            date: Saturday 14th July
+            url: /resources/races/2012/4_aldershot.pdf
+            status: Results
+        -   name: Race 5
+            venue: Welwyn
+            date: Saturday 20th October
+            url: /resources/races/2012/5_welwyn.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Saturday 12th May
+            url: /resources/races/2012/12bromcnres.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Bromley
+            date: Saturday 13th October
+            url: 
+            status: 
+
+-   year: 2011
+    events:
+    -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: /resources/races/2011/ffast11.txt
+        -   name: Overall Fastest Male
+            url: /resources/races/2011/mfast11.txt
+        -   name: Age Groups
+            url: /resources/races/2011/point11.txt
+        -   name: Overall Club
+            url: /resources/races/2011/club11.txt
+        races:
+        -   name: Race 1
+            venue: Bromley
+            date: Sunday 15th May
+            url: /resources/races/2011/1_bromley.pdf
+            status: Results
+        -   name: Race 2
+            venue: Bowles
+            date: Sunday 5th June
+            url: /resources/races/2011/2_bowles.pdf
+            status: Results
+        -   name: Race 3
+            venue: Aldershot
+            date: Sunday 26th June
+            url: /resources/races/2011/3_aldershot.pdf
+            status: Results
+        -   name: Race 4
+            venue: Brentwood
+            date: Saturday 2nd July
+            url: /resources/races/2011/4_brentwood.pdf
+            status: Results
+        -   name: Race 5
+            venue: Welwyn
+            date: Saturday 10th September
+            url: /resources/races/2011/5_welwyn.pdf
+            status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley Club National
+            venue: Bromley
+            date: Sunday 8th May
+            url: /resources/races/2011/11bromcnres.pdf
+            status: Results
+    -   series: Regional
+        races:
+        -   name: Tr-Regional
+            venue: Welwyn
+            date: Saturday 15th October
+            url: /resources/races/2011/tri-regional.pdf
+            status: Results
+
 -   year: 2010
     events:
     -   series: LSERSA Summer Series
