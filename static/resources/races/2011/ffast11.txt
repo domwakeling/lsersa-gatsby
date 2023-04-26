@@ -1,0 +1,112 @@
+                 LONDON & SOUTH EAST REGIONAL SKI ASSOCIATION
+                            2011 SUMMER RACE LEAGUE
+                     Sponsored by Bartletts of Hillingdon
+                       Welwyn  Saturday 10th September
+
+
+
+                      Fastest Skier
+
+The fastest skier is calculated as follows:
+
+   For each race the value given is
+            ( ( racer's time - winner's time )       )
+      100 - ( ( ---------------------------- ) x 100 )
+            ( (        winner's time         )       )
+
+   Avge is the average of the three best values.
+
+   A racer must have at least three finishes to be ranked.
+
+Males and females are treated separately.
+
+
+                          Fastest Female Skier - Overall
+
+Pos  Name                     BR     BO     AL     BW     WE     Avge
+
+  1  EVANS Emily           100.00 100.00    -   100.00    -     100.00
+  2  SYMONS Rachel          90.73  95.18    -      -    93.71    93.20
+  3  VALE Nikkie            81.07  85.67 100.00  93.17  86.25    93.14
+  4  DAVIES Jenny             -    84.26  96.84    -    89.12    90.07
+  5  CUTHBERT Sarah         74.20  80.21  93.17  79.20  79.10    84.20
+  6  WOODWARD Lucy          77.40  79.86  92.10  79.89  77.79    83.95
+  7  VALE Lauren            70.24  74.82  92.49  81.27  75.53    83.10
+  8  HOMMEL Klara           76.51    -    87.36  78.56  82.88    82.93
+  9  WOODWARD Sarah         57.91  68.37  86.85  72.71  78.05    79.20
+ 10  LEWINGTON Caitlin      75.99  76.81  82.34    -    76.13    78.43
+ 11  STANDEN Katie          63.75  68.79  84.14  77.73  72.61    78.16
+ 12  MAWSON Louise          70.48    -    80.08  77.48    -      76.01
+ 13  KEYS Georgia           67.28  71.35  73.98  69.57  76.08    73.80
+ 14  WILSON Lizzie          66.15  11.77  83.47    -    69.34    72.98
+ 15  BOTY Carys             57.72  63.48  73.70    -    64.60    67.26
+ 16  TREW Eleanor           59.56  51.91  69.92  64.65 -139.98    64.71
+ 17  DUFFELL Xanthe         57.49  60.35    -      -    66.21    61.35
+ 18  MOORE Danica           54.76  54.68  68.62  60.42  52.47    61.27
+ 19  TREW Isobel              -    53.05  68.62  59.44    -      60.37
+ 20  HILLIARD Charlotte     58.43  60.07    -    57.28    -      58.59
+ 21  BUCKLAND Amber         41.53    -    53.61  34.71  45.42    46.85
+ 22  BOTY Nia                 -    39.29  55.36  36.77  42.15    45.60
+ 23  CLARKE Holly           37.57  36.95  54.74  34.61  41.34    44.55
+ 24  DAVEY Caitlin          40.11    -    50.51    -    34.54    41.72
+ 25  CHRISTOPHER Rebecca    19.63    -    41.20    -    39.53    33.45
+ 26  HINTON Georgina        17.80  33.48    -      -    31.77    27.68
+ 27  WEBER Jana             18.31  18.44  23.19  -6.15  -2.97    19.98
+
+     FAIRWEATHER Sega         -      -      -      -   100.00   100.00
+     BOZIER Hannah            -      -    97.97    -      -      97.97
+     HATHWAY Isabella         -      -    96.28    -      -      96.28
+     MEAD Darcie              -      -      -      -    90.08    90.08
+     COOPER Yasmin            -      -      -    84.27    -      84.27
+     THOMPSON Mikki         79.05    -      -      -      -      79.05
+     LYNCH Samantha           -      -    75.06    -      -      75.06
+     PLENDERLEITH Lucy        -      -      -      -    72.81    72.81
+     COLLEY Bella             -      -      -      -    69.79    69.79
+     VEGTING Amelia         66.57    -      -      -    69.69    68.13
+     YOUNG Ella             63.23    -      -      -    66.26    64.75
+     BOND Bella               -      -      -      -    64.55    64.55
+     KAHVE Lucy               -      -      -      -    61.63    61.63
+     BANGER Indiya            -      -      -      -    59.97    59.97
+     PHILLIPS Meriel          -      -      -      -    59.47    59.47
+     HUGHES Rachel          66.01    -      -      -    51.76    58.88
+     ORCHARD Olivia           -      -      -      -    57.40    57.40
+     FARRANT Ruby             -      -    57.39    -      -      57.39
+     BROOKER Lolli          56.12    -      -      -      -      56.12
+     LUKER Joanne           54.14    -      -      -      -      54.14
+     FOSTER Olivia            -      -      -      -    52.57    52.57
+     MOORE Danica             -      -      -      -    52.47    52.47
+     STEPHEN Lucy             -    52.20    -      -      -      52.20
+     PARKER Abigail         52.07    -      -      -      -      52.07
+     HUFF Sarah               -      -      -      -    51.71    51.71
+     WILLIAMS Alice         46.47    -      -      -      -      46.47
+     LUPTON Pip             46.89  45.67    -      -      -      46.28
+     SCRANAGE-HARRISON Ele    -      -      -      -    42.75    42.75
+     SMIDT-WALLIS Brielle     -      -      -      -    40.94    40.94
+     DISNEY Jessie            -      -      -      -    40.79    40.79
+     WILLOWS April          40.68    -      -      -    40.74    40.71
+     TURNER Morgan          42.04  35.96    -      -      -      39.00
+     EPERON Isabella        38.94    -      -      -      -      38.94
+     FOSTER Sophie            -      -      -      -    38.42    38.42
+     SMIDT-WALLIS Brielle     -    37.09    -      -      -      37.09
+     BAYLIS Arabella          -      -      -      -    36.66    36.66
+     VESELY Cordelia          -      -      -      -    29.20    29.20
+     BAYLIS Francesca         -      -      -      -    28.80    28.80
+     VERNON Rebecca           -      -      -      -    27.14    27.14
+     BANNISTER Lucy           -      -      -      -    25.08    25.08
+     BOUCHER Hannah           -      -      -      -    23.36    23.36
+     BOUCHER Sarah          23.45    -      -      -    21.25    22.35
+     ASHMAN Olivia          19.16    -      -      -    21.10    20.13
+     DISNEY Maddie            -      -      -      -    17.88    17.88
+     VALENTINE Ella           -      -      -      -    17.47    17.47
+     MEYLER Anna            13.47    -      -      -    18.38    15.92
+     BROWN Isabel             -      -      -      -    13.95    13.95
+     WEEKS Georgia            -      -      -      -    11.08    11.08
+     WATKINS Katya            -      -      -      -     7.25     7.25
+     THOMPSON Tilly         -2.17    -      -      -      -      -2.17
+     WEEKS Ella               -      -      -      -   -16.72   -16.72
+     CONVEY Rosie             -      -      -      -   -17.67   -17.67
+     MURPHY Laura          -36.44    -      -      -   -54.93   -45.69
+     LYSAKOVA-IVANOVA Mart    -      -      -      -   -45.92   -45.92
+
+
+
