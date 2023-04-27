@@ -7,15 +7,28 @@ footer {
 
     margin-top: 1rem;
 
-    #social-media {
+    #spreader {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .social-media-icon {
-        width: 50px;
-        height: auto;
-        margin-bottom: 1.0rem;
+    #social-media {
+        
+        .social-link {
+            
+            text-decoration: none;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .social-media-icon {
+                width: 50px;
+                height: auto;
+                margin-bottom: 1.0rem;
+            }
+        }
     }
 
 }

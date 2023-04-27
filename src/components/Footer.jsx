@@ -33,22 +33,25 @@ const Footer = () => {
             <footer>
                 <div className="container footer-container">
                     <p className="smaller">&copy;1998-{year} LSERSA, all rights reserved</p>
+                    <div id="spreader" />
                     <div id="social-media">
+                        <a href="https://www.facebook.com/LSERSA/" className="social-link" target="_fb">
+                            {/* style={{ textDecoration: "none", marginRight: "10px" }} */}
+                            <GatsbyImage
+                                image={imgData.filter(node => /fb/.test(node.path))[0].image}
+                                alt="Facebook"
+                                className="social-media-icon"
+                            />
+                        </a>
+                        <a href="https://www.instagram.com/lsersa_uk/" className="social-link" target="_insta">
+                            {/* style={{ textDecoration: "none" }} */}
+                            <GatsbyImage
+                                image={imgData.filter(node => /inst/.test(node.path))[0].image}
+                                alt="Instagram"
+                                className="social-media-icon"
+                            />
+                        </a>
                     </div>
-                    <a href="https://www.facebook.com/LSERSA/" style={{ textDecoration: "none", marginRight: "10px" }} target="_fb">
-                        <GatsbyImage
-                            image={imgData.filter(node => /fb/.test(node.path))[0].image}
-                            alt="Facebook"
-                            className="social-media-icon"
-                        />
-                    </a>
-                    <a href="https://www.instagram.com/lsersa_uk/" style={{ textDecoration: "none" }} target="_insta">
-                        <GatsbyImage
-                            image={imgData.filter(node => /inst/.test(node.path))[0].image}
-                            alt="Instagram"
-                            className="social-media-icon"
-                        />
-                    </a>
                 </div>
             </footer>
         </div>
