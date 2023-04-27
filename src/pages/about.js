@@ -31,7 +31,7 @@ const AboutPage = () => {
     return (
         <Layout>
             <div className="container">
-                <Hero text="ABOUT" text2="LSERSA" />
+                <Hero text="ABOUT" text2="THE REGION" />
                 <div className="row">
                     <h1 className="underlined">About LSERSA</h1>
 
@@ -77,7 +77,9 @@ const AboutPage = () => {
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
+
             </div>
         </Layout>
     )

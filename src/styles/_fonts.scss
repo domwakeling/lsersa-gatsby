@@ -80,8 +80,22 @@ small, .smallest {
 
 a {
     color: $color_p300;
+    position: relative;
+
     &:hover {
-        color: $color_p500;
+        // color: $color_p500;
+        text-decoration: none;
+        
+        &::before {
+            content: '';
+            background-color: transparentize($color_c500, 0.35);
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            width: 100%;
+            height: 1.1rem;
+            z-index: -1;
+        }
     }
 }
 
