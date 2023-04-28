@@ -1107,6 +1107,13 @@
             date: Saturday 16th July 
             url: /resources/races/2005/wyccnresults.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 24th April
+            url: /resources/races/2005/kent_2005_results.pdf
+            status: Results
 
 -   year: 2004
     events:
@@ -1157,6 +1164,13 @@
             venue: Chatham
             date: Saturday 19th June
             url: /resources/races/2004/chtcnres.pdf
+            status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 13th June
+            url: /resources/races/2004/kent_2004_results.pdf
             status: Results
 
 -   year: 2003
@@ -1209,6 +1223,13 @@
             date: Saturday 5th July
             url: /resources/races/2003/chtcnres.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 15th June
+            url: /resources/races/2003/kent_2003_results.pdf
+            status: Results
 
 -   year: 2002
     events:
@@ -1255,6 +1276,13 @@
             date: Saturday 4th May
             url: /resources/races/2002/chtcnres.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Saturday 22nd June
+            individual: /resources/races/2002/kent_2002_individual.pdf
+            teams: /resources/races/2002/kent_2002_teams.pdf
         
 
 -   year: 2001
