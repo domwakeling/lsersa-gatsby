@@ -172,10 +172,10 @@
     -   series: Regional Competitions
         races:        
         -   name: Tri-Regional
-            venue: 
-            date: 
-            url:
-            status:
+            venue: Welwyn
+            date: Sunday 2nd October
+            url: https://gbski.com/racedocs/2022/C1051/C1051RES%20Tri%20Regions%202022%20-%20Results.pdf
+            status: Results on GBSki
 
     -   series: Other Competitions
         races:        
@@ -459,8 +459,8 @@
         -   name: Tri-Regional
             venue: Welwyn
             date: Saturday 14th October
-            url:
-            status:
+            url: https://gbski.com/racedocs/2017/C389/C389RES%20Tri%20Regons%202017%20-%20Results.pdf
+            status: Results on GBSki
 
 -   year: 2016
     events:
@@ -516,6 +516,14 @@
             date: Sunday 12th June
             individual: /resources/races/2016/london_2016_individual.pdf
             teams: /resources/races/2016/london_2016_teams.pdf
+    
+    -   series: Regional Competitions
+        races:        
+        -   name: Tri-Regional
+            venue: Welwyn
+            date: Saturday 15th October
+            url: /resources/races/2016/tri-regional.pdf
+            status: Results
 
 -   year: 2015
     events:
