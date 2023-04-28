@@ -106,6 +106,11 @@
                         &:last-child {
                             border-bottom: none !important;
                         }
+                        &:hover {
+                            &::before {
+                                height: 0;
+                            }
+                        }
                     }
                 }
             }

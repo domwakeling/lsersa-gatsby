@@ -28,7 +28,7 @@ const SponsorsPage = () => {
                                 sponsordata.map((item, idx) => (
                                     <div className="sponsor-card" key={`sponsor-page-${idx}`}>
                                         <div className="sponsor-logo-grid-item">
-                                            <a href="{{ item.url }}" target="{{ item.target }}">
+                                            <a href={item.url} target={item.target }>
                                                 <GatsbyImage
                                                     image={imgData.filter(node => node.path === item.img)[0].image}
                                                     alt={item.name}
