@@ -33,9 +33,9 @@ const ToDoPage = () => {
                         <br/>
                         <li><b>Races</b></li>
                         <li>Results for CN's, Tri-Regional etc (links or copies)</li>
-                        <li>Kent schools? Results ... starting 2002, not sure when until (link to results on SkiResults?)</li>
+                        <li>Kent schools? Results ... starting 2002 through 2016 (2017 onwards linking to Precise)</li>
                         <li>London schools? Results ...</li>
-                        <li>Surrey schools? Results ...</li>
+                        <li>Surrey schools? Results ... through 2017 (2018 onwards linking to Precise)</li>
                         <li>Confirm race rules policy is OK</li>
                     </ul>
                     <p><i>* if there's a different direction people want to go with the design,

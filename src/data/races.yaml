@@ -156,13 +156,18 @@
         -   name: Kent Schools
             venue: Chatham
             date: Sunday 8th May
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2022/05/Kent-Schools-Individual-Results-2022.pdf 
+            teams: https://preciseracing.co.uk/wp-content/uploads/2022/05/Kent-Schools-Teams-Results-2022.pdf
         -   name: London Schools
             venue: Welwyn
             date: Weekend 18th & 19th June
             url: 
             status: 
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 13th November
+            individual: https://preciseracing.co.uk/wp-content/uploads/2022/11/Individual-Results-2022.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2022/11/School-Results.pdf
 
     -   series: Regional Competitions
         races:        
@@ -227,21 +232,21 @@
     
     -   series: School Competitions
         races:
-        -   name: Kent Schools
-            venue: Chatham
-            date: Sunday 3rd October
-            url: 
-            status: 
         -   name: London Schools
             venue: Welwyn
             date: Sunday 21st June
             url: 
             status: 
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 3rd October
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/10/Kent-Schools-2021.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/10/Kent-Team-Results-2021.pdf
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 14th November
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/11/Categories.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/11/Primary-Team-Results-1.pdf
 
 -   year: 2020
 
@@ -300,8 +305,8 @@
         -   name: Kent Schools
             venue: Chatham
             date: Sunday 12th May
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/03/Kent-Schools-2019-Individual.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/03/Kentschools-teams-2019-.pdf
         -   name: London Schools
             venue: Welwyn
             date: Sunday 23rd June
@@ -310,8 +315,8 @@
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 22nd September
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/03/Surrey-Schools-2019-Individuals.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/03/2019-teams.pdf
 
     -   series: Regional Competitions
         races:
@@ -373,8 +378,8 @@
         -   name: Kent Schools
             venue: Chatham
             date: Sunday 6th May
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/03/KentSchoolsIndividual2018.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/03/KentSchoolsTeams2018.pdf
         -   name: London Schools
             venue: Welwyn
             date: Sunday 24th June
@@ -388,8 +393,8 @@
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 30th September
-            url: 
-            status: 
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/03/SURREY-2018-RESULT-IN-CAT.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/03/SURREY-2018-RESULTS-SCHOOL-TEAM-.pdf
 
     -   series: Regional Competitions
         races:
@@ -441,8 +446,8 @@
         -   name: Kent Schools
             venue: Brentwood
             date: Saturday 6th May
-            url:
-            status:
+            individual: https://preciseracing.co.uk/wp-content/uploads/2021/03/2017_results_by_age.pdf
+            teams: https://preciseracing.co.uk/wp-content/uploads/2021/03/2017_teams_by_group.pdf
         -   name: London Schools
             venue: Welwyn
             date: Sunday 18th June

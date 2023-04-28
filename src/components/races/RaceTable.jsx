@@ -12,7 +12,7 @@ const RaceElement = ({ item }) => {
                         <td style={{ minWidth: "160px" }}>{race.name}</td>
                         <td style={{ minWidth: "160px" }}>{race.venue}</td>
                         <td style={{ minWidth: "200px" }}>{race.date}</td>
-                        { (race.mens === undefined) && (
+                        { (race.url !== undefined) && (
                             <td colSpan="2" style={{ minWidth: "100px" }}>
                                 {race.url ? (
                                     <a className="race-link" href={race.url} target="_offsite">
@@ -31,6 +31,22 @@ const RaceElement = ({ item }) => {
                                     </a>
                                     <a className="race-link" href={race.mens}>
                                         Mens
+                                    </a>
+                                </td>
+                            </>
+                        )}
+                        {(race.teams !== undefined) && (
+                            <>
+                                <td>
+                                    <a
+                                        className="race-link"
+                                        href={race.individual} style={{ marginRight: "1.0rem" }}
+                                        target="_individual"
+                                    >
+                                        Individual
+                                    </a>
+                                    <a className="race-link" href={race.teams} target="_teams">
+                                        Teams
                                     </a>
                                 </td>
                             </>
