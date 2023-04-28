@@ -21,15 +21,19 @@
             padding-left: 0.75rem;
             padding-right: 0.75rem;
 
-            &:first-of-type {
-                padding-left: 0;
-            }
+            // &:first-of-type {
+            //     padding-left: 0;
+            // }
         }
     }
 
     ul.navlink-desktop {
         @include for-tablet-down {
             display: none;
+        }
+
+        li:hover {
+            box-shadow: 0 0.2rem $color_c500, 0 -0.2rem $color_c500;
         }
     }
 
