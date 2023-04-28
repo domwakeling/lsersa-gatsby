@@ -33,7 +33,6 @@ const ToDoPage = () => {
                         <br/>
                         <li><b>Races</b></li>
                         <li>Results for CN's, Tri-Regional etc (links or copies)</li>
-                        <li>London schools? Results ...</li>
                         <li>Surrey schools? Results ... through 2017 (2018 onwards linking to Precise)</li>
                         <li>Confirm race rules policy is OK</li>
                     </ul>

@@ -51,6 +51,22 @@ const RaceElement = ({ item }) => {
                                 </td>
                             </>
                         )}
+                        {(race.primary !== undefined) && (
+                            <>
+                                <td>
+                                    <a
+                                        className="race-link"
+                                        href={race.primary} style={{ marginRight: "1.0rem" }}
+                                        target="_primary"
+                                    >
+                                        Primary
+                                    </a>
+                                    <a className="race-link" href={race.secondary} target="_secondary">
+                                        Secondary
+                                    </a>
+                                </td>
+                            </>
+                        )}
                     </tr>
                 ))
             }

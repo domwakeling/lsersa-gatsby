@@ -161,8 +161,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Weekend 18th & 19th June
-            url: 
-            status: 
+            primary: https://gbski.com/competition.php?ID=1106
+            secondary: https://gbski.com/competition.php?ID=1107
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 13th November
@@ -231,12 +231,7 @@
             status: Results
     
     -   series: School Competitions
-        races:
-        -   name: London Schools
-            venue: Welwyn
-            date: Sunday 21st June
-            url: 
-            status: 
+        races: 
         -   name: Kent Schools
             venue: Chatham
             date: Sunday 3rd October
@@ -310,8 +305,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Sunday 23rd June
-            url: 
-            status: 
+            url: https://gbski.com/competition.php?ID=592
+            status: Results on GBSki
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 22nd September
@@ -383,8 +378,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Sunday 24th June
-            url: 
-            status: 
+            url: https://gbski.com/competition.php?ID=462
+            status: Results on GBSki
         -   name: ESSKIA Regional
             venue: Various
             date: Sunday 16th September
@@ -451,8 +446,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Sunday 18th June
-            url:
-            status:
+            individual: /resources/races/2017/london_2017_individual.pdf
+            teams: /resources/races/2017/london_2017_teams.pdf
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 1st October
@@ -519,8 +514,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Sunday 12th June
-            url:
-            status:
+            individual: /resources/races/2016/london_2016_individual.pdf
+            teams: /resources/races/2016/london_2016_teams.pdf
 
 -   year: 2015
     events:
@@ -564,8 +559,8 @@
         -   name: London Schools
             venue: Welwyn
             date: Sunday 14th June
-            url:
-            status:
+            individual: /resources/races/2015/london_2015_individual.pdf
+            teams: /resources/races/2015/london_2015_teams.pdf
         -   name: Kent Schools
             venue: Brentwood
             date: Saturday27th June
@@ -637,6 +632,11 @@
             date: Sunday 11th May
             individual: /resources/races/2014/kent_2014_individual.pdf
             teams: /resources/races/2014/kent_2014_teams.pdf
+        -   name: London Schools
+            venue: Welwyn
+            date: Sunday 8th June
+            url: /resources/races/2014/london_2014_results.pdf
+            status: Results
     -   series: Regional
         races:
         -   name: Tr-Regional
