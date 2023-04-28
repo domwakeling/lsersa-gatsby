@@ -514,8 +514,8 @@
         -   name: Kent Schools
             venue: Brentwood
             date: Saturday 7th May
-            url:
-            status:
+            individual: /resources/races/2016/kent_2016_individual.pdf
+            teams: /resources/races/2016/kent_2016_teams.pdf
         -   name: London Schools
             venue: Welwyn
             date: Sunday 12th June
@@ -569,8 +569,8 @@
         -   name: Kent Schools
             venue: Brentwood
             date: Saturday27th June
-            url:
-            status:
+            individual: /resources/races/2015/kent_2015_individual.pdf
+            teams: /resources/races/2015/kent_2015_teams.pdf
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 4th October
@@ -630,6 +630,13 @@
             date: Saturday 12th May
             url: 
             status: 
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 11th May
+            individual: /resources/races/2014/kent_2014_individual.pdf
+            teams: /resources/races/2014/kent_2014_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -677,6 +684,13 @@
             date: Sunday 21st July
             url: /resources/races/2013/5_bromley.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 16th June
+            individual: /resources/races/2013/kent_2013_individual.pdf
+            teams: /resources/races/2013/kent_2013_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -730,6 +744,13 @@
             date: Saturday 12th May
             url: /resources/races/2012/12bromcnres.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 20th May
+            individual: /resources/races/2012/kent_2012_individual.pdf
+            teams: /resources/races/2012/kent_2012_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -783,6 +804,13 @@
             date: Sunday 8th May
             url: /resources/races/2011/11bromcnres.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 12th June
+            individual: /resources/races/2011/kent_2011_individual.pdf
+            teams: /resources/races/2011/kent_2011_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -836,6 +864,13 @@
             date: Saturday 17th April
             url: /resources/races/2010/10bromcnres.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 13th June
+            individual: /resources/races/2010/kent_2010_individual.pdf
+            teams: /resources/races/2010/kent_2010_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -894,6 +929,13 @@
             date: Saturday 6th June
             url: /resources/races/2009/09welwyn2res.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 10th May
+            individual: /resources/races/2009/kent_2009_individual.pdf
+            teams: /resources/races/2009/kent_2009_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -952,6 +994,13 @@
             date: Saturday 19th July
             url: /resources/races/2008/08welwyn2res.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 8th June
+            individual: /resources/races/2008/kent_2008_individual.pdf
+            teams: /resources/races/2008/kent_2008_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -1010,6 +1059,13 @@
             date: Sunday 10th June
             url: /resources/races/2007/07wyccnresults.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 3rd June
+            individual: /resources/races/2007/kent_2007_individual.pdf
+            teams: /resources/races/2007/kent_2007_teams.pdf
 
 -   year: 2006
     events:
@@ -1056,6 +1112,13 @@
             date: Sunday 30th April
             url: /resources/races/2006/bromcn2006results.pdf
             status: Results
+    -   series: School Competitions
+        races:
+        -   name: Kent Schools
+            venue: Bromley
+            date: Sunday 11th June
+            individual: /resources/races/2006/kent_2006_individual.pdf
+            teams: /resources/races/2006/kent_2006_teams.pdf
 
 -   year: 2005
     events:
