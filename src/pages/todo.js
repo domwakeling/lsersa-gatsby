@@ -32,7 +32,6 @@ const ToDoPage = () => {
                         <li>Updated policies or other documents we should add?</li>
                         <br/>
                         <li><b>Races</b></li>
-                        <li>Results for CN's, GBRs etc where region involved (links or copies)</li>
                         <li>Surrey schools? Results ... through 2017 (2018 onwards linking to Precise)</li>
                         <li>Confirm race rules policy is OK</li>
                     </ul>

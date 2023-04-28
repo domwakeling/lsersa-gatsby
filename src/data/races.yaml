@@ -288,12 +288,12 @@
             venue: Chatham
             date: Saturday 15th June
             url: https://gbski.com/competition.php?ID=587
-            status: Results
+            status: Results on GBSki
         -   name: Bromley Club National
             venue: Chatham
             date: Sunday 16th June
             url: https://gbski.com/competition.php?ID=589
-            status: Results
+            status: Results on GBSki
 
     -   series: School Competitions
         races:
@@ -367,6 +367,22 @@
             date: Saturday 13th October
             url: https://skiresults.co.uk/events/899
             status: Results
+
+    -   series: Club Nationals
+        races:
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Saturday 7th July
+            url: https://gbski.com/competition.php?ID=466
+            status: Results on GBSki
+    
+    -   series: BSA GBR Outdoor Series
+        races:
+        -   name: Race 5
+            venue: Chatham
+            date: Sunday 8th July
+            url: https://gbski.com/competition.php?ID=468
+            status: Results on GBSki
 
     -   series: School Competitions
         races:
@@ -630,9 +646,9 @@
         races:
         -   name: Bromley Club National
             venue: Bromley
-            date: Saturday 12th May
-            url: 
-            status: 
+            date: Saturday 14th June
+            url: https://gbski.com/competition.php?ID=106
+            status: Results on GBSki
     -   series: School Competitions
         races:
         -   name: Kent Schools
@@ -692,6 +708,13 @@
             date: Sunday 21st July
             url: /resources/races/2013/5_bromley.pdf
             status: Results
+    -   series: Club Nationals
+        races:
+        -   name: Bromley & Chatham CN
+            venue: Bromley
+            date: Saturday 20th April
+            url: https://gbski.com/competition.php?ID=6
+            status: Results on GBSki
     -   series: School Competitions
         races:
         -   name: Kent Schools
@@ -747,7 +770,7 @@
             status: Results
     -   series: Club Nationals
         races:
-        -   name: Bromley Club National
+        -   name: Bromley & Chatham CN
             venue: Bromley
             date: Saturday 12th May
             url: /resources/races/2012/12bromcnres.pdf
