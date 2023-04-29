@@ -23,3 +23,4 @@
 - [ ] do we also want to put in slopes?
 - [x] add favicon
 - [ ] sponsor carousel
+- [ ] link "highlight hover" doesn't work if the link is over multiple rows
