@@ -15,12 +15,12 @@
 - [x] race pages => add further years and documents as necessary
 - [x] school race pages + results
 - [x] CN and tri-regional results, check/add
-- [ ] training page => set it up
+- [x] training page => set it up
 - [ ] training page => any info on other training? Telemark, Skiercross?
 - [ ] region page => committee
 - [x] clubs page
 - [x] add blurb and links for clubs
 - [ ] do we also want to put in slopes?
 - [x] add favicon
-- [ ] sponsor carousel
+- [x] sponsor carousel
 - [ ] link "highlight hover" doesn't work if the link is over multiple rows

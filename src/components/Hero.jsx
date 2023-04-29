@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Carousel from "./Carousel";
 
 const Hero = ({
     imageAlt = "LSERSA racers at the 2018 Tri-Regional competition",
@@ -59,23 +60,7 @@ const Hero = ({
             </div>
             <div className="right-column">
                 <h2 className="as-h3" style={{ textAlign: "center" }}>our sponsors</h2>
-                <div style={{
-                    height: "150px",
-                    width: "200px",
-                    backgroundColor: "#aaa",
-                    margin: "1em auto 1em"
-                }}>
-                    <p style={{
-                        width: '100%',
-                        margin: '0',
-                        color: "white",
-                        textAlign: 'center',
-                        fontSize: '3.0rem',
-                        paddingTop: '2.5rem'
-                    }}>
-                        SPONSOR CAROUSEL
-                    </p>
-                </div>
+                <Carousel />
             </div>
         </div>
     )

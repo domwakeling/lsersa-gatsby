@@ -11,7 +11,6 @@ const ToDoPage = () => {
                     <p>Outstanding actions</p>
                     <ul>
                         <li><b>Structural/scope</b></li>
-                        <li>Sort out sponsor carousel</li>
                         <li>Is this (fairly limited) re-design what people want?!*</li>
                         <br/>
                         <li><b>Someone else's eyes</b></li>

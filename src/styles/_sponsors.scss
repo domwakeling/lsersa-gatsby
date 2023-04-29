@@ -18,3 +18,24 @@
         transparentize($color_p300, 0.8) 0px 1px 10px 0px;
     float: right; 
 }
+
+a.sponsor-carousel-image {
+    &:hover {
+        &::before {
+            height: 0;
+        }
+    }
+}
+
+
+.carousel-hidden {
+    opacity: 0 !important;
+    transition-duration: 500ms;
+    transition-property: opacity;
+}
+
+.carousel-visible {
+    opacity: 1;
+    transition-duration: 500ms;
+    transition-property: opacity;
+}
