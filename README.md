@@ -10,7 +10,7 @@
 - [x] race pages => automate archive
 - [x] race pages => automate current year
 - [x] race pages => copy from 11ty version
-- [ ] race pages => add timing on day
+- [x] race pages => add timing on day
 - [x] race pages => add link to policy (update policy?)
 - [x] race pages => add further years and documents as necessary
 - [x] school race pages + results
