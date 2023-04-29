@@ -32,7 +32,7 @@ const ToDoPage = () => {
                         <li>Updated policies or other documents we should add?</li>
                         <br/>
                         <li><b>Races</b></li>
-                        <li>Surrey schools? Results ... through 2017 (2018 onwards linking to Precise)</li>
+                        <li>Add times to the race page</li>
                         <li>Confirm race rules policy is OK</li>
                     </ul>
                     <p><i>* if there's a different direction people want to go with the design,

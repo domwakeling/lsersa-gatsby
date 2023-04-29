@@ -13,8 +13,8 @@
 - [ ] race pages => add timing on day
 - [x] race pages => add link to policy (update policy?)
 - [x] race pages => add further years and documents as necessary
-- [ ] school race pages + results
-- [ ] CN and tri-regional results, check/add
+- [x] school race pages + results
+- [x] CN and tri-regional results, check/add
 - [ ] training page => set it up
 - [ ] training page => any info on other training? Telemark, Skiercross?
 - [ ] region page => committee

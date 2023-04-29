@@ -520,8 +520,8 @@
         -   name: Surrey Schools
             venue: Aldershot
             date: Sunday 20th March
-            url:
-            status:
+            individual: /resources/races/2016/surrey_2016_individual.pdf
+            teams: /resources/races/2016/surrey_2016_teams.pdf
         -   name: Kent Schools
             venue: Brentwood
             date: Saturday 7th May
@@ -661,6 +661,11 @@
             date: Sunday 8th June
             url: /resources/races/2014/london_2014_results.pdf
             status: Results
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 5th October
+            individual: /resources/races/2014/surrey_2014_individual.pdf
+            teams: /resources/races/2014/surrey_2014_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -722,6 +727,11 @@
             date: Sunday 16th June
             individual: /resources/races/2013/kent_2013_individual.pdf
             teams: /resources/races/2013/kent_2013_teams.pdf
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 13th October
+            individual: /resources/races/2013/surrey_2013_individual.pdf
+            teams: /resources/races/2013/surrey_2013_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -782,6 +792,11 @@
             date: Sunday 20th May
             individual: /resources/races/2012/kent_2012_individual.pdf
             teams: /resources/races/2012/kent_2012_teams.pdf
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 14th October
+            individual: /resources/races/2012/surrey_2012_individual.pdf
+            teams: /resources/races/2012/surrey_2012_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -842,6 +857,11 @@
             date: Sunday 12th June
             individual: /resources/races/2011/kent_2011_individual.pdf
             teams: /resources/races/2011/kent_2011_teams.pdf
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 16th October
+            individual: /resources/races/2011/surrey_2011_individual.pdf
+            teams: /resources/races/2011/surrey_2011_teams.pdf
     -   series: Regional
         races:
         -   name: Tr-Regional
@@ -895,6 +915,11 @@
             date: Saturday 17th April
             url: /resources/races/2010/10bromcnres.pdf
             status: Results
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 17th October
+            individual: /resources/races/2010/surrey_2010_individual.pdf
+            teams: /resources/races/2010/surrey_2010_teams.pdf
     -   series: School Competitions
         races:
         -   name: Kent Schools
