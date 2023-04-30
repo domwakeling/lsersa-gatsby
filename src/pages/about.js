@@ -6,6 +6,7 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import committeeData from '../data/committee.yaml';
+import meetingsData from '../data/meetings.yaml';
 
 const AboutPage = () => {
     // query to get all logos with their relative path
@@ -29,6 +30,8 @@ const AboutPage = () => {
         path: node.relativePath,
         image: getImage(node)
     }));
+
+    const meetingYear = meetingsData[0].year;
 
     return (
         <Layout>
@@ -130,6 +133,7 @@ const AboutPage = () => {
                             ))
                         }
                     </table>
+                    <p><a href={`/minutes/${meetingYear}`}>Meeting minutes</a>.</p>
                 </div>
             </div>
 
