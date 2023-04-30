@@ -4,6 +4,8 @@ import Hero from "../components/Hero.jsx";
 import { Link, useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
+import PanelCard from "../components/PanelCard.jsx";
+import committeeData from '../data/committee.yaml';
 
 const AboutPage = () => {
     // query to get all logos with their relative path
@@ -79,8 +81,58 @@ const AboutPage = () => {
                     </div>
                     <br />
                 </div>
-
             </div>
+
+            <div className="banner col-p900 bg-p300">
+                <div className="container">
+                    <div className="row">
+                        <h2>More about ...</h2>
+                        <div className="panel-container">
+                            <PanelCard url="/clubs/">
+                                <h3>Clubs</h3>
+                                <p>Afiliated clubs</p>
+                            </PanelCard>
+                            <PanelCard url="/races/">
+                                <h3>Races</h3>
+                                <p>Race calendar & results</p>
+                            </PanelCard>
+                            <PanelCard url="#committee">
+                                <h3>Region</h3>
+                                <p>The committee</p>
+                            </PanelCard>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row">
+                    <br/>
+                    <h2 id="committee">The Committee</h2>
+                    <p><i>Members of the Executive Committee noted with an asterisk</i></p>
+                    <table className="table-responsive-container">
+                        {
+                            committeeData.map(item => (
+                                <tr>
+                                    <td>
+                                        {item.executive ? <b>*</b> : ''}
+                                    </td>
+                                    <td style={{paddingRight: '2.0rem'}}>
+                                        {item.executive ? <b>{item.role}</b> : item.role }
+                                    </td>
+                                    <td style={{ paddingRight: '2.0rem' }}>
+                                        {item.name !== null ? item.name : <b>VACANT</b> }
+                                    </td>
+                                    <td>
+                                        {item.email ? <a className="race-link" href={`mailto:${item.email}`}>email</a> : ''}
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </table>
+                </div>
+            </div>
+
         </Layout>
     )
 }

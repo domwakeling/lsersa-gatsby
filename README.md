@@ -17,7 +17,8 @@
 - [x] CN and tri-regional results, check/add
 - [x] training page => set it up
 - [ ] training page => any info on other training? Telemark, Skiercross?
-- [ ] region page => committee
+- [x] region page => committee
+- [ ] not sure where, but minutes etc
 - [x] clubs page
 - [x] add blurb and links for clubs
 - [ ] do we also want to put in slopes?

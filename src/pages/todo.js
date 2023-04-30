@@ -25,9 +25,8 @@ const ToDoPage = () => {
                         <li>Any other policies or documents we should add?</li>
                         <br/>
                         <li><b>The Region</b></li>
-                        <li>Add committee, meeting minutes, historical etc</li>
+                        <li>Add meeting minutes, historical etc</li>
                         <li>Do we add slopes in the same way as clubs?</li>
-                        <li>Have a page for "region"? Add more info to "about"?</li>
                         <li>Updated policies or other documents we should add?</li>
                         <br/>
                         <li><b>Races</b></li>

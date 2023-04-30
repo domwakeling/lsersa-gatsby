@@ -1,11 +1,11 @@
 -   text: Home
     link: /
 
--   text: Races
-    link: /races/
-
 -   text: Training
     link: /training/
+
+-   text: Races
+    link: /races/
 
 -   text: Clubs
     link: /clubs/
