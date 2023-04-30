@@ -104,7 +104,7 @@ const RacesPage = () => {
                     <p>Age groups for the current, previous and following year are available on{' '}
                         <a href="https://gbski.com/lists.php#ages" target="_gbski">GBSki.com</a>.</p>
                     <p><b>Downloads</b></p>
-                    <div>
+                    <div style={{ marginBottom: "1.0rem"}}>
                         <DownloadItem filelink="/race_rules_2023.pdf" filename="LSERSA race rules" filetype="PDF" />
                     </div>
                 </div>

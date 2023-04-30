@@ -1,6 +1,8 @@
 import React from "react";
 
-const DownloadItem = ({ filetype, filename, filelink }) => {
+const DownloadItem = ({ filetype, filename, filelink, mini }) => {
+
+    const miniImg = mini ? true: false;
 
     let fileImgUrl = "";
     switch (filetype) {
@@ -33,18 +35,31 @@ const DownloadItem = ({ filetype, filename, filelink }) => {
     }
     
     return (
-        <div style={{ width: "150px", display: "inline-block", marginRight: '10px' }}>
+        <div style={{
+            width: miniImg ? "100px" : "150px",
+            display: "inline-block",
+            marginRight: '10px'
+        }}>
             <a href={filelink} target="_download">
                 <div style={{ width: "100%" }}>
                     <img
                         src={fileImgUrl}
-                        height="80"
-                        width="72"
-                        style={{ paddingLeft: "39px", width: "72px", height: "auto" }}
+                        height={miniImg ? "40" : "80"}
+                        width={miniImg ? "36" : "72"}
+                        style={{
+                            paddingLeft: miniImg ? "32px" : "39px",
+                            width: miniImg ? "36px": "72px" ,
+                            height: "auto",
+                            marginTop: "0.2rem"
+                        }}
                         alt="download"
                     />
                 </div>
-                <p style={{ textAlign: "center", marginTop: "0.2rem" }}>{filename}</p>
+                <p style={{
+                    textAlign: "center",
+                    marginTop: "0",
+                    marginBottom: "0.3rem"
+                }}>{filename}</p>
             </a>
         </div>
     )

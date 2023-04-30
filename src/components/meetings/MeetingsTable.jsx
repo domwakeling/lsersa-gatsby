@@ -1,11 +1,25 @@
 import React from "react";
+import DownloadItem from "../DownloadItem";
 
 const MeetingElement = ({ item }) => {
     return (
         <>
             <tr>
+                <td style={{ paddingRight: "2.0rem" }}>{item.name}</td>
+                <td style={{ paddingRight: "2.0rem", minWidth: "100px" }}>{item.venue}</td>
+                <td style={{ paddingRight: "2.0rem" }}>{item.date}</td>
                 <td>
-                    {item.name}
+                    {item.docs !== null ? (
+                        item.docs.map((doc, idx_d) => (
+                            <DownloadItem
+                                filetype="PDF"
+                                filename={doc.text}
+                                filelink={doc.url}
+                                key={idx_d}
+                                mini={true}
+                            />
+                        ))
+                    ) : '' }
                 </td>
             </tr>
         </>

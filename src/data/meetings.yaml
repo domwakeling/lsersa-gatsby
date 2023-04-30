@@ -1,23 +1,31 @@
 -   year: 2021
     items:
-    -   name: AGM - Chatham - 12 December 2021
+    -   name: AGM (2021)
+        venue: Chatham
+        date: 12 December 2021
         docs:
-        -   url: /resources/minutes/2022/LSERSA_AGM_2021.pdf
+        -   url: /resources/minutes/2021/agm_211207.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 12 December 2021
+    -   name: Committee meeting
+        venue: Chatham
+        date: 12 December 2021
         docs:
-        -   url: /resources/minutes/2022/LSERSA_Committee_Dec_2021.pdf
+        -   url: /resources/minutes/2021/committee_211207.pdf
             text: Minutes
 
-    -   name: AGM - virtual - 4 February 2021
+    -   name: AGM (2020)
+        venue: virtual
+        date: 4 February 2021
         docs:
-        -   url: /resources/minutes/2021/LSERSA_AGM_2020.pdf
+        -   url: /resources/minutes/2021/agm_210204.pdf
             text: Minutes
 
-    -   name: Committee meeting - virtual - 4 February 2021
+    -   name: Committee meeting
+        venue: virtual 
+        date: 4 February 2021
         docs:
-        -   url: /resources/minutes/2021/LSERSA_Committee_Meeting_210204.pdf
+        -   url: /resources/minutes/2021/committee_210204.pdf
             text: Minutes
 
 -   year: 2020
