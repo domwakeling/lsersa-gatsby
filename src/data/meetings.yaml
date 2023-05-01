@@ -1,3 +1,35 @@
+-   year: 2023
+    items:
+    -   name: Committee meeting
+        venue: virtual
+        date: 17 April 2023
+        docs:
+        -   url: /resources/minutes/2023/committee_230417.pdf
+            text: Minutes
+        
+    -   name: Committee meeting
+        venue: virtual
+        date: 20 March 2023
+        docs:
+        -   url: /resources/minutes/2023/committee_230323.pdf
+            text: Minutes
+
+-   year: 2022
+    items:
+    -   name: Committee meeting
+        venue: virtual
+        date: 26 September 2022
+        docs:
+        -   url: /resources/minutes/2022/committee_220926.pdf
+            text: Minutes
+        
+    -   name: Committee meeting
+        venue: virtual
+        date: 14 March 2022
+        docs:
+        -   url: /resources/minutes/2022/committee_220314.pdf
+            text: Minutes
+
 -   year: 2021
     items:
     -   name: AGM (2021)
@@ -30,58 +62,78 @@
 
 -   year: 2020
     items:
-    -   name: AGM - Chatham - 29 January 2020
+    -   name: AGM
+        venue: Chatham
+        date: 29 January 2020
         docs:
         -   url: /resources/minutes/2020/LSERSA_AGM_2019_Minutes.pdf
             text: Minutes
             
-    -   name: Committee meeting - Chatham - 29 January 2020
+    -   name: Committee meeting
+        venue: Chatham
+        date: 29 January 2020
         docs:
         -   url: /resources/minutes/2020/LSERSA_meeting_20200129_minutes.pdf
             text: Minutes
 
 -   year: 2018
     items:
-    -   name: AGM - Chatham - 12 December 2018
+    -   name: AGM 
+        venue: Chatham 
+        date: 12 December 2018
         docs:
         -   url: /resources/minutes/2018/AGM_181211.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 12 December 2018
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 12 December 2018
         docs:
         -   url: /resources/minutes/2018/minutes_181211.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 30 May 2018
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 30 May 2018
         docs:
         -   url: /resources/minutes/2018/minutes_180530.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 16 January 2018
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 16 January 2018
         docs:
         -   url: /resources/minutes/2018/minutes_180116.pdf
             text: Minutes
 
 -   year: 2017
     items:
-    -   name: AGM - Chatham - 16 January 2018
+    -   name: AGM 
+        venue: Chatham 
+        date: 16 January 2018
         docs:
         -   url: /resources/minutes/2017/AGM_180116.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 31 August 2017
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 31 August 2017
         docs:
         -   url: /resources/minutes/2017/Minutes_170831.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 11 May 2017
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 11 May 2017
         docs:
         -   url: /resources/minutes/2017/Minutes_170511.pdf
             text: Minutes
 
 -   year: 2016
     items:
-    -   name: AGM followed by committee meeting - 23rd November 2016
+    -   name: AGM followed by committee meeting
+        venue:
+        date: 23rd November 2016
         docs:
         -   url: /resources/minutes/2016/LSERSA_AGM_2016.pdf
             text: AGM Minutes
@@ -90,56 +142,72 @@
 
 -   year: 2015
     items:
-    -   name: AGM - 6th January 2016
+    -   name: AGM 
+        venue: 
+        date: 6 January 2016
         docs:
         -   url: /resources/minutes/2015/LSERSA_AGM_2015.pdf
             text: AGM Minutes
 
-    -   name: EGM - 9th December 2015
+    -   name: EGM 
+        venue: 
+        date: 9 December 2015
         docs:
         -   url: /resources/minutes/2015/LSERSA_EGM_151209.pdf
             text: EGM Minutes
 
 -   year: 2014
     items:          
-    -   name: AGM followed by committee meeting - Swanley - 17th November 2014
+    -   name: AGM followed by committee meeting 
+        venue: Swanley 
+        date: 17 November 2014
         docs:
         -   url: /resources/minutes/2014/AGM_17_November_2014.pdf
             text: AGM Minutes
         -   url: /resources/minutes/2014/Committee_Minutes_17_November_2014.pdf
             text: Committee Minutes
 
-    -   name: EGM - Bromley - 26th February 2014
+    -   name: EGM 
+        venue: Bromley 
+        date: 26 February 2014
         docs:
         -   url: /resources/minutes/2014/EGM_Minutes_26_February_2014.pdf
             text: EGM Minutes
 
 -   year: 2013
     items:
-    -   name: AGM followed by meeting - Bromley - 6th November 2013
+    -   name: AGM followed by meeting 
+        venue: Bromley 
+        date: 6 November 2013
         docs:
         -   url: /resources/minutes/2013/AGM_Minutes_6_November_2013.pdf
             text: AGM Minutes
         -   url: /resources/minutes/2013/Committee_Minutes_6_November_2013.pdf
             text: Meeting Minutes
 
-    -   name: Committee meeting - Bromley - 23rd January 2013
+    -   name: Committee meeting 
+        venue: Bromley
+        date: 23rd January 2013
         docs:
         -   url: /resources/minutes/2013/Committee_Minutes_23_January_2013.pdf
             text: Meeting Minutes
 
 -   year: 2012
     items:
-    -   name: AGM followed by meeting - Bromley - 14th November 2012
+    -   name: AGM followed by meeting 
+        venue: Bromley 
+        date: 14 November 2012
         docs:
         -   url: /resources/minutes/2012/LSERSA_Committee_Positions_2.pdf
             text: Committee List
         -   url: /resources/minutes/2012/LSERSA_AGM_Minutes_14_Nov_12.pdf
             text: AGM Minutes
-        -   url: /resources/minutes/2012/Committee_Minutes_14th_November_2012.pdf
+        -   url: /resources/minutes/2012/Committee_Minutes_14_November_2012.pdf
             text: Meeting Minutes
 
-    -   name: EGM followed by meeting - Bromley - 29th February 2012
+    -   name: EGM followed by meeting
+        venue: Bromley 
+        date: 29 February 2012
         docs:
         -   url: /resources/minutes/2012/EGM_Minutes_29Feb2012.pdf
             text: EGM minutes
@@ -148,48 +216,64 @@
 
 -   year: 2011
     items:
-    -   name: AGM - Bromley - 9th November 2011
+    -   name: AGM 
+        venue: Bromley 
+        date: 9 November 2011
         docs:
         -   url: /resources/minutes/2011/LSERSA_AGM_Minutes.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 10th March 2011
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 10 March 2011
         docs:
         -   url: /resources/minutes/2011/110310_minutes.pdf
             text: Minutes
         
 -   year: 2010
     items:      
-    -   name: AGM -  Bromley - 24th November 2010
+    -   name: AGM 
+        venue: Bromley
+        date: 24 November 2010
         docs:
         -   url: /resources/minutes/2010/AGM_Minutes.pdf
             text: Minutes
         -   url: /resources/minutes/2010/Committee_positions.pdf
             text: Nominations for Committee Positions
 
-    -   name: Committee meeting - Bromley - 29th September 2010
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 29 September 2010
         docs:
         -   url: /resources/minutes/2010/100929_minutes.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 30th June 2010
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 30 June 2010
         docs:
         -   url: /resources/minutes/2010/100630_minutes.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 3rd March 2010
+    -   name: Committee meeting
+        venue: Bromley
+        date: 3rd March 2010
         docs:
         -   url: /resources/minutes/2010/100303_minutes.pdf
             text: Minutes
 
 -   year: 2009
     items:
-    -   name: Meeting to discuss development plan - Bromley - 25th November 2009
+    -   name: Meeting to discuss development plan 
+        venue: Bromley 
+        date: 25 November 2009
         docs:
         -   url: /resources/minutes/2009/Development_Plan_2009_Minutes_25_Nov_09.pdf
             text: Minutes
 
-    -   name: AGM - Bromley - 25th November 2009
+    -   name: AGM 
+        venue: Bromley 
+        date: 25 November 2009
         docs:
         -   url: /resources/minutes/2009/LSERSA_AGM_Minutes_25_Nov_09.pdf
             text: Minutes
@@ -202,24 +286,32 @@
         -   url: /resources/minutes/2009/LSERSA-Schools_Sports_Development_Report_Oct_2009.pdf
             text: Schools Report
                 
-    -   name: Executive Meeting - Bromley 5th August 2009
+    -   name: Executive Meeting 
+        venue: Bromley 
+        date: 5 August 2009
         docs:
         -   url: /resources/minutes/2009/090805_exec_committee_1.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 24th June 2009
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 24 June 2009
         docs:
         -   url: /resources/minutes/2009/090624_mins.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 2nd March 2009
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 2 March 2009
         docs:
         -   url: /resources/minutes/2009/090302_mins.pdf
             text: Minutes
 
 -   year: 2008
     items:
-    -   name: AGM - Bromley - 20th November 2008
+    -   name: AGM 
+        venue: Bromley 
+        date: 20 November 2008
         docs:
         -   url: /resources/minutes/2008/AGM2008Minutes.pdf
             text: Minutes
@@ -228,138 +320,189 @@
         -   url: /resources/minutes/2008/AGM2008MinutesAppendix1.pdf
             text: Chairman's Report
 
-    -   name: Committee meeting - Bromley - 24th September 2008 
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 24 September 2008 
         docs:
 
-    -   name: Committee meeting - Bromley - 26th March 2008
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 26 March 2008
         docs:
         -   url: /resources/minutes/2008/080326_mins.pdf
             text: Minutes
 
 -   year: 2007
     items:
-    -   name: AGM - Bromley -  28th November 2007
+    -   name: AGM
+        venue:  Bromley
+        date: 28 November 2007
         docs:
         -   url: /resources/minutes/2007/AGM2007Minutes.pdf
             text: Minutes
         -   url: /resources/minutes/2007/Nominations_AGM2007.pdf
             text: Nominations
 
-    -   name: Committee meeting - Bromley - 31st July 2007
+    -   name: Committee meeting
+        venue: Bromley 
+        date: 31 July 2007
         docs:
         -   url: /resources/minutes/2007/070731_mins.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 16th April 2007
+    -   name: Committee meeting
+        venue: Bromley
+        date: 16 April 2007
         docs:
         -   url: /resources/minutes/2007/070416_mins.pdf
             text: Minutes
 
 -   year: 2006
     items:
-    -   name: AGM - Bromley - 5th December 2006
+    -   name: AGM
+        venue: Bromley 
+        date: 5 December 2006
         docs:
         -   url: /resources/minutes/2006/AGM2006.pdf
             text: Minutes
         -   url: /resources/minutes/2006/Nominations_AGM2006.pdf
             text: Nominations
 
-    -   name: Committee meeting - Bromley - 11th October 2006
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 11 October 2006
         docs:
         -   url: /resources/minutes/2006/20061011.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 20th June 2006
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 20 June 2006
         docs:
         -   url: /resources/minutes/2006/060620.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 19th April 2006
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 19 April 2006
         docs:
         -   url: /resources/minutes/2006/060419.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 1st February 2006
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 1 February 2006
         docs:
         -   url: /resources/minutes/2006/060201.pdf
             text: Minutes
 
 -   year: 2005
     items:
-    -   name: AGM - Bromley - 23rd November 2005
+    -   name: AGM
+        venue: Bromley
+        date: 23rd November 2005
         docs:
         -   url: /resources/minutes/agm05/AGM2005Minutes.pdf
-            text: Minutes</a> &nbsp;
+            text: Minutes
 
-    -   name: Committee meeting - Bromley - 23rd August 2005
+    -   name: Committee meeting
+        venue: Bromley
+        date: 23rd August 2005
         docs:
 
-    -   name: Committee meeting - Bromley - 12th April 2005
+    -   name: Committee meeting
+        venue: Bromley 
+        date: 12 April 2005
         docs:
         -   url: /resources/minutes/20050412.pdf
             text: Minutes
 
 -   year: 2004
     items:
-    -   name: AGM - Chatham - 17th November 2004
+    -   name: AGM 
+        venue: Chatham 
+        date: 17 November 2004
         docs:
         -   url: /resources/minutes/AGM_041117.pdf
             text: Minutes
 
-    -   name: Committee meeting - Chatham - 6th October 2004
+    -   name: Committee meeting 
+        venue: Chatham 
+        date: 6 October 2004
         docs:
         -   url: /resources/minutes/041006.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 13th July 2004
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 13 July 2004
         docs:
         -   url: /resources/minutes/040713.pdf
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 16th March 2004
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 16 March 2004
         docs:
         -   url: /resources/minutes/040316.pdf
             text: Minutes
 
 -   year: 2003
     items:
-    -   name: AGM - Bromley - 24th November 2003
+    -   name: AGM
+        venue: Bromley
+        date: 24 November 2003
         docs:
-    -   name: Committee meeting - Bromley - 29th October 2003
+
+    -   name: Committee meeting 
+        venue: Bromley
+        date: 29 October 2003
         docs:
         -   url: /resources/minutes/031029.pdf
             text: Minutes
 
-    -   name: Committee meeting - Wycombe - 27th July 2003
+    -   name: Committee meeting
+        venue: Wycombe 
+        date: 27 July 2003
         docs:
         -   url: /resources/minutes/030727.doc
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 2nd April 2003
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 2 April 2003
         docs:
         -   url: /resources/minutes/030402.doc
             text: Minutes
 
 -   year: 2002
     items:
-    -   name: AGM - Bromley - 13th November 2002
+    -   name: AGM 
+        venue: Bromley 
+        date: 13 November 2002
         docs:
         -   url: /resources/minutes/agm_021113.doc
             text: Minutes
 
-    -   name: Committee meeting - Wycombe - 7th September 2002
+    -   name: Committee meeting 
+        venue: Wycombe 
+        date: 7 September 2002
         docs:
         -   url: /resources/minutes/020907.doc
             text: Minutes
 
-    -   name: Committee meeting - Bromley - 13th February 2002
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 13 February 2002
         docs:
         -   url: /resources/minutes/020213.doc
             text: Minutes
 
 -   year: 2001
     items:
-    -   name: AGM - Bromley - 14th November 2001
+    -   name: AGM
+        venue: Bromley 
+        date: 14 November 2001
         docs:
         -   url: /resources/minutes/agm2001/minutes.doc
             text: Minutes
@@ -370,64 +513,88 @@
         -   url: /resources/minutes/agm2001/appendix3.doc
             text: Race Secretary's Report
 
-    -   name: Committee meeting - Bromley - 12th June 2001
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 12 June 2001
         docs:
         -   url: /resources/minutes/010612.doc
             text: Minutes
 
-    -   name: Wycombe - 6th March 2001
+    -   name: Committee meeting 
+        venue: Wycombe
+        date: 6 March 2001
         docs:
 
 -   year: 2000
     items:
-    -   name: London - 28th November 2000
+    -   name: Committee meeting
+        venue: London 
+        date: 28 November 2000
         docs:
         -   url: /resources/minutes/001128.htm
             text: Minutes
 
-    -   name: Bromley - 19th September 2000
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 19 September 2000
         docs:
         -   url: /resources/minutes/000919.htm
             text: Minutes
 
-    -   name: Hillingdon - 27th June 2000
+    -   name: Committee meeting 
+        venue: Hillingdon 
+        date:  27 June 2000
         docs:
         -   url: /resources/minutes/000627.htm
             text: Minutes
 
-    -   name: Bromley - 30th April 2000
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 30 April 2000
         docs:
         -   url: /resources/minutes/000430.htm
             text: Minutes
 
-    -   name: Wycombe - 1st March 2000
+    -   name: Committee meeting
+        venue: Wycombe 
+        date: 1 March 2000
         docs:
         -   url: /resources/minutes/000301.htm
             text: Minutes
 
-    -   name: London - 2nd February 2000
+    -   name: Committee meeting 
+        venue: London 
+        date: 2 February 2000
         docs:
         -   url: /resources/minutes/000202.htm
             text: Minutes
 
 -   year: 1999
     items:
-    -   name: Bromley - 9th November 1999
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 9 November 1999
         docs:
         -   url: /resources/minutes/991109.htm
             text: Minutes
 
-    -   name: London  - 28th September1999
+    -   name: Committee meeting 
+        venue: London  
+        date: 28 September 1999
         docs:
         -   url: /resources/minutes/990928.htm
             text: Minutes
 
-    -   name: Wycombe - 3rd July 1999
+    -   name: Committee meeting 
+        venue: Wycombe 
+        date: 3rd July 1999
         docs:
         -   url: /resources/minutes/990703.htm
             text: Minutes
 
-    -   name: Bromley - 19th April 1999
+    -   name: Committee meeting 
+        venue: Bromley 
+        date: 19 April 1999
         docs:
         -   url: /resources/minutes/990419.htm
             text: Minutes

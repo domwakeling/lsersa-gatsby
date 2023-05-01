@@ -33,33 +33,58 @@ const DownloadItem = ({ filetype, filename, filelink, mini }) => {
         default:
             fileImgUrl = "/pdf_download.png";
     }
+
+    const divStyle = miniImg ? ({
+        display: "inline-block",
+        marginRight: '10px'
+    }) : ({
+        width: "150px",
+        display: "inline-block",
+        marginRight: '10px'
+    })
+
+    const imgStyle = miniImg ? ({
+        width: "36px",
+        height: "auto",
+        marginTop: "0.2rem",
+        marginRight: "1.0rem"
+    }) : ({
+        paddingLeft: "39px",
+        width: "72px",
+        height: "auto",
+        marginTop: "0.2rem"
+    })
     
     return (
-        <div style={{
-            width: miniImg ? "100px" : "150px",
-            display: "inline-block",
-            marginRight: '10px'
-        }}>
+        <div style={divStyle}>
             <a href={filelink} target="_download">
                 <div style={{ width: "100%" }}>
+                    {miniImg && (
+                        <div
+                            style={{
+                                verticalAlign: "middle", 
+                                display: "inline-block", 
+                                position: "relative", 
+                                bottom: "1.2rem",
+                                marginRight: "0.6rem"
+                            }}
+                        >{filename}</div>
+                    )}
                     <img
                         src={fileImgUrl}
                         height={miniImg ? "40" : "80"}
                         width={miniImg ? "36" : "72"}
-                        style={{
-                            paddingLeft: miniImg ? "32px" : "39px",
-                            width: miniImg ? "36px": "72px" ,
-                            height: "auto",
-                            marginTop: "0.2rem"
-                        }}
+                        style={imgStyle}
                         alt="download"
                     />
                 </div>
-                <p style={{
-                    textAlign: "center",
-                    marginTop: "0",
-                    marginBottom: "0.3rem"
-                }}>{filename}</p>
+                { !miniImg && (
+                    <p style={{
+                        textAlign: "center",
+                        marginTop: "0",
+                        marginBottom: "0.3rem"
+                    }}>{filename}</p>
+                )}
             </a>
         </div>
     )
