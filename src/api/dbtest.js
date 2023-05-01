@@ -1,7 +1,8 @@
-const fetch = require('node-fetch'); 
+import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 
 const config = {
+    fetch,
     host: process.env.DATABASE_HOST,
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD

@@ -28,11 +28,11 @@
     "gatsby-source-filesystem": "^5.9.0",
     "gatsby-transformer-sharp": "^5.9.0",
     "gatsby-transformer-yaml": "^5.9.0",
-    "node-fetch": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-responsive-masonry": "^2.1.7",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "undici": "^5.22.0"
   },
   "devDependencies": {
     "gatsby-plugin-netlify": "^5.1.0"
