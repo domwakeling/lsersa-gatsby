@@ -17,6 +17,25 @@
         transparentize($color_p300, 0.8) 0px 4px 5px 0px,
         transparentize($color_p300, 0.8) 0px 1px 10px 0px;
     float: right; 
+
+    .sponsor-logo-grid-item {
+        width: 200px;
+        margin: 1.0rem auto;
+    
+        a {
+            &:hover {
+                &::before {
+                    height: 0;
+                }
+            }
+        }
+        @media (max-width: 700px) {
+            width: 150px;
+        }
+        
+    }
+    
+
 }
 
 a.sponsor-carousel-image {
