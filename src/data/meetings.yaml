@@ -327,7 +327,7 @@
         date: 25 November 2009
         docs:
         -   url: /resources/minutes/2009/agm_091125.pdf
-            text: Minutes & Reports
+            text: Minutes
                 
     -   name: Executive Meeting 
         venue: Bromley 
@@ -432,19 +432,14 @@
         venue: Bromley
         date: 23rd November 2005
         docs:
-        -   url: /resources/minutes/agm05/AGM2005Minutes.pdf
+        -   url: /resources/minutes/2005/agm_051123.pdf
             text: Minutes
-
-    -   name: Committee meeting
-        venue: Bromley
-        date: 23rd August 2005
-        docs:
 
     -   name: Committee meeting
         venue: Bromley 
         date: 12 April 2005
         docs:
-        -   url: /resources/minutes/20050412.pdf
+        -   url: /resources/minutes/2005/committee_051412.pdf
             text: Minutes
 
 -   year: 2004
@@ -453,28 +448,28 @@
         venue: Chatham 
         date: 17 November 2004
         docs:
-        -   url: /resources/minutes/AGM_041117.pdf
+        -   url: /resources/minutes/2004/agm_041117.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 6 October 2004
         docs:
-        -   url: /resources/minutes/041006.pdf
+        -   url: /resources/minutes/2004/committee_041006.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 13 July 2004
         docs:
-        -   url: /resources/minutes/040713.pdf
+        -   url: /resources/minutes/2004/committee_040713.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 16 March 2004
         docs:
-        -   url: /resources/minutes/040316.pdf
+        -   url: /resources/minutes/2004/committee_040316.pdf
             text: Minutes
 
 -   year: 2003
@@ -483,26 +478,28 @@
         venue: Bromley
         date: 24 November 2003
         docs:
+        -   url: /resources/minutes/2003/agm_031124.pdf
+            text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley
         date: 29 October 2003
         docs:
-        -   url: /resources/minutes/031029.pdf
+        -   url: /resources/minutes/2003/committee_031029.pdf
             text: Minutes
 
     -   name: Committee meeting
         venue: Wycombe 
         date: 27 July 2003
         docs:
-        -   url: /resources/minutes/030727.doc
+        -   url: /resources/minutes/2003/committee_030727.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 2 April 2003
         docs:
-        -   url: /resources/minutes/030402.doc
+        -   url: /resources/minutes/2003/committee_030402.pdf
             text: Minutes
 
 -   year: 2002
@@ -511,21 +508,21 @@
         venue: Bromley 
         date: 13 November 2002
         docs:
-        -   url: /resources/minutes/agm_021113.doc
+        -   url: /resources/minutes/2002/agm_021113.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Wycombe 
         date: 7 September 2002
         docs:
-        -   url: /resources/minutes/020907.doc
+        -   url: /resources/minutes/2002/committee_020907.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 13 February 2002
         docs:
-        -   url: /resources/minutes/020213.doc
+        -   url: /resources/minutes/2002/committee_020213.pdf
             text: Minutes
 
 -   year: 2001
@@ -534,26 +531,15 @@
         venue: Bromley 
         date: 14 November 2001
         docs:
-        -   url: /resources/minutes/agm2001/minutes.doc
-            text: Minutes
-        -   url: /resources/minutes/agm2001/appendix1.doc
-            text: Chairman's Report
-        -   url: /resources/minutes/agm2001/appendix2.doc
-            text: Treasurer's Report
-        -   url: /resources/minutes/agm2001/appendix3.doc
-            text: Race Secretary's Report
+        -   url: /resources/minutes/2001/agm_011114.pdf
+            text: Minutes 
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 12 June 2001
         docs:
-        -   url: /resources/minutes/010612.doc
+        -   url: /resources/minutes/2001/committee_010612.pdf
             text: Minutes
-
-    -   name: Committee meeting 
-        venue: Wycombe
-        date: 6 March 2001
-        docs:
 
 -   year: 2000
     items:
@@ -561,42 +547,42 @@
         venue: London 
         date: 28 November 2000
         docs:
-        -   url: /resources/minutes/001128.htm
+        -   url: /resources/minutes/2000/committee_001128.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 19 September 2000
         docs:
-        -   url: /resources/minutes/000919.htm
+        -   url: /resources/minutes/2000/committee_000919.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Hillingdon 
         date:  27 June 2000
         docs:
-        -   url: /resources/minutes/000627.htm
+        -   url: /resources/minutes/2000/committee_000627.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 30 April 2000
         docs:
-        -   url: /resources/minutes/000430.htm
+        -   url: /resources/minutes/2000/committee_000430.pdf
             text: Minutes
 
     -   name: Committee meeting
         venue: Wycombe 
         date: 1 March 2000
         docs:
-        -   url: /resources/minutes/000301.htm
+        -   url: /resources/minutes/2000/committee_000301.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: London 
         date: 2 February 2000
         docs:
-        -   url: /resources/minutes/000202.htm
+        -   url: /resources/minutes/2000/committee_000202.pdf
             text: Minutes
 
 -   year: 1999
@@ -605,27 +591,27 @@
         venue: Bromley 
         date: 9 November 1999
         docs:
-        -   url: /resources/minutes/991109.htm
+        -   url: /resources/minutes/1999/committee_991109.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: London  
         date: 28 September 1999
         docs:
-        -   url: /resources/minutes/990928.htm
+        -   url: /resources/minutes/1999/committee_990928.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Wycombe 
         date: 3rd July 1999
         docs:
-        -   url: /resources/minutes/990703.htm
+        -   url: /resources/minutes/1999/committee_990703.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 19 April 1999
         docs:
-        -   url: /resources/minutes/990419.htm
+        -   url: /resources/minutes/1999/committee_990419.pdf
             text: Minutes
             
