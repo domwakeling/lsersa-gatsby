@@ -15,8 +15,8 @@ const RaceArchivePage = ({ pageContext }) => {
                 <Hero
                     text="MEETINGS"
                     text2={pageContext.year}
-                    imageUrl="hero/trophies.png"
-                    imageAlt="End of year trophies"
+                    imageUrl="hero/hero_clock.png"
+                    imageAlt="Low-angle image of a clock"
                 />
                 <div className="row">
 
@@ -28,7 +28,7 @@ const RaceArchivePage = ({ pageContext }) => {
                     </div>
 
                     <h1>{pageContext.year} Meetings</h1>
-                    
+
                     <div className="table-responsive-container left-column">
                         <MeetingsTable data={meetingsDataYear} />
                     </div>

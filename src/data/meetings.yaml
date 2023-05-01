@@ -11,7 +11,7 @@
         venue: virtual
         date: 20 March 2023
         docs:
-        -   url: /resources/minutes/2023/committee_230323.pdf
+        -   url: /resources/minutes/2023/committee_230320.pdf
             text: Minutes
 
 -   year: 2022
@@ -62,18 +62,34 @@
 
 -   year: 2020
     items:
-    -   name: AGM
+    -   name: AGM (2020)
+        venue: virtual
+        date: 4 February 2021
+        docs:
+        -   url: /resources/minutes/2021/agm_210204.pdf
+            text: Minutes
+
+    -   name: AGM (2019)
         venue: Chatham
         date: 29 January 2020
         docs:
-        -   url: /resources/minutes/2020/LSERSA_AGM_2019_Minutes.pdf
+        -   url: /resources/minutes/2020/agm_200129.pdf
             text: Minutes
             
     -   name: Committee meeting
         venue: Chatham
         date: 29 January 2020
         docs:
-        -   url: /resources/minutes/2020/LSERSA_meeting_20200129_minutes.pdf
+        -   url: /resources/minutes/2020/committee_200129.pdf
+            text: Minutes
+
+-   year: 2019
+    items:
+    -   name: AGM
+        venue: Chatham
+        date: 29 January 2020
+        docs:
+        -   url: /resources/minutes/2020/agm_200129.pdf
             text: Minutes
 
 -   year: 2018
@@ -82,28 +98,28 @@
         venue: Chatham 
         date: 12 December 2018
         docs:
-        -   url: /resources/minutes/2018/AGM_181211.pdf
+        -   url: /resources/minutes/2018/agm_181211.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 12 December 2018
         docs:
-        -   url: /resources/minutes/2018/minutes_181211.pdf
+        -   url: /resources/minutes/2018/committee_181211.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 30 May 2018
         docs:
-        -   url: /resources/minutes/2018/minutes_180530.pdf
+        -   url: /resources/minutes/2018/committee_180530.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 16 January 2018
         docs:
-        -   url: /resources/minutes/2018/minutes_180116.pdf
+        -   url: /resources/minutes/2018/committee_180116.pdf
             text: Minutes
 
 -   year: 2017
