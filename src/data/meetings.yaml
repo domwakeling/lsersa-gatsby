@@ -356,23 +356,14 @@
         venue: Bromley 
         date: 20 November 2008
         docs:
-        -   url: /resources/minutes/2008/AGM2008Minutes.pdf
+        -   url: /resources/minutes/2008/agm_081120.pdf
             text: Minutes
-        -   url: /resources/minutes/2008/Nominations_AGM2008.pdf
-            text: Nominations
-        -   url: /resources/minutes/2008/AGM2008MinutesAppendix1.pdf
-            text: Chairman's Report
-
-    -   name: Committee meeting 
-        venue: Bromley 
-        date: 24 September 2008 
-        docs:
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 26 March 2008
         docs:
-        -   url: /resources/minutes/2008/080326_mins.pdf
+        -   url: /resources/minutes/2008/committee_080326.pdf
             text: Minutes
 
 -   year: 2007
@@ -381,23 +372,21 @@
         venue:  Bromley
         date: 28 November 2007
         docs:
-        -   url: /resources/minutes/2007/AGM2007Minutes.pdf
+        -   url: /resources/minutes/2007/agm_071128.pdf
             text: Minutes
-        -   url: /resources/minutes/2007/Nominations_AGM2007.pdf
-            text: Nominations
 
     -   name: Committee meeting
         venue: Bromley 
         date: 31 July 2007
         docs:
-        -   url: /resources/minutes/2007/070731_mins.pdf
+        -   url: /resources/minutes/2007/committee_070731.pdf
             text: Minutes
 
     -   name: Committee meeting
         venue: Bromley
         date: 16 April 2007
         docs:
-        -   url: /resources/minutes/2007/070416_mins.pdf
+        -   url: /resources/minutes/2007/committee_070416.pdf
             text: Minutes
 
 -   year: 2006
@@ -406,37 +395,35 @@
         venue: Bromley 
         date: 5 December 2006
         docs:
-        -   url: /resources/minutes/2006/AGM2006.pdf
+        -   url: /resources/minutes/2006/agm_061205.pdf
             text: Minutes
-        -   url: /resources/minutes/2006/Nominations_AGM2006.pdf
-            text: Nominations
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 11 October 2006
         docs:
-        -   url: /resources/minutes/2006/20061011.pdf
+        -   url: /resources/minutes/2006/committee_061011.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 20 June 2006
         docs:
-        -   url: /resources/minutes/2006/060620.pdf
+        -   url: /resources/minutes/2006/committee_060620.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 19 April 2006
         docs:
-        -   url: /resources/minutes/2006/060419.pdf
+        -   url: /resources/minutes/2006/committee_060419.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 1 February 2006
         docs:
-        -   url: /resources/minutes/2006/060201.pdf
+        -   url: /resources/minutes/2006/committee_060201.pdf
             text: Minutes
 
 -   year: 2005

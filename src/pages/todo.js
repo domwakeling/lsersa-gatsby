@@ -25,7 +25,7 @@ const ToDoPage = () => {
                         <li>Any other policies or documents we should add?</li>
                         <br/>
                         <li><b>The Region</b></li>
-                        <li>Add meeting minutes 2022 AGM, then 2008 and earlier</li>
+                        <li>Add meeting minutes 2022 AGM, then 2005 and earlier</li>
                         <li>Do we add slopes in the same way as clubs?</li>
                         <li>Updated policies or other documents we should add?</li>
                         <br/>
