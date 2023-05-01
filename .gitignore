@@ -4,3 +4,5 @@ public
 _design
 **/.DS_Store
 _resources
+.env
+.env.development

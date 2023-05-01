@@ -20,6 +20,7 @@
   "dependencies": {
     "@fontsource/hind": "^4.5.10",
     "@fontsource/roboto": "^4.5.8",
+    "@planetscale/database": "^1.7.0",
     "gatsby": "^5.9.0",
     "gatsby-plugin-image": "^3.9.0",
     "gatsby-plugin-sass": "^6.9.0",
