@@ -94,7 +94,7 @@
 
 -   year: 2018
     items:
-    -   name: AGM 
+    -   name: AGM (2018)
         venue: Chatham 
         date: 12 December 2018
         docs:
@@ -114,6 +114,13 @@
         docs:
         -   url: /resources/minutes/2018/committee_180530.pdf
             text: Minutes
+    
+    -   name: AGM (2017)
+        venue: Chatham 
+        date: 16 January 2018
+        docs:
+        -   url: /resources/minutes/2017/agm_180116.pdf
+            text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
@@ -128,33 +135,45 @@
         venue: Chatham 
         date: 16 January 2018
         docs:
-        -   url: /resources/minutes/2017/AGM_180116.pdf
+        -   url: /resources/minutes/2017/agm_180116.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 31 August 2017
         docs:
-        -   url: /resources/minutes/2017/Minutes_170831.pdf
+        -   url: /resources/minutes/2017/committee_170831.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Chatham 
         date: 11 May 2017
         docs:
-        -   url: /resources/minutes/2017/Minutes_170511.pdf
+        -   url: /resources/minutes/2017/committee_170511.pdf
             text: Minutes
 
 -   year: 2016
     items:
-    -   name: AGM followed by committee meeting
+    -   name: AGM (2016)
         venue:
         date: 23rd November 2016
         docs:
-        -   url: /resources/minutes/2016/LSERSA_AGM_2016.pdf
-            text: AGM Minutes
-        -   url: /resources/minutes/2016/LSERSA_Committee_Meeting_161123.pdf
-            text: Committee Minutes
+        -   url: /resources/minutes/2016/agm_161123.pdf
+            text: Minutes
+
+    -   name: Committee meeting
+        venue:
+        date: 23rd November 2016
+        docs: 
+        -   url: /resources/minutes/2016/committee_161123.pdf
+            text: Minutes
+    
+    -   name: AGM (2015)
+        venue: 
+        date: 6 January 2016
+        docs:
+        -   url: /resources/minutes/2015/agm_160106.pdf
+            text: Minutes
 
 -   year: 2015
     items:
@@ -162,15 +181,15 @@
         venue: 
         date: 6 January 2016
         docs:
-        -   url: /resources/minutes/2015/LSERSA_AGM_2015.pdf
-            text: AGM Minutes
+        -   url: /resources/minutes/2015/agm_160106.pdf
+            text: Minutes
 
     -   name: EGM 
-        venue: 
+        venue: Bromley
         date: 9 December 2015
         docs:
-        -   url: /resources/minutes/2015/LSERSA_EGM_151209.pdf
-            text: EGM Minutes
+        -   url: /resources/minutes/2015/egm_151209.pdf
+            text: Minutes
 
 -   year: 2014
     items:          
