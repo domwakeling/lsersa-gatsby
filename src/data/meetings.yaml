@@ -253,7 +253,7 @@
         -   url: /resources/minutes/2012/committee_121114.pdf
             text: Minutes
 
-    -   name: EGM followed by meeting
+    -   name: EGM
         venue: Bromley 
         date: 29 February 2012
         docs:
@@ -273,14 +273,14 @@
         venue: Bromley 
         date: 9 November 2011
         docs:
-        -   url: /resources/minutes/2011/LSERSA_AGM_Minutes.pdf
+        -   url: /resources/minutes/2011/agm_111109.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 10 March 2011
         docs:
-        -   url: /resources/minutes/2011/110310_minutes.pdf
+        -   url: /resources/minutes/2011/committee_110310.pdf
             text: Minutes
         
 -   year: 2010
@@ -289,75 +289,65 @@
         venue: Bromley
         date: 24 November 2010
         docs:
-        -   url: /resources/minutes/2010/AGM_Minutes.pdf
+        -   url: /resources/minutes/2010/agm_101124.pdf
             text: Minutes
-        -   url: /resources/minutes/2010/Committee_positions.pdf
-            text: Nominations for Committee Positions
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 29 September 2010
         docs:
-        -   url: /resources/minutes/2010/100929_minutes.pdf
+        -   url: /resources/minutes/2010/committee_100929.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 30 June 2010
         docs:
-        -   url: /resources/minutes/2010/100630_minutes.pdf
+        -   url: /resources/minutes/2010/committee_100630.pdf
             text: Minutes
 
     -   name: Committee meeting
         venue: Bromley
         date: 3rd March 2010
         docs:
-        -   url: /resources/minutes/2010/100303_minutes.pdf
+        -   url: /resources/minutes/2010/committee_100303.pdf
             text: Minutes
 
 -   year: 2009
     items:
-    -   name: Meeting to discuss development plan 
+    -   name: Development Plan review
         venue: Bromley 
         date: 25 November 2009
         docs:
-        -   url: /resources/minutes/2009/Development_Plan_2009_Minutes_25_Nov_09.pdf
+        -   url: /resources/minutes/2009/minutes_091125.pdf
             text: Minutes
 
     -   name: AGM 
         venue: Bromley 
         date: 25 November 2009
         docs:
-        -   url: /resources/minutes/2009/LSERSA_AGM_Minutes_25_Nov_09.pdf
-            text: Minutes
-        -   url: /resources/minutes/2009/NOMINATION_PROPOSALS_2009_7.pdf
-            text: Nomination Proposals
-        -   url: /resources/minutes/2009/LSERSA-Chairmans_Report_Nov_2009.pdf
-            text: Chairman's Report
-        -   url: /resources/minutes/2009/LSERSA-Sponsorship_Report_2009.pdf
-            text: Sponsorship Report
-        -   url: /resources/minutes/2009/LSERSA-Schools_Sports_Development_Report_Oct_2009.pdf
-            text: Schools Report
+        -   url: /resources/minutes/2009/agm_091125.pdf
+            text: Minutes & Reports
                 
     -   name: Executive Meeting 
         venue: Bromley 
         date: 5 August 2009
         docs:
-        -   url: /resources/minutes/2009/090805_exec_committee_1.pdf
+        -   url: /resources/minutes/2009/egm_090805.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 24 June 2009
         docs:
-        -   url: /resources/minutes/2009/090624_mins.pdf
+        -   url: /resources/minutes/2009/committee_090624.pdf
             text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley 
         date: 2 March 2009
         docs:
-        -   url: /resources/minutes/2009/090302_mins.pdf
+        -   url: /resources/minutes/2009/committee_090302.pdf
             text: Minutes
 
 -   year: 2008
