@@ -5,7 +5,7 @@ import Carousel from "./Carousel";
 
 const Hero = ({
     imageAlt = "LSERSA racers at the 2018 Tri-Regional competition",
-    imageShade = "rgba(0,0,0,0.2)",
+    imageShade = "rgba(0,0,0,0.1)",
     imageUrl = "hero/hero_tri_2018.png",
     text = "WELCOME",
     text2 = "",

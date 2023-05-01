@@ -36,7 +36,7 @@ const ClubsPage = () => {
                 <Hero
                     text="LOCAL"
                     text2="CLUBS"
-                    imageUrl="hero/trophies.png"
+                    imageUrl="hero/hero_clubs.png"
                     imageAlt="End of year trophies"
                 />
                 <div className="row">
