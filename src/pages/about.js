@@ -113,26 +113,28 @@ const AboutPage = () => {
                     <br/>
                     <h2 id="committee">The Committee</h2>
                     <p><i>Members of the Executive Committee noted with an asterisk</i></p>
-                    <table className="table-responsive-container">
-                        {
-                            committeeData.map(item => (
-                                <tr>
-                                    <td>
-                                        {item.executive ? <b>*</b> : ''}
-                                    </td>
-                                    <td style={{paddingRight: '2.0rem'}}>
-                                        {item.executive ? <b>{item.role}</b> : item.role }
-                                    </td>
-                                    <td style={{ paddingRight: '2.0rem' }}>
-                                        {item.name !== null ? item.name : <b>VACANT</b> }
-                                    </td>
-                                    <td>
-                                        {item.email ? <a className="race-link" href={`mailto:${item.email}`}>email</a> : ''}
-                                    </td>
-                                </tr>
-                            ))
-                        }
-                    </table>
+                    <div className="table-responsive-container">
+                        <table>
+                            {
+                                committeeData.map(item => (
+                                    <tr>
+                                        <td>
+                                            {item.executive ? <b>*</b> : ''}
+                                        </td>
+                                        <td style={{paddingRight: '2.0rem'}}>
+                                            {item.executive ? <b>{item.role}</b> : item.role }
+                                        </td>
+                                        <td style={{ paddingRight: '2.0rem' }}>
+                                            {item.name !== null ? item.name : <b>VACANT</b> }
+                                        </td>
+                                        <td>
+                                            {item.email ? <a className="race-link" href={`mailto:${item.email}`}>email</a> : ''}
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </table>
+                    </div>
                     <p><a href={`/minutes/${meetingYear}`}>Meeting minutes</a>.</p>
                 </div>
             </div>

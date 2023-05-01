@@ -16,6 +16,7 @@ const HeaderComponent = ({ title, description, pathname, children }) => {
         <>
             <html lang="en" />
             <meta name="description" content={seo.description} />
+            <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1.0' />
             <link id="favicon" rel="icon" href={fav} sizes="32x32" type="image/png" />
             {children}
         </>

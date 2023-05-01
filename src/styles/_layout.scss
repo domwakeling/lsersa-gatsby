@@ -26,6 +26,7 @@
 
     @include for-tablet-down() {
         width: 100%;
+        max-width: 100%;
     }
 }
 
