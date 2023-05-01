@@ -1,4 +1,5 @@
 import { connect } from '@planetscale/database';
+import fetch from 'node-fetch';
 
 const config = {
     host: process.env.DATABASE_HOST,
