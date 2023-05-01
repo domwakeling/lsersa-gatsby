@@ -193,61 +193,79 @@
 
 -   year: 2014
     items:          
-    -   name: AGM followed by committee meeting 
+    -   name: AGM
         venue: Swanley 
         date: 17 November 2014
         docs:
-        -   url: /resources/minutes/2014/AGM_17_November_2014.pdf
-            text: AGM Minutes
-        -   url: /resources/minutes/2014/Committee_Minutes_17_November_2014.pdf
-            text: Committee Minutes
+        -   url: /resources/minutes/2014/agm_141117.pdf
+            text: Minutes
+    
+    -   name: Committee meeting
+        venue: Swanley 
+        date: 17 November 2014
+        docs:
+        -   url: /resources/minutes/2014/committee_141117.pdf
+            text: Minutes
 
     -   name: EGM 
         venue: Bromley 
         date: 26 February 2014
         docs:
-        -   url: /resources/minutes/2014/EGM_Minutes_26_February_2014.pdf
-            text: EGM Minutes
+        -   url: /resources/minutes/2014/egm_140226.pdf
+            text: Minutes
 
 -   year: 2013
     items:
-    -   name: AGM followed by meeting 
+    -   name: AGM
         venue: Bromley 
         date: 6 November 2013
         docs:
-        -   url: /resources/minutes/2013/AGM_Minutes_6_November_2013.pdf
-            text: AGM Minutes
-        -   url: /resources/minutes/2013/Committee_Minutes_6_November_2013.pdf
-            text: Meeting Minutes
+        -   url: /resources/minutes/2013/agm_131106.pdf
+            text: Minutes
+    
+    -   name: Committee meeting
+        venue: Bromley 
+        date: 6 November 2013
+        docs:
+        -   url: /resources/minutes/2013/committee_131106.pdf
+            text: Minutes
 
     -   name: Committee meeting 
         venue: Bromley
         date: 23rd January 2013
         docs:
-        -   url: /resources/minutes/2013/Committee_Minutes_23_January_2013.pdf
-            text: Meeting Minutes
+        -   url: /resources/minutes/2013/committee_130123.pdf
+            text: Minutes
 
 -   year: 2012
     items:
-    -   name: AGM followed by meeting 
+    -   name: AGM
         venue: Bromley 
         date: 14 November 2012
         docs:
-        -   url: /resources/minutes/2012/LSERSA_Committee_Positions_2.pdf
-            text: Committee List
-        -   url: /resources/minutes/2012/LSERSA_AGM_Minutes_14_Nov_12.pdf
-            text: AGM Minutes
-        -   url: /resources/minutes/2012/Committee_Minutes_14_November_2012.pdf
-            text: Meeting Minutes
+        -   url: /resources/minutes/2012/agm_121114.pdf
+            text: Minutes
+    
+    -   name: Committee meeting
+        venue: Bromley 
+        date: 14 November 2012
+        docs:
+        -   url: /resources/minutes/2012/committee_121114.pdf
+            text: Minutes
 
     -   name: EGM followed by meeting
         venue: Bromley 
         date: 29 February 2012
         docs:
-        -   url: /resources/minutes/2012/EGM_Minutes_29Feb2012.pdf
-            text: EGM minutes
-        -   url: /resources/minutes/2012/Minutes_29Feb2012.pdf
-            text: Meeting Minutes
+        -   url: /resources/minutes/2012/egm_120229.pdf
+            text: Minutes
+    
+    -   name: Committee meeting
+        venue: Bromley 
+        date: 29 February 2012
+        docs:
+        -   url: /resources/minutes/2012/committee_120229.pdf
+            text: Minutes
 
 -   year: 2011
     items:
