@@ -52,6 +52,10 @@
             border-radius: 1.0rem;
             padding: 1.0rem;
 
+            h3 {
+                margin-bottom: 0.5rem;
+            }
+
             &:hover {
                 background-color: $color_c500;
                 color: $color_c100;
@@ -80,6 +84,10 @@
             p {
                 font-size: 2.0rem;
                 margin-bottom: 0;
+
+                &:nth-child(2) {
+                    margin-top: 0;
+                }
             }
         }
     }

@@ -62,38 +62,40 @@ const RacesPage = () => {
                     <p>Typical timetable for the day is</p>
                     <div className="table-responsive-container">
                         <table>
-                            <tr>
-                                <td>08:00</td>
-                                <td>Race office opens for bib issue</td>
-                            </tr>
-                            <tr>
-                                <td>08:30</td>
-                                <td>Open practice</td>
-                            </tr>
-                            <tr>
-                                <td>09:00</td>
-                                <td>Course setting</td>
-                            </tr>
-                            <tr>
-                                <td>09:15</td>
-                                <td>Officials meeting</td>
-                            </tr>
-                            <tr>
-                                <td>09:20</td>
-                                <td>Course inspection (U14 & above through full gates)</td>
-                            </tr>
-                            <tr>
-                                <td>09:40</td>
-                                <td>Course inspection (U12 & below through stubby gates)</td>
-                            </tr>
-                            <tr>
-                                <td>09:45</td>
-                                <td>Start first run of Individual Slalom</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td> - then head-to-heads, team events and prizegiving</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>08:00</td>
+                                    <td>Race office opens for bib issue</td>
+                                </tr>
+                                <tr>
+                                    <td>08:30</td>
+                                    <td>Open practice</td>
+                                </tr>
+                                <tr>
+                                    <td>09:00</td>
+                                    <td>Course setting</td>
+                                </tr>
+                                <tr>
+                                    <td>09:15</td>
+                                    <td>Officials meeting</td>
+                                </tr>
+                                <tr>
+                                    <td>09:20</td>
+                                    <td>Course inspection (U14 & above through full gates)</td>
+                                </tr>
+                                <tr>
+                                    <td>09:40</td>
+                                    <td>Course inspection (U12 & below through stubby gates)</td>
+                                </tr>
+                                <tr>
+                                    <td>09:45</td>
+                                    <td>Start first run of Individual Slalom</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> - then head-to-heads, team events and prizegiving</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <p>Trophies are awarded at each event for top three in age group, based on combined

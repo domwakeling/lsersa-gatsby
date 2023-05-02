@@ -84,6 +84,66 @@ const AboutPage = () => {
                     </div>
                     <br />
                 </div>
+                <div className="row">
+                    <div className="sponsor-logo-grid">
+                        <div className="sponsor-logo-grid-item">
+                            <a href="https://www.northeastsnowsports.org.uk/" target="_nesa">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /nesa/.test(node.path))[0].image}
+                                    alt="North East Snowsports Associaetion"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="http://www.snowsportsouth.org.uk/" target="_sss">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /sss/.test(node.path))[0].image}
+                                    alt="Snowsport South"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="http://www.ersa.co.uk/" target="_ersa">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /ersa\./.test(node.path))[0].image}
+                                    alt="Eastern Region Snowsports Association"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="https://www.facebook.com/people/South-West-Snowsports-Association/100054589382615/?locale=en_GB" target="_swsa">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /swsa/.test(node.path))[0].image}
+                                    alt="South West Snowsports Association"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="https://www.facebook.com/groups/289836357858579/" target="_nwsf">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /nwsf/.test(node.path))[0].image}
+                                    alt="North West Ski Federation"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="https://www.cesnowsports.org/" target="_cesa">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /cesa/.test(node.path))[0].image}
+                                    alt="Central England Snowsports Association"
+                                />
+                            </a>
+                        </div>
+                        <div className="sponsor-logo-grid-item">
+                            <a href="http://www.ysf-ski.org.uk/" target="_ysf">
+                                <GatsbyImage
+                                    image={imgData.filter(node => /ysf/.test(node.path))[0].image}
+                                    alt="Yorkshire Ski Federation"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div className="banner col-p900 bg-p300">
@@ -115,9 +175,10 @@ const AboutPage = () => {
                     <p><i>Members of the Executive Committee noted with an asterisk</i></p>
                     <div className="table-responsive-container">
                         <table>
+                            <tbody>
                             {
-                                committeeData.map(item => (
-                                    <tr>
+                                committeeData.map((item, idx) => (
+                                    <tr key={`cmte-${idx}`}>
                                         <td>
                                             {item.executive ? <b>*</b> : ''}
                                         </td>
@@ -133,6 +194,7 @@ const AboutPage = () => {
                                     </tr>
                                 ))
                             }
+                            </tbody>
                         </table>
                     </div>
                     <p><a href={`/minutes/${meetingYear}`}>Meeting minutes</a>.</p>
