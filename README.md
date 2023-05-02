@@ -1,3 +1,32 @@
+# LSERSA website
+
+2023 re-build of the LSERSA website using [Gatsby](https://www.gatsbyjs.com/),
+[PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/).
+
+## Rationale
+
+Using Gatsby allows for a data-driven approach to generating the site (particualrly  for the
+`/races/` and `/minutes/` elements, which otherwise are proven to be quite intensive to maintain)
+and also provides React and lambda functions to run the booking system.
+
+## Deployment
+
+At point of writing the re-build is still in progress, but intention is that the replacement site
+will be deployed onto Netlify (using GitHub integration) and the appropriate records changed so that
+`lsersa.org` automatically (and invisible) forwards.
+
+*This is the approach taken for the Bowles website re-build from 2016, which worked well*
+
+## Database
+
+The backend for the booking system is a MySQL database on PlanetScale, accessed by API routes on
+the website (provided as Gatsby functions). The database structure is:
+
+![database schema diagram](./_db_info/LSERSA%20booking%20schema.png)
+
+
+
+
 
 
 ### TO DO

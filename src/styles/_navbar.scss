@@ -29,7 +29,8 @@
         }
 
         li:hover {
-            box-shadow: 0 0.2rem $color_c500, 0 -0.2rem $color_c500;
+            // box-shadow: 0 0.2rem $color_c500, 0 -0.2rem $color_c500;
+            box-shadow: 0 0.2rem $color_p900, 0 -0.2rem $color_p900;
         }
     }
 
