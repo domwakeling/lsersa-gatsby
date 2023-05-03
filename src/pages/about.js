@@ -46,9 +46,9 @@ const AboutPage = () => {
                             <p>The London &amp; South East Regional Ski Association (LSERSA) was first
                                 set up in 1970 to represent skiers in the South Eastern counties of
                                 England. LSERSA has solid relationships with many other regions as well
-                                as the Home Nation Governing Bodies (HNGBs). It is one of the eight
-                                regions that are currently affiliated to Snowsport England (SSE), and
-                                through it to GB Snowsport.</p>
+                                as the Home Nation Governing Bodies (HNGBs). It is one of the eight{' '}
+                                <Link to="#regions">regional assocations</Link> that are currently
+                                affiliated to Snowsport England (SSE), and through it to GB Snowsport.</p>
 
                             <p>In 2006 the region changed its name to the London &amp; South East
                                 Regional Snowsports Association to reflect the expanding diversity of
@@ -82,23 +82,6 @@ const AboutPage = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <br />
-                </div>
-                <div className="row">
-                    <div className="region-logo-grid">
-                    {
-                        regionsData.map((item, idx) => (
-                            <div className="region-logo-grid-item" key={`region-${idx}`}>
-                                <a href={item.url} target={item.target}>
-                                    <GatsbyImage
-                                        image={imgData.filter(node => node.path === item.img)[0].image}
-                                        alt={item.name}
-                                    />
-                                </a>
-                            </div>
-                        ))
-                    }
                     </div>
                     <br />
                 </div>
@@ -155,7 +138,26 @@ const AboutPage = () => {
                             </tbody>
                         </table>
                     </div>
-                    <p><a href={`/minutes/${meetingYear}`}>Meeting minutes</a>.</p>
+                    <p>Please follow the link for <a href={`/minutes/${meetingYear}`}>meeting minutes</a>.</p>
+                </div>
+                <div className="row">
+                    <hr />
+                    <h2 id="regions">Other regional assocations</h2>
+                    <div className="region-logo-grid">
+                    {
+                        regionsData.map((item, idx) => (
+                            <div className="region-logo-grid-item" key={`region-${idx}`}>
+                                <a href={item.url} target={item.target}>
+                                    <GatsbyImage
+                                        image={imgData.filter(node => node.path === item.img)[0].image}
+                                        alt={item.name}
+                                    />
+                                </a>
+                            </div>
+                        ))
+                    }
+                    </div>
+                    <br />
                 </div>
             </div>
 
