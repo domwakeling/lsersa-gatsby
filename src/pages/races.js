@@ -108,8 +108,17 @@ const RacesPage = () => {
                     <p>Age groups for the current, previous and following year are available on{' '}
                         <a href="https://gbski.com/lists.php#ages" target="_gbski">GBSki.com</a>.</p>
                     <p><b>Downloads</b></p>
-                    <div style={{ marginBottom: "1.0rem"}}>
-                        <DownloadItem filelink="/race_rules_2023.pdf" filename="LSERSA race rules" filetype="PDF" />
+                    <div style={{ marginBottom: "2.0rem"}}>
+                        <DownloadItem
+                            filelink="/resources/guidance/race_rules_2023.pdf"
+                            filename="LSERSA race rules"
+                            filetype="PDF"
+                        />
+                        <DownloadItem
+                            filelink="/resources/guidance/if_in_doubt_sit_them_out.pdf"
+                            filename="concussion guide"
+                            filetype="PDF"
+                        />
                     </div>
                 </div>
             </div>
@@ -117,23 +126,60 @@ const RacesPage = () => {
             <div className="banner col-p900 bg-p300">
                 <div className="container">
                     <div className="row">
-                        <br />
-                        <h2>Personal Conduct</h2>
-                        <p>We wish to remind all racers, coaches, parents and spectators that appropriate
-                            personal conduct is expected at all LSERSA events. Whilst a competitive
-                            atmosphere is to be encouraged, inappropriate or unsportsmanlike behaviour will
-                            not be tolerated and can ultimately lead to sanctions, including suspension from
-                            LSERSA events.</p>
-                        <p>Examples of such behaviour include: equipment abuse, swearing,
-                            aggressive behaviour, discrimination of any form, heated arguments, disrespect
-                            shown to any official or volunteer.</p>
-                        <p>All LSERSA events are "family friendly" environments with appropriate
-                            behaviour to be demonstrated at all times.</p>
+                        <h2 id="concussion_guidance">Concussion Guidance</h2>
+                        <p>The safety and well being of racers is a priority for racers participating in
+                            LSERSA races, so please take the time to read the publication but more
+                            importantly adhere to the minimum 21 day exclusion period recommended. The
+                            severity of a concussion injury should not be underestimated and it is
+                            important individuals, parents, schools and clubs work together to ensure
+                            guidance is followed.</p>
+                        <p>Key points</p>
+                        <ul>
+                            <li>Most people with concussion recover fully with time.</li>
+                            <li>A concussion is a brain injury.</li>
+                            <li>All concussions are serious.</li>
+                            <li>Head injury can be fatal.</li>
+                            <li>Most concussions occur without loss of consciousness (being "knocked out").</li>
+                        </ul>
+                        <p>Anyone with one or more visible clues, or symptoms of a head injury must be
+                            immediately removed from playing or training and must not take part in any
+                            further physical sport or work activity, even if symptoms resolve, until
+                            assessment by an appropriate Healthcare Professional or by accessing the NHS
+                            by calling 111, which should be sought within 24 hours. Return to education/
+                            work takes priority over return to sport.</p>
+                        <p>Individuals with concussion should only return to training or playing sport
+                            which risks head injury after having followed a graduated return to activity
+                            (education/work) and sport programme.</p>
+                        <p>All concussions should be managed individually, but there should be no return
+                            to training or competition before 21 days from injury.</p>
+                        <p>Anyone with symptoms after 28 days should seek medical advice from their GP
+                            (which may in turn require specialist referral and review).</p>
                     </div>
                 </div>
             </div>
 
             <div className="container">
+                <div className="row">
+                </div>
+            </div>
+
+            
+            <div className="container">
+                <div className="row">
+                    <br />
+                    <h2>Personal Conduct</h2>
+                    <p>We wish to remind all racers, coaches, parents and spectators that appropriate
+                        personal conduct is expected at all LSERSA events. Whilst a competitive
+                        atmosphere is to be encouraged, inappropriate or unsportsmanlike behaviour will
+                        not be tolerated and can ultimately lead to sanctions, including suspension from
+                        LSERSA events.</p>
+                    <p>Examples of such behaviour include: equipment abuse, swearing,
+                        aggressive behaviour, discrimination of any form, heated arguments, disrespect
+                        shown to any official or volunteer.</p>
+                    <p>All LSERSA events are "family friendly" environments with appropriate
+                        behaviour to be demonstrated at all times.</p>
+                </div>
+            
                 <div className="row">
                     <br />
                     <h2>Equipment Requirements</h2>

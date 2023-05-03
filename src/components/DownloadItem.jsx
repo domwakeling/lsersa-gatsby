@@ -7,31 +7,31 @@ const DownloadItem = ({ filetype, filename, filelink, mini }) => {
     let fileImgUrl = "";
     switch (filetype) {
         case 'PDF':
-            fileImgUrl = "/pdf_download.png";
+            fileImgUrl = "/images/pdf_download.png";
             break;
         case 'XLS':
-            fileImgUrl = "/excel_download.png";
+            fileImgUrl = "/images/excel_download.png";
             break;
         case 'XLSX':
-            fileImgUrl = "/excel_download.png";
+            fileImgUrl = "/images/excel_download.png";
             break;
         case 'XLSM':
-            fileImgUrl = "/excel_download.png";
+            fileImgUrl = "/images/excel_download.png";
             break;
         case 'excel':
-            fileImgUrl = "/excel_download.png";
+            fileImgUrl = "/images/excel_download.png";
             break;
         case 'DOC':
-            fileImgUrl = "/word_download.png";
+            fileImgUrl = "/images/word_download.png";
             break;
         case 'DOCX':
-            fileImgUrl = "/word_download.png";
+            fileImgUrl = "/images/word_download.png";
             break;
         case 'word':
-            fileImgUrl = "/word_download.png";
+            fileImgUrl = "/images/word_download.png";
             break;
         default:
-            fileImgUrl = "/pdf_download.png";
+            fileImgUrl = "/images/pdf_download.png";
     }
 
     const divStyle = miniImg ? ({

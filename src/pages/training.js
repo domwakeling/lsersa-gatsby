@@ -17,14 +17,12 @@ const TrainingPage = () => {
 
                     <div className="advice-box">
                         <p>Regional Race Training for slalom is held at Chatham on Saturday mornings,
-                            9&mdash;11am. Sessions are open to racers of all levels.
-                        </p>
+                            9&mdash;11am. Sessions are open to racers of all levels.</p>
                     </div>
 
                     <p>The sessions are run by our experienced team of coaches, led by Andrew Atkinson
                         and Jim Gibb, and are &pound;21 per racer. Training covers technique, race
                         tactics, skills and drills, and includes stubby and full gate courses.</p>
-
                     <p>Please join the LSERSA facebook group to get regular updates, and email <a
                         href="mailto:regionalcoach@lsersa.org">Andy Atkinson</a> (Head Coach) for
                         more information and to register for session invites and notifications.</p>
