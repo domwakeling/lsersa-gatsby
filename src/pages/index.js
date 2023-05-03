@@ -66,7 +66,7 @@ const HomePage = () => {
 
             <div className="container">
                 <div className="row">
-                    <h2>Thankyou to our sponsors</h2>
+                    <h2>Thank you to our sponsors</h2>
                     <div className="sponsor-logo-grid">
                         {sponsordata.map((item, idx) => (
                             <div className="sponsor-logo-grid-item" key={`sponsor-body-${idx}`} >

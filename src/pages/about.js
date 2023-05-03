@@ -7,6 +7,7 @@ import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import committeeData from '../data/committee.yaml';
 import meetingsData from '../data/meetings.yaml';
+import regionsData from '../data/regions.yaml';
 
 const AboutPage = () => {
     // query to get all logos with their relative path
@@ -85,64 +86,21 @@ const AboutPage = () => {
                     <br />
                 </div>
                 <div className="row">
-                    <div className="sponsor-logo-grid">
-                        <div className="sponsor-logo-grid-item">
-                            <a href="https://www.northeastsnowsports.org.uk/" target="_nesa">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /nesa/.test(node.path))[0].image}
-                                    alt="North East Snowsports Associaetion"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="http://www.snowsportsouth.org.uk/" target="_sss">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /sss/.test(node.path))[0].image}
-                                    alt="Snowsport South"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="http://www.ersa.co.uk/" target="_ersa">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /ersa\./.test(node.path))[0].image}
-                                    alt="Eastern Region Snowsports Association"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="https://www.facebook.com/people/South-West-Snowsports-Association/100054589382615/?locale=en_GB" target="_swsa">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /swsa/.test(node.path))[0].image}
-                                    alt="South West Snowsports Association"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="https://www.facebook.com/groups/289836357858579/" target="_nwsf">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /nwsf/.test(node.path))[0].image}
-                                    alt="North West Ski Federation"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="https://www.cesnowsports.org/" target="_cesa">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /cesa/.test(node.path))[0].image}
-                                    alt="Central England Snowsports Association"
-                                />
-                            </a>
-                        </div>
-                        <div className="sponsor-logo-grid-item">
-                            <a href="http://www.ysf-ski.org.uk/" target="_ysf">
-                                <GatsbyImage
-                                    image={imgData.filter(node => /ysf/.test(node.path))[0].image}
-                                    alt="Yorkshire Ski Federation"
-                                />
-                            </a>
-                        </div>
+                    <div className="region-logo-grid">
+                    {
+                        regionsData.map((item, idx) => (
+                            <div className="region-logo-grid-item" key={`region-${idx}`}>
+                                <a href={item.url} target={item.target}>
+                                    <GatsbyImage
+                                        image={imgData.filter(node => node.path === item.img)[0].image}
+                                        alt={item.name}
+                                    />
+                                </a>
+                            </div>
+                        ))
+                    }
                     </div>
+                    <br />
                 </div>
             </div>
 

@@ -1,0 +1,22 @@
+.region-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    column-gap: 2.0rem;
+
+    @media (max-width: 630px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.region-logo-grid-item {
+    width: 100%;
+    margin: 1.0rem auto;
+
+    a {
+        &:hover {
+            &::before {
+                height: 0;
+            }
+        }
+    }
+}

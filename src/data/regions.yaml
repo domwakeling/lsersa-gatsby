@@ -1,0 +1,34 @@
+-   url: https://www.northeastsnowsports.org.uk/
+    img: logos/nesa.png
+    target: _nesa
+    name: North East Snowsports Association
+
+-   url: http://www.snowsportsouth.org.uk/
+    img: logos/sss.png
+    target: _sss
+    name: Snowsport South
+
+-   url: http://www.ersa.co.uk/
+    img: logos/ersa.png
+    target: _ersa
+    name: Eastern Region Snowsports Association
+
+-   url: https://www.facebook.com/people/South-West-Snowsports-Association/100054589382615/?locale=en_GB
+    img: logos/swsa.png
+    target: _swsa
+    name: South West Snowsports Association
+
+-   url: https://www.facebook.com/groups/289836357858579/
+    img: logos/nwsf.png
+    target: _nwsf
+    name: North West Ski Federation
+
+-   url: https://www.cesnowsports.org/
+    img: logos/cesa.png
+    target: _cesa
+    name: Central England Snowsports Association
+
+-   url: http://www.ysf-ski.org.uk/
+    img: logos/ysf.png
+    target: _ysf
+    name: Yorkshire Ski Federation
