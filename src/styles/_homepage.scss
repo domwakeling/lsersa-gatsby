@@ -47,7 +47,7 @@
         display: grid;
 
         .panel {
-            // border: 1px solid $color_p700;
+            border: 1px solid $color_p700;
             // background-color: $color_p500;
             border-radius: 1.0rem;
             padding: 1.0rem;
@@ -61,7 +61,7 @@
                 color: $color_c100;
                 border-color: $color_c100;
 
-                a {
+                a, p {
                     color: $color_c100;
                 }
 

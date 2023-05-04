@@ -4,11 +4,14 @@
 -   text: Training
     link: /training/
 
--   text: Races
-    link: /races/
-
 -   text: Clubs
     link: /clubs/
+
+-   text: Slopes
+    link: /slopes/
+
+-   text: Races
+    link: /races/
 
 -   text: Sponsors
     link: /sponsors/

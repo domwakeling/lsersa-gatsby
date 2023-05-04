@@ -1,0 +1,29 @@
+-   name: Bowles
+    url: https://bowles.rocks/individuals-and-families/skiing-snowboarding/
+    map_url: https://www.google.co.uk/maps/place/Bowles/@51.0763215,0.1199321,12z/data=!4m6!3m5!1s0x47df43408dbe30c3:0x6acd318aefa794f1!8m2!3d51.0763085!4d0.2023303!16s%2Fm%2F0h3w2rx
+    img: maps/bowles.png
+    target: _bowles
+
+-   name: Chatham Snowports Centre
+    url: https://www.jnlchatham.co.uk/
+    map_url: https://www.google.co.uk/maps/place/Chatham+Snowsports+Centre/@51.3557002,0.4774044,12z/data=!4m6!3m5!1s0x47d8cd573b18f827:0x5cc86d68cd351b85!8m2!3d51.3556873!4d0.5598026!16s%2Fg%2F1tgh6v5d
+    img: maps/chatham.png
+    target: _chatham
+
+-   name: Folkestone Sports Centre
+    url: https://www.folkestonesportscentre.co.uk/snowsports/
+    map_url: https://www.google.co.uk/maps/place/Folkestone+Ski+Centre/@51.0876752,1.0862899,12z/data=!4m6!3m5!1s0x47debf2a5cb0b54b:0x1b9aec1e287b3a64!8m2!3d51.0876622!4d1.1686934!16s%2Fg%2F1hc1n_xpl
+    img: maps/folkestone.png
+    target: _folkestone
+
+-   name: Knockhatch Ski
+    url: https://knockhatchskischool.com/
+    map_url: https://www.google.co.uk/maps/place/Knockhatch+Ski+%26+Snowboard+School/@50.8609875,0.1446157,12z/data=!4m6!3m5!1s0x47df6fcb776b6d67:0xc82604b182739a87!8m2!3d50.8609745!4d0.2270192!16s%2Fg%2F11f3xmg2xf
+    img: maps/knockhatch.png
+    target: _knockhatch
+
+-   name: Sandown Sports
+    url: https://sandownsports.co.uk/ski/
+    map_url: https://www.google.co.uk/maps/place/Sandown+Sports+and+Ski/@51.3730527,-0.4473777,12z/data=!4m6!3m5!1s0x48760acf347dd923:0xec834c8e8e846eee!8m2!3d51.3730494!4d-0.3649749!16s%2Fg%2F11cm16d0wn
+    img: maps/sandown.png
+    target: _sandown

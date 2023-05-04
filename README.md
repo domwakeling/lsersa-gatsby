@@ -1,7 +1,19 @@
 # LSERSA website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/658d902f-c687-4c02-9058-5be539a76000/deploy-status)](https://app.netlify.com/sites/lsersa/deploys)
+
 2023 re-build of the LSERSA website using [Gatsby](https://www.gatsbyjs.com/),
 [PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/).
+
+## Index
+**[Rationale](#rationale)**
+
+**[Deployment](#deployment)**
+
+**[Sponsors](#sponsors)**
+
+**[Booking System](#booking-system)**
+* [Database](#database)
 
 ## Rationale
 
@@ -17,14 +29,50 @@ will be deployed onto Netlify (using GitHub integration) and the appropriate rec
 
 *This is the approach taken for the Bowles website re-build from 2016, which worked well*
 
-## Database
+[⥣ back to index](#index)
+
+## Sponsors
+
+Sponsor information is stored in the `sponsors.yaml` data file:
+
+```
+src
+|- data
+   |- sponsors.yaml
+```
+
+The structure for each sponsor is:
+
+```
+-   name:   // sponsors name
+    url:    // url for sponsor's website
+    img:    // image in 400x300 ratio, in scr/images/sponsors *
+    target: // recommend underscore and sponsor name, no spaces
+    copy:   // sponsor copy in html formatting
+
+* img path in the file should be sponsors/<sponsor_name>.png (or jepg)
+```
+
+This data is used (a) to populate the `sponsors` page, (b) to populate the sponsors carousel that
+sits alongside "hero" images, and (c) to populate the sponsors images at the bottom of the homepage.
+
+For the 2023 season there are seven sponsors and having seven logos in onw row (reducing to four
+logos per row on smaller devices) appears to work well; this is determined by the styling
+of the `.sponsor-logo-grid` element **in the `_homepage.scss` file** (change the
+`grid-template-columns: repeat(7, 1fr);` value).
+
+[⥣ back to index](#index)
+
+## Booking System
+
+### Database
 
 The backend for the booking system is a MySQL database on PlanetScale, accessed by API routes on
 the website (provided as Gatsby functions). The database structure is:
 
 ![database schema diagram](./_db_info/LSERSA%20booking%20schema.png)
 
-
+[⥣ back to index](#index)
 
 
 

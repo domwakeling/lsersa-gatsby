@@ -11,23 +11,6 @@ const Layout = ({ children }) => {
 
     return (
         <>
-            {/* <Helmet
-                meta={[
-                    { name: 'description', content: 'Bowles ski racing club' },
-                    { name: 'keywords', content: 'bowles, ski, skiing, racing' },
-                    { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
-                ]}
-                htmlAttributes={{
-                    lang: 'en',
-                }}
-            >
-                <script
-                    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign">
-                </script>
-            </Helmet> */}
-            {/* <Header
-                siteTitle={`${data.site.siteMetadata.title}`}
-            /> */}
             <Navbar />
             {/* <ToastContainer align="right" position="top" /> */}
             {children}
