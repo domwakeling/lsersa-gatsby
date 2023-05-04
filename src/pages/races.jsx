@@ -128,32 +128,12 @@ const RacesPage = () => {
                     <div className="row">
                         <h2 id="concussion_guidance">Concussion Guidance</h2>
                         <p>The safety and well being of racers is a priority for racers participating in
-                            LSERSA races, so please take the time to read the publication but more
+                            LSERSA races, so please take the time to read the <a target="_downlaod"
+                            href="/resources/guidance/if_in_doubt_sit_them_out.pdf">guidance</a> but more
                             importantly adhere to the minimum 21 day exclusion period recommended. The
                             severity of a concussion injury should not be underestimated and it is
                             important individuals, parents, schools and clubs work together to ensure
                             guidance is followed.</p>
-                        <p>Key points</p>
-                        <ul>
-                            <li>Most people with concussion recover fully with time.</li>
-                            <li>A concussion is a brain injury.</li>
-                            <li>All concussions are serious.</li>
-                            <li>Head injury can be fatal.</li>
-                            <li>Most concussions occur without loss of consciousness (being "knocked out").</li>
-                        </ul>
-                        <p>Anyone with one or more visible clues, or symptoms of a head injury must be
-                            immediately removed from playing or training and must not take part in any
-                            further physical sport or work activity, even if symptoms resolve, until
-                            assessment by an appropriate Healthcare Professional or by accessing the NHS
-                            by calling 111, which should be sought within 24 hours. Return to education/
-                            work takes priority over return to sport.</p>
-                        <p>Individuals with concussion should only return to training or playing sport
-                            which risks head injury after having followed a graduated return to activity
-                            (education/work) and sport programme.</p>
-                        <p>All concussions should be managed individually, but there should be no return
-                            to training or competition before 21 days from injury.</p>
-                        <p>Anyone with symptoms after 28 days should seek medical advice from their GP
-                            (which may in turn require specialist referral and review).</p>
                     </div>
                 </div>
             </div>

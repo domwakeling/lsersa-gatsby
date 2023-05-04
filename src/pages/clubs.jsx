@@ -6,6 +6,7 @@ import clubsData from '../data/clubs.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from '../components/utility/SponsorParser.jsx';
+import { Link } from "gatsby";
 
 const ClubsPage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -41,10 +42,10 @@ const ClubsPage = () => {
                 />
                 <div className="row">
                     <h1>Clubs</h1>
-                    <p style={{ fontSize: "2.0rem" }}>
-                        The following regional clubs are affiliated to LSERSA through Snowsports
-                        England:
-                    </p>
+                    <p className="larger">
+                        THe region is fortunate to have a number of active snowports clubs based at{' '}
+                        <Link to="/slopes">slopes</Link> all round the region. From beginner-friendly
+                        to elite training, there's a club for everybody.</p>
                     {
                         clubsData.map((club, idx) => (
                             <div className="club-container" key={idx}>

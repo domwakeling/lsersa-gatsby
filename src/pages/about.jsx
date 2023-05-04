@@ -94,7 +94,7 @@ const AboutPage = () => {
                         <div className="panel-container">
                             <PanelCard url="/clubs/">
                                 <h3>Clubs</h3>
-                                <p>Afiliated clubs</p>
+                                <p>Affiliated clubs</p>
                             </PanelCard>
                             <PanelCard url="/races/">
                                 <h3>Races</h3>
