@@ -5,7 +5,7 @@ import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import slopesData from '../data/slopes.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
-// import SponsorParser from '../components/utility/SponsorParser.jsx';
+import SponsorParser from '../components/utility/SponsorParser.jsx';
 
 const SlopesPage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -60,7 +60,11 @@ const SlopesPage = () => {
                                 </div>
                                 <div className="slope-info">
                                     <h2 className="as=h3">{slope.name}</h2>
-                                    {/* <SponsorParser rawHTML={slope.copy} /> */}
+                                    {
+                                        slope.copy && ( slope.copy !== null ) && (
+                                            <SponsorParser rawHTML={slope.copy} />
+                                        )
+                                    }
                                     <a className="slope-link" href={slope.url} target={slope.target}>
                                         Visit site
                                     </a>

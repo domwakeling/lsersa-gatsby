@@ -6,12 +6,15 @@
     column-gap: 1.0rem;
 
     @include for-tablet-down() {
-        grid-template-columns: 40% 1fr;
+        grid-template-columns: 200px 1fr;
     }
 
     .slope-image {
-        color: $color_p100;
         width: 100%;
+        @include for-tablet-down() {
+            width: 200px;
+            height: 200px;            
+        }
     }
 
     .slope-info {
