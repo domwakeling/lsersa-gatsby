@@ -2,12 +2,15 @@ import * as React from 'react';
 import Layout from '../../components/Layout.jsx';
 import Hero from "../../components/Hero.jsx";
 import raceData from '../../data/races.yaml';
+import specialData from '../../data/specials.yaml';
 import RaceTable from "../../components/races/RaceTable.jsx";
 import RaceYearList from "../../components/races/RaceYearList.jsx";
 import HeaderComponent from '../../components/head/HeaderComponent.jsx';
 
 const RaceArchivePage = ({ pageContext }) => {
     const raceDataYear = raceData.filter(item => item.year === pageContext.year)[0];
+
+    const specialsDataYear = specialData.filter(item => item.year === pageContext.year);
 
     return (
         <Layout>
@@ -43,6 +46,34 @@ const RaceArchivePage = ({ pageContext }) => {
                     { pageContext.year === 2020 && (
                         <p>There were no races held in 2020 due to Covid.</p>
                     )}
+
+                    {
+                        specialsDataYear.length > 0 && (
+                            <>
+                                <br />
+                                <h2>Special Cups {pageContext.year}</h2>
+                                <p>Winners of the end-of-year awards.</p>
+                                <div className="table-responsive-container">
+                                    <table>
+                                        <tbody>
+                                        {
+                                            specialsDataYear[0].items.map((item, idx) => (
+                                                <tr key={`spec-${idx}`}>
+                                                    <td style={{ paddingRight: '1.0rem' }}>
+                                                        {item.name}
+                                                    </td>
+                                                    <td style={{ paddingRight: '1.0rem' }}>
+                                                        {item.winner}
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </>
+                        )
+                    }
 
                     <div className="tablet-down">
                         <hr />
