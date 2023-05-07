@@ -1,3 +1,4 @@
+import { fetch } from 'undici'; 
 import { slopes } from '../../lib/slopedata.js';
 
 export default async function handler(req, res) {
