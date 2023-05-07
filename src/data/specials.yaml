@@ -1,3 +1,104 @@
+-   year: 2022
+    items:
+    -   name: Best New Skier
+        winner: Franky Brown
+    -   name: Bartletts Trophy - Most Improved
+        winner: Max Chapman
+    -   name: Good Effort Cup
+        winner: Oscar Cox & Star Palmer
+    -   name: Chairman's Cup for Commitment
+        winner: Gabriel Currie
+    -   name: Maltese Bursary Award
+        winner: Ethan Cole & Jude Collier
+    -   name: Eve Alcott Memorial
+        winner: The Ayton Family
+    -   name: Matthew Owens Award
+        winner: Dom Wakeling
+
+-   year: 2021
+    items:
+    -   name: Best New Skier
+        winner: Max Chapman
+    -   name: Bartletts Trophy - Most Improved
+        winner: Marcus Pop
+    -   name: Good Effort Cup
+        winner: Darcy Collier & Anthony Forte
+    -   name: Chairman's Cup for Commitment
+        winner: Anthony Forte & Emilia Pop
+    -   name: Maltese Bursary Award
+        winner: Archie Toms
+    -   name: Eve Alcott Memorial
+        winner: The Brown Family
+    -   name: Matthew Owens Award
+        winner: Chris Huelin
+
+-   year: 2019
+    items:
+    -   name: Best New Skier
+        winner: Jacob Ulatowski
+    -   name: Bartletts Trophy - Most Improved
+        winner: Oliver Engalnd
+    -   name: Good Effort Cup
+        winner: Matilda Townsend & Charlie Watts
+    -   name: Chairman's Cup for Commitment
+        winner: Charlotte Currie & Noah Grecula
+    -   name: Maltese Bursary Award
+        winner: Kenzie Standen & Kyren Standen
+    -   name: Eve Alcott Memorial
+        winner: The Toms Family
+    -   name: Matthew Owens Award
+        winner: Nigel Hilliard
+
+-   year: 2018
+    items:
+    -   name: Best New Skier
+        winner: Adam Cornick
+    -   name: Bartletts Trophy - Most Improved
+        winner: Stella Pople
+    -   name: Good Effort Cup
+        winner: Harvey Stanley & Lauren Healey
+    -   name: Chairman's Cup for Commitment
+        winner: Eddie Meadway & Evie Whitmarsh-Ali
+    -   name: Maltese Bursary Award
+        winner: Oliver England & Spencer Ciloglu Can
+    -   name: Eve Alcott Memorial
+        winner: The Wakeling Family
+    -   name: Matthew Owens Award
+        winner: John Ali
+
+-   year: 2017
+    items:
+    -   name: Best New Skier
+        winner:  Reuben Atkins & Stella Pople
+    -   name: Bartletts Trophy - Most Improved
+        winner: George Maley
+    -   name: Good Effort Cup
+        winner: Charlie Watts & Isabella Tomkinson
+    -   name: Chairman's Cup for Commitment
+        winner: Felicity Toms & Oliver Tovalarza
+    -   name: Maltese Bursary Award
+        winner: Saul Biggs & Megan Whitmarsh-Ali
+    -   name: Eve Alcott Memorial
+        winner: The Vincent Family
+
+-   year: 2016
+    items:
+    -   name: Bartletts Trophy - Most Improved
+        winner: Felicity Toms
+    -   name: Eve Alcott Memorial
+        winner: The Biggs Family
+    -   name: Matthew Owens Award
+        winner: Clare Gravener
+
+-   year: 2015
+    items:
+    -   name: Bartletts Trophy - Most Improved
+        winner: Liam Atkinson
+    -   name: Eve Alcott Memorial
+        winner: The Brezka Family
+    -   name: Matthew Owens Award
+        winner: John Lewington
+
 -   year: 2014
     items:
     -   name: Best New Skier

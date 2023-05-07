@@ -668,7 +668,7 @@
             teams: /resources/races/2014/surrey_2014_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Welwyn
             date: Saturday 18th October
             url:  /resources/races/2014/tri-regional.pdf
@@ -734,7 +734,7 @@
             teams: /resources/races/2013/surrey_2013_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Welwyn
             date: Saturday 12th October
             url: /resources/races/2013/tri-regional.pdf
@@ -799,7 +799,7 @@
             teams: /resources/races/2012/surrey_2012_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Bromley
             date: Saturday 13th October
             url: 
@@ -864,7 +864,7 @@
             teams: /resources/races/2011/surrey_2011_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Welwyn
             date: Saturday 15th October
             url: /resources/races/2011/tri-regional.pdf
@@ -929,7 +929,7 @@
             teams: /resources/races/2010/kent_2010_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Brentwood
             date: Saturday 16th October
             url: /resources/races/2010/tri-regional.pdf
@@ -994,7 +994,7 @@
             teams: /resources/races/2009/kent_2009_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Brentwood
             date: Saturday 17th October
             url: /resources/races/2009/tri-regional.pdf
@@ -1059,7 +1059,7 @@
             teams: /resources/races/2008/kent_2008_teams.pdf
     -   series: Regional
         races:
-        -   name: Tr-Regional
+        -   name: Tri-Regional
             venue: Brentwood
             date: Saturday 4th October
             url: /resources/races/2008/tri-regional.pdf
