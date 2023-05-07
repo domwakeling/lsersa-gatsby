@@ -1,0 +1,50 @@
+input {
+    border: 1px solid $color_p300;
+    display: block;
+    min-width: 15rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+}
+
+div.postcode-form {
+    input {
+        display: inline-block;
+    }
+
+    button {
+        padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+        border-radius: 0.5rem;
+        margin-left: 1.0rem;
+        background-color: $color_p300;
+        color: $color_p900;
+        border: 1px solid $color_p300;
+
+        &:hover {
+            background-color: $color_c500;
+            color: $color_c100;
+            border-color: $color_c100;
+        }
+
+        &:disabled {
+            background-color: $color_g700;
+            color: $color_g100;
+            border-color: $color_g100;
+            cursor: not-allowed;
+        }
+    }
+}
+
+label.circle-label {
+    font-size: 1.8rem;
+    background-color: $color_p300;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    color: white;
+    margin-right: 0.75rem;
+    position: relative;
+    top: 0.3rem;
+    float: left;
+}

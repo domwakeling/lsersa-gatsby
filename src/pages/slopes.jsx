@@ -6,6 +6,7 @@ import slopesData from '../data/slopes.yaml';
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from '../components/utility/SponsorParser.jsx';
+import SlopeSearch from "../components/SlopeSearch.jsx";
 
 const SlopesPage = () => {
     // query to get all sponsor images with their relative path - matching the img value in yaml
@@ -74,6 +75,7 @@ const SlopesPage = () => {
                         ))
                     }
                 </div>
+                <SlopeSearch />
             </div>
         </Layout>
     )
