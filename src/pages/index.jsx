@@ -34,7 +34,7 @@ const HomePage = () => {
             <div className="banner col-p900 bg-p300">
                 <div className="container">
                     <div className="row">
-                        <h3>Concussion Guidance 2023 &mdash; Please Read</h3>
+                        <h2 className="as-h3">Concussion Guidance 2023 &mdash; Please Read</h2>
                         <p className="larger">Recently, updated guidance has been published by the UK
                             Government on concussion with the title “if in doubt, sit them out”. LSERSA
                             has adopted this guidance.</p>

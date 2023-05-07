@@ -35,13 +35,39 @@
         <p>Knockhatch is an outdoor dry Ski and Snowboard Centre in Hailsham, East Sussex with a 110m
             slope. The surface is a carpet, which is ideal for learners.</p>
 
-
 -   name: Sandown Sports
     url: https://sandownsports.co.uk/ski/
     map_url: https://www.google.co.uk/maps/place/Sandown+Sports+and+Ski/@51.3730527,-0.4473777,12z/data=!4m6!3m5!1s0x48760acf347dd923:0xec834c8e8e846eee!8m2!3d51.3730494!4d-0.3649749!16s%2Fg%2F11cm16d0wn
     img: maps/sandown.png
     target: _sandown
     copy: >
-        <p>Sandown Ski is London's only ski slope, based Esher hill in Surrey. The centre has  four
+        <p>Sandown Ski is London's only ski slope, based Esher hill in Surrey. The centre has four
             dry ski slopes for all abilities, and is home to both Sandown Sports Junior Ski Club and
             Sandown Park Race Club.</p>
+
+-   name: Alpine Snowsports Aldershot
+    url: https://activenation.org.uk/venues/alpine-snowsports-aldershot/
+    map_url: https://www.google.co.uk/maps/place/Alpine+Snowsports+Aldershot/@51.2565285,-0.8326499,12z/data=!4m6!3m5!1s0x4875d354fa246aa7:0xc9d62f7ccc80ac5!8m2!3d51.256526!4d-0.7490602!16s%2Fg%2F1tdmdbyc
+    img: maps/aldershot.png
+    target: _aldershot
+    copy: >
+        <p>Aldershot's Snowsports Centre offers skiing and snowboarding.</p>
+
+-   name: Brentwood Park
+    url: http://www.brentwoodskicentre.co.uk/
+    map_url: https://www.google.co.uk/maps/place/Brentwood+Park+Ski+%26+Snowboard+Centre/@51.5974379,0.2121916,12z/data=!4m6!3m5!1s0x47d8b94b8cde09eb:0x90773990ea1d587!8m2!3d51.597425!4d0.2945898!16s%2Fg%2F1tg_wbyk
+    img: maps/brentwood.png
+    target: _brentwood
+    copy: >
+        <p>Brentwood Park Ski and Snowboard Centre offers a variety  of dry skiing and snowboarding
+        to suit all ability levels.</p>
+
+-   name: Gosling Ski Centre
+    url: https://www.better.org.uk/leisure-centre/welwyn/gosling-sports-park/skiing
+    map_url: https://www.google.co.uk/maps/place/Gosling+Ski+%26+Snowboard+Centre/@51.7895674,-0.2955534,12z/data=!4m6!3m5!1s0x48763b3fd00ecd25:0x7ea4a72398c4f6ef!8m2!3d51.7895545!4d-0.2131552!16s%2Fg%2F11h0w2mn3
+    img: maps/welwyn.png
+    target: _welwyn
+    copy: >
+        <p>The Gosling Ski Centre offers a wide range of activities for all ages, beginner to
+            advanced. Recreational Skiing and Private Lessons are also available to book.</p>
+

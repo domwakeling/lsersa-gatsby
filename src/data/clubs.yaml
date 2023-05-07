@@ -96,3 +96,17 @@
         <p>Tonicity Sports are an inclusive ski club affiliated with Snowsport England. Whether
             you want to be a ski racer or just improve your technique ready for you next holiday,
             Tonicity sports is a ski club accessible to everyone.</p>
+
+-   name: Disability Snowsports UK
+    url: https://www.disabilitysnowsport.org.uk/
+    img: clubs/dsuk.png
+    target: _dsuk
+    copy: >
+        <p>DSUK believe that all people have the right to access the unique physical, mental, and
+            social benefits of snowsport, regardless of disability, injury, or experience. They
+            operate ski schools at various locations throughout the UK.</p>
+        <p>There are two local groups in the region,
+            <a href="https://www.disabilitysnowsport.org.uk/local-groups/dsuk-southeast-group"
+            target="_dsuk_se">South East</a> (based at Bowles) and
+            <a href="https://www.disabilitysnowsport.org.uk/local-groups/dsuk-tunbridge-wells"
+            target="_dsuk_tw">Tunbridge Wells</a> (based at Chatham).</p>

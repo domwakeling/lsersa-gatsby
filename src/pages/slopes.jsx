@@ -43,7 +43,8 @@ const SlopesPage = () => {
                     <h1>Slopes</h1>
                     <p className="larger">
                         We are fortunate to have a number of slopes in and around the region,
-                        making snowsports accessible to everyone.</p>
+                        making snowsports accessible to everyone. The following are slopes that
+                        the region uses regularly for races / DSUK / SSCD activities.</p>
                     {
                         slopesData.map((slope, idx) => (
                             <div className="slope-container" key={idx}>

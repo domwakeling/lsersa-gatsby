@@ -95,10 +95,10 @@ the website (provided as Gatsby functions). The database structure is:
 - [x] training page => set it up
 - [ ] training page => any info on other training? Telemark, Skiercross?
 - [x] region page => committee
-- [ ] not sure where, but minutes etc
+- [x] not sure where, but minutes etc
 - [x] clubs page
 - [x] add blurb and links for clubs
-- [ ] do we also want to put in slopes?
+- [x] do we also want to put in slopes?
 - [x] add favicon
 - [x] sponsor carousel
 - [ ] link "highlight hover" doesn't work if the link is over multiple rows
