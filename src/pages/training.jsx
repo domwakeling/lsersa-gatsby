@@ -10,7 +10,7 @@ const TrainingPage = () => {
                 <Hero
                     text="TRAINING"
                     imageUrl="hero/inter_regional.png"
-                    imageAlt="Training at Chatham"
+                    imageAlt="LSERSA team at Inter-Regionals"
                 />
                 <div className="row">
                     <h1>Regional Slalom Training</h1>

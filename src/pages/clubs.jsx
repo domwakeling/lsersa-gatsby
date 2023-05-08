@@ -38,12 +38,12 @@ const ClubsPage = () => {
                     text="LOCAL"
                     text2="CLUBS"
                     imageUrl="hero/hero_clubs.png"
-                    imageAlt="End of year trophies"
+                    imageAlt="Slub teams metalists"
                 />
                 <div className="row">
                     <h1>Clubs</h1>
                     <p className="larger">
-                        THe region is fortunate to have a number of active snowports clubs based at{' '}
+                        The region is fortunate to have a number of active snowports clubs based at{' '}
                         <Link to="/slopes">slopes</Link> all round the region. From beginner-friendly
                         to elite training, there's a club for everybody.</p>
                     {

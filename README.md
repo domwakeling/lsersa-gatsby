@@ -12,6 +12,10 @@
 
 **[Sponsors](#sponsors)**
 
+**[The Region](#the-region)**
+* [Clubs](#clubs)
+* [Slopes](#slopes)
+
 **[Booking System](#booking-system)**
 * [Database](#database)
 
@@ -43,7 +47,7 @@ src
 
 The structure for each sponsor is:
 
-```
+```yaml
 -   name:   // sponsors name
     url:    // url for sponsor's website
     img:    // image in 400x300 ratio, in scr/images/sponsors *
@@ -60,6 +64,58 @@ For the 2023 season there are seven sponsors and having seven logos in onw row (
 logos per row on smaller devices) appears to work well; this is determined by the styling
 of the `.sponsor-logo-grid` element **in the `_homepage.scss` file** (change the
 `grid-template-columns: repeat(7, 1fr);` value).
+
+As new sponsors are added (and old removed), the following changes are required:
+* change the content of the `sponsors.yaml` file (deleting and adding as appropriate)
+* for new sponsors, a logo is required - this should sit in the `src/images/sponsors` 
+  folder; have a transparent background (`png` recommended); be in a 4:3 ratio, ideally 400x300
+* if the number of sponsors changes, change the `grid-template-columns` value in
+  `src/style/_homepage.scss` (for `.sponsor-grid-logo`)
+  
+[⥣ back to index](#index)
+
+## The Region
+
+### Clubs
+
+As with most other elements, clubs info is stored in a YAML file - in this case, `src/data/clubs.yaml`.
+
+The structure for the data is
+
+```yaml
+-   name:   // club name
+    url:    // url for the club's website (or facebook page)
+    img:    // image in 400x400 ratio, in scr/images/clubs *
+    target: // recommend underscore and club name, no spaces
+    copy:   // club copy in html formatting
+
+* img path in the file should be clubs/<sponsor_name>.png (or jepg)
+```
+
+Logos are 4:3 ratio (preferably 400x300 file size) with a transparent background (so ideally PNG).
+
+All clubs officially affiliated with LSERSA (as notified by SSE) are listed, as well as
+DSUK which has two local groups.
+
+### Slopes
+
+Data for the slopes is held in **two** files; the main one is another YAML file at
+`src/data/slopes.yaml` with the following structure:
+
+```yaml
+-   name:      // slope/centre name
+    url:       // url for the slope's website
+    map_url :  // url for a Google maps search of the centre name at 2km scale
+    img:       // image in 400x200 ratio, in scr/images/slopes *
+    target:    // recommend underscore and slope name, no spaces
+    copy:      // club copy in html formatting
+
+* img path in the file should be slopes/<sponsor_name>.png (or jepg)
+```
+**In addition** there is also a second file with JSON data at `src/lib/slopedata.js`. This
+repeats the `name`, `url`, `map-url` and `target` fields, whilst also adding latitude and
+longitude values (and is used by the API function `getslopes` to determine distance from the
+given postcode).
 
 [⥣ back to index](#index)
 

@@ -37,7 +37,13 @@ const AboutPage = () => {
     return (
         <Layout>
             <div className="container">
-                <Hero text="ABOUT" text2="THE REGION" />
+                <Hero
+                    imageUrl="hero/hero_tri_2017.png"
+                    imageAlt="Tri-Regional team 2017"
+                    imageShade="rgba(0,0,0,0.1)"
+                    text="ABOUT"
+                    text2="US"
+                />
                 <div className="row">
                     <h1 className="underlined">About LSERSA</h1>
 

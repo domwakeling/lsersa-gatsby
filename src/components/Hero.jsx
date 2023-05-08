@@ -44,13 +44,13 @@ const Hero = ({
                             className="hero_image"
                         />
                         <div className="hero-shade" style={{ backgroundColor : imageShade }} />
-                        <div className="hero-text">
+                        <div className="hero-text" style={{ borderColor: textColor }}>
                             { text2 && text2 !== '' && (
                                 <p className="hero-para" style={{ color: textColor }}>
                                     {text}
                                 </p>
                             )}
-                            <p className="hero-para" style={{ color: textColor, borderBottomColor: textColor }}>
+                            <p className="hero-para" style={{ color: textColor }}>
                                 { text2 && text2 !== '' ? text2 : text }
                             </p> 
                         </div>

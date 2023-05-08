@@ -34,7 +34,7 @@ const RaceArchivePage = ({ pageContext }) => {
 
                     { pageContext.year !== 2020 && (
                         <>
-                            <h2>Race Calendar</h2>
+                            <h2>Race Results</h2>
                             <div>
                                 <div className="table-responsive-container left-column">
                                     <RaceTable data={raceDataYear} />
