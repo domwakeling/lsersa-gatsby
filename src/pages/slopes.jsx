@@ -37,8 +37,8 @@ const SlopesPage = () => {
                 <Hero
                     text="LOCAL"
                     text2="SLOPES"
-                    imageUrl="hero/hero_clubs.png"
-                    imageAlt="End of year trophies"
+                    imageUrl="hero/hero_brentwood.png"
+                    imageAlt="Racers at Brentwood slope"
                 />
                 <div className="row">
                     <h1>Slopes</h1>
