@@ -23,7 +23,7 @@ const HomePage = () => {
                 <Hero text="WELCOME" text2="TO LSERSA" />
                 <div className="row">
                     <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
-                    <p>Welcome to the London & South East Regional Snowsports Assocation, LSERSA. We
+                    <p>Welcome to the London &amp; South East Regional Snowsports Association, LSERSA. We
                         are a regional association affiliated with Snowsport England, the national
                         governing body.</p>
                     <p>In addition to providing Regional Race Training and organising the LSERSA
