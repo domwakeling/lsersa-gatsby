@@ -3,7 +3,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/658d902f-c687-4c02-9058-5be539a76000/deploy-status)](https://app.netlify.com/sites/lsersa/deploys)
 
 2023 re-build of the LSERSA website using [Gatsby](https://www.gatsbyjs.com/),
-[PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/).
+[PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/), with
+[Stripe](https://stripe.com/en-gb) integration for payments.
+
+![stack flow diagra,](./static/stack-design.png)
 
 ## Index
 **[Rationale](#rationale)**
@@ -27,11 +30,11 @@ and also provides React and lambda functions to run the booking system.
 
 ## Deployment
 
-At point of writing the re-build is still in progress, but intention is that the replacement site
-will be deployed onto Netlify (using GitHub integration) and the appropriate records changed so that
-`lsersa.org` automatically (and invisible) forwards.
+The replacement site is deployed onto Netlify (using GitHub integration); the `lsersa.org` domain,
+which is provided through [Easyspace](https://www.easyspace.com/), is then set to point to the
+Netlify app 'behind the scenes'.
 
-*This is the approach taken for the Bowles website re-build from 2016, which worked well*
+*This is the approach taken for the Bowles website re-build from 2016, which worked well.*
 
 [⥣ back to index](#index)
 
@@ -60,7 +63,7 @@ The structure for each sponsor is:
 This data is used (a) to populate the `sponsors` page, (b) to populate the sponsors carousel that
 sits alongside "hero" images, and (c) to populate the sponsors images at the bottom of the homepage.
 
-For the 2023 season there are seven sponsors and having seven logos in onw row (reducing to four
+For the 2023 season there are seven sponsors and having seven logos in one row (reducing to four
 logos per row on smaller devices) appears to work well; this is determined by the styling
 of the `.sponsor-logo-grid` element **in the `_homepage.scss` file** (change the
 `grid-template-columns: repeat(7, 1fr);` value).
@@ -95,7 +98,8 @@ The structure for the data is
 Logos are 4:3 ratio (preferably 400x300 file size) with a transparent background (so ideally PNG).
 
 All clubs officially affiliated with LSERSA (as notified by SSE) are listed, as well as
-DSUK which has two local groups.
+DSUK which has two local groups. This needs to be reviewed annually to ensure that any new
+affiliates are picked up (and potentially remove any clubs that are no longer affiliated).
 
 ### Slopes
 
@@ -116,6 +120,10 @@ Data for the slopes is held in **two** files; the main one is another YAML file 
 repeats the `name`, `url`, `map-url` and `target` fields, whilst also adding latitude and
 longitude values (and is used by the API function `getslopes` to determine distance from the
 given postcode).
+
+*The map images are either 2km or 5km scale screenshots taken from Google Maps and cropped
+(**not** resized) to suit the 400x200 requirement; use appropriate scale and aim to have the
+pin "somewhat central" so that if will still be in the image on smaller screens.*
 
 [⥣ back to index](#index)
 
