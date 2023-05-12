@@ -28,12 +28,14 @@ const RacesPage = () => {
 
                     <h1>{raceData[0].year} Race Season</h1>
 
+                    <a className="tablet-down years-link" href="#previous-years">
+                        previous years
+                    </a>
+
                     <h2>Race Calendar</h2>
-                    {/* <div> */}
                         <div className="table-responsive-container left-column">
                             <RaceTable data={raceData[0]} />
                         </div>
-                    {/* </div> */}
                 </div>
             </div>
 
@@ -184,7 +186,7 @@ const RacesPage = () => {
                             target="_rules">The British Ski and Snowboard Guide to Helmets for Alpine Racing</a>.</p>
 
                     <br />
-                    <div className="tablet-down">
+                    <div id="previous-years" className="tablet-down">
                         <hr />
                         <h2 className="as-h3">Links to other years' results</h2>
                         <RaceYearList year={raceData[0].year} />

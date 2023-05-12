@@ -34,6 +34,10 @@ const RaceArchivePage = ({ pageContext }) => {
 
                     { pageContext.year !== 2020 && (
                         <>
+                            <a className="tablet-down years-link" href="#other-years">
+                                other years
+                            </a>
+
                             <h2>Race Results</h2>
                             <div>
                                 <div className="table-responsive-container left-column">
@@ -75,7 +79,7 @@ const RaceArchivePage = ({ pageContext }) => {
                         )
                     }
 
-                    <div className="tablet-down">
+                    <div id="other-years" className="tablet-down">
                         <hr />
                         <h2 className="as-h3">Links to other years' results</h2>
                         <RaceYearList year={pageContext.year} />
