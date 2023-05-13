@@ -36,7 +36,7 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
 
     const setPasswordReset = (e) => {
         e.preventDefault();
-        setMode(MODES.PASWORD_RESET)
+        setMode(MODES.PASWORD_RESET_REQUEST)
     }
 
     // capture <enter> key from 'search' input and divert
@@ -89,11 +89,9 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
             <br />
             <p><b>TODO:</b></p>
             <ul>
-                <li>send confirmation email to the requestor</li>
-                <li>send request email to head coach/admin</li>
-                <li>add user with pending to the DB</li>
-                <li><i>user then appears in the admin pane to confirm or deny</i></li>
-                <li><i>once user is confirmed, they get an email with a link to confirm ...</i></li>
+                <li>deal with login flow</li>
+                <li>error message in the event of a problem</li>
+                <li><i>work out persistence of login using JWTs?</i></li> 
             </ul>
         </div>
     )

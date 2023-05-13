@@ -23,7 +23,7 @@ const bodyText = `
     <td style="padding:0;">
         <table class="column" style="border-spacing:0;padding-left:8px;padding-right:8px;">
             <tr>
-                <td style="padding:0;">
+                <td style="padding:10px 0 0 0;">
                     <h2 style="font-size: 20px;">
                         HEADER_PLACEHOLDER
                     </h2>

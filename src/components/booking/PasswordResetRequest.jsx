@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MODES } from "../../lib/modes";
 
-const PasswordReset = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
+const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     const [message, setMessage] = useState('');
 
     const handleEmail = (e) => {
@@ -63,13 +63,13 @@ const PasswordReset = ({ email, setEmail, emailValid, setEmailValid, setMode }) 
             <p><b>TODO:</b></p>
             <ul>
                 <li>check email address is in the system</li>
+                <li>generate token</li>
                 <li>send email</li>
                 <li>deal with errors</li>
-                <li><i>user then appears in the admin pane to confirm or deny</i></li>
-                <li><i>once user is confirmed, they get an email with a link to confirm ...</i></li>
+                <li>message as appropriate</li>
             </ul>
         </div>
     )
 }
 
-export default PasswordReset;
+export default PasswordResetRequest;
