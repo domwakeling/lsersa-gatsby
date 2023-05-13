@@ -1,15 +1,22 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MODES } from "../../lib/modes";
 
-const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
+const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     const [message, setMessage] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleEmail = (e) => {
         e.preventDefault();
         setEmail(e.target.value);
         setMessage('');
         setEmailValid(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(e.target.value));
+    }
+
+    const handlePassword = (e) => {
+        e.preventDefault();
+        setPassword(e.target.value);
+        setMessage('');
     }
 
     const handleSubmit = async (e) => {
@@ -22,6 +29,11 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
             to complete the sign-up process.`);
     }
 
+    const setSignIn = (e) => {
+        e.preventDefault();
+        setMode(MODES.SIGNING_UP)
+    }
+
     // capture <enter> key from 'search' input and divert
     const checkEnterKey = (e) => {
         if (e.keyCode === 13 && emailValid) {
@@ -31,35 +43,38 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
         }
     };
 
-    const setLogIn = (e) => {
-        e.preventDefault();
-        setMode(MODES.LOGGING_IN)
-    }
-
     return (
         <div>
-            <h2>REQUEST AN ACCOUNT</h2>
-            <p>To request a new account, please submit your email address. The
-                request will be sent to the head coach for review.</p>
+            <h2>LOG IN</h2>
             <div className="postcode-form">
                 <input
                     type="text"
-                    id="emailRequest"
-                    name="emailRequest"
+                    id="emailEnter"
+                    name="emailEnter"
                     onChange={handleEmail}
                     onKeyDown={checkEnterKey}
                     value={email}
                     placeholder="email address"
                 />
+                <br/>
+                <input
+                    type="password"
+                    id="passwordEnter"
+                    name="passwordEnter"
+                    onChange={handlePassword}
+                    onKeyDown={checkEnterKey}
+                    value={password}
+                    placeholder="password"
+                />
                 <button
-                    disabled={!emailValid}
+                    disabled={!(emailValid && password !== '')}
                     onClick={handleSubmit}
                 >
-                    Submit
+                    Log In
                 </button>
             </div>
-            <p>If you have an account, you need to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
-            { message !== '' && (
+            <p>If you don't have an account, you need to <Link to="#" onClick={setSignIn}>create one</Link>.</p>
+            {message !== '' && (
                 <p className="advice-box">{message}</p>
             )
 
@@ -78,4 +93,4 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     )
 }
 
-export default SignUp;
+export default LogIn;

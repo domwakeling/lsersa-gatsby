@@ -3,7 +3,6 @@ const MODES = {
     LOGGED_IN: 1,
     LOGGING_IN: 2,
     SIGNING_UP: 3,
-    WELCOME: 4,
 }
 
 const ADMINMODES = {
