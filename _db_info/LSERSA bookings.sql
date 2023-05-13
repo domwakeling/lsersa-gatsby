@@ -63,4 +63,4 @@ ALTER TABLE `tokens` ADD FOREIGN KEY (`type`) REFERENCES `token_types` (`id`);
 
 INSERT INTO roles (name) VALUES ("admin"), ("user");
 
-INSERT INTO token_types (type) VALUES ("passwordReset");
+INSERT INTO token_types (type) VALUES ("passwordReset"), ("accountRequest");

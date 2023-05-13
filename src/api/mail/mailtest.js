@@ -68,10 +68,6 @@ async function main() {
                 .replace("BODY_PLACEHOLDER", newBodyText), // html body
     });
 
-    console.log(info);
-
-    console.log("Message sent: %s", info.messageId);
-
     return info;
 }
 
@@ -82,3 +78,37 @@ export default async function handler(req, res) {
     res.status(200).json({ message: ret });
 
 }
+
+/* typical response:
+
+{
+    "message": {
+        "accepted": [
+            "domwakeling@gmail.com"
+        ],
+        "rejected": [],
+        "ehlo": [
+            "ENHANCEDSTATUSCODES",
+            "PIPELINING",
+            "8BITMIME",
+            "SIZE 31457280",
+            "DSN",
+            "AUTH PLAIN LOGIN",
+            "DELIVERBY",
+            "HELP"
+        ],
+        "envelopeTime": 75,
+        "messageTime": 137,
+        "messageSize": 6151,
+        "response": "250 2.0.0 34DC4ggT028963 Message accepted for delivery",
+        "envelope": {
+            "from": "bookingsystem@lsersa.org",
+            "to": [
+                "domwakeling@gmail.com"
+            ]
+        },
+        "messageId": "<9de21d64-8c62-8615-a0e3-b4f6169d269d@lsersa.org>"
+    }
+}
+
+*/
