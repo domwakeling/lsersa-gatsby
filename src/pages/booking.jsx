@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout.jsx";
 import { MODES, ADMINMODES } from "../lib/modes.js";
-import SignUp from "../components/booking/SignUp.jsx";
 import LogIn from "../components/booking/LogIn.jsx";
+import PasswordReset from "../components/booking/PasswordReset.jsx";
+import SignUp from "../components/booking/SignUp.jsx";
 
 const BookingPage = () => {
     const [user, setUser] = useState(null);
@@ -71,6 +72,16 @@ const BookingPage = () => {
 
                     {mode === MODES.SIGNING_UP && (
                         <SignUp
+                            email={email}
+                            emailValid={emailValid}
+                            setEmail={setEmail}
+                            setEmailValid={setEmailValid}
+                            setMode={setMode}
+                        />
+                    )}
+
+                    {mode === MODES.PASWORD_RESET && (
+                        <PasswordReset
                             email={email}
                             emailValid={emailValid}
                             setEmail={setEmail}

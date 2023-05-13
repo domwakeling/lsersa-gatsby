@@ -34,6 +34,11 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
         setMode(MODES.SIGNING_UP)
     }
 
+    const setPasswordReset = (e) => {
+        e.preventDefault();
+        setMode(MODES.PASWORD_RESET)
+    }
+
     // capture <enter> key from 'search' input and divert
     const checkEnterKey = (e) => {
         if (e.keyCode === 13 && emailValid) {
@@ -46,7 +51,7 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     return (
         <div>
             <h2>LOG IN</h2>
-            <div className="postcode-form">
+            <div className="booking-form">
                 <input
                     type="text"
                     id="emailEnter"
@@ -74,6 +79,7 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
                 </button>
             </div>
             <p>If you don't have an account, you need to <Link to="#" onClick={setSignIn}>create one</Link>.</p>
+            <p><Link to="#" onClick={setPasswordReset}>Forgotten password</Link>?</p>
             {message !== '' && (
                 <p className="advice-box">{message}</p>
             )

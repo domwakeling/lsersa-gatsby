@@ -1,8 +1,8 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MODES } from "../../lib/modes";
 
-const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
+const PasswordReset = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     const [message, setMessage] = useState('');
 
     const handleEmail = (e) => {
@@ -16,10 +16,12 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
         e.preventDefault();
         // TODO: logic for requesting an account + visual notification
         setEmail('');
-        setMessage(`Your request has been sent and a confirmation email has been sent to your
-            email address. Please check your emails (and possible any spam folder) to ensure that
-            this is received — once approved you will receive another email message inviting you
-            to complete the sign-up process.`);
+        setMessage(`An email has been sent with instructions to reset your password.`);
+    }
+
+    const setLogIn = (e) => {
+        e.preventDefault();
+        setMode(MODES.LOGGING_IN)
     }
 
     // capture <enter> key from 'search' input and divert
@@ -31,16 +33,9 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
         }
     };
 
-    const setLogIn = (e) => {
-        e.preventDefault();
-        setMode(MODES.LOGGING_IN)
-    }
-
     return (
         <div>
-            <h2>REQUEST AN ACCOUNT</h2>
-            <p>To request a new account, please submit your email address. The
-                request will be sent to the head coach for review.</p>
+            <h2>RESET PASSWORD</h2>
             <div className="booking-form">
                 <input
                     type="text"
@@ -58,19 +53,18 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
                     Submit
                 </button>
             </div>
-            <p>If you have an account, you need to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
-            { message !== '' && (
+            {message !== '' && (
                 <p className="advice-box">{message}</p>
-            )
-
+                )
             }
+            <p>Back to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
 
             <br />
             <p><b>TODO:</b></p>
             <ul>
-                <li>send confirmation email to the requestor</li>
-                <li>send request email to head coach/admin</li>
-                <li>add user with pending to the DB</li>
+                <li>check email address is in the system</li>
+                <li>send email</li>
+                <li>deal with errors</li>
                 <li><i>user then appears in the admin pane to confirm or deny</i></li>
                 <li><i>once user is confirmed, they get an email with a link to confirm ...</i></li>
             </ul>
@@ -78,4 +72,4 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     )
 }
 
-export default SignUp;
+export default PasswordReset;
