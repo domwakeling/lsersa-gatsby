@@ -1,9 +1,10 @@
 CREATE TABLE `users` (
   `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `email` varchar(100) UNIQUE NOT NULL,
-  `password_hash` varchar(255) NOT NULL,
+  `password_hash` varchar(255),
   `verified` boolean NOT NULL,
-  `role` integer NOT NULL
+  `role` integer NOT NULL,
+  `contact` varchar(30)
 );
 
 CREATE TABLE `users_racers` (
