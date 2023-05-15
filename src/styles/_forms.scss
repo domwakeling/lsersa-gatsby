@@ -7,15 +7,19 @@ input {
     padding: 0.5rem 1.0rem 0.5rem 1.0rem;
 }
 
-div.postcode-form {
+div.postcode-form, div.booking-form {
     input {
         display: inline-block;
     }
+    button {
+        margin-left: 1.0rem;
+    }
+}
 
+div.postcode-form, div.booking-form, div.user-form {
     button {
         padding: 0.5rem 1.0rem 0.5rem 1.0rem;
         border-radius: 0.5rem;
-        margin-left: 1.0rem;
         background-color: $color_p300;
         color: $color_p900;
         border: 1px solid $color_p300;
@@ -32,6 +36,24 @@ div.postcode-form {
             border-color: $color_g100;
             cursor: not-allowed;
         }
+    }
+}
+
+.user-form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label {
+        input {
+            // min-width: 300px;
+            // max-width: 90%;
+            width: 90%;
+        }
+        margin-bottom: 1.5rem;
+    }
+
+    @include for-tablet-down () {
+        grid-template-columns: 1fr;
     }
 }
 

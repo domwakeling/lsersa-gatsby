@@ -30,7 +30,7 @@ const SlopeSearch = () => {
 
     // capture <enter> key from 'search' input and divert
     const checkEnterKey = (e) => {
-        if (e.keyCode == 13 && codeValid) {
+        if (e.keyCode === 13 && codeValid) {
             e.preventDefault();
             const fakeE = { preventDefault: () => { } };
             handleSubmit(fakeE);
