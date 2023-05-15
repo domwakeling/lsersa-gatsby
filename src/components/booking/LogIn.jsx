@@ -81,10 +81,10 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
             <p>If you don't have an account, you need to <Link to="#" onClick={setSignIn}>create one</Link>.</p>
             <p><Link to="#" onClick={setPasswordReset}>Forgotten password</Link>?</p>
             {message !== '' && (
-                <p className="advice-box">{message}</p>
-            )
-
-            }
+                <div className="advice-box">
+                    <p>{message}</p>
+                </div>
+            )}
 
             <br />
             <p><b>TODO:</b></p>

@@ -80,10 +80,10 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
             <p>If you have an account, you need to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
             { waiting && ( <LoadingSpinner />)}
             { message !== '' && (
-                <p className="advice-box">{message}</p>
-            )
-
-            }
+                <div className="advice-box">
+                    <p>{message}</p>
+                </div>
+            )}
 
             <br />
             <p><b>TODO:</b></p>

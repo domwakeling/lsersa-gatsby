@@ -54,9 +54,10 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
                 </button>
             </div>
             {message !== '' && (
-                <p className="advice-box">{message}</p>
-                )
-            }
+                <div className="advice-box">
+                    <p>{message}</p>
+                </div>
+            )}
             <p>Back to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
 
             <br />
