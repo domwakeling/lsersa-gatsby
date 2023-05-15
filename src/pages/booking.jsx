@@ -4,6 +4,7 @@ import { MODES, ADMINMODES } from "../lib/modes.js";
 import LogIn from "../components/booking/LogIn.jsx";
 import PasswordResetRequest from "../components/booking/PasswordResetRequest.jsx";
 import SignUp from "../components/booking/SignUp.jsx";
+import UserDashboard from "../components/booking/UserDashboard.jsx";
 
 const BookingPage = () => {
     const [user, setUser] = useState(null);
@@ -15,7 +16,7 @@ const BookingPage = () => {
     const [emailValid, setEmailValid] = useState(false);
 
     const setAdmin = () => { setMode(MODES.ADMIN) }
-    const setLoggedIn = () => { setMode(MODES.LOGGED_IN) }
+    const setLoggedIn = () => { setMode(MODES.LOGGED_IN); setUser({id: 123}) }
     const setLogging = () => { setMode(MODES.LOGGING_IN) }
     const setSigning = () => { setMode(MODES.SIGNING_UP) }
     
@@ -54,10 +55,7 @@ const BookingPage = () => {
                     )}
 
                     {mode === MODES.LOGGED_IN && (
-                        <div>
-                            <p>LOGGED IN</p>
-                            <p>Normal user logged in</p>
-                        </div>
+                        <UserDashboard user={user} />
                     )}
 
                     {mode === MODES.LOGGING_IN && (
