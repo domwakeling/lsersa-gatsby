@@ -1,9 +1,11 @@
 import React, { useState }from "react";
 import { Link } from "gatsby";
 import { MODES } from "../../lib/modes";
+import LoadingSpinner from "./elements/LoadingSpinner";
 
 const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
     const [message, setMessage] = useState('');
+    const [waiting, setWaiting] = useState(false);
 
     const handleEmail = (e) => {
         e.preventDefault();
@@ -14,12 +16,29 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // TODO: logic for requesting an account + visual notification
-        setEmail('');
-        setMessage(`Your request has been sent and a confirmation email has been sent to your
-            email address. Please check your emails (and possible any spam folder) to ensure that
-            this is received — once approved you will receive another email message inviting you
-            to complete the sign-up process.`);
+        setWaiting(true);
+        const body = {
+            email: email,
+        }
+        
+        const res = await fetch("/api/user/newaccountrequest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+        });
+        const status = res.status;
+        const data = await res.json();
+        // response as appropriate
+        setWaiting(false);
+        if (status === 200) {
+            setMessage(`Your request has been sent and a confirmation email has been sent to your
+                email address. Please check your emails (and possible any spam folder) to ensure that
+                this is received — once approved you will receive another email message inviting you
+                to complete the sign-up process.`);
+            setEmail('');
+        } else {
+            setMessage(data.message);
+        }
     }
 
     // capture <enter> key from 'search' input and divert
@@ -59,6 +78,7 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
                 </button>
             </div>
             <p>If you have an account, you need to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
+            { waiting && ( <LoadingSpinner />)}
             { message !== '' && (
                 <p className="advice-box">{message}</p>
             )

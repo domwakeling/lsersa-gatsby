@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import UserDetail from "../../components/booking/UserDetails";
-import PulseLoader from "react-spinners/PulseLoader";
+import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
 
 const ValidateUser = ({params}) => {
     const [user, setUser] = useState(null);
@@ -42,7 +42,7 @@ const ValidateUser = ({params}) => {
 
                     
                     { isLoading && (
-                        <PulseLoader color="#172a95" size={10} speedMultiplier={0.75} />
+                        <LoadingSpinner />
                     )}
 
                     {

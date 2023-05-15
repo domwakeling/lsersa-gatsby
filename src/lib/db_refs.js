@@ -10,7 +10,14 @@ const tokenTYpes = {
     ACCOUNT_REQUEST: 2
 }
 
+// id values for genders
+const genders = {
+    FEMALE: 1,
+    MALE: 2
+}
+
 export {
+    genders,
     roles,
     tokenTYpes
 }
