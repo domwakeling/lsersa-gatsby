@@ -27,27 +27,12 @@ CREATE TABLE `users_racers` (
 
 CREATE TABLE `roles` (
   `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) UNIQUE NOT NULL,
-  `yob` integer NOT NULL,
-  `concession` boolean,
-  `club` integer
+  `name` varchar(60) UNIQUE NOT NULL
 );
 
 CREATE TABLE `genders` (
   `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` varchar(10) UNIQUE NOT NULL
-);
-
-CREATE TABLE `clubs` (
-  `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `affiliated` boolean
-);
-
-CREATE TABLE `session` (
-  `date` date UNIQUE PRIMARY KEY NOT NULL,
-  `limit` integer,
-  `message` varchar(255)
 );
 
 CREATE TABLE `tokens` (
@@ -112,7 +97,7 @@ ALTER TABLE `users_racers` ADD FOREIGN KEY (`racer_id`) REFERENCES `racers` (`id
 
 ALTER TABLE `bookings` ADD FOREIGN KEY (`racer_id`) REFERENCES `racers` (`id`);
 
-ALTER TABLE `users` ADD FOREIGN KEY (`role`) REFERENCES `roles` (`id`);
+ALTER TABLE `users` ADD FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
 ALTER TABLE `tokens` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
@@ -120,9 +105,9 @@ ALTER TABLE `tokens` ADD FOREIGN KEY (`type_id`) REFERENCES `token_types` (`id`)
 
 ALTER TABLE `bookings` ADD FOREIGN KEY (`session_date`) REFERENCES `sessions` (`date`);
 
-ALTER TABLE `clubs` ADD FOREIGN KEY (`id`) REFERENCES `racers` (`club_id`);
+ALTER TABLE `racers` ADD FOREIGN KEY (`club_id`) REFERENCES `clubs` (`id`);
 
-ALTER TABLE `genders` ADD FOREIGN KEY (`id`) REFERENCES `racers` (`gender_id`);
+ALTER TABLE `racers` ADD FOREIGN KEY (`gender_id`) REFERENCES `genders` (`id`);
 
 */
 
