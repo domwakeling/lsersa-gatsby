@@ -3,19 +3,18 @@ import TextField from "./elements/TextField";
 import EmailField from "./elements/EmailField";
 import PasswordField from "./elements/PasswordField";
 
-const UserDetail = ({user, emptyPasswordOk=false}) => {
+const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
     // for the secondary_ and emergency_ emails, it's acceptable that they're empty
     const checkEmail = (email) => !email || (email === '' ) || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
-
-    const userId = user.id;
+ 
     const [userEmail, setUserEmail] = useState(user.email);
     const [userEmailValid, setUserEmailValid] = useState(true);
     const [userFirstName, setUserFirstName] = useState(user.first_name || '');
-    const [userSecondName, setUserSecondName] = useState(user.second_name || '');
+    const [userLastName, setUserLastName] = useState(user.last_name || '');
     const [userMobile, setUserMobile] = useState(user.mobile || '');
     const [secondEmail, setSecondEmail] = useState(user.secondary_email || '');
     const [secondEmailValid, setSecondEmailValid] = useState(checkEmail(user.secondary_email));
-    const [secondName, setSecondName] = useState(user.secondary_name || '');
+    const [secondName, setLastName] = useState(user.secondary_name || '');
     const [secondMobile, setSecondMobile] = useState(user.secondary_mobile || '');
     const [emergencyEmail, setEmergencyEmail] = useState(user.emergency_email || '');
     const [emergencyEmailValid, setEmergencyEmailValid] = useState(checkEmail(user.emergency_email));
@@ -30,12 +29,28 @@ const UserDetail = ({user, emptyPasswordOk=false}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // TODO: logic for requesting an account + visual notification
-        // setEmail('');
-        // setMessage(`Your request has been sent and a confirmation email has been sent to your
-        //     email address. Please check your emails (and possible any spam folder) to ensure that
-        //     this is received — once approved you will receive another email message inviting you
-        //     to complete the sign-up process.`);
+        const newUser = ({
+            id: user.id,
+            email: userEmail,
+            password: password1,
+            // verified: false,
+            // role_id: user.role_id,
+            first_name: userFirstName,
+            last_name: userLastName,
+            address_1: address1,
+            address_2: address2,
+            city: city,
+            postcode: postcode,
+            emergency_name: emergencyName,
+            emergency_email: emergencyEmail,
+            emergency_mobile: emergencyMobile,
+            secondary_name: secondName,
+            secondary_email: secondEmail,
+            secondary_mobile: secondMobile,
+            // freetext: user.freetext,
+            // identifier: user.identifier
+        });
+        handleUserDetailSubmit(newUser);
     }
 
     // capture <enter> key from 'search' input and divert
@@ -60,6 +75,13 @@ const UserDetail = ({user, emptyPasswordOk=false}) => {
                     checkEnterKey={checkEnterKey}
                 />
                 <TextField
+                    label="Mobile"
+                    placeholder="mobile"
+                    value={userMobile}
+                    setValue={setUserMobile}
+                    checkEnterKey={checkEnterKey}
+                />
+                <TextField
                     label="First Name"
                     placeholder="first name"
                     value={userFirstName}
@@ -67,17 +89,10 @@ const UserDetail = ({user, emptyPasswordOk=false}) => {
                     checkEnterKey={checkEnterKey}
                 />
                 <TextField
-                    label="Second Name"
-                    placeholder="second name"
-                    value={userSecondName}
-                    setValue={setUserSecondName}
-                    checkEnterKey={checkEnterKey}
-                />
-                <TextField
-                    label="Mobile"
-                    placeholder="mobile"
-                    value={userMobile}
-                    setValue={setUserMobile}
+                    label="Last Name"
+                    placeholder="last name"
+                    value={userLastName}
+                    setValue={setUserLastName}
                     checkEnterKey={checkEnterKey}
                 />
                 <PasswordField
@@ -163,7 +178,7 @@ const UserDetail = ({user, emptyPasswordOk=false}) => {
                     label="Name"
                     placeholder="name"
                     value={secondName}
-                    setValue={setSecondName}
+                    setValue={setLastName}
                     checkEnterKey={checkEnterKey}
                 />
                 <EmailField

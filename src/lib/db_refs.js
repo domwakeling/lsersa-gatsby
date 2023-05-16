@@ -5,7 +5,7 @@ const roles = {
 }
 
 // id values for token_types table
-const tokenTYpes = {
+const tokenTypes = {
     PASSWORD_RESET: 1,
     ACCOUNT_REQUEST: 2
 }
@@ -19,5 +19,5 @@ const genders = {
 export {
     genders,
     roles,
-    tokenTYpes
+    tokenTypes
 }

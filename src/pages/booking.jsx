@@ -1,57 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout.jsx";
-import { MODES, ADMINMODES } from "../lib/modes.js";
+import { MODES } from "../lib/modes.js";
+import { roles } from "../lib/db_refs.js";
 import LogIn from "../components/booking/LogIn.jsx";
 import PasswordResetRequest from "../components/booking/PasswordResetRequest.jsx";
 import SignUp from "../components/booking/SignUp.jsx";
 import UserDashboard from "../components/booking/UserDashboard.jsx";
+import AdminDashboard from "../components/booking/AdminDashboard.jsx";
+import LoadingSpinner from "../components/booking/elements/LoadingSpinner.jsx";
 
 const BookingPage = () => {
     const [user, setUser] = useState(null);
-    const [mode, setMode] = useState(MODES.LOGGING_IN);
-    const [adminMode, setAdminMode] = useState(null);
-    const [userMode, setUserMode] = useState(null);
+    const [mode, setMode] = useState(MODES.LOADING);
 
     const [email, setEmail] = useState("");
     const [emailValid, setEmailValid] = useState(false);
 
-    const setAdmin = () => { setMode(MODES.ADMIN) }
-    const setLoggedIn = () => { setMode(MODES.LOGGED_IN); setUser({id: 123}) }
-    const setLogging = () => { setMode(MODES.LOGGING_IN) }
-    const setSigning = () => { setMode(MODES.SIGNING_UP) }
-    
+    useEffect(() => {
+        // hooks require that async function is defined before being called; this checks for a token
+        async function checkForToken() {
+            const res = await fetch("/api/polljwt");
+            if (res.status == 200) {
+                const data = await res.json();
+                setUser(data);
+                if(data.role === roles.ADMIN) {
+                    setMode(MODES.ADMIN);
+                } else {
+                    setMode(MODES.LOGGED_IN);
+                }
+            } else {
+                // no token or invalid user, go to the log-in screen
+                setMode(MODES.LOGGING_IN)
+            }
+        }
+        if (!user && mode === MODES.LOADING) {
+            // send to an endpoint to see whether there's a token embedded ...
+            checkForToken();
+        }
+    }, [user, mode]);
+
     return (
         <Layout>
             <div className="container">
                 <div className="row">
                     <h1 className="underlined">Booking</h1>
+                    <hr/>
+                    {typeof user}
+                    {' '}
+                    {user}
+                    {' '}
+                    {user == null && "null"}
+                    <hr />
 
-                    <div style={{ backgroundColor: "lightgreen", marginBottom: "2.0rem"}}>
-                        <h2>TEMPORARY PANEL</h2>
-                        <p>Select mode to see the developed UI (not currently linked up to database)</p>
-                        <div>
-                            <button onClick={setLogging}>Log In</button>
-                            <button onClick={setSigning}>Sign Up</button>
-                            <button onClick={setAdmin}>Admin User</button> 
-                            <button onClick={setLoggedIn}>Normal User</button>
-                        </div>
-                        <br/>
-                    </div>
+                    {mode === MODES.LOADING && (
+                        <LoadingSpinner />
+                    )}
 
                     {mode === MODES.ADMIN && (
-                        <div>
-                            <p>ADMIN</p>
-                            <p>Needs to be able to:</p>
-                            <ul>
-                                <li>invite someone to create an account by sending an email</li>
-                                <li>make edits on someone else's account - contact details, email address etc</li>
-                                <li>edit name, club and age for individual racers</li>
-                                <li>Link an existing racer to a new parent account</li>
-                                <li>turn off bookings for future weeks and specify why</li>
-                                <li>change the number of racers that will be accepted on a sesssion</li>
-                                <li>post a message about a session (which may be why it's cancelled!)</li>
-                            </ul>
-                        </div>
+                        <AdminDashboard user={user}/>
                     )}
 
                     {mode === MODES.LOGGED_IN && (

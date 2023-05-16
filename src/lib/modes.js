@@ -4,7 +4,9 @@ const MODES = {
     LOGGING_IN: 2,
     SIGNING_UP: 3,
     PASWORD_RESET_REQUEST: 4,
-    PASSWORD_REQUEST_HANDLE: 5
+    PASSWORD_REQUEST_HANDLE: 5,
+    LOADING: 6,
+    LOGGING_OUT: 7
 }
 
 const ADMINMODES = {
@@ -16,8 +18,18 @@ const USERMODES = {
     BOOKING: 2,
 }
 
+const COMPLETING_MODES = {
+    LOADING: 0,
+    INVALID_TOKEN: 1,
+    NO_TOKEN: 2,
+    TOKEN_FOUND: 3,
+    SUBMIT_GOOD: 4,
+    SUBMIT_BAD: 5
+}
+
 export {
     ADMINMODES,
+    COMPLETING_MODES,
     MODES,
     USERMODES
 }

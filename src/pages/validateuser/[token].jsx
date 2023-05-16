@@ -1,27 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import UserDetail from "../../components/booking/UserDetails";
 import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
+import { COMPLETING_MODES } from "../../lib/modes";
 
 const ValidateUser = ({params}) => {
     const [user, setUser] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const [mode, setMode] = useState(COMPLETING_MODES.LOADING)
 
     const token = params.token;
 
-    // do something to try and retrieve data related to the token; if it matches a user, setUser;
-    // when done setIsLoading false; show correct info in the meantime
+    // on load, check to see if the token is valid and if so retrieve user ...
+    useEffect(() => {
+        // hooks require that async function is defined before being called; this checks for a token
+        async function retrieveUserFromToken() {
+            const res = await fetch(`/api/user/newaccountcomplete?token=${token}`);
+            if (res.status === 200) {
+                const data = await res.json();
+                setUser(data);
+                setMode(COMPLETING_MODES.TOKEN_FOUND);
+            
+            } else if (res.status === 404) {
+                // if no token found, it'll be status 404
+                setMode(COMPLETING_MODES.NO_TOKEN);
+            } else {
+                // likely status 400, but error regardless
+                setMode(COMPLETING_MODES.INVALID_TOKEN);
+            }
+        }
+        if (!user && mode === COMPLETING_MODES.LOADING) {
+            // send to an endpoint to see whether there's a token embedded ...
+            retrieveUserFromToken();
+        }
+    }, [user, mode, token]);
 
-    const setLoadingMode = () => {
-        setIsLoading(true);
-        setUser(null)
-    }
-    const setInputMode = () => {
-        setIsLoading(false);
-        setUser({
-            email: 'dom@fmail.com',
-            id: 1
+    const handleUserDetailSubmit = async (userData) => {
+        const body = {
+            user: userData,
+            token: token
+        }
+        const res = await fetch(`/api/user/newaccountcomplete`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
         });
+        
+        // if (res.status === 200) {
+        //     const data = await res.json();
+        //     setUser(data);
+        //     setMode(COMPLETING_MODES.TOKEN_FOUND);
+
+        // } else if (res.status === 404) {
+        //     // if no token found, it'll be status 404
+        //     setMode(COMPLETING_MODES.NO_TOKEN);
+        // } else {
+        //     // likely status 400, but error regardless
+        //     setMode(COMPLETING_MODES.INVALID_TOKEN);
+        // }
     }
 
     return (
@@ -30,32 +65,38 @@ const ValidateUser = ({params}) => {
                 <div className="row">
                     <h1 className="underlined">Complete Sign Up</h1>
 
-                    <div style={{ backgroundColor: "lightgreen", marginBottom: "2.0rem" }}>
-                        <h2>TEMPORARY PANEL</h2>
-                        <p>Select mode to see the developed UI (not currently linked up to database)</p>
-                        <div>
-                            <button onClick={setLoadingMode}>Waiting for data</button>
-                            <button onClick={setInputMode}>Complete user info</button>
-                        </div>
-                        <br />
-                    </div>
-
+                    <hr />
+                    {token}
+                    <hr />
                     
-                    { isLoading && (
+                    { (mode === COMPLETING_MODES.LOADING) && (
                         <LoadingSpinner />
                     )}
 
-                    {
-                        user !== null && (
-                            <>
-                                <p>Please fill out the details below to complete your account
-                                    sign-up.</p>
-                                <UserDetail
-                                    user={user}
-                                />
-                            </>
-                        )
-                    }
+                    { mode === COMPLETING_MODES.INVALID_TOKEN && (
+                        <div className="advice-box">
+                            <p>Your link is invalid — it may have expired. Please contact the
+                                coaching team for more help.</p>
+                        </div>
+                    )}
+
+                    {mode === COMPLETING_MODES.NO_TOKEN && (
+                        <div className="advice-box">
+                            <p>That link does not work — it may be wrong, or may have expired. Please
+                                check again, and contact the coaching team if you need more help.</p>
+                        </div>
+                    )}
+
+                    {user !== null && (mode === COMPLETING_MODES.TOKEN_FOUND) && (
+                        <>
+                            <p>Please fill out the details below to complete your account
+                                sign-up.</p>
+                            <UserDetail
+                                user={user}
+                                handleUserDetailSubmit={handleUserDetailSubmit}
+                            />
+                        </>
+                    )}
 
                 </div>
             </div>

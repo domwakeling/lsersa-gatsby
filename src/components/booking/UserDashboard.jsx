@@ -1,5 +1,6 @@
 import React from "react";
 import UserDetail from "./UserDetails";
+import { USERMODES } from "../../lib/modes";
 
 const UserDashboard = ({user}) => {
     return (
