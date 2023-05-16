@@ -11,19 +11,20 @@ const config = {
 
 const getUserFromToken = async (token) => {
     const conn = await connect(config);
+    console.log('about to run foundTokens');
     const foundTokens = await conn.execute(`SELECT * FROM tokens WHERE token = '${token}'`);
-
+    console.log('foundTokens:', foundTokens);
     // if the token doesn't exist, return empty
     if (foundTokens.rows.length == 0) {
         return [];
     }
-
+    console.log('length not nil');
     // if it's not an account-request token, return empty
     const foundToken = foundTokens.rows[0];
     if (foundToken.type_id != tokenTypes.ACCOUNT_REQUEST) {
         return null;
     }
-
+    console.log('tokenstype is valid');
     // check the token is in date ...
     let today = new Date();
     let expiry = new Date(foundToken.expiresAt);
@@ -31,10 +32,10 @@ const getUserFromToken = async (token) => {
         const _ = await conn.execute(`DELETE FROM tokens WHERE token = '${token}'`);
         return null;
     }
-
+    console.log('time is good');
     // look for the user
     const foundUsers = await conn.execute(`SELECT * FROM users WHERE id = '${foundToken.user_id}'`);
-    
+    console.log('foundUsers?', foundUsers);
     // if user is empty, something is wrong ...
     if (foundUsers.rows.length == 0) {
         const _ = await conn.execute(`DELETE FROM tokens WHERE token = '${token}'`);
