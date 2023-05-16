@@ -1,5 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
+import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
 
 const config = {
@@ -23,60 +24,95 @@ const verifyNewUserAccount = async (token, userData) => {
         return false;
     }
 
-    // TODO: hash the password; insert the info into database row and make verified; delete the access token; set a jwt (or maybe thats in the client)
-    // const conn = await connect(config);
-    return [token, userData];
+    // user matches so prepare to update; last element of params is the verified status
+    const hashedPassword = brcypt.hashSync(userData.password, 10);
+    const params = [
+        userData.email,
+        hashedPassword,
+        userData.first_name,
+        userData.last_name,
+        userData.address_1,
+        userData.address_2,
+        userData.city,
+        userData.postcode,
+        userData.emergency_name,
+        userData.emergency_email,
+        userData.emergency_mobile,
+        userData.secondary_name,
+        userData.secondary_email,
+        userData.secondary_mobile,
+        true
+    ];
+
+    const conn = await connect(config);
+    const results = await conn.transaction(async (tx) => {
+        // update the record
+        
+        const tryNewUser = await tx.execute(`
+            UPDATE users
+            SET
+                email = ?,
+                password_hash = ?,
+                first_name = ?,
+                last_name = ?,
+                address_1 = ?,
+                address_2 = ?,
+                city = ?,
+                postcode = ?,
+                emergency_name = ?,
+                emergency_email = ?,
+                emergency_mobile = ?,
+                secondary_name = ?,
+                secondary_email = ?,
+                secondary_mobile = ?,
+                verified = ?
+            WHERE id=${userData.id}`,
+            params
+        );
+        
+        // delete the access token
+        const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
+        
+        // TODO: set a jwt (or maybe thats in the client)
+
+        return {
+            tryNewUser,
+            tryDeleteToken
+        }
+    });
+    return true;
 }
-
-// const insertUser = async (conn, email, role_id) => {
-//     const results = await conn.transaction(async (tx) => {
-//         // insert a new user into users table
-//         const newIdentifier = token(20);
-//         const tryNewUser = await tx.execute(
-//             'INSERT INTO users (email, role_id, verified, identifier) VALUES (?,?,?,?)',
-//             [email, role_id, false, newIdentifier]
-//         );
-//         // insert a new ACCOUNT_REQUEST token for that user in the tokens table
-//         const newUserId = tryNewUser.insertId;
-//         const newToken = token(12);
-//         const newDate = new Date();
-//         newDate.setDate(newDate.getDate() + 7); // 7 days to use token
-//         const tryNewToken = await tx.execute(
-//             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
-//             [newUserId, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
-//         )
-//         // return the info
-//         return {
-//             tryNewUser,
-//             tryNewToken,
-//             newToken
-//         }
-//     });
-
-//     return results;
-// }
 
 export default async function handler(req, res) {
 
     if (req.method == 'POST') {
         // get data from the body and instigate ...
         const { user, token } = req.body;
-        const result = await verifyNewUserAccount(token, user);
 
-        // if result is null there was something wrong with the token
-        if (result === null) {
-            res.status(400).json({ message: 'Token is not valid.' });
+        try {
+            const result = await verifyNewUserAccount(token, user);
+
+            // if result is null there was something wrong with the token
+            if (result === null) {
+                res.status(400).json({ message: 'Token is not valid.' });
+                return;
+            }
+
+            // if result is false, there was no user or it doesn't match the user sent with POST
+            if (result === false) {
+                res.status(404).json({ message: 'User does not match.' })
+                return;
+            }
+
+            res.status(200).json({ message: "successfully verified account" });
+            return;
+        
+        } catch (error) {
+            console.log(error.message);
+            // generic error message
+            res.status(500).json({ message: "Server error: bad request" });
             return;
         }
-
-        // if result is false, there was no user or it doesn't match the user sent with POST
-        if (result === false) {
-            res.status(404).json({ message: 'User does not match.' })
-            return;
-        }
-
-        res.status(200).json({ message: "hi there" });
-        return;
 
     } else {
         // method is not POST, fail gracefully

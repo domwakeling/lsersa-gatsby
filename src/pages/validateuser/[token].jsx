@@ -45,18 +45,13 @@ const ValidateUser = ({params}) => {
             body: JSON.stringify(body),
         });
 
-        // if (res.status === 200) {
-        //     const data = await res.json();
-        //     setUser(data);
-        //     setMode(COMPLETING_MODES.TOKEN_FOUND);
+        if (res.status === 200) {
+            setMode(COMPLETING_MODES.SUBMIT_GOOD);
 
-        // } else if (res.status === 404) {
-        //     // if no token found, it'll be status 404
-        //     setMode(COMPLETING_MODES.NO_TOKEN);
-        // } else {
-        //     // likely status 400, but error regardless
-        //     setMode(COMPLETING_MODES.INVALID_TOKEN);
-        // }
+        } else {
+            // likely status 400, but error regardless
+            setMode(COMPLETING_MODES.SUBMIT_BAD);
+        }
     }
 
     return (
@@ -64,10 +59,6 @@ const ValidateUser = ({params}) => {
             <div className="container">
                 <div className="row">
                     <h1 className="underlined">Complete Sign Up</h1>
-
-                    <hr />
-                    {token}
-                    <hr />
                     
                     { (mode === COMPLETING_MODES.LOADING) && (
                         <LoadingSpinner />
@@ -83,7 +74,7 @@ const ValidateUser = ({params}) => {
                     {mode === COMPLETING_MODES.NO_TOKEN && (
                         <div className="advice-box">
                             <p>That link does not work — it may be wrong, or may have expired. Please
-                                check again, and contact the coaching team if you need more help.</p>
+                                check again, or contact the coaching team if you need more help.</p>
                         </div>
                     )}
 
@@ -96,6 +87,20 @@ const ValidateUser = ({params}) => {
                                 handleUserDetailSubmit={handleUserDetailSubmit}
                             />
                         </>
+                    )}
+
+                    {mode === COMPLETING_MODES.SUBMIT_GOOD && (
+                        <div className="advice-box">
+                            <p>Success, your account is verified! Please <a href="/booking/">log
+                                in</a> to continue.</p>
+                        </div>
+                    )}
+
+                    {mode === COMPLETING_MODES.SUBMIT_BAD && (
+                        <div className="advice-box">
+                            <p>Unfortomately something has gone wrong - plase reload the page. If
+                                that doesn't work, contact the coaching team for help.</p>
+                        </div>
                     )}
 
                 </div>

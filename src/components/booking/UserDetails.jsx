@@ -33,8 +33,6 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
             id: user.id,
             email: userEmail,
             password: password1,
-            // verified: false,
-            // role_id: user.role_id,
             first_name: userFirstName,
             last_name: userLastName,
             address_1: address1,
@@ -46,9 +44,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
             emergency_mobile: emergencyMobile,
             secondary_name: secondName,
             secondary_email: secondEmail,
-            secondary_mobile: secondMobile,
-            // freetext: user.freetext,
-            // identifier: user.identifier
+            secondary_mobile: secondMobile            
         });
         handleUserDetailSubmit(newUser);
     }

@@ -24,7 +24,7 @@ const COMPLETING_MODES = {
     NO_TOKEN: 2,
     TOKEN_FOUND: 3,
     SUBMIT_GOOD: 4,
-    SUBMIT_BAD: 5
+    SUBMIT_BAD: 5,
 }
 
 export {
