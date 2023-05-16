@@ -14,7 +14,7 @@ const ValidateUser = ({params}) => {
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token
         async function retrieveUserFromToken() {
-            const res = await fetch(`/api/user/newaccountcomplete?token=${token}`);
+            const res = await fetch(`/api/user/newaccountcomplete/${token}/`);
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);
@@ -44,7 +44,7 @@ const ValidateUser = ({params}) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
         });
-        
+
         // if (res.status === 200) {
         //     const data = await res.json();
         //     setUser(data);

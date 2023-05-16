@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { tokenTypes } from '../../lib/db_refs';
+import { getUserFromToken } from '../../lib/users/get_user_from_token';
 
 const config = {
     fetch,
@@ -9,48 +9,10 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
-const getUserFromToken = async (token) => {
-    const conn = await connect(config);
-    console.log('about to run foundTokens');
-    const foundTokens = await conn.execute(`SELECT * FROM tokens WHERE token = '${token}'`);
-    console.log('foundTokens:', foundTokens);
-    // if the token doesn't exist, return empty
-    if (foundTokens.rows.length == 0) {
-        return [];
-    }
-    console.log('length not nil');
-    // if it's not an account-request token, return empty
-    const foundToken = foundTokens.rows[0];
-    if (foundToken.type_id != tokenTypes.ACCOUNT_REQUEST) {
-        return null;
-    }
-    console.log('tokenstype is valid');
-    // check the token is in date ...
-    let today = new Date();
-    let expiry = new Date(foundToken.expiresAt);
-    if (today > expiry) {
-        const _ = await conn.execute(`DELETE FROM tokens WHERE token = '${token}'`);
-        return null;
-    }
-    console.log('time is good');
-    // look for the user
-    const foundUsers = await conn.execute(`SELECT * FROM users WHERE id = '${foundToken.user_id}'`);
-    console.log('foundUsers?', foundUsers);
-    // if user is empty, something is wrong ...
-    if (foundUsers.rows.length == 0) {
-        const _ = await conn.execute(`DELETE FROM tokens WHERE token = '${token}'`);
-        return null;
-    }
-
-    return foundUsers.rows[0];
-}
-
 const verifyNewUserAccount = async (token, userData) => {
-    const conn = await connect(config);
-
     // re-check thaet the token is valid and relates to this user
-    const checkUser = getUserFromToken (token);
-
+    const checkUser = await getUserFromToken (token);
+    
     // if it's null or an empty array, something was wrong with the token
     if (checkUser == null || checkUser == []) {
         return null;
@@ -62,6 +24,7 @@ const verifyNewUserAccount = async (token, userData) => {
     }
 
     // TODO: hash the password; insert the info into database row and make verified; delete the access token; set a jwt (or maybe thats in the client)
+    // const conn = await connect(config);
     return [token, userData];
 }
 
@@ -95,29 +58,7 @@ const verifyNewUserAccount = async (token, userData) => {
 
 export default async function handler(req, res) {
 
-    if (req.method == 'GET') {
-        // get the token and retrieve data
-        console.log(req.url);
-        const token = req.url.match(/\/\?token=([a-zA-Z0-9]*)$/)[1];
-        const data = await getUserFromToken(token);
-
-        // if data is null the token was invalid
-        if (data === null) {
-            res.status(400).json({message: 'Token is not valid.'});
-            return;
-        }
-
-        // if daeta is an empty array, array wasn't found
-        if (data == []) {
-            res.status(404).json({message: 'Token not found.'})
-            return;
-        }
-
-        // success, return the data (which will be a user)
-        res.status(200).json(data);
-        return;
-
-    } else if (req.method == 'POST') {
+    if (req.method == 'POST') {
         // get data from the body and instigate ...
         const { user, token } = req.body;
         const result = await verifyNewUserAccount(token, user);
@@ -134,12 +75,11 @@ export default async function handler(req, res) {
             return;
         }
 
-        console.log(result);
         res.status(200).json({ message: "hi there" });
         return;
 
     } else {
-        // method is not GET or POST, fail gracefully
+        // method is not POST, fail gracefully
         res.status(405).json({ message: "ERROR: method not allowed" });
         return;
     }
