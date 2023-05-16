@@ -2,8 +2,8 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { roles, tokenTYpes } from '../../lib/db_refs';
 import { token } from '../../lib/token.';
-import { sendNewAccountEmailToUser } from '../../lib/mail/newaccounttouser';
-import { sendShortEmail } from '../../lib/mail/shortemail';
+import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
+import { sendShortEmail } from '../../lib/mail/send_short_email';
 
 const config = {
     fetch,
@@ -53,7 +53,7 @@ export default async function handler(req, res) {
                 });
                 
                 // trigger an email to the new admin
-                const emailSent = await sendNewAccountEmailToUser(results.newToken, email);
+                const _ = await emailNewAccountTokenToUser(results.newToken, email);
 
                 // all well
                 res.status(200).json({ message: "success" });
@@ -98,7 +98,7 @@ export default async function handler(req, res) {
                 });
 
                 // trigger an email to the admins
-                const emailSentToAdmin = await sendShortEmail(
+                let _ = await sendShortEmail(
                     admin.rows.map(item => item.email),
                     "[TEST, IGNORE] New User Request",
                     "New User Request",
@@ -106,7 +106,7 @@ export default async function handler(req, res) {
                         dashboard to review`
                 );
                 // trigger an email to the user
-                const emailSentToUser = await sendShortEmail(
+                _ = await sendShortEmail(
                     [email],
                     "[TEST, IGNORE] New User Request",
                     "New User Request",
