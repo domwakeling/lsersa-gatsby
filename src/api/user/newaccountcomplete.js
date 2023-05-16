@@ -97,6 +97,7 @@ export default async function handler(req, res) {
 
     if (req.method == 'GET') {
         // get the token and retrieve data
+        console.log(req.url);
         const token = req.url.match(/\/\?token=([a-zA-Z0-9]*)$/)[1];
         const data = await getUserFromToken(token);
 
