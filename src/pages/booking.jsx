@@ -9,6 +9,18 @@ import UserDashboard from "../components/booking/UserDashboard.jsx";
 import AdminDashboard from "../components/booking/AdminDashboard.jsx";
 import LoadingSpinner from "../components/booking/elements/LoadingSpinner.jsx";
 
+const LogOut = ({clickHandler}) => {
+    return (
+        <div className="button-float-right">
+            <button
+                onClick={clickHandler}
+            >
+                Log Out
+            </button>
+        </div>
+    )
+}
+
 const BookingPage = () => {
     const [user, setUser] = useState(null);
     const [mode, setMode] = useState(MODES.LOADING);
@@ -20,7 +32,7 @@ const BookingPage = () => {
         // hooks require that async function is defined before being called; this checks for a token
         async function checkForToken() {
             const res = await fetch("/api/polljwt");
-            if (res.status == 200) {
+            if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);
                 if(data.role_id === roles.ADMIN) {
@@ -39,23 +51,37 @@ const BookingPage = () => {
         }
     }, [user, mode]);
 
+    const logOutHandler = async (e) => {
+        e.preventDefault();
+        const res = await fetch(`/api/user/logout`, { method: "POST" });
+        if (res.status !== 200) {
+            const data = await res.json();
+            console.log(data);
+        }
+        setUser(null);
+        setMode(MODES.LOGGING_IN);
+    }
+
     return (
         <Layout>
             <div className="container">
                 <div className="row">
-
+                    <h1>Training Booking</h1>
                     {mode === MODES.LOADING && (
                         <LoadingSpinner />
                     )}
-
                     {mode === MODES.ADMIN && (
-                        <AdminDashboard user={user}/>
+                        <>
+                            {user && <LogOut clickHandler={logOutHandler} />}
+                            <AdminDashboard user={user}/>
+                        </>
                     )}
-
                     {mode === MODES.LOGGED_IN && (
-                        <UserDashboard user={user} />
+                        <>
+                            {user && <LogOut clickHandler={logOutHandler} />}
+                            <UserDashboard user={user} />
+                        </>
                     )}
-
                     {mode === MODES.LOGGING_IN && (
                         <LogIn
                             email={email}
@@ -66,7 +92,6 @@ const BookingPage = () => {
                             setUser={setUser}
                         />
                     )}
-
                     {mode === MODES.SIGNING_UP && (
                         <SignUp
                             email={email}
@@ -76,7 +101,6 @@ const BookingPage = () => {
                             setMode={setMode}
                         />
                     )}
-
                     {mode === MODES.PASWORD_RESET_REQUEST && (
                         <PasswordResetRequest
                             email={email}
@@ -86,11 +110,9 @@ const BookingPage = () => {
                             setMode={setMode}
                         />
                     )}
-
                 </div>
             </div>
         </Layout>
-
     )
 }
 
