@@ -13,9 +13,6 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
 
-        // ** TODO: remove this **
-        console.log(req.cookies);
-
         try {
             const token = req.cookies.lsersaUserToken;
             const identifier = getIdFromToken(token);
@@ -23,7 +20,7 @@ export default async function handler(req, res) {
             if (identifier) {
                 // check that the identifier returns a valid user
                 const conn = await connect(config);
-                const results = await conn.execute(`SELECT * FROM users WHERE identifier=${identifier}`);
+                const results = await conn.execute(`SELECT * FROM users WHERE identifier = '${identifier}'`);
 
                 if (results.rows.length > 0) {
                     // identifier has returned a valid user, all good
@@ -40,7 +37,7 @@ export default async function handler(req, res) {
                 return;    
             }
 
-        } catch {
+        } catch (error) {
             // error, most likely didn't find a cookie
             res.status(204).json({ message: "Cookie not found" });
             return;    

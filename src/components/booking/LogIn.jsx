@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { MODES } from "../../lib/modes";
 import LoadingSpinner from "./elements/LoadingSpinner";
+import { roles } from "../../lib/db_refs";
 
 const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser }) => {
     const [message, setMessage] = useState('');
@@ -39,7 +40,11 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser })
         if (res.status === 200) {
             const data = await res.json();    
             setUser(data);
-            setMode(MODES.LOGGED_IN);
+            if (data.role_id == roles.ADMIN) {
+                setMode(MODES.ADMIN);
+            } else {
+                setMode(MODES.LOGGED_IN);
+            }
 
         } else {
             // likely status 400, but error regardless

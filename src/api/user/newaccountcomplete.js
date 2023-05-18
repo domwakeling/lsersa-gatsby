@@ -110,7 +110,7 @@ export default async function handler(req, res) {
 
             // get a JWT, set it in the header, return success
             const jwt = createToken(result.identifier);
-            res.setHeader("Set-Cookie", [`lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}`]);
+            res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}; Path=/`);
             res.status(200).json({ message: "successfully verified account" });
             return;
         

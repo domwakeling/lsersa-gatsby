@@ -29,7 +29,6 @@ const getPasswordHashForEmail = async (email) => {
 }
 
 export default async function handler(req, res) {
-    console.log("hey we're here")
 
     if (req.method == 'POST') {
 
@@ -49,7 +48,7 @@ export default async function handler(req, res) {
 
             if (verified) {
                 const jwt = createToken(user.identifier);
-                res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}`);
+                res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}; Path=/`);
                 res.status(200).json(user);
                 return;
             }
