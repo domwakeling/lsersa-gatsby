@@ -2,6 +2,7 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
+import { createToken, MAX_AGE } from '../../lib/jwtmethods';
 
 const config = {
     fetch,
@@ -73,14 +74,17 @@ const verifyNewUserAccount = async (token, userData) => {
         // delete the access token
         const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
         
-        // TODO: set a jwt (or maybe thats in the client)
-
         return {
             tryNewUser,
             tryDeleteToken
         }
     });
-    return true;
+
+
+    return {
+        results,
+        identifier: checkUser.identifier
+    };
 }
 
 export default async function handler(req, res) {
@@ -104,6 +108,9 @@ export default async function handler(req, res) {
                 return;
             }
 
+            // get a JWT, set it in the header, return success
+            const jwt = createToken(result.identifier);
+            res.setHeader("Set-Cookie", [`lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}`]);
             res.status(200).json({ message: "successfully verified account" });
             return;
         

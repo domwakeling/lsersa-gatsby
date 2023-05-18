@@ -44,7 +44,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
             emergency_mobile: emergencyMobile,
             secondary_name: secondName,
             secondary_email: secondEmail,
-            secondary_mobile: secondMobile            
+            secondary_mobile: secondMobile,
         });
         handleUserDetailSubmit(newUser);
     }

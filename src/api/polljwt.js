@@ -1,5 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
+import { getIdFromToken } from '../lib/jwtmethods';
 
 const config = {
     fetch,
@@ -12,25 +13,27 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
 
-        try {
-            const token = req.headers.cookie.match(
-                /lsersaUserToken=?([a-zA-Z0-9\-_.]+).*/
-            )[1];
+        // ** TODO: remove this **
+        console.log(req.cookies);
 
-            if (data.identifier) {
+        try {
+            const token = req.cookies.lsersaUserToken;
+            const identifier = getIdFromToken(token);
+
+            if (identifier) {
                 // check that the identifier returns a valid user
                 const conn = await connect(config);
-                const results = await conn.execute(`SELECT * FROM users WHERE identifier=${data.identifier}`);
+                const results = await conn.execute(`SELECT * FROM users WHERE identifier=${identifier}`);
 
                 if (results.rows.length > 0) {
                     // identifier has returned a valid user, all good
                     res.status(200).json(results.rows[0]);
                     return;
                 } else {
-                    // there is now valid user ...
+                    // there is no valid user ...
+                    res.status(204).json({ message: "No valid id found" });
+                    return;    
                 }
-                res.status(204).json({ message: "No valid id found" });
-                return;    
 
             } else {// there was no identifier so token invalid
                 res.status(204).json({ message: "No id found" });

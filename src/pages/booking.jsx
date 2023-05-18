@@ -23,7 +23,7 @@ const BookingPage = () => {
             if (res.status == 200) {
                 const data = await res.json();
                 setUser(data);
-                if(data.role === roles.ADMIN) {
+                if(data.role_id === roles.ADMIN) {
                     setMode(MODES.ADMIN);
                 } else {
                     setMode(MODES.LOGGED_IN);
@@ -43,14 +43,6 @@ const BookingPage = () => {
         <Layout>
             <div className="container">
                 <div className="row">
-                    <h1 className="underlined">Booking</h1>
-                    <hr/>
-                    {typeof user}
-                    {' '}
-                    {user}
-                    {' '}
-                    {user == null && "null"}
-                    <hr />
 
                     {mode === MODES.LOADING && (
                         <LoadingSpinner />
@@ -71,6 +63,7 @@ const BookingPage = () => {
                             setEmail={setEmail}
                             setEmailValid={setEmailValid}
                             setMode={setMode}
+                            setUser={setUser}
                         />
                     )}
 

@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import UserDetail from "../../components/booking/UserDetails";
 import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
 import { COMPLETING_MODES } from "../../lib/modes";
+import { navigate } from "gatsby";
 
 const ValidateUser = ({params}) => {
     const [user, setUser] = useState(null);
@@ -46,7 +47,10 @@ const ValidateUser = ({params}) => {
         });
 
         if (res.status === 200) {
+            // set message ...
             setMode(COMPLETING_MODES.SUBMIT_GOOD);
+            // attempt to transfer to booking page (which will recognise the cookie) ...
+            navigate("/booking/");
 
         } else {
             // likely status 400, but error regardless
