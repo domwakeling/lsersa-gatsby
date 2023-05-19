@@ -9,3 +9,20 @@ div.booking-form {
 div.button-float-right {
     float: right;
 }
+
+button.tab-button {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background-color: $color-p900;
+    border: 1px solid $color-p300;
+    border-bottom: 0px;
+    padding: 0.5rem 1.0rem;
+    &:hover {
+        background-color: $color-c500;   
+    }
+}
+
+button.tab-button.active {
+    background-color: $color-p300;
+    color: $color-p900;
+}

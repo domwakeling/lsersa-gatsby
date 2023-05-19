@@ -10,6 +10,7 @@ const MODES = {
 }
 
 const ADMINMODES = {
+    REVIEW_REQUESTS: 0
 
 }
 
