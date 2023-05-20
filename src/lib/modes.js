@@ -10,8 +10,8 @@ const MODES = {
 }
 
 const ADMINMODES = {
-    REVIEW_REQUESTS: 0
-
+    REVIEW_REQUESTS: 0,
+    INVITE_USER: 1
 }
 
 const USERMODES = {

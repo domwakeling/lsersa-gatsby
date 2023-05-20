@@ -3,6 +3,7 @@ import { ADMINMODES } from "../../lib/modes";
 import TabPanel from "./elements/TabPanel";
 import TabLabel from "./elements/TabLabel";
 import ReviewRequests from "./admins/ReviewRequest";
+import InviteUser from "./admins/InviteUser";
 
 const AdminDashboard = ({ user }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
@@ -14,8 +15,8 @@ const AdminDashboard = ({ user }) => {
             mode: ADMINMODES.REVIEW_REQUESTS
         },
         {
-            text: "choice two",
-            mode: 1
+            text: "invite user",
+            mode: ADMINMODES.INVITE_USER
         },
         {
             text: "choice three",
@@ -77,6 +78,9 @@ const AdminDashboard = ({ user }) => {
                 <br/>
                 {adminMode === ADMINMODES.REVIEW_REQUESTS && (
                     <ReviewRequests count={requestsCount} setCount={setRequestsCount} />
+                )}
+                {adminMode === ADMINMODES.INVITE_USER && (
+                    <InviteUser />
                 )}
             </div>
             <br/>

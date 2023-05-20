@@ -93,3 +93,34 @@ button.tab-button.active {
     }
 
 }
+
+.invite-pane {
+    max-width: 400px;
+
+    input[type=text] {
+        width: 100%;
+    }
+    
+    
+    button {
+        padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+        border-radius: 0.5rem;
+        border: 1px solid $color_p300;
+        background-color: $color_p300;
+        color: $color_p900;
+
+        &:disabled, &:disabled:hover {
+            background-color: $color_g700;
+            color: $color_g100;
+            border-color: $color_g100;
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: $color_c500;
+            color: $color_c100;
+            border-color: $color_c100;
+        }
+    }
+
+}

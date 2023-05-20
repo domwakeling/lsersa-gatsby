@@ -3,6 +3,7 @@ import { connect } from '@planetscale/database';
 import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
 import { token } from '../../lib/token.';
 import { tokenTypes } from '../../lib/db_refs';
+import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 
 const config = {
     fetch,
@@ -78,6 +79,13 @@ export default async function handler(req, res) {
 
         try {
             const { type } = req.body;
+            const token = req.cookies.lsersaUserToken;
+
+            const hasAdmin = await verifyUserHasAdminRole(token);
+            if (!hasAdmin) {
+                res.status(401).json({message: 'User does not have admin access'});
+                return;
+            }
 
             if (type === 'user') {
                 const { id, email, freetext } = req.body;
@@ -106,6 +114,13 @@ export default async function handler(req, res) {
 
         try {
             const { type } = req.body;
+            const token = req.cookies.lsersaUserToken;
+
+            const hasAdmin = await verifyUserHasAdminRole(token);
+            if (!hasAdmin) {
+                res.status(401).json({ message: 'User does not have admin access' });
+                return;
+            }
 
             if (type === 'user') {
                 const { id } = req.body;

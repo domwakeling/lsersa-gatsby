@@ -1,43 +1,15 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { roles, tokenTypes } from '../../lib/db_refs';
-import { token } from '../../lib/token.';
+import { roles } from '../../lib/db_refs';
 import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
+import insertUser from '../../lib/users/insertNewUser';
 
 const config = {
     fetch,
     host: process.env.DATABASE_HOST,
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD
-}
-
-const insertUser = async (conn, email, role_id) => {
-    const results = await conn.transaction(async (tx) => {
-        // insert a new user into users table
-        const newIdentifier = token(20);
-        const tryNewUser = await tx.execute(
-            'INSERT INTO users (email, role_id, verified, identifier) VALUES (?,?,?,?)',
-            [email, role_id, false, newIdentifier]
-        );
-        // insert a new ACCOUNT_REQUEST token for that user in the tokens table
-        const newUserId = tryNewUser.insertId;
-        const newToken = token(12);
-        const newDate = new Date();
-        newDate.setDate(newDate.getDate() + 7); // 7 days to use token
-        const tryNewToken = await tx.execute(
-            'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
-            [newUserId, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
-        )
-        // return the info
-        return {
-            tryNewUser,
-            tryNewToken,
-            newToken
-        }
-    });
-
-    return results;
 }
 
 export default async function handler(req, res) {

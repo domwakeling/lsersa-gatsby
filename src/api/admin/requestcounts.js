@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         try {
             const users = await conn.execute('SELECT id FROM users WHERE verified = FALSE');
             const racers = await conn.execute('SELECT id FROM racers WHERE verified = FALSE');
-            
+
             res.status(200).json({
                 users: users.rows.length,
                 racers: racers.rows.length
