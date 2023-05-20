@@ -26,3 +26,70 @@ button.tab-button.active {
     background-color: $color-p300;
     color: $color-p900;
 }
+
+.pane-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.0rem;
+
+    @include for-tablet-down {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-pane {
+        padding: 0.5rem 1.0rem;
+        border-radius: 0.5rem;
+        border: 1px solid $color-p300;
+
+        input[type=text] {
+            width: 95%;
+        }
+
+        textarea {
+            display: block;
+            width: 95%;
+            background-color: $color-c900;
+            resize: none;
+            padding: 0.1rem 1.0rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        button {
+            padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+            border-radius: 0.5rem;
+            &:disabled {
+                background-color: $color_g700;
+                color: $color_g100;
+                border-color: $color_g100;
+                cursor: not-allowed;
+            }
+            border: 1px solid $color_p300;
+        }
+        
+        button.confirm {
+            background-color: $color_p300;
+            color: $color_p900;
+            float: right;
+            margin-left: 1.0rem;
+            
+            &:hover {
+                background-color: $color_c500;
+                color: $color_c100;
+                border-color: $color_c100;
+            }
+        }
+
+        button.reject {
+            background-color: red;
+            color: $color-c900;
+            float: right;
+
+            &:hover {
+                background-color: darken(red, 5%);
+            }
+        }
+
+    }
+
+}

@@ -76,7 +76,7 @@ const AdminDashboard = ({ user }) => {
                 </TabPanel>
                 <br/>
                 {adminMode === ADMINMODES.REVIEW_REQUESTS && (
-                    <ReviewRequests />
+                    <ReviewRequests count={requestsCount} setCount={setRequestsCount} />
                 )}
             </div>
             <br/>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextField = ({ label, placeholder, value, setValue, checkEnterKey}) => {
+const TextField = ({ label, placeholder, value, setValue, checkEnterKey, disabled}) => {
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -16,6 +16,7 @@ const TextField = ({ label, placeholder, value, setValue, checkEnterKey}) => {
                 onKeyDown={checkEnterKey}
                 value={value}
                 placeholder={placeholder}
+                disabled={disabled}
             />
         </label>
     )
