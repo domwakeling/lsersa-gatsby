@@ -6,7 +6,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
-import DownloadItem from "../components/DownloadItem.jsx";
 
 const HomePage = () => {
     const imgQueryData = useSponsorImages();
