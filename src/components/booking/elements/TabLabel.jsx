@@ -1,10 +1,10 @@
 import React from "react";
 
-const TabLabel = ({ text, setAdminMode, mode, active }) => {
+const TabLabel = ({ text, setMode, mode, active }) => {
 
     const clickHandler = (e) => {
         e.preventDefault();
-        setAdminMode(mode);
+        setMode(mode);
     }
 
     const classNames = active ? "tab-button active" : "tab-button"

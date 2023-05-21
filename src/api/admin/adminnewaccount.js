@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         // check that we were passed a valid email address and if not fail gracefully
         const validEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)
         if (!req.body || !req.body.email || !validEmail(req.body.email)) {
-            res.status(400).json({ message: "ERROR: email not provided or not valid" });
+            res.status(400).json({ message: "ERROR: Email not provided or not valid" });
             return;
         }
 
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
             const hasAdmin = await verifyUserHasAdminRole(token);
             if (!hasAdmin) {
-                res.status(401).json({ message: 'User does not have admin access' });
+                res.status(401).json({ message: 'ERROR: User does not have admin access' });
                 return;
             }
 
@@ -52,11 +52,11 @@ export default async function handler(req, res) {
             // special case - failed due to duplicate error message
             const m = error.message;
             if (/Duplicate entry/.test(m)) {
-                res.status(500).json({ message: "Account already exists for that email address" });
+                res.status(409).json({ message: "Account already exists for that email address" });
                 return;
             };
             // otherwise generic error message
-            res.status(500).json({ message: "Server error: bad request" });
+            res.status(500).json({ message: "SERVER ERROR: bad request" });
             return;
         }
         

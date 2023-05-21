@@ -4,10 +4,15 @@ import TabPanel from "./elements/TabPanel";
 import TabLabel from "./elements/TabLabel";
 import ReviewRequests from "./admins/ReviewRequest";
 import InviteUser from "./admins/InviteUser";
+import UserDetail from "./UserDetails";
+import updateUserDetails from "../../lib/users/updateUser";
+import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 
-const AdminDashboard = ({ user }) => {    
+const AdminDashboard = ({ user, setUser }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
     const [adminMode, setAdminMode] = useState(ADMINMODES.REVIEW_REQUESTS);
+    const [message, setMessage] = useState('');
+    const [messageClass, setMessageClass] = useState('');
 
     const tabData = [
         {
@@ -35,10 +40,31 @@ const AdminDashboard = ({ user }) => {
             mode: 5
         },
         {
-            text: "choice seven",
-            mode: 6
+            text: "manage your details",
+            mode: ADMINMODES.MANAGING_OWN_DETAILS
         }
-    ]
+    ];
+
+    const displayMessage = (messageType, messageText, messageTime) => {
+        setMessageClass(messageType)
+        setMessage(messageText);
+        setTimeout(() => {
+            setMessage('');
+        }, messageTime);
+    }
+
+    const handleUserDetailSubmit = async (newUser) => {
+        const result = await updateUserDetails(user, newUser);
+        const data = await result.json();
+        if (result.status === 200) {
+            setUser(data.newUser);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Details updated", MESSAGE_TIME);
+        } else if (result.status === 409) {
+            displayMessage(MESSAGE_CLASSES.ALERT, data.message, MESSAGE_TIME);
+        } else {
+            displayMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+        }
+    }
 
     useEffect(() => {
         async function checkForRequests() {
@@ -70,25 +96,37 @@ const AdminDashboard = ({ user }) => {
                             key={idx}
                             text={item.text}
                             mode={item.mode}
-                            setAdminMode={setAdminMode}
+                            setMode={setAdminMode}
                             active={idx === adminMode}
                         />
                     ))}
                 </TabPanel>
                 <br/>
                 {adminMode === ADMINMODES.REVIEW_REQUESTS && (
-                    <ReviewRequests count={requestsCount} setCount={setRequestsCount} />
+                    <ReviewRequests setCount={setRequestsCount} />
                 )}
                 {adminMode === ADMINMODES.INVITE_USER && (
                     <InviteUser />
                 )}
+                {(adminMode === ADMINMODES.MANAGING_OWN_DETAILS && (
+                    <UserDetail
+                        user={user}
+                        emptyPasswordOk={true}
+                        handleUserDetailSubmit={handleUserDetailSubmit}
+                        updating={true}
+                    />
+                ))}
             </div>
+            {message && message !== '' && (
+                <div className={messageClass}>
+                    <p>{message}</p>
+                </div>
+            )}
             <br/>
             <hr/>
             <p>Needs to be able to:</p>
             <ul>
                 <li><b>ensure that only admin can hit the API endpoints ...</b></li>
-                <li>invite someone to create an account by sending an email</li>
                 <li>make edits on someone else's account - contact details, email address etc</li>
                 <li>edit name, club and age for individual racers</li>
                 <li>Link an existing racer to a new parent account</li>

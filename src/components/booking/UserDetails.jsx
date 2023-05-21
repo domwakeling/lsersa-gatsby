@@ -3,7 +3,7 @@ import TextField from "./elements/TextField";
 import EmailField from "./elements/EmailField";
 import PasswordField from "./elements/PasswordField";
 
-const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
+const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updating=false) => {
     // for the secondary_ and emergency_ emails, it's acceptable that they're empty
     const checkEmail = (email) => !email || (email === '' ) || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
  
@@ -33,6 +33,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
             id: user.id,
             email: userEmail,
             password: password1,
+            mobile: userMobile,
             first_name: userFirstName,
             last_name: userLastName,
             address_1: address1,
@@ -60,7 +61,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
 
     return (
         <div className="user-form">
-            <h2 className="as-h3">User details</h2>
+            <h2 className="as-h3">Your details</h2>
             <div className="user-form-columns">
                 <EmailField
                     label="Email"
@@ -132,6 +133,10 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
                     checkEnterKey={checkEnterKey}
                 />
             </div>
+            {updating && (
+                <p><i>To  update password, complete the fields above, otherwise you do not need
+                    to re-enter your password to update other details.</i></p>
+            )}
             
             <hr/>
 
@@ -197,7 +202,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}) => {
             <br />
             <button
                 disabled={!userEmailValid || !secondEmailValid || !emergencyEmailValid ||
-                    (password1 !== password2) || (!emptyPasswordOk && password1 === '')}
+                    (emergencyMobile === '') || (password1 !== password2) || (!emptyPasswordOk && password1 === '')}
                 onClick={handleSubmit}
             >
                 Update

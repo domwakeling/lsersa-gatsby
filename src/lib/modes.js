@@ -11,12 +11,14 @@ const MODES = {
 
 const ADMINMODES = {
     REVIEW_REQUESTS: 0,
-    INVITE_USER: 1
+    INVITE_USER: 1,
+    MANAGING_OWN_DETAILS: 6
 }
 
 const USERMODES = {
+    BOOKING: 0,
     ADDING_RACER: 1,
-    BOOKING: 2,
+    MANAGING_DETAILS: 2
 }
 
 const COMPLETING_MODES = {

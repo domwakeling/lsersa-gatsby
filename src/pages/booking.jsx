@@ -73,13 +73,13 @@ const BookingPage = () => {
                     {mode === MODES.ADMIN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <AdminDashboard user={user}/>
+                            <AdminDashboard user={user} setUser={setUser} />
                         </>
                     )}
                     {mode === MODES.LOGGED_IN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <UserDashboard user={user} />
+                            <UserDashboard user={user} setUser={setUser} />
                         </>
                     )}
                     {mode === MODES.LOGGING_IN && (

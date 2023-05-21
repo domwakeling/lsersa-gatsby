@@ -97,7 +97,7 @@ button.tab-button {
     position: fixed;
     width: 100%;
     max-width: 1200px;
-    top: 60px;
+    top: 0px;
 
     @include for-tablet-down() {
         max-width: calc(100% - 3.0rem);
@@ -108,6 +108,13 @@ button.tab-button {
         float: right;
         width: 250px;
         border-radius: 0.5rem;
+        @include for-phone-only() {
+            display: inline-block;
+            float:none;
+            width: 90%;
+            margin: 10px auto;
+            text-align: center;
+        }
     }
 }
 

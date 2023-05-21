@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import TextField from "../elements/TextField";
+import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../../lib/constants";
 
-const UserRequest = ({ user, updateRequests }) => {
-    const [freetext, setFreetext] = useState(user.freetext || '');
+const UserRequest = ({ user, updateRequests, setMessage }) => {
+    const [adminText, setAdminText] = useState(user.admin_text || '');
     const [deleting, setDeleting] = useState(false);
 
     const textHandler = (e) => {
         e.preventDefault();
-        setFreetext(e.target.value.substring(0,255));
+        setAdminText(e.target.value.substring(0,255));
     }
 
     const submitHandler = async (e) => {
@@ -21,7 +22,7 @@ const UserRequest = ({ user, updateRequests }) => {
                 type: "user",
                 id: user.id,
                 email: user.email,
-                freetext
+                admin_text: adminText
             }
             const res = await fetch(`/api/admin/requests`, {
                 method: "POST",
@@ -30,6 +31,10 @@ const UserRequest = ({ user, updateRequests }) => {
             });
             if (res.status === 200) {
                 updateRequests();
+                setMessage(MESSAGE_CLASSES.SUCCESS, "Account confirmed, email has been sent", MESSAGE_TIME);
+            } else {
+                const data = await res.json();
+                setMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
             }
         }
     }
@@ -51,6 +56,10 @@ const UserRequest = ({ user, updateRequests }) => {
             });
             if (res.status === 200) {
                 updateRequests();
+                setMessage(MESSAGE_CLASSES.SUCCESS, "Account request rejected", MESSAGE_TIME);
+            } else {
+                const data = await res.json();
+                setMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
             }
         }
     }
@@ -58,9 +67,9 @@ const UserRequest = ({ user, updateRequests }) => {
     return (
         <div className="admin-pane">
             <TextField label="email" value={user.email} disabled={true} />
-            <label>freetext (admin only) {freetext.length}/255
+            <label>free text (admin only) {adminText.length}/255
                 <textarea
-                    value={freetext}
+                    value={adminText}
                     onChange={textHandler}
                 />
             </label>

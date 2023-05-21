@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import EmailField from "../elements/EmailField";
+import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../../lib/constants";
 
 const InviteUser = () => {
     const [email, setEmail] = useState('');
     const [emailValid, setEmailValid] = useState(false);
     const [message, setMessage] = useState('');
+    const [messageClass, setMessageClass] = useState('');
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -19,15 +21,26 @@ const InviteUser = () => {
             body: JSON.stringify(body),
         });
         if (res.status === 200) {
+            setMessageClass(MESSAGE_CLASSES.SUCCESS)
             setMessage("Invite sent");
             setTimeout(() => {
                 setMessage('');
-            }, 3000)
-        } else {
-            setMessage("There was a problem");
+            }, MESSAGE_TIME);
+            setEmail('');
+        } else if (res.status === 409) {
+            setMessageClass(MESSAGE_CLASSES.ALERT);
+            const data = await res.json();
+            setMessage(data.message);
             setTimeout(() => {
                 setMessage('');
-            }, 3000)
+            }, MESSAGE_TIME);
+        } else {
+            setMessageClass(MESSAGE_CLASSES.WARN);
+            const data = await res.json();
+            setMessage(data.message);
+            setTimeout(() => {
+                setMessage('');
+            }, MESSAGE_TIME);
         }
     }
 
@@ -57,8 +70,8 @@ const InviteUser = () => {
             </div>
             <br />
             {message && message !== '' && (
-                <div className="advice-box">
-                    <p>{message}</p>      
+                <div className={messageClass}>
+                    <p>{message}</p>
                 </div>
             )}
         </>

@@ -2,10 +2,12 @@ import React, {useState, useEffect} from "react";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import UserRequest from "./UserRequest";
 
-const ReviewRequests = ({ count, setCount }) => {
+const ReviewRequests = ({ setCount }) => {
     const [users, setUsers] = useState([]);
     const [racers, setRacers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [message, setMessage] = useState('');
+    const [messageClass, setMessageClass] = useState('success-box');
 
     const updateRequests = async () => {
         const res = await fetch(`/api/admin/requests`);
@@ -19,6 +21,14 @@ const ReviewRequests = ({ count, setCount }) => {
             setUsers([]);
             setRacers([]);
         }
+    }
+
+    const displayMessage = (messageType, messageText, messageTime) => {
+        setMessageClass(messageType)
+        setMessage(messageText);
+        setTimeout(() => {
+            setMessage('');
+        }, messageTime);
     }
 
     useEffect(() => {
@@ -53,7 +63,12 @@ const ReviewRequests = ({ count, setCount }) => {
             {!isLoading && users.length > 0 && (
                 <div className="pane-container">
                     {users.map((user, idx) => (
-                        <UserRequest user={user} key={idx} updateRequests={updateRequests} />
+                        <UserRequest
+                            user={user}
+                            key={idx}
+                            updateRequests={updateRequests}
+                            setMessage={displayMessage}
+                        />
                     ))}
                 </div>
             )}
@@ -64,6 +79,11 @@ const ReviewRequests = ({ count, setCount }) => {
             )}
             {!isLoading && (racers.length === 0) && (
                 <p>No racer acceptance requests.</p>
+            )}
+            {message && message !== '' && (
+                <div className={messageClass}>
+                    <p>{message}</p>
+                </div>
             )}
         </>
     )

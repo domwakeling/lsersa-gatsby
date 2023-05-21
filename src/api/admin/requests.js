@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
-import { token } from '../../lib/token.';
+import { token } from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 
@@ -12,11 +12,11 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
-const verifyUser = async (id, email, freetext) => {
+const verifyUser = async (id, email, admin_text) => {
     const conn = await connect(config);
     
     const params = [
-        freetext,
+        admin_text,
         true
     ];
     const results = await conn.transaction(async (tx) => {
@@ -24,7 +24,7 @@ const verifyUser = async (id, email, freetext) => {
         const tryUpdateUser = await tx.execute(`
                     UPDATE users
                     SET
-                        freetext = ?,
+                        admin_text = ?,
                         verified = ?
                     WHERE email="${email}"`,
             params
@@ -56,7 +56,7 @@ export default async function handler(req, res) {
 
         try {
             const users = await conn.execute(`
-                SELECT id, email, freetext
+                SELECT id, email, admin_text
                 FROM users
                 WHERE verified = FALSE`
             );
@@ -71,7 +71,7 @@ export default async function handler(req, res) {
         } catch (error) {
             console.log(error.message);
             // generic error message
-            res.status(500).json({ message: "Server error: bad request" });
+            res.status(500).json({ message: "SERVER ERROR: Bad request" });
             return;
         }
     
@@ -83,13 +83,13 @@ export default async function handler(req, res) {
 
             const hasAdmin = await verifyUserHasAdminRole(token);
             if (!hasAdmin) {
-                res.status(401).json({message: 'User does not have admin access'});
+                res.status(401).json({message: 'ERROR: You do not have admin access'});
                 return;
             }
 
             if (type === 'user') {
-                const { id, email, freetext } = req.body;
-                const results = await verifyUser(id, email, freetext);
+                const { id, email, admin_text } = req.body;
+                const results = await verifyUser(id, email, admin_text);
                 
                 // trigger an email to the new user
                 const _ = await emailNewAccountTokenToUser(results.newToken, email);
@@ -118,7 +118,7 @@ export default async function handler(req, res) {
 
             const hasAdmin = await verifyUserHasAdminRole(token);
             if (!hasAdmin) {
-                res.status(401).json({ message: 'User does not have admin access' });
+                res.status(401).json({ message: 'ERROR: You do not have admin access' });
                 return;
             }
 
