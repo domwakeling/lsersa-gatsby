@@ -8,6 +8,7 @@ CREATE TABLE `users` (
   `last_name` varchar(50),
   `address_1` varchar(100),
   `address_2` varchar(100),
+  `mobile` varchar(20),
   `city` varchar(50),
   `postcode` varchar(10),
   `emergency_name` varchar(50),
@@ -16,7 +17,7 @@ CREATE TABLE `users` (
   `secondary_name` varchar(50),
   `secondary_email` varchar(100),
   `secondary_mobile` varchar(20),
-  `freetext` varchar(255),
+  `admin_text` varchar(255),
   `identifier` varchar(20) UNIQUE NOT NULL
 );
 
@@ -54,7 +55,8 @@ CREATE TABLE `racers` (
   `club_id` integer,
   `club_expiry` date,
   `verified` boolean,
-  `competency` varchar(255)
+  `user_text` varchar(255),
+  `admin_text` varchar(255)
 );
 
 CREATE TABLE `token_types` (
