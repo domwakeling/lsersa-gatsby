@@ -19,6 +19,11 @@ const sendShortEmail = async (emails, subject, headerText, bodyTextSent, plainBo
                         ${bodyTextSent}
                     </td>
                 </tr>
+                <tr>
+                    <td class="row" style="padding:0;padding-bottom:16px;padding-top:32px">
+                        <img style="width: 100%" src="https://lsersa.org/images/sponsor_banner_1200.png">
+                    </td>
+                </tr>
             </table>
         </td>
     `
