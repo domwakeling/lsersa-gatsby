@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
-import { ADMINMODES } from "../../lib/modes";
-import TabPanel from "./elements/TabPanel";
-import TabLabel from "./elements/TabLabel";
-import ReviewRequests from "./admins/ReviewRequest";
-import InviteUser from "./admins/InviteUser";
-import UserDetail from "./UserDetails";
 import updateUserDetails from "../../lib/users/updateUser";
+import InviteUser from "./admins/InviteUser";
+import ReviewRequests from "./admins/ReviewRequest";
+import TabLabel from "./elements/TabLabel";
+import TabPanel from "./elements/TabPanel";
+import UserDetail from "./UserDetails";
+import { ADMINMODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
+import ManageClubs from "./admins/ManageClubs";
 
 const AdminDashboard = ({ user, setUser }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
@@ -36,8 +37,8 @@ const AdminDashboard = ({ user, setUser }) => {
             mode: 4
         },
         {
-            text: "choice six",
-            mode: 5
+            text: "manage clubs",
+            mode: ADMINMODES.MANAGE_CLUBS
         },
         {
             text: "manage your details",
@@ -108,14 +109,17 @@ const AdminDashboard = ({ user, setUser }) => {
                 {adminMode === ADMINMODES.INVITE_USER && (
                     <InviteUser />
                 )}
-                {(adminMode === ADMINMODES.MANAGING_OWN_DETAILS && (
+                {adminMode === ADMINMODES.MANAGING_OWN_DETAILS && (
                     <UserDetail
                         user={user}
                         emptyPasswordOk={true}
                         handleUserDetailSubmit={handleUserDetailSubmit}
                         updating={true}
                     />
-                ))}
+                )}
+                {adminMode === ADMINMODES.MANAGE_CLUBS && (
+                    <ManageClubs />
+                )}
             </div>
             {message && message !== '' && (
                 <div className={messageClass}>

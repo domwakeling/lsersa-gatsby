@@ -63,6 +63,20 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
         <div className="user-form">
             <h2 className="as-h3">Your details</h2>
             <div className="user-form-columns">
+                <TextField
+                    label="First Name"
+                    placeholder="first name"
+                    value={userFirstName}
+                    setValue={setUserFirstName}
+                    checkEnterKey={checkEnterKey}
+                />
+                <TextField
+                    label="Last Name"
+                    placeholder="last name"
+                    value={userLastName}
+                    setValue={setUserLastName}
+                    checkEnterKey={checkEnterKey}
+                />
                 <EmailField
                     label="Email"
                     placeholder="email"
@@ -76,20 +90,6 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     placeholder="mobile"
                     value={userMobile}
                     setValue={setUserMobile}
-                    checkEnterKey={checkEnterKey}
-                />
-                <TextField
-                    label="First Name"
-                    placeholder="first name"
-                    value={userFirstName}
-                    setValue={setUserFirstName}
-                    checkEnterKey={checkEnterKey}
-                />
-                <TextField
-                    label="Last Name"
-                    placeholder="last name"
-                    value={userLastName}
-                    setValue={setUserLastName}
                     checkEnterKey={checkEnterKey}
                 />
                 <PasswordField

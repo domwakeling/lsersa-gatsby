@@ -12,6 +12,7 @@ const MODES = {
 const ADMINMODES = {
     REVIEW_REQUESTS: 0,
     INVITE_USER: 1,
+    MANAGE_CLUBS: 5,
     MANAGING_OWN_DETAILS: 6
 }
 

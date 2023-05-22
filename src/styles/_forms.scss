@@ -28,7 +28,7 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
 
 .user-form-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     label {
         input {
@@ -37,7 +37,11 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
         margin-bottom: 1.5rem;
     }
 
-    @include for-tablet-down () {
+    @include for-tablet-only () {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include for-phone-only() {
         grid-template-columns: 1fr;
     }
 }

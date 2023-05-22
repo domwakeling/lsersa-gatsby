@@ -76,7 +76,7 @@ CREATE TABLE `clubs` (
   `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `contact_name` varchar(100),
-  `conact_email` varchar(100),
+  `contact_email` varchar(100),
   `affiliated` boolean
 );
 

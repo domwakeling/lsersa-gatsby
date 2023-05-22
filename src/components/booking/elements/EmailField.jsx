@@ -1,6 +1,15 @@
 import React from "react";
 
-const EmailField = ({ label, placeholder, value, setValue, setEmailValid, checkEnterKey, emptyOk=false }) => {
+const EmailField = ({
+    label,
+    placeholder,
+    value,
+    setValue,
+    setEmailValid,
+    checkEnterKey,
+    emptyOk=false,
+    disabled=false
+}) => {
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -23,6 +32,7 @@ const EmailField = ({ label, placeholder, value, setValue, setEmailValid, checkE
                 onKeyDown={checkEnterKey}
                 value={value}
                 placeholder={placeholder}
+                disabled={disabled}
             />
         </label>
     )

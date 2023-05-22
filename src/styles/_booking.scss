@@ -28,10 +28,13 @@ button.tab-button {
 
 .pane-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.0rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.0rem;
 
-    @include for-tablet-down {
+    @include for-tablet-only() {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include for-phone-only() {
         grid-template-columns: 1fr;
     }
 
@@ -39,14 +42,15 @@ button.tab-button {
         padding: 0.5rem 1.0rem;
         border-radius: 0.5rem;
         border: 1px solid $color-p300;
+        background-color: lighten($color-p900, 2.5%);
 
         input[type=text] {
-            width: 95%;
+            width: 90%;
         }
 
         textarea {
             display: block;
-            width: 95%;
+            width: 90%;
             background-color: $color-c900;
             resize: none;
             padding: 0.1rem 1.0rem;
@@ -138,4 +142,83 @@ button.tab-button {
         background-color: $color-lightred;
         border: 1px solid darken($color-lightred, 50%);
     }
+}
+
+.club-add-button {
+    @include common-button;
+    @include blue-button;
+    float: right;
+    &:hover {
+        @include orange-button;
+    }
+}
+
+.two-segment {
+
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .button-container {
+        margin-bottom: 1.0rem;
+        
+        button.left {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            background-color: $color-g900;
+            color: $color-g100;
+            &:hover {
+                @include orange-button;
+            }
+            &:disabled {
+                background-color: $color-g700;
+                color: $color-g700;
+                &:hover {
+                    color: $color-g700;
+                }
+            }
+        }
+
+        button.right {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0 !important;
+            background-color: $color-g900;
+            color: $color-g100;
+            &:hover {
+                @include orange-button;
+            }
+            &:disabled {
+                background-color: $color-g700;
+                color: $color-g700;
+                &:hover {
+                    color: $color-g700;
+                }
+            }
+        }
+
+        button.right.active, button.left.active {
+            @include blue-button;
+            &:hover {
+                @include blue-button
+            }
+            &:disabled {
+                background-color: $color-g900;
+                color: $color-g100;
+                &:hover {
+                    background-color: $color-g900;
+                }
+            }
+        }
+    }
+}
+
+button.club-button, button.cancel-button {
+    float: right;
+    margin-top: 2.5rem;
+}
+
+.cancel-button {
+    margin-right: 1.0rem;
 }
