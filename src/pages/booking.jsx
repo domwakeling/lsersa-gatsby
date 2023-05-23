@@ -31,7 +31,7 @@ const BookingPage = () => {
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token
         async function checkForToken() {
-            const res = await fetch("/api/polljwt");
+            const res = await fetch("/api/poll-jwt");
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);

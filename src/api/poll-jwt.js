@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdFromToken } from '../lib/jwtmethods';
+import { getIdFromToken } from '../lib/jwt-methods';
 
 const config = {
     fetch,

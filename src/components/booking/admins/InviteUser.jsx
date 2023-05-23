@@ -15,7 +15,7 @@ const InviteUser = () => {
             email
         }        
         
-        const res = await fetch(`/api/admin/adminnewaccount`, {
+        const res = await fetch(`/api/admin/admin-new-account`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

@@ -21,7 +21,7 @@ const SignUp = ({ email, setEmail, emailValid, setEmailValid, setMode }) => {
             email: email,
         }
         
-        const res = await fetch("/api/user/newaccountrequest", {
+        const res = await fetch("/api/user/new-account-request", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

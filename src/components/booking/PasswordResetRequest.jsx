@@ -15,7 +15,7 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
     const handleSubmit = async (e) => {
         e.preventDefault();
         const body = { email: email }
-        const res = await fetch(`/api/user/passwordresetrequest`, {
+        const res = await fetch(`/api/user/password-reset-request`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

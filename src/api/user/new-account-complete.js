@@ -2,7 +2,7 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
-import { createToken, MAX_AGE } from '../../lib/jwtmethods';
+import { createToken, MAX_AGE } from '../../lib/jwt-methods';
 import { tokenTypes } from '../../lib/db_refs';
 
 const config = {

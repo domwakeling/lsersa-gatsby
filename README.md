@@ -92,7 +92,7 @@ The structure for the data is
     target: // recommend underscore and club name, no spaces
     copy:   // club copy in html formatting
 
-* img path in the file should be clubs/<sponsor_name>.png (or jepg)
+* img path in the file should be clubs/<sponsor_name>.png (or jpeg)
 ```
 
 Logos are 4:3 ratio (preferably 400x300 file size) with a transparent background (so ideally PNG).
@@ -116,9 +116,9 @@ Data for the slopes is held in **two** files; the main one is another YAML file 
 
 * img path in the file should be slopes/<sponsor_name>.png (or jepg)
 ```
-**In addition** there is also a second file with JSON data at `src/lib/slopedata.js`. This
+**In addition** there is also a second file with JSON data at `src/lib/slope-data.js`. This
 repeats the `name`, `url`, `map-url` and `target` fields, whilst also adding latitude and
-longitude values (and is used by the API function `getslopes` to determine distance from the
+longitude values (and is used by the API function `get-slopes` to determine distance from the
 given postcode).
 
 *The map images are either 2km or 5km scale screenshots taken from Google Maps and cropped
@@ -157,7 +157,7 @@ the website (provided as Gatsby functions). The database structure is:
 - [x] school race pages + results
 - [x] CN and tri-regional results, check/add
 - [x] training page => set it up
-- [ ] training page => any info on other training? Telemark, Skiercross?
+- [ ] training page => any info on other training? Telemark, Ski-Cross?
 - [x] region page => committee
 - [x] not sure where, but minutes etc
 - [x] clubs page

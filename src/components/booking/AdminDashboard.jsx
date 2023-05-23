@@ -69,7 +69,7 @@ const AdminDashboard = ({ user, setUser }) => {
 
     useEffect(() => {
         async function checkForRequests() {
-            const res = await fetch("/api/admin/requestcounts");
+            const res = await fetch("/api/admin/request-counts");
             if (res.status === 200) {
                 const data = await res.json();
                 setRequestsCount(data.users + data.racers);

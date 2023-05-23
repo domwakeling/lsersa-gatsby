@@ -16,7 +16,7 @@ const ResetPassword = ({ params }) => {
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token
         async function retrieveUserFromToken() {
-            const res = await fetch(`/api/user/resetpasswordcomplete/${token}/`);
+            const res = await fetch(`/api/user/reset-password-complete/${token}/`);
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);
@@ -42,7 +42,7 @@ const ResetPassword = ({ params }) => {
             token: token,
             password: password1
         }
-        const res = await fetch(`/api/user/resetpasswordcomplete`, {
+        const res = await fetch(`/api/user/reset-password-complete`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
@@ -128,7 +128,7 @@ const ResetPassword = ({ params }) => {
 
                     {mode === COMPLETING_MODES.SUBMIT_BAD && (
                         <div className="advice-box">
-                            <p>Unfortomately something has gone wrong - plase reload the page. If
+                            <p>Unfortunately something has gone wrong - please reload the page. If
                                 that doesn't work, contact the coaching team for help.</p>
                         </div>
                     )}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import navbarlinks from '../data/navbarlinks.yaml';
+import navbarLinks from '../data/navbar-links.yaml';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from "gatsby";
 
@@ -65,7 +65,7 @@ const Navbar = () => {
                             <span className="brand-text">LSERSA</span>
                         </Link>
                         <ul className="navlink-desktop">
-                            { navbarlinks.map((item, idx) => (
+                            { navbarLinks.map((item, idx) => (
                                 <li className="menu-wide" key={`navlink-desktop-${idx}`}>
                                     <Link to={item.link}>
                                         {item.text}
@@ -76,7 +76,7 @@ const Navbar = () => {
                     </div>
                     <div id="menu-responsive" className={menuOpen ? "menu-show" : ""}>
                         <ul>
-                            {navbarlinks.map((item, idx) => (
+                            {navbarLinks.map((item, idx) => (
                                 <li className="menu-wide" key={`navlink-tablet-${idx}`}>
                                     <Link to={item.link}>
                                         {item.text}

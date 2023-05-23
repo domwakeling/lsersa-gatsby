@@ -1,5 +1,5 @@
 import { fetch } from 'undici'; 
-import { slopes } from '../../lib/slopedata.js';
+import { slopes } from '../../lib/slope-data.js';
 
 export default async function handler(req, res) {
 

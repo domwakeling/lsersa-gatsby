@@ -12,7 +12,7 @@ const updateUserDetails = async (user, newUser) => {
         updates: updateDetails
     }
 
-    const res = await fetch(`/api/user/updateuserdetails`, {
+    const res = await fetch(`/api/user/update-user-details`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

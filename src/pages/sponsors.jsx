@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout.jsx";
-import sponsordata from '../data/sponsors.yaml';
+import sponsorData from '../data/sponsors.yaml';
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import SponsorParser from "../components/utility/SponsorParser.jsx";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -25,7 +25,7 @@ const SponsorsPage = () => {
                     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
                         <Masonry gutter="20px">
                             {
-                                sponsordata.map((item, idx) => (
+                                sponsorData.map((item, idx) => (
                                     <div className="sponsor-card" key={`sponsor-page-${idx}`}>
                                         <div className="sponsor-logo-grid-item">
                                             <a href={item.url} target={item.target }>

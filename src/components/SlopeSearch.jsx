@@ -46,8 +46,8 @@ const SlopeSearch = () => {
             <div className="postcode-form">
                 <input
                     type="text"
-                    id="searchpostcode"
-                    name="searchpostcode"
+                    id="search-postcode"
+                    name="search-postcode"
                     onChange={handlePostcode}
                     onKeyDown={checkEnterKey}
                     value={postcode}

@@ -15,7 +15,7 @@ const ValidateUser = ({params}) => {
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token
         async function retrieveUserFromToken() {
-            const res = await fetch(`/api/user/newaccountcomplete/${token}/`);
+            const res = await fetch(`/api/user/new-account-complete/${token}/`);
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);
@@ -40,7 +40,7 @@ const ValidateUser = ({params}) => {
             user: userData,
             token: token
         }
-        const res = await fetch(`/api/user/newaccountcomplete`, {
+        const res = await fetch(`/api/user/new-account-complete`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
@@ -102,7 +102,7 @@ const ValidateUser = ({params}) => {
 
                     {mode === COMPLETING_MODES.SUBMIT_BAD && (
                         <div className="advice-box">
-                            <p>Unfortomately something has gone wrong - plase reload the page. If
+                            <p>Unfortunately something has gone wrong - please reload the page. If
                                 that doesn't work, contact the coaching team for help.</p>
                         </div>
                     )}

@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { roles } from '../db_refs';
-import { getIdFromToken } from '../jwtmethods';
+import { getIdFromToken } from '../jwt-methods';
 
 const config = {
     fetch,
