@@ -2,7 +2,6 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
-import { createToken, MAX_AGE } from '../../lib/jwtmethods';
 import { tokenTypes } from '../../lib/db_refs';
 
 const config = {
@@ -12,71 +11,39 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
-const verifyNewUserAccount = async (token, userData) => {
+const verifyNewUserAccount = async (token, id, password) => {
     // re-check thaet the token is valid and relates to this user
-    const checkUser = await getUserFromToken (token, tokenTypes.ACCOUNT_REQUEST);
-    
+    const checkUser = await getUserFromToken(token, tokenTypes.PASSWORD_RESET);
+
     // if it's null or an empty array, something was wrong with the token
     if (checkUser == null || checkUser == []) {
         return null;
     }
 
     // if there isn't a returned id, or it doesn't match the userData, return false
-    if (!checkUser || !checkUser.id || (checkUser.id !== userData.id) ) {
+    if (!checkUser || !checkUser.id || (checkUser.id !== id)) {
         return false;
     }
 
     // user matches so prepare to update; last element of params is the verified status
-    const hashedPassword = brcypt.hashSync(userData.password, 10);
-    const params = [
-        userData.email,
-        hashedPassword,
-        userData.first_name,
-        userData.last_name,
-        userData.address_1,
-        userData.address_2,
-        userData.mobile,
-        userData.city,
-        userData.postcode,
-        userData.emergency_name,
-        userData.emergency_email,
-        userData.emergency_mobile,
-        userData.secondary_name,
-        userData.secondary_email,
-        userData.secondary_mobile,
-        true
-    ];
+    const hashedPassword = brcypt.hashSync(password, 10);
+    const params = [hashedPassword];
 
     const conn = await connect(config);
     const results = await conn.transaction(async (tx) => {
         // update the record
-        
+
         const tryNewUser = await tx.execute(`
             UPDATE users
             SET
-                email = ?,
-                password_hash = ?,
-                first_name = ?,
-                last_name = ?,
-                address_1 = ?,
-                address_2 = ?,
-                mobile = ?,
-                city = ?,
-                postcode = ?,
-                emergency_name = ?,
-                emergency_email = ?,
-                emergency_mobile = ?,
-                secondary_name = ?,
-                secondary_email = ?,
-                secondary_mobile = ?,
-                verified = ?
-            WHERE id=${userData.id}`,
+                password_hash = ?
+            WHERE id=${id}`,
             params
         );
-        
+
         // delete the access token
         const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
-        
+
         return {
             tryNewUser,
             tryDeleteToken
@@ -85,19 +52,19 @@ const verifyNewUserAccount = async (token, userData) => {
 
 
     return {
-        results,
-        identifier: checkUser.identifier
+        results
     };
 }
 
 export default async function handler(req, res) {
+    console.log(req.body)
 
     if (req.method == 'POST') {
         // get data from the body and instigate ...
-        const { user, token } = req.body;
+        const { id, token, password } = req.body;
 
         try {
-            const result = await verifyNewUserAccount(token, user);
+            const result = await verifyNewUserAccount(token, id, password);
 
             // if result is null there was something wrong with the token
             if (result === null) {
@@ -111,12 +78,9 @@ export default async function handler(req, res) {
                 return;
             }
 
-            // get a JWT, set it in the header, return success
-            const jwt = createToken(result.identifier);
-            res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}; Path=/`);
-            res.status(200).json({ message: "successfully verified account" });
+            res.status(200).json({ message: "successfully reset password" });
             return;
-        
+
         } catch (error) {
             console.log(error.message);
             // generic error message

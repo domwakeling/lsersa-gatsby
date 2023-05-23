@@ -17,9 +17,19 @@
 }
 
 @mixin orange-button {
-    background-color: $color_c500;
-    color: $color_c100;
-    border-color: $color_c100;
+    background-color: $color_c500 !important;
+    color: $color_c100 !important;
+    border-color: $color_c100 !important;
+}
+
+@mixin red-button {
+    background-color: $color-red !important;
+    border: 1px solid $color-darkred !important;
+    color: $color-p900;
+    float: right;
+    &:hover {
+        @include orange-button();
+    }
 }
 
 hr {

@@ -1,12 +1,13 @@
-import { getUserFromToken } from "../../../lib/users/get_user_from_token";
-import { tokenTypes } from "../../../lib/db_refs";
+import { tokenTypes} from '../../../lib/db_refs';
+import { getUserFromToken } from '../../../lib/users/get_user_from_token';
+
 
 export default async function handler(req, res) {
 
     if (req.method == 'GET') {
         // get the token and retrieve data
         const token = req.params.token;
-        const data = await getUserFromToken(token, tokenTypes.ACCOUNT_REQUEST);
+        const data = await getUserFromToken(token, tokenTypes.PASSWORD_RESET);
 
         // if data is null the token was invalid
         if (data === null) {

@@ -17,7 +17,7 @@ const SlopeSearch = () => {
         e.preventDefault();
         setFoundSlopes([]);
         setErrorMessage('');
-        const res = await fetch(`/api/getslopes/${postcode}`);
+        const res = await fetch(`/api/get-slopes/${postcode}`);
         const status = res.status;
         const data = await res.json();
         

@@ -1,6 +1,5 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { tokenTypes } from '../db_refs';
 
 const config = {
     fetch,
@@ -9,7 +8,7 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
-const getUserFromToken = async (token) => {
+const getUserFromToken = async (token, tokenType) => {
     const conn = await connect(config);
     const foundTokens = await conn.execute(`SELECT * FROM tokens WHERE token = '${token}'`);
     
@@ -20,7 +19,7 @@ const getUserFromToken = async (token) => {
 
     // if it's not an account-request token, return empty
     const foundToken = foundTokens.rows[0];
-    if (foundToken.type_id != tokenTypes.ACCOUNT_REQUEST) {
+    if (foundToken.type_id != tokenType) {
         return null;
     }
 

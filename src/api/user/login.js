@@ -53,7 +53,8 @@ export default async function handler(req, res) {
                 return;
             }
 
-            res.status(401).json({message: 'Password did not maetch'});
+            res.status(401).json({message: 'Password did not match'});
+            return;
 
         } catch (error) {
             console.log(error.message);

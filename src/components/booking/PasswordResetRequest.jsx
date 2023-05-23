@@ -14,9 +14,18 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // TODO: logic for requesting an account + visual notification
-        setEmail('');
-        setMessage(`An email has been sent with instructions to reset your password.`);
+        const body = { email: email }
+        const res = await fetch(`/api/user/passwordresetrequest`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
+        });
+        if (res.status === 200) {
+            setEmail('');
+            setMessage(`An email has been sent with instructions to reset your password.`);
+        } else {
+            setMessage('There was an issue - please try again.')
+        }
     }
 
     const setLogIn = (e) => {
@@ -36,6 +45,7 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
     return (
         <div>
             <h2>RESET PASSWORD</h2>
+            <p>Enter your email below and submit to request a password reset email.</p>
             <div className="booking-form">
                 <input
                     type="text"

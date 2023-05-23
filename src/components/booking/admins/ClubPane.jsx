@@ -98,7 +98,7 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
             // editing an existing club
             setEditable(true);
         } else {
-            // saving an exisdting club
+            // saving an existing club
             const result = await updateClub();
             if (result) {
                 setEditable(false);

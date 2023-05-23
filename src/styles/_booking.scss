@@ -69,12 +69,7 @@ button.tab-button {
                 margin-left: 1.0rem;
             }
             &.reject {
-                background-color: red;
-                color: $color-c900;
-                float: right;
-                &:hover {
-                    background-color: darken(red, 5%);
-                }
+                @include red-button;
             }
         }
     }
@@ -219,6 +214,7 @@ button.club-button, button.cancel-button {
     margin-top: 2.5rem;
 }
 
-.cancel-button {
-    margin-right: 1.0rem;
+button.cancel-button {
+    margin-right: 0.5rem;
+    @include red-button;
 }
