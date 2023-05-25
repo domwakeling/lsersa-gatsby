@@ -6,7 +6,7 @@
 [PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/), with
 [Stripe](https://stripe.com/en-gb) integration for payments.
 
-![stack flow diagra,](./static/stack-design.png)
+![stack flow diagram](./static/stack-design.png)
 
 ## Index
 **[Rationale](#rationale)**
@@ -24,14 +24,14 @@
 
 ## Rationale
 
-Using Gatsby allows for a data-driven approach to generating the site (particualrly  for the
+Using Gatsby allows for a data-driven approach to generating the site (particularly  for the
 `/races/` and `/minutes/` elements, which otherwise are proven to be quite intensive to maintain)
 and also provides React and lambda functions to run the booking system.
 
 ## Deployment
 
 The replacement site is deployed onto Netlify (using GitHub integration); the `lsersa.org` domain,
-which is provided through [Easyspace](https://www.easyspace.com/), is then set to point to the
+which is provided through [EasySpace](https://www.easyspace.com/), is then set to point to the
 Netlify app 'behind the scenes'.
 
 *This is the approach taken for the Bowles website re-build from 2016, which worked well.*
@@ -57,7 +57,7 @@ The structure for each sponsor is:
     target: // recommend underscore and sponsor name, no spaces
     copy:   // sponsor copy in html formatting
 
-* img path in the file should be sponsors/<sponsor_name>.png (or jepg)
+* img path in the file should be sponsors/<sponsor_name>.png (or jpeg)
 ```
 
 This data is used (a) to populate the `sponsors` page, (b) to populate the sponsors carousel that
@@ -114,7 +114,7 @@ Data for the slopes is held in **two** files; the main one is another YAML file 
     target:    // recommend underscore and slope name, no spaces
     copy:      // club copy in html formatting
 
-* img path in the file should be slopes/<sponsor_name>.png (or jepg)
+* img path in the file should be slopes/<sponsor_name>.png (or jpeg)
 ```
 **In addition** there is also a second file with JSON data at `src/lib/slope-data.js`. This
 repeats the `name`, `url`, `map-url` and `target` fields, whilst also adding latitude and

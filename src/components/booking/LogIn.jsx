@@ -59,7 +59,7 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser })
 
     const setPasswordReset = (e) => {
         e.preventDefault();
-        setMode(MODES.PASWORD_RESET_REQUEST)
+        setMode(MODES.PASSWORD_RESET_REQUEST)
     }
 
     // capture <enter> key from 'search' input and divert

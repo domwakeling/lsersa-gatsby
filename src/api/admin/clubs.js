@@ -29,7 +29,7 @@ export default async function handler(req, res) {
             return;
 
         } else if (req.method === 'POST') {
-            // inesrt a new club
+            // insert a new club
             const {name, contact_name, contact_email, affiliated} = req.body;
             const conn = await connect(config);
             const _ = await conn.execute(

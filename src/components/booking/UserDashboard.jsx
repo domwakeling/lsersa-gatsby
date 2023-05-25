@@ -3,26 +3,26 @@ import UserDetail from "./UserDetails";
 import TabPanel from "./elements/TabPanel";
 import TabLabel from "./elements/TabLabel";
 import updateUserDetails from "../../lib/users/updateUser";
-import { USERMODES } from "../../lib/modes";
+import { USER_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 
 const UserDashboard = ({user, setUser}) => {
-    const [userMode, setUserMode] = useState(USERMODES.ADDING_RACER);
+    const [userMode, setUserMode] = useState(USER_MODES.ADDING_RACER);
     const [message, setMessage] = useState('');
     const [messageClass, setMessageClass] = useState('');
 
     const tabData = [
         {
             text: "bookings",
-            mode: USERMODES.BOOKING
+            mode: USER_MODES.BOOKING
         },
         {
             text: "add racer",
-            mode: USERMODES.ADDING_RACER
+            mode: USER_MODES.ADDING_RACER
         },
         {
             text: "manage your details",
-            mode: USERMODES.MANAGING_DETAILS
+            mode: USER_MODES.MANAGING_DETAILS
         }
     ];
 
@@ -63,7 +63,7 @@ const UserDashboard = ({user, setUser}) => {
                     ))}
                 </TabPanel>
                 <br />
-                {(userMode === USERMODES.MANAGING_DETAILS && (
+                {(userMode === USER_MODES.MANAGING_DETAILS && (
                     <UserDetail
                         user={user}
                         emptyPasswordOk={true}

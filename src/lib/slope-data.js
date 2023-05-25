@@ -10,7 +10,7 @@ const slopes = [
         }
     },
     {
-        name: "Chatham Snowports Centre",
+        name: "Chatham Snowsports Centre",
         url: "https://www.jnlchatham.co.uk/",
         map_url: "https://www.google.co.uk/maps/place/Chatham+Snowsports+Centre/@51.3557002,0.4774044,12z/data=!4m6!3m5!1s0x47d8cd573b18f827:0x5cc86d68cd351b85!8m2!3d51.3556873!4d0.5598026!16s%2Fg%2F1tgh6v5d",
         target: "_chatham",

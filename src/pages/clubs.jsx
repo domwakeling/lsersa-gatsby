@@ -43,7 +43,7 @@ const ClubsPage = () => {
                 <div className="row">
                     <h1>Clubs</h1>
                     <p className="larger">
-                        The region is fortunate to have a number of active snowports clubs based at{' '}
+                        The region is fortunate to have a number of active snowsports clubs based at{' '}
                         <Link to="/slopes">slopes</Link> all round the region. From beginner-friendly
                         to elite training, there's a club for everybody.</p>
                     {

@@ -60,11 +60,11 @@ const AboutPage = () => {
                                 Regional Snowsports Association to reflect the expanding diversity of
                                 the region and its members. Today LSERSA represents a variety of
                                 snowsports clubs including alpine and freestyle skiing, snowboarding,
-                                telemark and skiercross.</p>
+                                telemark and skier-cross.</p>
 
                             <p>As well as running the <Link to="/races/">Summer Race Series</Link>,
                                 LSERSA runs weekly <Link to="/training/">slalom training</Link> sessions
-                                together with ad-hoc skiercross and telemark training, and supports
+                                together with ad-hoc skier-cross and telemark training, and supports
                                 local school ski racing.</p>
                         </div>
 
@@ -125,7 +125,7 @@ const AboutPage = () => {
                             <tbody>
                             {
                                 committeeData.map((item, idx) => (
-                                    <tr key={`cmte-${idx}`}>
+                                    <tr key={`committee-${idx}`}>
                                         <td>
                                             {item.executive ? <b>*</b> : ''}
                                         </td>

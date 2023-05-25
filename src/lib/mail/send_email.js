@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-const sendEmail = async (emails, subject, messageText, messgeHTML) => {
+const sendEmail = async (emails, subject, messageText, messageHTML) => {
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
@@ -19,7 +19,7 @@ const sendEmail = async (emails, subject, messageText, messgeHTML) => {
         to: emails.join(", "), // list of receivers
         subject: subject, // Subject line
         text: messageText, // plain text body
-        html: messgeHTML // html body
+        html: messageHTML // html body
     });
 
     return info;

@@ -14,7 +14,7 @@ const MeetingElement = ({ item }) => {
                             <DownloadItem
                                 filetype="PDF"
                                 filename={doc.text}
-                                filelink={doc.url}
+                                file_link={doc.url}
                                 key={idx_d}
                                 mini={true}
                             />

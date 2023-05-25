@@ -13,7 +13,7 @@ const config = {
 }
 
 const verifyNewUserAccount = async (token, userData) => {
-    // re-check thaet the token is valid and relates to this user
+    // re-check that the token is valid and relates to this user
     const checkUser = await getUserFromToken (token, tokenTypes.ACCOUNT_REQUEST);
     
     // if it's null or an empty array, something was wrong with the token

@@ -1,7 +1,7 @@
 import React from "react"
 import Hero from "../components/Hero.jsx";
 import Layout from "../components/Layout.jsx";
-import sponsordata from '../data/sponsors.yaml';
+import sponsorData from '../data/sponsors.yaml';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
@@ -68,7 +68,7 @@ const HomePage = () => {
                 <div className="row">
                     <h2>Thank you to our sponsors</h2>
                     <div className="sponsor-logo-grid">
-                        {sponsordata.map((item, idx) => (
+                        {sponsorData.map((item, idx) => (
                             <div className="sponsor-logo-grid-item" key={`sponsor-body-${idx}`} >
                                 <a href={item.url} target={item.target}>
                                     <GatsbyImage

@@ -1,6 +1,6 @@
 import React from "react";
 
-const DownloadItem = ({ filetype, filename, filelink, mini }) => {
+const DownloadItem = ({ filetype, filename, file_link, mini }) => {
 
     const miniImg = mini ? true: false;
 
@@ -57,7 +57,7 @@ const DownloadItem = ({ filetype, filename, filelink, mini }) => {
     
     return (
         <div style={divStyle}>
-            <a href={filelink} target="_download">
+            <a href={file_link} target="_download">
                 <div style={{ width: "100%" }}>
                     {miniImg && (
                         <div

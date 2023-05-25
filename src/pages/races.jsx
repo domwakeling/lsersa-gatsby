@@ -55,7 +55,7 @@ const RacesPage = () => {
                             and once entries are finally closed, no more racers will be accepted.</p>
                     </div>
 
-                    <p>LSRESA runs a summer series each year. Race format is:</p>
+                    <p>LSERSA runs a summer series each year. Race format is:</p>
                     <ul>
                         <li>three individual slalom runs</li>
                         <li>three individual head-to-head dual slaloms</li>
@@ -95,7 +95,7 @@ const RacesPage = () => {
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td> - then head-to-heads, team events and prizegiving</td>
+                                    <td> - then head-to-heads, team events and prize-giving</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -112,12 +112,12 @@ const RacesPage = () => {
                     <p><b>Downloads</b></p>
                     <div style={{ marginBottom: "2.0rem"}}>
                         <DownloadItem
-                            filelink="/resources/guidance/race_rules_2023.pdf"
+                            file_link="/resources/guidance/race_rules_2023.pdf"
                             filename="LSERSA race rules"
                             filetype="PDF"
                         />
                         <DownloadItem
-                            filelink="/resources/guidance/if_in_doubt_sit_them_out.pdf"
+                            file_link="/resources/guidance/if_in_doubt_sit_them_out.pdf"
                             filename="concussion guide"
                             filetype="PDF"
                         />
@@ -130,7 +130,7 @@ const RacesPage = () => {
                     <div className="row">
                         <h2 id="concussion_guidance">Concussion Guidance</h2>
                         <p>The safety and well being of racers is a priority for racers participating in
-                            LSERSA races, so please take the time to read the <a target="_downlaod"
+                            LSERSA races, so please take the time to read the <a target="_download"
                             href="/resources/guidance/if_in_doubt_sit_them_out.pdf">guidance</a> but more
                             importantly adhere to the minimum 21 day exclusion period recommended. The
                             severity of a concussion injury should not be underestimated and it is

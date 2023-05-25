@@ -101,7 +101,7 @@ const BookingPage = () => {
                             setMode={setMode}
                         />
                     )}
-                    {mode === MODES.PASWORD_RESET_REQUEST && (
+                    {mode === MODES.PASSWORD_RESET_REQUEST && (
                         <PasswordResetRequest
                             email={email}
                             emailValid={emailValid}

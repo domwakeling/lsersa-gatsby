@@ -3,8 +3,8 @@
  */
 module.exports = {
     siteMetadata: {
-        title: 'London & South East Regional Snowsports Assocaetion',
-        description: 'Website for LSERSA, the London & South East Regional Snowsports Assocaetion',
+        title: 'London & South East Regional Snowsports Association',
+        description: 'Website for LSERSA, the London & South East Regional Snowsports Association',
         siteUrl: `http://lsersa.org/`,
     },
     plugins: [

@@ -5,24 +5,24 @@ import ReviewRequests from "./admins/ReviewRequest";
 import TabLabel from "./elements/TabLabel";
 import TabPanel from "./elements/TabPanel";
 import UserDetail from "./UserDetails";
-import { ADMINMODES } from "../../lib/modes";
+import { ADMIN_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 import ManageClubs from "./admins/ManageClubs";
 
 const AdminDashboard = ({ user, setUser }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
-    const [adminMode, setAdminMode] = useState(ADMINMODES.REVIEW_REQUESTS);
+    const [adminMode, setAdminMode] = useState(ADMIN_MODES.REVIEW_REQUESTS);
     const [message, setMessage] = useState('');
     const [messageClass, setMessageClass] = useState('');
 
     const tabData = [
         {
             text: "review requests",
-            mode: ADMINMODES.REVIEW_REQUESTS
+            mode: ADMIN_MODES.REVIEW_REQUESTS
         },
         {
             text: "invite user",
-            mode: ADMINMODES.INVITE_USER
+            mode: ADMIN_MODES.INVITE_USER
         },
         {
             text: "choice three",
@@ -38,11 +38,11 @@ const AdminDashboard = ({ user, setUser }) => {
         },
         {
             text: "manage clubs",
-            mode: ADMINMODES.MANAGE_CLUBS
+            mode: ADMIN_MODES.MANAGE_CLUBS
         },
         {
             text: "manage your details",
-            mode: ADMINMODES.MANAGING_OWN_DETAILS
+            mode: ADMIN_MODES.MANAGING_OWN_DETAILS
         }
     ];
 
@@ -103,13 +103,13 @@ const AdminDashboard = ({ user, setUser }) => {
                     ))}
                 </TabPanel>
                 <br/>
-                {adminMode === ADMINMODES.REVIEW_REQUESTS && (
+                {adminMode === ADMIN_MODES.REVIEW_REQUESTS && (
                     <ReviewRequests setCount={setRequestsCount} />
                 )}
-                {adminMode === ADMINMODES.INVITE_USER && (
+                {adminMode === ADMIN_MODES.INVITE_USER && (
                     <InviteUser />
                 )}
-                {adminMode === ADMINMODES.MANAGING_OWN_DETAILS && (
+                {adminMode === ADMIN_MODES.MANAGING_OWN_DETAILS && (
                     <UserDetail
                         user={user}
                         emptyPasswordOk={true}
@@ -117,7 +117,7 @@ const AdminDashboard = ({ user, setUser }) => {
                         updating={true}
                     />
                 )}
-                {adminMode === ADMINMODES.MANAGE_CLUBS && (
+                {adminMode === ADMIN_MODES.MANAGE_CLUBS && (
                     <ManageClubs />
                 )}
             </div>
@@ -135,7 +135,7 @@ const AdminDashboard = ({ user, setUser }) => {
                 <li>edit name, club and age for individual racers</li>
                 <li>Link an existing racer to a new parent account</li>
                 <li>turn off bookings for future weeks and specify why</li>
-                <li>change the number of racers that will be accepted on a sesssion</li>
+                <li>change the number of racers that will be accepted on a session</li>
                 <li>post a message about a session (which may be why it's cancelled!)</li>
             </ul>
         </div>

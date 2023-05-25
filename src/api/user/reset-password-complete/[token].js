@@ -15,7 +15,7 @@ export default async function handler(req, res) {
             return;
         }
 
-        // if data is an empty array, array wasn't found (object will hanve length undefined, won't trip this)
+        // if data is an empty array, array wasn't found (object will have length undefined, won't trip this)
         if (data.length == 0) {
             res.status(404).json({ message: 'Token not found.' })
             return;

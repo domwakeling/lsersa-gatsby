@@ -8,8 +8,8 @@ export default async function handler(req, res) {
     const uri = `https://api.postcodes.io/postcodes/${postcode}`.replace(/\s/g, "%20");
 
     // get data from end
-    const resdata = await fetch(uri);
-    const data = await resdata.json();
+    const result = await fetch(uri);
+    const data = await result.json();
 
     if (data.status != 200) {
         res.status(data.status).json({error: data.error});

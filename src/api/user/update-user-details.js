@@ -26,7 +26,7 @@ export default async function handler(req, res) {
                 return;
             }
 
-            // hash password, or remove from udpates if blank
+            // hash password, or remove from updates if blank
             if (updates.password && updates.password !== '') {
                 const hashedPassword = brcypt.hashSync(updates.password, 10);
                 updates.password_hash = hashedPassword;
@@ -63,7 +63,7 @@ export default async function handler(req, res) {
             
             // if for some reason this hasn't worked, error out ...
             if (!tryUpdateUser || tryUpdateUser.rowsAffected !== 1) {
-                res.status(500).json({messge: 'ERROR: Changes not saved'});
+                res.status(500).json({message: 'ERROR: Changes not saved'});
                 return;
             }
 
