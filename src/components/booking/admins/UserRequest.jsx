@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TextField from "../elements/TextField";
-import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../../lib/constants";
+import { MESSAGE_CLASSES } from "../../../lib/constants";
 
-const UserRequest = ({ user, updateRequests, setMessage }) => {
+const UserRequest = ({ user, updateRequests, displayMessage }) => {
     const [adminText, setAdminText] = useState(user.admin_text || '');
     const [deleting, setDeleting] = useState(false);
 
@@ -31,10 +31,10 @@ const UserRequest = ({ user, updateRequests, setMessage }) => {
             });
             if (res.status === 200) {
                 updateRequests();
-                setMessage(MESSAGE_CLASSES.SUCCESS, "Account confirmed, email has been sent", MESSAGE_TIME);
+                displayMessage(MESSAGE_CLASSES.SUCCESS, "Account confirmed, email has been sent");
             } else {
                 const data = await res.json();
-                setMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+                displayMessage(MESSAGE_CLASSES.WARN, data.message);
             }
         }
     }
@@ -56,10 +56,10 @@ const UserRequest = ({ user, updateRequests, setMessage }) => {
             });
             if (res.status === 200) {
                 updateRequests();
-                setMessage(MESSAGE_CLASSES.SUCCESS, "Account request rejected", MESSAGE_TIME);
+                displayMessage(MESSAGE_CLASSES.SUCCESS, "Account request rejected");
             } else {
                 const data = await res.json();
-                setMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+                displayMessage(MESSAGE_CLASSES.WARN, data.message);
             }
         }
     }

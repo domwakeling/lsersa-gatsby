@@ -9,11 +9,9 @@ import { ADMIN_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 import ManageClubs from "./admins/ManageClubs";
 
-const AdminDashboard = ({ user, setUser }) => {    
+const AdminDashboard = ({ user, setUser, displayMessage }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
     const [adminMode, setAdminMode] = useState(ADMIN_MODES.REVIEW_REQUESTS);
-    const [message, setMessage] = useState('');
-    const [messageClass, setMessageClass] = useState('');
 
     const tabData = [
         {
@@ -45,14 +43,6 @@ const AdminDashboard = ({ user, setUser }) => {
             mode: ADMIN_MODES.MANAGING_OWN_DETAILS
         }
     ];
-
-    const displayMessage = (messageType, messageText, messageTime) => {
-        setMessageClass(messageType)
-        setMessage(messageText);
-        setTimeout(() => {
-            setMessage('');
-        }, messageTime);
-    }
 
     const handleUserDetailSubmit = async (newUser) => {
         const result = await updateUserDetails(user, newUser);
@@ -104,10 +94,10 @@ const AdminDashboard = ({ user, setUser }) => {
                 </TabPanel>
                 <br/>
                 {adminMode === ADMIN_MODES.REVIEW_REQUESTS && (
-                    <ReviewRequests setCount={setRequestsCount} />
+                    <ReviewRequests setCount={setRequestsCount} displayMessage={displayMessage} />
                 )}
                 {adminMode === ADMIN_MODES.INVITE_USER && (
-                    <InviteUser />
+                    <InviteUser displayMessage={displayMessage} />
                 )}
                 {adminMode === ADMIN_MODES.MANAGING_OWN_DETAILS && (
                     <UserDetail
@@ -115,17 +105,13 @@ const AdminDashboard = ({ user, setUser }) => {
                         emptyPasswordOk={true}
                         handleUserDetailSubmit={handleUserDetailSubmit}
                         updating={true}
+                        displayMessage={displayMessage}
                     />
                 )}
                 {adminMode === ADMIN_MODES.MANAGE_CLUBS && (
-                    <ManageClubs />
+                    <ManageClubs displayMessage={displayMessage} />
                 )}
             </div>
-            {message && message !== '' && (
-                <div className={messageClass}>
-                    <p>{message}</p>
-                </div>
-            )}
             <br/>
             <hr/>
             <p>Needs to be able to:</p>

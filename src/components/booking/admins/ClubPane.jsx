@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import EmailField from '../elements/EmailField';
 import TextField from '../elements/TextField';
 import TwoSegment from '../elements/TwoSegment';
-import { MESSAGE_CLASSES, MESSAGE_TIME } from '../../../lib/constants';
+import { MESSAGE_CLASSES } from '../../../lib/constants';
 
 const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
     const [clubName, setClubName] = useState(club.name);
@@ -30,12 +30,12 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
             body: JSON.stringify(body),
         });
         if (res.status === 200) {
-            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club added", MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club added");
             updatePane();
             return true;
         } else {
             const data = await res.json();
-            displayMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
             return false;
         }
     }
@@ -54,11 +54,11 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
             body: JSON.stringify(body),
         });
         if (res.status === 200) {
-            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club updated", MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club updated");
             return true;
         } else {
             const data = await res.json();
-            displayMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
             return false;
         }
     }
@@ -71,11 +71,11 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
             body: JSON.stringify(body),
         });
         if (res.status === 200) {
-            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club deleted", MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Club deleted");
             return true;
         } else {
             const data = await res.json();
-            displayMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
             return false;
         }
     }

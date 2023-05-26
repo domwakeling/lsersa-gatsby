@@ -8,6 +8,8 @@ import SignUp from "../components/booking/SignUp.jsx";
 import UserDashboard from "../components/booking/UserDashboard.jsx";
 import AdminDashboard from "../components/booking/AdminDashboard.jsx";
 import LoadingSpinner from "../components/booking/elements/LoadingSpinner.jsx";
+import MessageBox from "../components/booking/elements/MessageBox.jsx";
+import { MESSAGE_TIME } from "../lib/constants.js";
 
 const LogOut = ({clickHandler}) => {
     return (
@@ -24,9 +26,18 @@ const LogOut = ({clickHandler}) => {
 const BookingPage = () => {
     const [user, setUser] = useState(null);
     const [mode, setMode] = useState(MODES.LOADING);
-
+    const [message, setMessage] = useState('');
+    const [messageClass, setMessageClass] = useState('');
     const [email, setEmail] = useState("");
     const [emailValid, setEmailValid] = useState(false);
+
+    const displayMessage = (messageType, messageText) => {
+        setMessageClass(messageType)
+        setMessage(messageText);
+        setTimeout(() => {
+            setMessage('');
+        }, MESSAGE_TIME);
+    }
 
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token
@@ -73,13 +84,13 @@ const BookingPage = () => {
                     {mode === MODES.ADMIN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <AdminDashboard user={user} setUser={setUser} />
+                            <AdminDashboard user={user} setUser={setUser} displayMessage={displayMessage} />
                         </>
                     )}
                     {mode === MODES.LOGGED_IN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <UserDashboard user={user} setUser={setUser} />
+                            <UserDashboard user={user} setUser={setUser} displayMessage={displayMessage} />
                         </>
                     )}
                     {mode === MODES.LOGGING_IN && (
@@ -111,6 +122,7 @@ const BookingPage = () => {
                         />
                     )}
                 </div>
+                <MessageBox message={message} messageClass={messageClass} />
             </div>
         </Layout>
     )

@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import ClubPane from "./ClubPane";
 import LoadingSpinner from "../elements/LoadingSpinner";
 
-const ManageClubs = () => {
+const ManageClubs = ({ displayMessage}) => {
     const [clubs, setClubs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [addingClub, setAddingClub] = useState(false);
     const [clubsFilter, setClubsFilter] = useState('');
     const [filterRegex, setFilterRegex] = useState(null);
-    const [message, setMessage] = useState('');
-    const [messageClass, setMessageClass] = useState('');
 
     const updateClubs = async () => {
         const res = await fetch(`/api/admin/clubs`);
@@ -20,14 +18,6 @@ const ManageClubs = () => {
             // likely status 400, but error regardless
             setClubs([])
         }
-    }
-
-    const displayMessage = (messageType, messageText, messageTime) => {
-        setMessageClass(messageType)
-        setMessage(messageText);
-        setTimeout(() => {
-            setMessage('');
-        }, messageTime);
     }
 
     useEffect(() => {
@@ -116,11 +106,6 @@ const ManageClubs = () => {
                             updatePane={updateClubs}
                         />
                     ))}
-                </div>
-            )}
-            {message && message !== '' && (
-                <div className={messageClass}>
-                    <p>{message}</p>
                 </div>
             )}
         </>

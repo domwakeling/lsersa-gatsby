@@ -4,12 +4,10 @@ import TabPanel from "./elements/TabPanel";
 import TabLabel from "./elements/TabLabel";
 import updateUserDetails from "../../lib/users/updateUser";
 import { USER_MODES } from "../../lib/modes";
-import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
+import { MESSAGE_CLASSES } from "../../lib/constants";
 
-const UserDashboard = ({user, setUser}) => {
+const UserDashboard = ({user, setUser, displayMessage}) => {
     const [userMode, setUserMode] = useState(USER_MODES.ADDING_RACER);
-    const [message, setMessage] = useState('');
-    const [messageClass, setMessageClass] = useState('');
 
     const tabData = [
         {
@@ -26,24 +24,16 @@ const UserDashboard = ({user, setUser}) => {
         }
     ];
 
-    const displayMessage = (messageType, messageText, messageTime) => {
-        setMessageClass(messageType)
-        setMessage(messageText);
-        setTimeout(() => {
-            setMessage('');
-        }, messageTime);
-    }
-
     const handleUserDetailSubmit = async (newUser) => {
         const result = await updateUserDetails(user, newUser);
         const data = await result.json();
         if (result.status === 200) {
             setUser(data.newUser);
-            displayMessage(MESSAGE_CLASSES.SUCCESS, "Details updated", MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Details updated");
         } else if (result.status === 409) {
-            displayMessage(MESSAGE_CLASSES.ALERT, data.message, MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.ALERT, data.message);
         } else {
-            displayMessage(MESSAGE_CLASSES.WARN, data.message, MESSAGE_TIME);
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
         }
     }
 
@@ -72,11 +62,6 @@ const UserDashboard = ({user, setUser}) => {
                     />
                 ))}
             </div>
-            {message && message !== '' && (
-                <div className={messageClass}>
-                    <p>{message}</p>
-                </div>
-            )}
             <br />
             <hr />
             <p>Needs to be able to:</p>

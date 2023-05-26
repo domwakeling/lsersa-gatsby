@@ -69,16 +69,6 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
                 </div>
             )}
             <p>Back to <Link to="#" onClick={setLogIn}>log in</Link>.</p>
-
-            <br />
-            <p><b>TODO:</b></p>
-            <ul>
-                <li>check email address is in the system</li>
-                <li>generate token</li>
-                <li>send email</li>
-                <li>deal with errors</li>
-                <li>message as appropriate</li>
-            </ul>
         </div>
     )
 }

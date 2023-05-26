@@ -2,12 +2,10 @@ import React, {useState, useEffect} from "react";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import UserRequest from "./UserRequest";
 
-const ReviewRequests = ({ setCount }) => {
+const ReviewRequests = ({ setCount, displayMessage }) => {
     const [users, setUsers] = useState([]);
     const [racers, setRacers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [message, setMessage] = useState('');
-    const [messageClass, setMessageClass] = useState('success-box');
 
     const updateRequests = async () => {
         const res = await fetch(`/api/admin/requests`);
@@ -21,14 +19,6 @@ const ReviewRequests = ({ setCount }) => {
             setUsers([]);
             setRacers([]);
         }
-    }
-
-    const displayMessage = (messageType, messageText, messageTime) => {
-        setMessageClass(messageType)
-        setMessage(messageText);
-        setTimeout(() => {
-            setMessage('');
-        }, messageTime);
     }
 
     useEffect(() => {
@@ -67,7 +57,7 @@ const ReviewRequests = ({ setCount }) => {
                             user={user}
                             key={idx}
                             updateRequests={updateRequests}
-                            setMessage={displayMessage}
+                            displayMessage={displayMessage}
                         />
                     ))}
                 </div>
@@ -79,11 +69,6 @@ const ReviewRequests = ({ setCount }) => {
             )}
             {!isLoading && (racers.length === 0) && (
                 <p>No racer acceptance requests.</p>
-            )}
-            {message && message !== '' && (
-                <div className={messageClass}>
-                    <p>{message}</p>
-                </div>
             )}
         </>
     )
