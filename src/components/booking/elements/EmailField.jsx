@@ -27,7 +27,7 @@ const EmailField = ({
         <label>
             {label}
             <input
-                type="text"
+                type="email"
                 onChange={handleChange}
                 onKeyDown={checkEnterKey}
                 value={value}
