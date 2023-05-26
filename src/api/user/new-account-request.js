@@ -24,13 +24,14 @@ export default async function handler(req, res) {
         }
 
         const email = req.body.email;
+        const cleanEmail = email.toLowerCase();
         const conn = await connect(config);
         const admin = await conn.execute(`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`);
 
         if (admin.rows.length == 0) {
             // there are no admin users, so we need to set admin rights on this user
             try {
-                const results = await insertUser(conn, email, roles.ADMIN);
+                const results = await insertUser(conn, cleanEmail, roles.ADMIN);
                 
                 // trigger an email to the new admin
                 const _ = await emailNewAccountTokenToUser(results.newToken, email);
@@ -54,7 +55,7 @@ export default async function handler(req, res) {
         } else {
             // we have one or more admin users, so progress as usual
             try {
-                let _ = await insertUser(conn, email, roles.USER);
+                let _ = await insertUser(conn, cleanEmail, roles.USER);
 
                 // trigger an email to the admins
                 _ = await sendShortEmail(

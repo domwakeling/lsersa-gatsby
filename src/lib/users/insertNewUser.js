@@ -5,9 +5,10 @@ const insertUser = async (conn, email, role_id, verified=false) => {
     const results = await conn.transaction(async (tx) => {
         // insert a new user into users table
         const newIdentifier = token(20);
+        const cleanEmail = email.toLowerCase();
         const tryNewUser = await tx.execute(
             'INSERT INTO users (email, role_id, verified, identifier) VALUES (?,?,?,?)',
-            [email, role_id, verified, newIdentifier]
+            [cleanEmail, role_id, verified, newIdentifier]
         );
         if (verified) {
             // insert a new ACCOUNT_REQUEST token for that user in the tokens table IF verified

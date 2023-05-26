@@ -35,9 +35,10 @@ export default async function handler(req, res) {
         try {
             // get data from the body and instigate ...
             const { email, password } = req.body;
+            const cleanEmail = email.toLowerCase();
 
             // look for a stored hash
-            const user = await getPasswordHashForEmail(email);
+            const user = await getPasswordHashForEmail(cleanEmail);
 
             if (user == undefined || user == null) {
                 res.status(404).json({ message: 'Email not found.' });

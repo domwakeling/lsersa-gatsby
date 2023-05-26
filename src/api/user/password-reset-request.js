@@ -17,10 +17,11 @@ export default async function handler(req, res) {
 
         try {
             const { email } = req.body;
+            const cleanEmail = email.toLowerCase();
 
             // look for a stored hash
             const conn = await connect(config);
-            const users = await conn.execute(`SELECT * FROM users WHERE email = '${email}'`);
+            const users = await conn.execute(`SELECT * FROM users WHERE email = '${cleanEmail}'`);
 
             const user = users.rows[0];
 

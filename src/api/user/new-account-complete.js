@@ -28,8 +28,9 @@ const verifyNewUserAccount = async (token, userData) => {
 
     // user matches so prepare to update; last element of params is the verified status
     const hashedPassword = brcypt.hashSync(userData.password, 10);
+    const cleanEmail = userData.email.toLowerCase();
     const params = [
-        userData.email,
+        cleanEmail,
         hashedPassword,
         userData.first_name,
         userData.last_name,

@@ -31,7 +31,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
         e.preventDefault();
         const newUser = ({
             id: user.id,
-            email: userEmail,
+            email: userEmail.toLowerCase(),
             password: password1,
             mobile: userMobile,
             first_name: userFirstName,
@@ -41,10 +41,10 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
             city: city,
             postcode: postcode,
             emergency_name: emergencyName,
-            emergency_email: emergencyEmail,
+            emergency_email: emergencyEmail.toLowerCase(),
             emergency_mobile: emergencyMobile,
             secondary_name: secondName,
-            secondary_email: secondEmail,
+            secondary_email: secondEmail.toLowerCase(),
             secondary_mobile: secondMobile,
         });
         handleUserDetailSubmit(newUser);

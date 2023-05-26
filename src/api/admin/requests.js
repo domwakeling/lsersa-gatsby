@@ -14,6 +14,7 @@ const config = {
 
 const verifyUser = async (id, email, admin_text) => {
     const conn = await connect(config);
+    const cleanEmail = email.toLowerCase();
     
     const params = [
         admin_text,
@@ -26,7 +27,7 @@ const verifyUser = async (id, email, admin_text) => {
                     SET
                         admin_text = ?,
                         verified = ?
-                    WHERE email="${email}"`,
+                    WHERE email="${cleanEmail}"`,
             params
         );
 
