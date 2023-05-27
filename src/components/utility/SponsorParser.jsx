@@ -31,6 +31,7 @@ const ParaParser = ({ html }) => {
                 const url = item.match(/href="([A-Za-z0-9@.:#?&/\-_]+)"/)[1];
                 
                 let target = item.match(/target="([A-Za-z0-9@.:#?&/\-_]+)"/);
+                
                 if (target !== null) target = target[1];
                 
                 let text = item.match(/>(.*$)/)[1];
@@ -49,7 +50,7 @@ const ParaParser = ({ html }) => {
                         idx % 2 === 0 ? (
                             item
                         ) : (
-                            <a key={idx} href={item.url}>{item.text}</a>
+                            <a key={idx} href={item.url} target={item.target}>{item.text}</a>
                         )
                     ))
                 }
