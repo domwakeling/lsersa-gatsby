@@ -6,8 +6,6 @@
 [PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/), with
 [Stripe](https://stripe.com/en-gb) integration for payments.
 
-![stack flow diagram](./static/stack-design.png)
-
 ## Index
 **[Rationale](#rationale)**
 
@@ -36,6 +34,8 @@ Netlify app 'behind the scenes'.
 
 *This is the approach taken for the Bowles website re-build from 2016, which worked well.*
 
+![stack flow diagram](./static/stack-design.png)
+
 [⥣ back to index](#index)
 
 ## Sponsors
@@ -63,15 +63,19 @@ The structure for each sponsor is:
 This data is used (a) to populate the `sponsors` page, (b) to populate the sponsors carousel that
 sits alongside "hero" images, and (c) to populate the sponsors images at the bottom of the homepage.
 
-For the 2023 season there are seven sponsors and having seven logos in one row (reducing to four
-logos per row on smaller devices) appears to work well; this is determined by the styling
-of the `.sponsor-logo-grid` element **in the `_homepage.scss` file** (change the
-`grid-template-columns: repeat(7, 1fr);` value).
+As the number of sponsors changes, the styling of the sponsor logos at the bottom of the homepage
+may need updating; at the time of writing it is set up for eight logos in one row (reducing to four
+logos per row on devices with screen width less than 900px). This is determined by the styling
+of the `.sponsor-logo-grid` element **in the `_homepage.scss` file** (change the 
+`grid-template-columns: repeat(8, 1fr);` value).
 
 As new sponsors are added (and old removed), the following changes are required:
 * change the content of the `sponsors.yaml` file (deleting and adding as appropriate)
-* for new sponsors, a logo is required - this should sit in the `src/images/sponsors` 
+* for new sponsors, a logo is required - this should be saved in the `src/images/sponsors` 
   folder; have a transparent background (`png` recommended); be in a 4:3 ratio, ideally 400x300
+* add the logo to the 'sponsor banners' in `static/images` (there are two, one post-fixed `_1200`
+  which should be 1200px wide, and the other without a post-fix which should be 800px wide; height
+  "doesn't matter")
 * if the number of sponsors changes, change the `grid-template-columns` value in
   `src/style/_homepage.scss` (for `.sponsor-grid-logo`)
   

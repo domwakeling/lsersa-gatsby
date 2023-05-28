@@ -105,3 +105,14 @@
             in the folder for personal use. The monthly subscription also gives access to
             the news website - see <a href="https://www.racer-ready.co.uk/join-us"
             target="_racer">the website</a> for more details.</p>
+
+-   name: Snow Shepherd
+    url: https://www.snowshepherd.co.uk/
+    img: sponsors/snowshepherd.png
+    target: _shepherd
+    copy: >
+        <p>Snow Shepherd are the leading UK supplier and manufacturer of leather ski gloves, from
+            the classic Lifty glove to their Antarctic Expedition Gloves. Their gloves are made using
+            high quality same-batch leather, waterproof and breathable membranes, and insulation
+            that really works, ensuring the gloves work for you whether you're ripping down a
+            mountain, climbing one, or using them for your 9-5 job.</p>
