@@ -48,7 +48,7 @@ CREATE TABLE `tokens` (
 CREATE TABLE `racers` (
   `id` integer UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `first_name` varchar(60) NOT NULL,
-  `second_name` varchar(60) NOT NULL,
+  `last_name` varchar(60) NOT NULL,
   `dob` date NOT NULL,
   `gender_id` integer,
   `concession` boolean,
@@ -92,7 +92,7 @@ CREATE INDEX `users_index_1` ON `users` (`identifier`);
 
 CREATE INDEX `tokens_index_2` ON `tokens` (`token`);
 
-CREATE UNIQUE INDEX `racers_index_3` ON `racers` (`first_name`, `second_name`);
+CREATE UNIQUE INDEX `racers_index_3` ON `racers` (`first_name`, `last_name`);
 
 /* PlanetScale doesn't support foreign key constraints ...
 

@@ -11,6 +11,8 @@
 
 **[Deployment](#deployment)**
 
+**[Race Results](#race-results)**
+
 **[Sponsors](#sponsors)**
 
 **[The Region](#the-region)**
@@ -18,7 +20,12 @@
 * [Slopes](#slopes)
 
 **[Booking System](#booking-system)**
-* [Database](#database)
+* [Structure Flow](#structure-flow)
+* [Database]
+The general flow of the booking system is:
+
+![workflow](./db_info/workflows.png)
+(#database)
 
 ## Rationale
 
@@ -35,6 +42,66 @@ Netlify app 'behind the scenes'.
 *This is the approach taken for the Bowles website re-build from 2016, which worked well.*
 
 ![stack flow diagram](./static/stack-design.png)
+
+[⥣ back to index](#index)
+
+## Race Results
+
+The race results pages are mostly driven by structured data stored in the `races.yaml` (for the
+calendar/results) and `specials.yaml` (for LSERSA end-of-year special cups) files:
+
+```
+src
+|- data
+   |- races.yaml
+   |- specials.yaml
+```
+
+The general structure of the `races.yaml` data is as follows (there are also some end-of-year values
+for LSERSA overall winners, look at previous years for examples):
+
+```yaml
+-   year:           // year, eg 2023
+    events:         
+    -   series:     // series name, eg LSERSA Summer Series
+        races:        
+        -   name:   // name of fist race, eg Race 1
+            venue:  // venue eg Chatham
+            date:   // date, full text, eg Saturday 27th May
+            url:    // full http(s) url, leave blank if no link
+            status: // Results if complete, Entries otherwise
+
+        -  name:    // name of second race
+                    // etc etc
+
+    -   series:     // name of second series
+        races:
+        -   name:   // name of first race of second series
+                    // etc etc
+```
+
+The structure of the `specials.yaml` file is much simpler
+
+```yaml
+-   year:         // year, eg 2023
+    items:         
+    -   name:     // name of the cup
+        winner:   // name of the winner
+    -   name:     // etc etc
+        winner:
+```
+
+The data from these two files **generates** all 'archive results' pages and feeds the calendar
+data in the 'current' race page; the most recent year should always be at the **top** of the file;
+the most recent year in the `races.yaml` file is assumed to be "this year".
+
+Updates generally:
+* at the start of the year (and once sufficient dates are known) add a new year to `races.yaml` with
+  race series, dates, venues; leave the `url` blank; if Entries are available make the `status`
+  "Entries", otherwise "Entries tbc"
+* update as links to Ski Results, GBSki etc become available
+* once a race is complete, change the `status` to "Results"
+* at the end of season, add LSERSA special cups info to the `specials.yaml` file
 
 [⥣ back to index](#index)
 
@@ -133,6 +200,12 @@ pin "somewhat central" so that if will still be in the image on smaller screens.
 
 ## Booking System
 
+### Structure Flow
+
+The general flow of the booking system is:
+
+![workflow](./_db_info/workflows.png)
+
 ### Database
 
 The backend for the booking system is a MySQL database on PlanetScale, accessed by API routes on
@@ -141,32 +214,3 @@ the website (provided as Gatsby functions). The database structure is:
 ![database schema diagram](./_db_info/LSERSA%20booking%20schema.png)
 
 [⥣ back to index](#index)
-
-
-
-
-### TO DO
-
-- [x] footer not fixed to bottom on smaller pages
-- [x] gatsby build setting for netlify
-- [x] social icons touching bottom edge of screen, need padding
-- [x] check how menu looks on both phones and ipad (some weirdness going on?)
-- [x] fix masonry on the sponsors page (npm package?)
-- [x] race pages => automate archive
-- [x] race pages => automate current year
-- [x] race pages => copy from 11ty version
-- [x] race pages => add timing on day
-- [x] race pages => add link to policy (update policy?)
-- [x] race pages => add further years and documents as necessary
-- [x] school race pages + results
-- [x] CN and tri-regional results, check/add
-- [x] training page => set it up
-- [ ] training page => any info on other training? Telemark, Ski-Cross?
-- [x] region page => committee
-- [x] not sure where, but minutes etc
-- [x] clubs page
-- [x] add blurb and links for clubs
-- [x] do we also want to put in slopes?
-- [x] add favicon
-- [x] sponsor carousel
-- [ ] link "highlight hover" doesn't work if the link is over multiple rows
