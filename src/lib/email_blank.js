@@ -32,22 +32,22 @@ const htmlBlank = `<!DOCTYPE html
         <center class="wrapper" style="width:100%;table-layout:fixed;background-color:#F1F3FD;padding-bottom:60px;">
             <table class="main" width="100%"
                 style="background-color:#ffffff;margin:0 auto;width:100%;max-width:600px;border-spacing:0;">
-                <!-- TOP BORDER -->
-                <tr>
+               <!-- TOP BORDER -->
+                <!-- <tr>
                     <td height="8" style="padding:0;background-color: #172A95;"></td>
-                </tr>
+                </tr> -->
                 <!-- LOGO SECTION -->
                 <tr>
-                    <td style="padding:0;">
+                    <td style="padding:0; background-color: #172A95;">
                         <table class="column" width="100%" style="border-spacing:0;padding-left:8px;padding-right:8px;">
                             <tr>
-                                <td width="80px" style="padding: 10px 0 0 0; margin: 0;">
-                                    <img width="70px" height="90px" alt="LSERSA logo"
-                                        src="https://lsersa.org/images/lsersa_140x180.png"
+                                <td width="50px" style="padding: 0px 0 0 0; margin: 0;">
+                                    <img width="42px" height="56px" alt="LSERSA logo"
+                                        src="https://lsersa.org/images/lsersa_84x108_white.png"
                                         style="border:0; margin: 0;">
                                 </td>
                                 <td style="padding: 10px 0px 0px 0px;">
-                                    <h1 style="font-size: 60px; padding-top: 0px; margin: 0; font-weight: 500;">LSERSA</h1>
+                                    <h1 style="font-size: 60px; padding-top: 0px; margin: 0; font-weight: 500; color: white;">LSERSA</h1>
                                 </td>
                             </tr>
                         </table>
