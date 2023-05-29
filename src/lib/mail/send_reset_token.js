@@ -3,7 +3,7 @@ import { sendShortEmail } from "./send_short_email";
 // async..await is not allowed in global scope, must use a wrapper
 const emailResetPasswordTokenToUser = async (token, email) => {
 
-    const subject = "[TEST, IGNORE] Welcome to LSERSA";
+    const subject = "Welcome to LSERSA";
 
     const headText = "PASSWORD RESET";
 

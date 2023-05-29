@@ -60,7 +60,7 @@ export default async function handler(req, res) {
                 // trigger an email to the admins
                 _ = await sendShortEmail(
                     admin.rows.map(item => item.email),
-                    "[TEST, IGNORE] New User Request",
+                    "New User Request",
                     "New User Request",
                     `A user has requested a new account be created, please log in to the admin
                         dashboard to review`
@@ -69,7 +69,7 @@ export default async function handler(req, res) {
                 // trigger an email to the user
                 _ = await sendShortEmail(
                     [email],
-                    "[TEST, IGNORE] New User Request",
+                    "New User Request",
                     "New User Request",
                     `Your request has been sent to the coaching team for review.`
                 );

@@ -151,7 +151,7 @@ export default async function handler(req, res) {
             const admin = await conn.execute(`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`);
             _ = await sendShortEmail(
                 admin.rows.map(item => item.email),
-                "[TEST, IGNORE] New Racer Request",
+                "New Racer Request",
                 "New Racer Request",
                 `A user has requested a new racer be approved, please log in to the admin
                         dashboard to review`
