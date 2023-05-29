@@ -50,6 +50,52 @@ const verifyUser = async (id, email, admin_text) => {
     return results;
 }
 
+const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => {
+    const conn = await connect(config);
+    let cleanDate = null;
+    if (club_expiry && club_expiry !== undefined && club_expiry !== '') {
+        cleanDate = new Date(club_expiry);
+        cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
+    }
+
+    const params = [
+        cleanDate,
+        club_id,
+        concession,
+        admin_text,
+        true
+    ];
+    const results = await conn.transaction(async (tx) => {
+        // update the user
+        const tryUpdateRacer = await tx.execute(`
+                    UPDATE racers
+                    SET
+                        club_expiry = ?,
+                        club_id = ?,
+                        concession = ?,
+                        admin_text = ?,
+                        verified = ?
+                    WHERE id = ${id}`,
+            params
+        );
+
+        // create a new token and insert it
+        const newToken = token(12);
+        const newDate = new Date();
+        newDate.setDate(newDate.getDate() + 7); // 7 days to use token
+        const tryNewToken = await tx.execute(
+            'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
+            [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
+        )
+
+        return {
+            tryUpdateRacer
+        }
+    });
+
+    return results;
+}
+
 export default async function handler(req, res) {
 
     if (req.method == 'GET') {
@@ -61,7 +107,11 @@ export default async function handler(req, res) {
                 FROM users
                 WHERE verified = FALSE`
             );
-            const racers = await conn.execute('SELECT id FROM racers WHERE verified = FALSE');
+            const racers = await conn.execute(`
+                SELECT id, first_name, last_name, gender_id, club_id, user_text, dob
+                FROM racers
+                WHERE verified = FALSE`
+            );
             
             res.status(200).json({
                 users: users.rows,
@@ -101,8 +151,11 @@ export default async function handler(req, res) {
 
             } else {
                 // type will be racer ...
+                const { id, club_expiry, club_id, concession, admin_text } = req.body;
+                const _ = await verifyRacer(id, club_expiry, club_id, concession, admin_text);
 
-                // ** TODO **
+                res.status(200).json({ message: "Successfully updated racer" });
+                return;
             }
 
         } catch (error) {
@@ -133,8 +186,12 @@ export default async function handler(req, res) {
 
             } else {
                 // type is going to be racer
+                const { id } = req.body;
+                const conn = await connect(config);
+                const _ = await conn.execute(`DELETE FROM racers WHERE id = ${id}`);
 
-                // ** TODO **
+                res.status(200).json({ message: "Successfully deleted user" });
+                return;
             }
 
         } catch (error) {

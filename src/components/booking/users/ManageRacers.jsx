@@ -7,10 +7,8 @@ const ManageRacers = ({ racers, setRacers, displayMessage, user }) => {
 
     useEffect(() => {
         async function retrieveClubs() {
-            console.log("retrieve Clubs called")
             const res = await fetch(`/api/admin/clubs`);
             if (res.status === 200) {
-                console.log("status 200")
                 const data = await res.json();
                 setClubs(data.clubs);
             } else {
@@ -18,7 +16,6 @@ const ManageRacers = ({ racers, setRacers, displayMessage, user }) => {
                 setClubs([])
             }
         }
-        console.log("status 200")
         retrieveClubs();
     }, []);
 

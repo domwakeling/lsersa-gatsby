@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from "react";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import UserRequest from "./UserRequest";
+import RacerRequest from "./RacerRequest";
 
 const ReviewRequests = ({ setCount, displayMessage }) => {
     const [users, setUsers] = useState([]);
     const [racers, setRacers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [clubs, setClubs] = useState([]);
 
     const updateRequests = async () => {
         const res = await fetch(`/api/admin/requests`);
@@ -24,7 +26,7 @@ const ReviewRequests = ({ setCount, displayMessage }) => {
     useEffect(() => {
         async function retrieveRequests () {
             setIsLoading(true);
-            const res = await fetch(`/api/admin/requests`);
+            let res = await fetch(`/api/admin/requests`);
             if (res.status === 200) {
                 const data = await res.json();
                 setUsers(data.users);
@@ -33,6 +35,14 @@ const ReviewRequests = ({ setCount, displayMessage }) => {
                 // likely status 400, but error regardless
                 setUsers([]);
                 setRacers([]);
+            }
+            res = await fetch(`/api/admin/clubs`);
+            if (res.status === 200) {
+                const data = await res.json();
+                setClubs(data.clubs);
+            } else {
+                // likely status 400, but error regardless
+                setClubs([])
             }
             setIsLoading(false);
         }
@@ -69,6 +79,19 @@ const ReviewRequests = ({ setCount, displayMessage }) => {
             )}
             {!isLoading && (racers.length === 0) && (
                 <p>No racer acceptance requests.</p>
+            )}
+            {!isLoading && racers.length > 0 && (
+                <div className="pane-container">
+                    {racers.map((racer, idx) => (
+                        <RacerRequest
+                            racer={racer}
+                            key={idx}
+                            updateRequests={updateRequests}
+                            displayMessage={displayMessage}
+                            clubs={clubs}
+                        />
+                    ))}
+                </div>
             )}
         </>
     )

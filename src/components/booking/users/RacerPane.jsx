@@ -1,50 +1,12 @@
 import React, { useState } from 'react';
 import FreeField from '../elements/FreeField';
 import TextField from '../elements/TextField';
-import DropDownFieldForIds from '../elements/DropDownFieldForIds';
 import { MESSAGE_CLASSES } from '../../../lib/constants';
-import { genders } from '../../../lib/db_refs';
+import GenderSelection from '../elements/GenderSelection';
+import ClubSelection from '../elements/ClubSelection';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import parseISO from 'date-fns/parseISO';
-
-const GenderSelection = ({genderId, setGenderId, disabled}) => {
-    
-    const genderValues = ['female', 'male'];
-    const genderIds = [genders.FEMALE, genders.MALE];
-
-    return (
-        <div className="gender-selection">
-            <DropDownFieldForIds
-                values={genderValues}
-                ids={genderIds}
-                currentId={genderId}
-                label='gender'
-                setId={setGenderId}
-                disabled={disabled}
-            />
-        </div>
-    )
-}
-
-const ClubSelection = ({ clubId, setClubId, clubs, disabled }) => {
-
-    const clubValues = clubs.sort((a, b) => a.name < b.name ? -1: 1).map(club => club.name);
-    const clubIds = clubs.sort((a, b) => a.name < b.name ? -1 : 1).map(club => club.id);
-
-    return (
-        <div className="club-selection">
-            <DropDownFieldForIds
-                values={clubValues}
-                ids={clubIds}
-                currentId={clubId}
-                label='club'
-                setId={setClubId}
-                disabled={disabled}
-            />
-        </div>
-    )
-}
 
 const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, user }) => {
 
