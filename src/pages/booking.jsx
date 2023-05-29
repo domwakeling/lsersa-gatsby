@@ -25,6 +25,7 @@ const LogOut = ({clickHandler}) => {
 
 const BookingPage = () => {
     const [user, setUser] = useState(null);
+    const [racers, setRacers] = useState([]);
     const [mode, setMode] = useState(MODES.LOADING);
     const [message, setMessage] = useState('');
     const [messageClass, setMessageClass] = useState('');
@@ -46,6 +47,11 @@ const BookingPage = () => {
             if (res.status === 200) {
                 const data = await res.json();
                 setUser(data);
+                const res2 = await fetch(`/api/user/racers/${data.id}`);
+                if (res2.status === 200) {
+                    const data = await res2.json();
+                    setRacers(data.racers);
+                }
                 if(data.role_id === roles.ADMIN) {
                     setMode(MODES.ADMIN);
                 } else {
@@ -84,13 +90,25 @@ const BookingPage = () => {
                     {mode === MODES.ADMIN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <AdminDashboard user={user} setUser={setUser} displayMessage={displayMessage} />
+                            <AdminDashboard
+                                user={user}
+                                setUser={setUser}
+                                racers={racers}
+                                setRacers={setRacers}
+                                displayMessage={displayMessage}
+                            />
                         </>
                     )}
                     {mode === MODES.LOGGED_IN && (
                         <>
                             {user && <LogOut clickHandler={logOutHandler} />}
-                            <UserDashboard user={user} setUser={setUser} displayMessage={displayMessage} />
+                            <UserDashboard
+                                user={user}
+                                setUser={setUser}
+                                racers={racers}
+                                setRacers={setRacers}
+                                displayMessage={displayMessage}
+                            />
                         </>
                     )}
                     {mode === MODES.LOGGING_IN && (

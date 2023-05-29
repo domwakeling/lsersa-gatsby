@@ -45,8 +45,8 @@ export default async function handler(req, res) {
             const params = [];
 
             keys.forEach(key => {
-                const newColum = `${key} = ?`;
-                columns.push(newColum);
+                const newColumn = `${key} = ?`;
+                columns.push(newColumn);
                 params.push(updates[key]);
             });
 

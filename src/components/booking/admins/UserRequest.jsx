@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import TextField from "../elements/TextField";
+import FreeField from "../elements/FreeField";
 import { MESSAGE_CLASSES } from "../../../lib/constants";
 
 const UserRequest = ({ user, updateRequests, displayMessage }) => {
     const [adminText, setAdminText] = useState(user.admin_text || '');
     const [deleting, setDeleting] = useState(false);
-
-    const textHandler = (e) => {
-        e.preventDefault();
-        setAdminText(e.target.value.substring(0,255));
-    }
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -67,12 +63,11 @@ const UserRequest = ({ user, updateRequests, displayMessage }) => {
     return (
         <div className="admin-pane">
             <TextField label="email" value={user.email} disabled={true} />
-            <label>free text (admin only) {adminText.length}/255
-                <textarea
-                    value={adminText}
-                    onChange={textHandler}
-                />
-            </label>
+            <FreeField
+                label="free text (admin only)"
+                value={adminText}
+                setValue={setAdminText}
+            />
             <button className="confirm" onClick={submitHandler}>
                 {deleting ? "cancel" : "verify"}
             </button>

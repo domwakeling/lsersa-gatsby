@@ -218,3 +218,30 @@ button.cancel-button {
     margin-right: 0.5rem;
     @include red-button;
 }
+
+.dropdown {
+    max-width: 100%;
+    select {
+        max-width: 100%;
+        display: block;
+        border-radius: 0.25rem;
+        margin-bottom: 0.75rem;
+        padding: 0.3rem 1.0rem 0;
+        &:disabled {
+            background-color: $color-g900;
+            border: 1px solid $color-p300;
+        }
+    }
+}
+
+.gender-selection, .date-selection , .club-selection {
+    max-width: calc(50% - 1.0rem);
+}
+
+.gender-selection, .club-selection {
+    display: inline-block;
+}
+
+.gender-selection {
+    margin-right: 2.0rem;
+}

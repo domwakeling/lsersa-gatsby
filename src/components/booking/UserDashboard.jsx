@@ -1,12 +1,13 @@
 import React, {useState } from "react";
 import UserDetail from "./UserDetails";
+import ManageRacers from "./users/ManageRacers";
 import TabPanel from "./elements/TabPanel";
 import TabLabel from "./elements/TabLabel";
 import updateUserDetails from "../../lib/users/updateUser";
 import { USER_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES } from "../../lib/constants";
 
-const UserDashboard = ({user, setUser, displayMessage}) => {
+const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
     const [userMode, setUserMode] = useState(USER_MODES.ADDING_RACER);
 
     const tabData = [
@@ -15,7 +16,7 @@ const UserDashboard = ({user, setUser, displayMessage}) => {
             mode: USER_MODES.BOOKING
         },
         {
-            text: "add racer",
+            text: "manage racers",
             mode: USER_MODES.ADDING_RACER
         },
         {
@@ -53,6 +54,14 @@ const UserDashboard = ({user, setUser, displayMessage}) => {
                     ))}
                 </TabPanel>
                 <br />
+                {(userMode === USER_MODES.ADDING_RACER) && (
+                    <ManageRacers
+                        racers={racers}
+                        setRacers={setRacers}
+                        displayMessage={displayMessage}
+                        user={user}
+                    />
+                )}
                 {(userMode === USER_MODES.MANAGING_DETAILS && (
                     <UserDetail
                         user={user}
