@@ -8,8 +8,9 @@ import UserDetail from "./UserDetails";
 import { ADMIN_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 import ManageClubs from "./admins/ManageClubs";
+import ManageRacers from "./users/ManageRacers";
 
-const AdminDashboard = ({ user, setUser, displayMessage }) => {    
+const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
     const [adminMode, setAdminMode] = useState(ADMIN_MODES.REVIEW_REQUESTS);
 
@@ -39,9 +40,13 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
             mode: ADMIN_MODES.MANAGE_CLUBS
         },
         {
+            text: "manage your racers",
+            mode: ADMIN_MODES.MANAGING_OWN_RACERS
+        },
+        {
             text: "manage your details",
             mode: ADMIN_MODES.MANAGING_OWN_DETAILS
-        }
+        },
     ];
 
     const handleUserDetailSubmit = async (newUser) => {
@@ -106,6 +111,14 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
                         handleUserDetailSubmit={handleUserDetailSubmit}
                         updating={true}
                         displayMessage={displayMessage}
+                    />
+                )}
+                {(adminMode === ADMIN_MODES.MANAGING_OWN_RACERS) && (
+                    <ManageRacers
+                        racers={racers}
+                        setRacers={setRacers}
+                        displayMessage={displayMessage}
+                        user={user}
                     />
                 )}
                 {adminMode === ADMIN_MODES.MANAGE_CLUBS && (

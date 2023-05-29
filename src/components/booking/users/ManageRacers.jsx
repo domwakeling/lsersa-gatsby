@@ -65,6 +65,9 @@ const ManageRacers = ({ racers, setRacers, displayMessage, user }) => {
                     <br />
                 </>
             )}
+            {!addingRacer && racers.length === 0 && (
+                <p>There are currently no racers or racer requests associated with this account.</p>
+            )}
             <div className="pane-container">
                 {racers.sort((a, b) => a.name < b.name ? -1 : 1).map(racer => (
                     <RacerPane
