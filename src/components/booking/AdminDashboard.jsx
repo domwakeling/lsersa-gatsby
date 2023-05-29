@@ -136,9 +136,6 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
                 <li>make edits on someone else's account - contact details, email address etc</li>
                 <li>edit name, club and age for individual racers</li>
                 <li>Link an existing racer to a new parent account</li>
-                <li>turn off bookings for future weeks and specify why</li>
-                <li>change the number of racers that will be accepted on a session</li>
-                <li>post a message about a session (which may be why it's cancelled!)</li>
             </ul>
         </div>
     )

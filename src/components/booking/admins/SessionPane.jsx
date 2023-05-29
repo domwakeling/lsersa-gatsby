@@ -124,7 +124,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
 
     return (
         <div className="admin-pane">
-            <div className='date-selection'>
+            <div className='session-date'>
                 <label>
                     date
                     <DatePicker
@@ -136,23 +136,22 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
                     />
                 </label>
             </div>
-            <TextField
-                label="racer limit"
-                placeholder="racer limit"
-                value={maxCount}
-                setValue={setMaxCount}
-                checkEnterKey={() => { }}
-                disabled={!editable}
-            />
-            {!editing && (
-                <TextField
-                    label="racers entered"
-                    value={session['count(racer_id)']}
-                    setValue={() => { }}
+            <div className="racer-limit">
+                <TextField 
+                    label="racer limit"
+                    placeholder="racer limit"
+                    value={maxCount}
+                    setValue={setMaxCount}
                     checkEnterKey={() => { }}
-                    disabled={true}
+                    disabled={!editable}
                 />
+            </div>
+            {!editing ? (
+                <p>{session['count(racer_id)']} racers entered</p>
+            ) : (
+                <div style={{ display: "block", height: "2.0rem"}} />
             )}
+            
             <FreeField
                 label="message (displayed)"
                 value={message}
