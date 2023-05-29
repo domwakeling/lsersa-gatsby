@@ -9,6 +9,7 @@ import { ADMIN_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 import ManageClubs from "./admins/ManageClubs";
 import ManageRacers from "./users/ManageRacers";
+import ManageSessions from "./admins/ManageSessions";
 
 const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
@@ -24,8 +25,8 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
             mode: ADMIN_MODES.INVITE_USER
         },
         {
-            text: "choice three",
-            mode: 2
+            text: "manage sessions",
+            mode: ADMIN_MODES.MANAGE_SESSION
         },
         {
             text: "choice four",
@@ -123,6 +124,9 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
                 )}
                 {adminMode === ADMIN_MODES.MANAGE_CLUBS && (
                     <ManageClubs displayMessage={displayMessage} />
+                )}
+                {adminMode === ADMIN_MODES.MANAGE_SESSION && (
+                    <ManageSessions displayMessage={displayMessage} />
                 )}
             </div>
             <br/>

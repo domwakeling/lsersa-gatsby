@@ -82,7 +82,7 @@ CREATE TABLE `clubs` (
 
 CREATE TABLE `sessions` (
   `date` date UNIQUE PRIMARY KEY NOT NULL,
-  `limit` integer,
+  `max_count` integer,
   `message` varchar(255)
 );
 
