@@ -75,7 +75,6 @@ const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
             <hr />
             <p>Needs to be able to:</p>
             <ul>
-                <li>Request add racer (and change?)</li>
                 <li>make bookings</li>
             </ul>
         </div>

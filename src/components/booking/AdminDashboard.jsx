@@ -129,7 +129,6 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
             <hr/>
             <p>Needs to be able to:</p>
             <ul>
-                <li><b>ensure that only admin can hit the API endpoints ...</b></li>
                 <li>make edits on someone else's account - contact details, email address etc</li>
                 <li>edit name, club and age for individual racers</li>
                 <li>Link an existing racer to a new parent account</li>

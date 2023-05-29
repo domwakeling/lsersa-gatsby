@@ -21,11 +21,12 @@
 
 **[Booking System](#booking-system)**
 * [Structure Flow](#structure-flow)
-* [Database]
+* [Database](#database)
+* [API Endpoints](#api-endpoints)
+
 The general flow of the booking system is:
 
-![workflow](./db_info/workflows.png)
-(#database)
+![workflow](./_db_info/workflows.png)
 
 ## Rationale
 
@@ -212,5 +213,41 @@ The backend for the booking system is a MySQL database on PlanetScale, accessed 
 the website (provided as Gatsby functions). The database structure is:
 
 ![database schema diagram](./_db_info/LSERSA%20booking%20schema.png)
+
+[⥣ back to index](#index)
+
+### API Endpoints
+
+| Route          | Method | Comment
+| ---            | :---:  |   ---
+| `api/admin/`   |        |
+| `.../admin-new-account` | `POST` | Called from admin pane to verify account 
+| `.../clubs`    | `GET`  | Gets all rows from the `clubs` table
+| `.../clubs`    | `POST` | Adds a new row to the `clubs` table
+| `.../clubs`    | `PUT`  | Updates a row in the `clubs` table
+| `.../clubs`    |`DELETE`| Deletes a row from the `clubs` table
+| `.../request-count` | `GET` | Returns counts of unvalidated users and racers
+| `.../requests` | `GET`  | Returns arrays of unvalidated users and racers
+| `.../requests` | `POST` | Validates a user or racer request
+| `.../requests` |`DELETE`| Rejects and deletes a user or racer request
+| `api/get-slopes` |      |
+| `...[postcode]` | `GET` | Returns two slopes nearest the postcode
+| `api/user/`    |        |
+| `.../login`    | `POST` | Check password, set cookie, login
+| `.../logout`   | `POST` | Expires cookie, logout
+| `.../new-account-complete` | `POST` | Complete account sign-up
+| `.../.../[token]` |`GET`| Validates the token
+| `.../new-account-request` | `POST` | Save user, send request to admin<sup>1</sup>|
+| `.../password-reset-request` | `POST` | Insert token, send reset email
+| `.../racers`   | `POST` | Inserts a new racer
+| `.../racers`   | `PUT`  | Updates an existing racer
+| `.../.../[user_id]` |`GET`| Gets racers associated with the account
+| `.../reset-password-complete` | `POST` | Resets password
+| `.../.../[token]` |`GET`| Validates the token
+| `.../update-user-details` | `POST` | Update user's details
+| `api/poll-jwt` | `GET`  | Validates there is a JWT saved and valid
+
+**Footnotes**
+1. If there are no users with admin role, the user will be assigned admin and auto-validated
 
 [⥣ back to index](#index)
