@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import FreeField from "../elements/FreeField";
 import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
-import FreeField from "../elements/FreeField";
 import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
+import "react-datepicker/dist/react-datepicker.css";
 
 const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => {
     const [date, setDate] = useState(session.date ? parseISO(session.date) : null);

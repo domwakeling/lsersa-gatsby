@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from "react";
-import updateUserDetails from "../../lib/users/updateUser";
 import InviteUser from "./admins/InviteUser";
-import ReviewRequests from "./admins/ReviewRequest";
-import TabLabel from "./elements/TabLabel";
-import TabPanel from "./elements/TabPanel";
-import UserDetail from "./UserDetails";
-import { ADMIN_MODES } from "../../lib/modes";
-import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 import ManageClubs from "./admins/ManageClubs";
 import ManageRacers from "./users/ManageRacers";
 import ManageSessions from "./admins/ManageSessions";
+import ManageBookings from "./users/ManageBooking";
+import ReviewRequests from "./admins/ReviewRequest";
+import TabLabel from "./elements/TabLabel";
+import TabPanel from "./elements/TabPanel";
+import UserDetail from "./users/UserDetails";
+import updateUserDetails from "../../lib/users/updateUser";
+import { ADMIN_MODES } from "../../lib/modes";
+import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 
 const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
@@ -33,8 +34,8 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
             mode: 3
         },
         {
-            text: "choice five",
-            mode: 4
+            text: "manage own bookings",
+            mode: ADMIN_MODES.MANAGE_OWN_BOOKINGS
         },
         {
             text: "manage clubs",
@@ -127,6 +128,13 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
                 )}
                 {adminMode === ADMIN_MODES.MANAGE_SESSION && (
                     <ManageSessions displayMessage={displayMessage} />
+                )}
+                {(adminMode === ADMIN_MODES.MANAGE_OWN_BOOKINGS) && (
+                    <ManageBookings
+                        racers={racers}
+                        displayMessage={displayMessage}
+                        user={user}
+                    />
                 )}
             </div>
             <br/>

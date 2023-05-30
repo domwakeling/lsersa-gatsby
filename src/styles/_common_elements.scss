@@ -32,6 +32,14 @@
     }
 }
 
+@mixin grey-button {
+    background-color: $color-g700;
+    color: $color-g700;
+    &:hover {
+        color: $color-g700;
+    }
+}
+
 hr {
     border-bottom-color: $color_g700;
     border-top-width: 0;

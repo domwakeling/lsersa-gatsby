@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import TextField from "./elements/TextField";
-import EmailField from "./elements/EmailField";
-import PasswordField from "./elements/PasswordField";
+import EmailField from "../elements/EmailField";
+import PasswordField from "../elements/PasswordField";
+import TextField from "../elements/TextField";
 
 const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updating=false) => {
     // for the secondary_ and emergency_ emails, it's acceptable that they're empty

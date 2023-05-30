@@ -1,11 +1,12 @@
 import React, {useState } from "react";
-import UserDetail from "./UserDetails";
 import ManageRacers from "./users/ManageRacers";
-import TabPanel from "./elements/TabPanel";
+import ManageBookings from "./users/ManageBooking";
 import TabLabel from "./elements/TabLabel";
+import TabPanel from "./elements/TabPanel";
+import UserDetail from "./users/UserDetails";
 import updateUserDetails from "../../lib/users/updateUser";
-import { USER_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES } from "../../lib/constants";
+import { USER_MODES } from "../../lib/modes";
 
 const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
     const [userMode, setUserMode] = useState(USER_MODES.ADDING_RACER);
@@ -70,13 +71,15 @@ const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
                         updating={true}
                     />
                 ))}
+                {(userMode === USER_MODES.BOOKING) && (
+                    <ManageBookings
+                        racers={racers}
+                        displayMessage={displayMessage}
+                        user={user}
+                    />
+                )}
             </div>
             <br />
-            <hr />
-            <p>Needs to be able to:</p>
-            <ul>
-                <li>make bookings</li>
-            </ul>
         </div>
     )
 }

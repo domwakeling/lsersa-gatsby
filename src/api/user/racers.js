@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdFromToken } from '../../lib/jwt-methods';
+import { getIdentifierFromToken } from '../../lib/jwt-methods';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import { roles } from '../../lib/db_refs';
@@ -70,7 +70,6 @@ const updateRacer = async (racer_id, racer) => {
     if (idx >= 0) {
         let dob_date = new Date(racerValues[idx]);
         dob_date.setTime(dob_date.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
-        console.log(dob_date);
         racerValues[idx] = dob_date;
     }
 
@@ -116,7 +115,7 @@ export default async function handler(req, res) {
         const hasAdmin = await verifyUserHasAdminRole(token);
 
         // get identifier from token; get user_id from db; check they align OR token has admin
-        const identifier = getIdFromToken(token);
+        const identifier = getIdentifierFromToken(token);
         const conn = await connect(config);
         const users = await conn.execute(`SELECT * FROM users where id = '${user_id}'`);
 
@@ -161,8 +160,13 @@ export default async function handler(req, res) {
             return;
 
         } catch (error) {
-            console.log(error.message);
-            res.status(500).json({ message: error.message });
+            const m = error.message;
+            if (/Duplicate entry/.test(m)) {
+                res.status(409).json({ message: "A racer already exists with that name" });
+                return;
+            };
+            console.log(m);
+            res.status(500).json({ message: m });
             return;
         }
 

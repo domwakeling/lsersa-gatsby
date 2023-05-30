@@ -167,11 +167,7 @@ button.tab-button {
                 @include orange-button;
             }
             &:disabled {
-                background-color: $color-g700;
-                color: $color-g700;
-                &:hover {
-                    color: $color-g700;
-                }
+                @include grey-button;
             }
         }
 
@@ -263,5 +259,65 @@ button.cancel-button {
     input {
         max-width: 90px !important;
         min-width: 5rem !important;
+    }
+}
+
+.racer-lozenge {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 0.5rem;
+    background-color: $color-g900;
+    border: 1px solid $color-g300;
+    padding: 0.5rem 1.0rem;
+    margin-bottom: 1.5rem;
+
+    &.verified {
+        background-color: $color-p900;
+        border: 1px solid $color-p300;
+    }
+
+    &.booked {
+        background-color: $color-p300;
+        color: $color-p900;
+        border: 1px solid $color-p300;
+    }
+
+    .racer-name {
+        display: inline-block;
+        width: 220px;
+        padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+    }
+
+    button.booking-button {
+        float: right;
+        @include common-button;
+        @include blue-button;
+        &:hover {
+            @include orange-button;
+        }
+        &:disabled {
+            @include grey-button;
+        }
+
+    }
+
+    .lozenge {
+        float: right;
+        display: inline;
+        border-radius: 0.75rem;
+        padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+    
+        &.paid {
+            background-color: green;
+        }
+    
+        &.unpaid {
+            background-color: red;
+        }
+
+        &.booked {
+            background-color: green;
+            margin-left: 1.0rem;
+        }
     }
 }

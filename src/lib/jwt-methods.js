@@ -8,10 +8,12 @@ const jwt_secret = process.env.JWT_SECRET || "a secret for local JWT testing";
 const createToken = (identifier) => jwt.sign({ identifier }, jwt_secret, { expiresIn: MAX_AGE });
 
 // method to confirm token is signed and in-date; returns id if there is on, or null otherwise
-const getIdFromToken = (token) => {
+const getIdentifierFromToken = (token) => {
+    console.log(jwt_secret);
     try {
         const data = jwt.verify(token, jwt_secret);
         if (data.identifier) {
+            console.log(data.identifier);
             return data.identifier;
         } else {
             return null;
@@ -23,6 +25,6 @@ const getIdFromToken = (token) => {
 
 export {
     createToken,
-    getIdFromToken,
+    getIdentifierFromToken,
     MAX_AGE
 }

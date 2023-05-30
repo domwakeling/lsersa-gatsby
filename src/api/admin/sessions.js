@@ -84,7 +84,6 @@ export default async function handler(req, res) {
         } catch (error) {
             const m = error.message;
             if (/Duplicate entry/.test(m)) {
-                console.log('HERE HERE HERE');
                 res.status(409).json({ message: "Session already created for that date" });
                 return;
             };
@@ -126,10 +125,7 @@ export default async function handler(req, res) {
 
     } else if (req.method === 'DELETE') {
 
-        try {
-
-            console.log("STARTING TRY");
-    
+        try {    
             const { date } = req.body;
             let cleanDate = new Date(date);
             cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
@@ -139,8 +135,6 @@ export default async function handler(req, res) {
 
             const conn = await connect(config);
             const _ = await conn.execute(`DELETE FROM sessions WHERE date = '${dateString}'`);
-
-            console.log("AWAITED THE EXECUTE");
 
             res.status(200).json({ message: "Successfully deleted session" });
             return;

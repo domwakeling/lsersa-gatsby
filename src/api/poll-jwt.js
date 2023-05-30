@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdFromToken } from '../lib/jwt-methods';
+import { getIdentifierFromToken } from '../lib/jwt-methods';
 
 const config = {
     fetch,
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
         try {
             const token = req.cookies.lsersaUserToken;
-            const identifier = getIdFromToken(token);
+            const identifier = getIdentifierFromToken(token);
 
             if (identifier) {
                 // check that the identifier returns a valid user
@@ -27,12 +27,14 @@ export default async function handler(req, res) {
                     res.status(200).json(results.rows[0]);
                     return;
                 } else {
-                    // there is no valid user ...
+                    // there is no valid user ... clear the cookie to require logging in again
+                    res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
                     res.status(204).json({ message: "No valid id found" });
                     return;    
                 }
 
-            } else {// there was no identifier so token invalid
+            } else {// there was no identifier so token invalid ... clear the cookie
+                res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
                 res.status(204).json({ message: "No id found" });
                 return;    
             }

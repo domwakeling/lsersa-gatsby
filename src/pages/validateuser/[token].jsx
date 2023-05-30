@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../../components/Layout";
-import UserDetail from "../../components/booking/UserDetails";
-import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
-import { COMPLETING_MODES } from "../../lib/modes";
 import { navigate } from "gatsby";
+import Layout from "../../components/Layout";
+import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
+import UserDetail from "../../components/booking/users/UserDetails";
+import { COMPLETING_MODES } from "../../lib/modes";
 
 const ValidateUser = ({params}) => {
     const [user, setUser] = useState(null);

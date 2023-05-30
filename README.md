@@ -24,10 +24,6 @@
 * [Database](#database)
 * [API Endpoints](#api-endpoints)
 
-The general flow of the booking system is:
-
-![workflow](./_db_info/workflows.png)
-
 ## Rationale
 
 Using Gatsby allows for a data-driven approach to generating the site (particularly  for the
@@ -230,9 +226,15 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../requests` | `GET`  | Returns arrays of unvalidated users and racers
 | `.../requests` | `POST` | Validates a user or racer request
 | `.../requests` |`DELETE`| Rejects and deletes a user or racer request
+| `.../sessions` | `GET`  | Returns array of all sessions
+| `.../sessions` | `POST` | Add  new session
+| `.../sessions` | `PUT`  | Update a session
+| `.../sessions` |`DELETE`| delete a session
+| `.../.../[date]`| `GET` | Get session info and bookings for the date
 | `api/get-slopes` |      |
 | `...[postcode]` | `GET` | Returns two slopes nearest the postcode
 | `api/user/`    |        |
+| `.../bookings` | `POST` | Insert a booking (unpaid)
 | `.../login`    | `POST` | Check password, set cookie, login
 | `.../logout`   | `POST` | Expires cookie, logout
 | `.../new-account-complete` | `POST` | Complete account sign-up

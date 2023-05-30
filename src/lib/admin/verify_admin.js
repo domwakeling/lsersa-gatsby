@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { roles } from '../db_refs';
-import { getIdFromToken } from '../jwt-methods';
+import { getIdentifierFromToken } from '../jwt-methods';
 
 const config = {
     fetch,
@@ -13,26 +13,27 @@ const config = {
 const verifyUserHasAdminRole = async (userToken) => {
 
     try {
-        const identifier = await getIdFromToken(userToken);
+        const identifier = await getIdentifierFromToken(userToken);
 
         const conn = await connect(config);
         const foundUsers = await conn.execute(`
             SELECT identifier, role_id FROM users WHERE identifier = '${identifier}'
         `);
 
-        // if the token doesn't exist, return empty
+        // if the identifier doesn't exist, return empty
         if (foundUsers.rows.length == 0) {
-            return [];
+            return false;
         }
 
-        // if it's not an account-request token, return empty
+        // if the found user doesn't have ADMIN, false
         const foundUser = foundUsers.rows[0];
         if (foundUser.role_id != roles.ADMIN) {
-            return null;
+            return false;
         }
 
-        // id matches and role is ADMIN, good
+        // identifier is valid for an ADMIN user, all good
         return true;
+
     } catch (error) {
         console.log(error.message);
         return false

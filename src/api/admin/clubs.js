@@ -63,6 +63,13 @@ export default async function handler(req, res) {
             // delete a club
             const { id } = req.body;
             const conn = await connect(config);
+            
+            // are there any racers aligned to that club?
+            const racers = await conn.execute(`SELECT COUNT(club_id) FROM racers WHERE club_id = ${id};`);
+            if(racers.rows[0]['count(club_id)'] > 0) {
+                res.status(400).json({ message: "ERROR: there are racers associated with that club" });
+                return;
+            };
             const _ = await conn.execute(`DELETE FROM clubs WHERE id = ${id}`);
             // return
             res.status(200).json({ message: "Deleted club" });

@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdFromToken } from '../../../lib/jwt-methods';
+import { getIdentifierFromToken } from '../../../lib/jwt-methods';
 import { verifyUserHasAdminRole } from '../../../lib/admin/verify_admin';
 
 const config = {
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
             const hasAdmin = await verifyUserHasAdminRole(token);
 
             // get identifier from token; get user from db; check they align OR user has admin
-            const identifier = getIdFromToken(token);
+            const identifier = getIdentifierFromToken(token);
             const conn = await connect(config);
             const users = await conn.execute(`SELECT * FROM users where id = '${user_id}'`);
             
