@@ -12,10 +12,10 @@ const config = {
 export default async function handler(req, res) {
 
     try {
-        // ensure that the user is changing their own users
+        // ensure that the user is changing their own entries
         const token = req.cookies.lsersaUserToken;
         const { user_id } = req.body;
-        const validToken = verifyIdMatchesToken(user_id, token);
+        const validToken = await verifyIdMatchesToken(user_id, token);
         if (!validToken) {
             res.status(401).json({ message: 'ERROR: You do not have access' });
             return;
@@ -23,13 +23,32 @@ export default async function handler(req, res) {
 
         if (req.method === 'POST') {
             // get details and build dates
-            const { racer_id, date } = req.body;
+            const { racer_id, date, max_count } = req.body;
             const session_date = date.split("T")[0];
             const expiryDate = new Date(session_date);
             expiryDate.setDate(expiryDate.getDate() + 30); // keep bookings for 30 days after session
 
-            // insert
+            // get the existing bookings for that session ...
             const conn = await connect(config);
+            const bookings = await conn.execute(`
+                SELECT *
+                FROM bookings
+                WHERE session_date = ?`,
+                [session_date]);
+            
+            // check that there are spaces
+            if (bookings.rows.length >= max_count) {
+                res.status(204).json({message: 'No spaces available'});
+                return;
+            }
+
+            // check that the racer doesn't already have a space
+            if (bookings.rows.filter(item => item.racer_id === racer_id).length > 0) {
+                res.status(204).json({ message: 'Racer is already booked' });
+                return;
+            }
+
+            // insert
             const _ = await conn.execute(
                 'INSERT INTO bookings (session_date, racer_id, paid, expiresAt) VALUES (?,?,?,?)',
                 [session_date, racer_id, false, expiryDate]

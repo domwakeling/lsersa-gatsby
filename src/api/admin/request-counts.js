@@ -9,7 +9,8 @@ const config = {
 }
 
 export default async function handler(req, res) {
-
+    // not protecting this route
+    
     if (req.method == 'GET') {
         const conn = await connect(config);
         

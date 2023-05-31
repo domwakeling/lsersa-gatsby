@@ -9,7 +9,7 @@ import { MESSAGE_CLASSES } from "../../lib/constants";
 import { USER_MODES } from "../../lib/modes";
 
 const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
-    const [userMode, setUserMode] = useState(USER_MODES.ADDING_RACER);
+    const [userMode, setUserMode] = useState(USER_MODES.BOOKING);
 
     const tabData = [
         {

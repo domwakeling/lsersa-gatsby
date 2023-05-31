@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
         try {
 
-            // check there's a token stored, if not not valid
+            // check there's a token stored - if not, not valid; not going to worry about validating
             const token = req.cookies.lsersaUserToken;
             if (!token || token === undefined || token === null) {
                 // error, most likely didn't find a cookie
@@ -26,19 +26,22 @@ export default async function handler(req, res) {
             // get information
             const { date } = req.params;
             const conn = await connect(config);
-
             const session = await conn.execute(`SELECT * FROM sessions WHERE date = '${date}'`);
+
+            // if no session, exit
             if (session.rows.length === 0) {
                 res.status(204).json({message: 'Session not found'});
                 return;
             }
 
+            // get bookings
             const bookings = await conn.execute(`SELECT * FROM bookings WHERE session_date = '${date}'`)
             const data = {
                 session: session.rows[0],
                 bookings: bookings.rows
             }
             
+            // return data
             res.status(200).json(data);
             return;
 

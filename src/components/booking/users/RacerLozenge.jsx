@@ -1,7 +1,7 @@
 import React from "react";
 import { MESSAGE_CLASSES } from "../../../lib/constants";
 
-const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, date }) => {
+const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, date, max_count }) => {
 
     const matched = bookings.filter(item => item.racer_id === racer.id) 
     const booked = matched.length > 0 ? true : false;
@@ -15,7 +15,8 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
             const body = {
                 user_id: racer.user_id,
                 racer_id: racer.id,
-                date
+                date,
+                max_count
             }
             const res = await fetch(`/api/user/bookings`, {
                 method: "POST",
@@ -29,6 +30,7 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
             } else {
                 const data = await res.json();
                 displayMessage(MESSAGE_CLASSES.WARN, data.message);
+                updatePane();
                 return false;
             }
         }

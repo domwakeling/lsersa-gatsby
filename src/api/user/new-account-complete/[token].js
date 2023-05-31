@@ -3,6 +3,8 @@ import { tokenTypes } from "../../../lib/db_refs";
 
 export default async function handler(req, res) {
 
+    // user doesn't have an account, so can't use JWT
+
     if (req.method == 'GET') {
         // get the token and retrieve data
         const token = req.params.token;

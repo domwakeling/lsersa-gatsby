@@ -7,7 +7,8 @@ const roles = {
 // id values for token_types table
 const tokenTypes = {
     PASSWORD_RESET: 1,
-    ACCOUNT_REQUEST: 2
+    ACCOUNT_REQUEST: 2,
+    PAYMENT_PENDING: 3
 }
 
 // id values for genders

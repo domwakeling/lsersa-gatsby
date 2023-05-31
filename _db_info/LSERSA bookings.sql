@@ -69,6 +69,7 @@ CREATE TABLE `bookings` (
   `racer_id` integer NOT NULL,
   `paid` boolean,
   `expiresAt` date NOT NULL,
+  `token` varchar(20),
   PRIMARY KEY (`racer_id`, `session_date`)
 );
 
@@ -118,6 +119,6 @@ ALTER TABLE `racers` ADD FOREIGN KEY (`gender_id`) REFERENCES `genders` (`id`);
 
 INSERT INTO roles (name) VALUES ("admin"), ("user");
 
-INSERT INTO token_types (type) VALUES ("passwordReset"), ("accountRequest");
+INSERT INTO token_types (type) VALUES ("passwordReset"), ("accountRequest"), ("paymentPending");
 
 INSERT INTO genders (name) VALUES ("Female"), ("Male");

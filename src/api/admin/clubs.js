@@ -26,6 +26,7 @@ export default async function handler(req, res) {
             const conn = await connect(config);
             const clubs = await conn.execute('SELECT * FROM clubs');
             
+            // return
             res.status(200).json({ message: 'success', clubs: clubs.rows });
             return;
 
@@ -37,6 +38,7 @@ export default async function handler(req, res) {
                 'INSERT INTO clubs (name, contact_name, contact_email, affiliated) VALUES (?,?,?,?)',
                 [name, contact_name, contact_email, affiliated]
             )
+
             // return
             res.status(200).json({ message: 'Added new club'});
             return;
@@ -55,6 +57,7 @@ export default async function handler(req, res) {
                     WHERE id = ${ id }`,
                 [name, contact_name, contact_email, affiliated]
             )
+
             // return
             res.status(200).json({ message: 'Updated clubs' });
             return;
@@ -70,7 +73,10 @@ export default async function handler(req, res) {
                 res.status(400).json({ message: "ERROR: there are racers associated with that club" });
                 return;
             };
+
+            // no racers, so go ahead and delete
             const _ = await conn.execute(`DELETE FROM clubs WHERE id = ${id}`);
+            
             // return
             res.status(200).json({ message: "Deleted club" });
             return;

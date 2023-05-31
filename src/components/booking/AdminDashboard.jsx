@@ -14,7 +14,7 @@ import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 
 const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
-    const [adminMode, setAdminMode] = useState(ADMIN_MODES.REVIEW_REQUESTS);
+    const [adminMode, setAdminMode] = useState(ADMIN_MODES.MANAGE_OWN_BOOKINGS);
 
     const tabData = [
         {

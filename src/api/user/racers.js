@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdentifierFromToken } from '../../lib/jwt-methods';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
+import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import { roles } from '../../lib/db_refs';
 
@@ -114,18 +114,10 @@ export default async function handler(req, res) {
         // get admin status from token
         const hasAdmin = await verifyUserHasAdminRole(token);
 
-        // get identifier from token; get user_id from db; check they align OR token has admin
-        const identifier = getIdentifierFromToken(token);
-        const conn = await connect(config);
-        const users = await conn.execute(`SELECT * FROM users where id = '${user_id}'`);
+        // check if user_id matches with stored JWT
+        const isUser = await verifyIdMatchesToken(user_id, token);
 
-        const user = users.rows[0];
-        if (!user) {
-            res.status(400).json({ message: 'ERROR: No such user' });
-            return;
-        }
-
-        if (user.identifier !== identifier && !hasAdmin) {
+        if (!isUser && !hasAdmin) {
             // not self and not an admin
             res.status(401).json({ message: 'ERROR: You do not have access' });
             return;

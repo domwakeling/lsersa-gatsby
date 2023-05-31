@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdentifierFromToken } from '../../../lib/jwt-methods';
 import { verifyUserHasAdminRole } from '../../../lib/admin/verify_admin';
+import { verifyIdMatchesToken } from '../../../lib/users/verify_user_id';
 
 const config = {
     fetch,
@@ -9,7 +9,6 @@ const config = {
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD
 }
-
 
 export default async function handler(req, res) {
 
@@ -31,24 +30,17 @@ export default async function handler(req, res) {
             // get admin status from token
             const hasAdmin = await verifyUserHasAdminRole(token);
 
-            // get identifier from token; get user from db; check they align OR user has admin
-            const identifier = getIdentifierFromToken(token);
-            const conn = await connect(config);
-            const users = await conn.execute(`SELECT * FROM users where id = '${user_id}'`);
-            
-            const user = users.rows[0];
-            if (!user) {
-                res.status(400).json({message: 'ERROR: No such user'});
-                return;
-            }
+            // check if the user matches the JWT-stored identifier
+            const isUser = await verifyIdMatchesToken(user_id, token);
 
-            if (user.identifier !== identifier && !hasAdmin) {
+            if (!isUser && !hasAdmin) {
                 // not self and not an admin
                 res.status(401).json({ message: 'ERROR: You do not have access' });
                 return;
             }
 
             // get the racers for the user
+            const conn = connect(config);
             const racers = await conn.execute(`
                 SELECT *
                 FROM users_racers ur

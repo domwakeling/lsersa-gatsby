@@ -233,6 +233,10 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../.../[date]`| `GET` | Get session info and bookings for the date
 | `api/get-slopes` |      |
 | `...[postcode]` | `GET` | Returns two slopes nearest the postcode
+| `api/stripe` |      |
+| `.../cancel-payment` | `POST` | Revokes payment token
+| `.../complete-payment` | `POST` | Updates racers to show paid and deletes token
+| `.../create-checkout-session` | `POST` | Creates and stores token, sends to Stripe
 | `api/user/`    |        |
 | `.../bookings` | `POST` | Insert a booking (unpaid)
 | `.../login`    | `POST` | Check password, set cookie, login
@@ -248,6 +252,14 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../.../[token]` |`GET`| Validates the token
 | `.../update-user-details` | `POST` | Update user's details
 | `api/poll-jwt` | `GET`  | Validates there is a JWT saved and valid
+
+### Payments System
+
+The flow for payments (the "Stripe integration") is:
+
+![payments workflow](./_db_info/payments.png)
+
+[⥣ back to index](#index)
 
 **Footnotes**
 1. If there are no users with admin role, the user will be assigned admin and auto-validated

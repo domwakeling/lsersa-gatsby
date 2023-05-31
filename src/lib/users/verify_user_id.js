@@ -16,7 +16,7 @@ const verifyIdMatchesToken = async (id, userToken) => {
 
         const conn = await connect(config);
         const foundUsers = await conn.execute(`
-            SELECT identifier, role_id FROM users WHERE identifier = '${identifier}'
+            SELECT id, identifier FROM users WHERE identifier = '${identifier}'
         `);
 
         // if the identifier doesn't exist, return empty

@@ -23,19 +23,18 @@ export default async function handler(req, res) {
             return;
         }
 
-        const { email } = req.body;
-        const conn = await connect(config);
-        
-        // we have one or more admin users, so progress as usual
         try {
+            // check that the user sending the request is an admin
             const token = req.cookies.lsersaUserToken;
-
             const hasAdmin = await verifyUserHasAdminRole(token);
             if (!hasAdmin) {
                 res.status(401).json({ message: 'ERROR: User does not have admin access' });
                 return;
             }
-
+            
+            // insert the user
+            const conn = await connect(config);
+            const { email } = req.body;
             let results = await insertUser(conn, email, roles.USER, true);
 
             // trigger an email to the user

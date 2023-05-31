@@ -50,7 +50,6 @@ const verifyNewUserAccount = async (token, id, password) => {
         }
     });
 
-
     return {
         results
     };

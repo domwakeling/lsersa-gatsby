@@ -1,8 +1,5 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-// import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
-// import { token } from '../../lib/token';
-// import { tokenTypes } from '../../lib/db_refs';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 
 const config = {
@@ -14,7 +11,32 @@ const config = {
 
 export default async function handler(req, res) {
 
-    // authorisation first - check the requester has admin
+    if (req.method == 'GET') {
+        // no protection on the GET route - needed by non-admin and doesn't reveal personal info
+
+        try {
+            const conn = await connect(config);
+            const sessions = await conn.execute(`
+                SELECT date, max_count, message, COUNT(racer_id)
+                FROM sessions s
+                LEFT JOIN bookings b
+                ON s.date = b.session_date
+                GROUP BY date;`
+            );
+
+            res.status(200).json({sessions: sessions.rows});
+            return;
+
+        } catch (error) {
+            console.log(error.message);
+            // generic error message
+            res.status(500).json({ message: "SERVER ERROR: Bad request" });
+            return;
+        }
+
+    }
+    
+    // authorisation for other methods - check the requester has admin
     try {
         // get token from request
         const token = req.cookies.lsersaUserToken;
@@ -40,30 +62,7 @@ export default async function handler(req, res) {
         return;
     }
 
-    if (req.method == 'GET') {
-
-        try {
-            const conn = await connect(config);
-            const sessions = await conn.execute(`
-                SELECT date, max_count, message, COUNT(racer_id)
-                FROM sessions s
-                LEFT JOIN bookings b
-                ON s.date = b.session_date
-                GROUP BY date;`
-            );
-            // ** TODO ** check this still works on a LEFT JOIN once there's data to collapse
-
-            res.status(200).json({sessions: sessions.rows});
-            return;
-
-        } catch (error) {
-            console.log(error.message);
-            // generic error message
-            res.status(500).json({ message: "SERVER ERROR: Bad request" });
-            return;
-        }
-
-    } else if (req.method === 'POST') {
+    if (req.method === 'POST') {
 
         try {
             const { date, message, max_count } = req.body;

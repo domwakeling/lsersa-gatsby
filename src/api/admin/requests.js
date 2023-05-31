@@ -38,7 +38,7 @@ const verifyUser = async (id, email, admin_text) => {
         const tryNewToken = await tx.execute(
             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
             [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
-        )
+        );
 
         return {
             tryUpdateUser,
@@ -98,10 +98,20 @@ const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => 
 
 export default async function handler(req, res) {
 
-    if (req.method == 'GET') {
-        const conn = await connect(config);
+    // the GET route provides personal details so protect everything
 
-        try {
+    try {
+        // check user has admin rights
+        const token = req.cookies.lsersaUserToken;
+        const hasAdmin = await verifyUserHasAdminRole(token);
+        if (!hasAdmin) {
+            res.status(401).json({ message: 'ERROR: You do not have admin access' });
+            return;
+        }
+
+        if (req.method == 'GET') {
+            // get info
+            const conn = await connect(config);
             const users = await conn.execute(`
                 SELECT id, email, admin_text
                 FROM users
@@ -113,30 +123,16 @@ export default async function handler(req, res) {
                 WHERE verified = FALSE`
             );
             
+            // return
             res.status(200).json({
                 users: users.rows,
                 racers: racers.rows
             });
             return;
+        
+        } else if (req.method === 'POST') {
 
-        } catch (error) {
-            console.log(error.message);
-            // generic error message
-            res.status(500).json({ message: "SERVER ERROR: Bad request" });
-            return;
-        }
-    
-    } else if (req.method === 'POST') {
-
-        try {
             const { type } = req.body;
-            const token = req.cookies.lsersaUserToken;
-
-            const hasAdmin = await verifyUserHasAdminRole(token);
-            if (!hasAdmin) {
-                res.status(401).json({message: 'ERROR: You do not have admin access'});
-                return;
-            }
 
             if (type === 'user') {
                 const { id, email, admin_text } = req.body;
@@ -157,25 +153,11 @@ export default async function handler(req, res) {
                 res.status(200).json({ message: "Successfully updated racer" });
                 return;
             }
-
-        } catch (error) {
-            console.log(error.message);
-            res.status(500).json({ message: error.message});
-            return;
-        }
     
-    } else if (req.method === 'DELETE') {
-
-        try {
+        } else if (req.method === 'DELETE') {
+        
             const { type } = req.body;
-            const token = req.cookies.lsersaUserToken;
-
-            const hasAdmin = await verifyUserHasAdminRole(token);
-            if (!hasAdmin) {
-                res.status(401).json({ message: 'ERROR: You do not have admin access' });
-                return;
-            }
-
+            
             if (type === 'user') {
                 const { id } = req.body;
                 const conn = await connect(config);
@@ -193,16 +175,16 @@ export default async function handler(req, res) {
                 res.status(200).json({ message: "Successfully deleted user" });
                 return;
             }
-
-        } catch (error) {
-            console.log(error.message);
-            res.status(500).json({message: error.message});
+            
+        } else {
+            // method is not GET, POST or DELETE, fail gracefully
+            res.status(405).json({ message: "ERROR: method not allowed" });
             return;
         }
-
-    } else {
-        // method is not GET, POST or DELETE, fail gracefully
-        res.status(405).json({ message: "ERROR: method not allowed" });
+        
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({message: error.message});
         return;
     }
 }
