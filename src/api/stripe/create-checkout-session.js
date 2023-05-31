@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { id, date } = req.body;
+        const { id, date } = req.body; 
 
         // check that the user is self
         const jwtToken = req.cookies.lsersaUserToken;
@@ -61,24 +61,17 @@ export default async function handler(req, res) {
         const newDate = new Date();
         newDate.setDate(newDate.getDate() + 1); // 1 day to use token
 
-        console.log(racers.rows);
         const racersIds = racers.rows.map(racer => racer.racer_id);
-        // console.log(racersIds);
         const idPlaceholders = racersIds.map(racer => "?").join(",");
 
         const results = await conn.transaction(async (tx) => {
             // insert the token
-            // console.log("STARTING TO INSERT TOKEN")
             const tryNewToken = await tx.execute(
                 'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
                 [id, newToken, newDate, tokenTypes.PAYMENT_PENDING]
             );
 
-            // add token to the racers
-            // console.log("STARTING TO UPDATE USERS")
-            // console.log(`UPDATE bookings
-                // SET token = ?
-                // WHERE racer_id IN (${idPlaceholders})`)
+            // update bookings by adding token to those who are being paid for
             const trySetToken = await tx.execute(`
                 UPDATE bookings
                 SET token = ?
@@ -92,6 +85,7 @@ export default async function handler(req, res) {
             ]
         });
 
+        // set up line items based on the racers we're booking
         const full_price = racers.rows.filter(r => r.concession === 0).length;
         const reduced_price = racers.rows.filter(r => r.concession !== 0).length;
         const line_items = [];
@@ -107,13 +101,8 @@ export default async function handler(req, res) {
                 'quantity': reduced_price
             })
         }
-
-
-        // use that token in the "success" and "failure" callbacks
-        // write the callback pages
-        // - on success, write everything to paid and remove the token
-        // - on failure, write the tokens in 'bookings' back to null and remove the token
         
+        // set up the session
         const session = await stripe.checkout.sessions.create({
             line_items,
             client_reference_id: token,
@@ -122,8 +111,7 @@ export default async function handler(req, res) {
             cancel_url: `${process.env.ROOT_URL}/payment/failure/${newToken}/`,
         });
 
-        res.status(200).json({url: session.url});
-        return;
+        res.redirect(303, session.url);
 
     } catch (error) {
         console.log(error.message);

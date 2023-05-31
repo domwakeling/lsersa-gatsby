@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { navigate } from "gatsby";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import RacerLozenge from "./RacerLozenge";
-import { MESSAGE_CLASSES, MONTHS, WEEKDAYS } from "../../../lib/constants";
+import { MONTHS, WEEKDAYS } from "../../../lib/constants";
 
 const ManageBookings = ({ user, racers, displayMessage}) => {
     const [session, setSession] = useState(null);
     const [available, setAvailable] = useState(0);
     const [bookings, setBookings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isWaiting, setIsWaiting] = useState(false);
     const [message, setMessage] = useState('');
 
     const nextSat =  useMemo(() => {
@@ -50,27 +50,6 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
         }
     }
 
-    const startPayment = async (e) => {
-        e.preventDefault();
-        const body = {
-            id: user.id,
-            date: nextSat
-        }
-        const res = await fetch(`/api/stripe/create-checkout-session`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body),
-        });
-        if (res.status === 200) {
-            const data = await res.json(); 
-            navigate(data.url);
-        } else {
-            const data = await res.json(); 
-            console.log(data.message);
-            displayMessage(MESSAGE_CLASSES.WARN, "Unable to make payment");
-        }
-    }
-
     useEffect(() => {
         async function retrieveSessionInfo() {
             setIsLoading(true);
@@ -101,17 +80,31 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
         retrieveSessionInfo();
     }, [nextSat]);
 
+    const clickHandler = () => {
+        document.forms["payment-form"].submit();
+        setIsWaiting(true);
+    }
+
     return (
         <>
             <h3>Manage Bookings</h3>
             {isLoading && <LoadingSpinner />}
-            {userUnpaid.length > 0 && (
-                <button
-                    className="club-add-button" 
-                    onClick={startPayment}
-                >
-                    Pay for booked sessions
-                </button>
+            {(userUnpaid.length > 0 && !isWaiting) && (
+                <form id="payment-form" method="post" action="/api/stripe/create-checkout-session">
+                    <input name="id" type="hidden" readOnly value={user.id} />
+                    <input name="date" type="hidden" readOnly value={nextSat.toISOString()} />
+                    <button
+                        onClick={clickHandler}
+                        className="club-add-button"
+                    >
+                        Pay for booked sessions
+                    </button>
+                </form>
+            )}
+            {isWaiting && (
+                <div style={{ float: "right"}} >
+                    <LoadingSpinner />
+                </div>
             )}
             <h4>{displayDate(nextSat)}</h4>
             {message !== '' && (

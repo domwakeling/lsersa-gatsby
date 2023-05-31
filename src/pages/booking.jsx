@@ -73,7 +73,6 @@ const BookingPage = () => {
         const res = await fetch(`/api/user/logout`, { method: "POST" });
         if (res.status !== 200) {
             const data = await res.json();
-            console.log(data);
         }
         setUser(null);
         setMode(MODES.LOGGING_IN);
