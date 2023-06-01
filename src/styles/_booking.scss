@@ -282,8 +282,9 @@ button.cancel-button {
     }
 
     &.booked {
-        background-color: $color-p300;
-        color: $color-p900;
+        background-color: $color-p900;
+        // background-color: $color-p300;
+        // color: $color-p900;
         border: 1px solid $color-p300;
     }
 
@@ -327,6 +328,7 @@ button.cancel-button {
         padding: 0.5rem 1.0rem 0.5rem 1.0rem;
         text-align: center;
         min-width: 5.0rem;
+        color: $color-p900;
 
         @media (min-width: 471px) {
             float: right;
@@ -345,6 +347,11 @@ button.cancel-button {
     
         &.unpaid {
             background-color: red;
+        }
+
+        &.unverified {
+            background-color: $color-c500;
+            color: $color-c100;
         }
 
         &.booked {

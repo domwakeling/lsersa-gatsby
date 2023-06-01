@@ -46,6 +46,15 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
                     {booked ? "booked" : "book"}
                 </button>
             )}
+            {(!racer.verified)&& (
+                <>
+                    <div className="lozenge-container">
+                        <div className="lozenge unverified">
+                            awaiting review
+                        </div>
+                    </div>
+                </>
+            )}
             { booked && (
                 <div className="lozenge-container">
                     <div className={paid ? "lozenge paid" : "lozenge unpaid"}>

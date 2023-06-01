@@ -87,6 +87,13 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
 
     return (
         <>
+            {(userUnpaid.length > 0 && !isWaiting) && (
+                <div className="advice-box">
+                    <p>Whilst in testing mode, use credit card number 4242 4242 4242 4242 at the
+                        payment screen (with any future date and any CVC) to make a fake payment. IF
+                        YOU ENTER REAL CARD DETAILS YOU <b>WILL</b> BE CHARGED</p>
+                </div>
+            )}
             <h3>Manage Bookings</h3>
             {isLoading && <LoadingSpinner />}
             {(userUnpaid.length > 0 && !isWaiting) && (
