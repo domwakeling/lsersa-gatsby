@@ -16,10 +16,11 @@ export default async function handler(req, res) {
         try {
             const token = req.cookies.lsersaUserToken;
             if (!token) {
+                console.log("No cookie found");
                 res.status(204).json({ message: "Cookie not found" });
                 return;       
             }
-
+            console.log("HERE");
             const identifier = getIdentifierFromToken(token);
 
             if (identifier) {
@@ -37,7 +38,7 @@ export default async function handler(req, res) {
                     return;    
                 }
 
-            } else {// there was no identifier so token invalid ... clear the cookie
+            } else {// there was no identifier so token invalid ... clear the cookie to be sure
                 res.clearCookie('lsersaUserToken', { path: '/' });
                 res.status(204).json({ message: "No id found" });
                 return;    

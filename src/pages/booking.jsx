@@ -43,8 +43,8 @@ const BookingPage = () => {
         // hooks require that async function is defined before being called; this checks for a token
         async function checkForToken() {
             const res = await fetch("/api/poll-jwt"); 
-            const data = await res.json();
             if (res.status === 200) {
+                const data = await res.json();
                 setUser(data);
                 if(data.role_id === roles.ADMIN) {
                     setMode(MODES.ADMIN);
