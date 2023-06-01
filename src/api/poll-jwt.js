@@ -15,6 +15,11 @@ export default async function handler(req, res) {
 
         try {
             const token = req.cookies.lsersaUserToken;
+            if (!token) {
+                res.status(204).json({ message: "Cookie not found" });
+                return;       
+            }
+
             const identifier = getIdentifierFromToken(token);
 
             if (identifier) {
@@ -27,21 +32,20 @@ export default async function handler(req, res) {
                     res.status(200).json(results.rows[0]);
                     return;
                 } else {
-                    // there is no valid user ... clear the cookie to require logging in again
-                    res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
+                    res.clearCookie('lsersaUserToken', { path: '/' });
                     res.status(204).json({ message: "No valid id found" });
                     return;    
                 }
 
             } else {// there was no identifier so token invalid ... clear the cookie
-                res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
+                res.clearCookie('lsersaUserToken', { path: '/' });
                 res.status(204).json({ message: "No id found" });
                 return;    
             }
 
         } catch (error) {
-            // error, most likely didn't find a cookie
-            res.status(204).json({ message: "Cookie not found" });
+            // error, generic
+            res.status(500).json({ message: error.message });
             return;    
         }
 

@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useState, useEffect } from "react";
 import ManageRacers from "./users/ManageRacers";
 import ManageBookings from "./users/ManageBooking";
 import TabLabel from "./elements/TabLabel";
@@ -8,8 +8,9 @@ import updateUserDetails from "../../lib/users/updateUser";
 import { MESSAGE_CLASSES } from "../../lib/constants";
 import { USER_MODES } from "../../lib/modes";
 
-const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
+const UserDashboard = ({user, setUser, displayMessage}) => {
     const [userMode, setUserMode] = useState(USER_MODES.BOOKING);
+    const [racers, setRacers] = useState([]);
 
     const tabData = [
         {
@@ -25,6 +26,21 @@ const UserDashboard = ({user, setUser, racers, setRacers, displayMessage}) => {
             mode: USER_MODES.MANAGING_DETAILS
         }
     ];
+
+    useEffect(() => {
+        // hooks require that async function is defined before being called; this checks for a token
+        async function getRacers() {
+            const res = await fetch(`/api/user/racers/${user.id}`);
+            const data = await res.json();
+            if (res.status === 200) {
+                setRacers(data.racers);
+            } else {
+                // no response; display message and set racers empty
+                setRacers([]);
+            }
+        }
+        getRacers();
+    }, [user.id]);
 
     const handleUserDetailSubmit = async (newUser) => {
         const result = await updateUserDetails(user, newUser);

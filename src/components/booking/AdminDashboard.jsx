@@ -12,8 +12,9 @@ import updateUserDetails from "../../lib/users/updateUser";
 import { ADMIN_MODES } from "../../lib/modes";
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../lib/constants";
 
-const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) => {    
+const AdminDashboard = ({ user, setUser, displayMessage }) => {    
     const [requestsCount, setRequestsCount] = useState(0);
+    const [racers, setRacers] = useState([]);
     const [adminMode, setAdminMode] = useState(ADMIN_MODES.MANAGE_OWN_BOOKINGS);
 
     const tabData = [
@@ -65,15 +66,25 @@ const AdminDashboard = ({ user, setUser, displayMessage, racers, setRacers }) =>
     }
 
     useEffect(() => {
-        async function checkForRequests() {
+        async function prepOnLoad() {
+            // requests count
             const res = await fetch("/api/admin/request-counts");
             if (res.status === 200) {
                 const data = await res.json();
                 setRequestsCount(data.users + data.racers);
             }
+            // racers
+            const res2 = await fetch(`/api/user/racers/${user.id}`);
+            if (res2.status === 200) {
+                const data = await res2.json();
+                setRacers(data.racers);
+            } else {
+                // no response; display message and set racers empty
+                setRacers([]);
+            }
         }
-        checkForRequests();  
-    }, [requestsCount]);
+        prepOnLoad();  
+    }, [requestsCount, user.id]);
 
     return (
         <div>
