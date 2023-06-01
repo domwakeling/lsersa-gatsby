@@ -7,7 +7,13 @@ const json2csv = (data) => {
     for (let i = 0; i < data.length; i++) {
         const csvRow = [];
         for (let j = 0; j < headers.length; j++) {
-            csvRow.push(data[i][headers[j]]);
+            // special case where the header contains "mobile" - it's a phone number ...
+            if(/mobile/.test(headers[j])) {
+                let tel = '=\"\"' + data[i][headers[j]] + '\"\"';
+                csvRow.push(tel);
+            } else {
+                csvRow.push(data[i][headers[j]]);
+            }
         }
         csvRows.push(csvRow.join(","))
     }

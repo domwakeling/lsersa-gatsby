@@ -130,7 +130,6 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
         if (res.status === 200) {
             // data into csv
             const csv = json2csv(data);
-            console.log(csv);
             // create blob
             const blob = new Blob([csv], { type: 'text/csv' });
             // create object for downloading url
