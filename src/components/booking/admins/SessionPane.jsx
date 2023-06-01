@@ -4,6 +4,7 @@ import FreeField from "../elements/FreeField";
 import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
 import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
+import { json2csv } from "../../../lib/json2csv";
 import "react-datepicker/dist/react-datepicker.css";
 
 const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => {
@@ -122,6 +123,31 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
         }
     }
 
+    const downloadHandler = async (e) => {
+        e.preventDefault();
+        const res = await fetch(`/api/admin/bookings/${session.date}`);
+        const data = await res.json();
+        if (res.status === 200) {
+            // data into csv
+            const csv = json2csv(data);
+            console.log(csv);
+            // create blob
+            const blob = new Blob([csv], { type: 'text/csv' });
+            // create object for downloading url
+            const url = window.URL.createObjectURL(blob)
+            // create a virtual anchor tag
+            const a = document.createElement('a')
+            // pass the url to virtual anchor
+            a.setAttribute('href', url)
+            // set the attributes and virtually click
+            a.setAttribute('download', `${session.date}-bookings.csv`);
+            a.click();
+            displayMessage(MESSAGE_CLASSES.SUCCESS, 'Downloaded')
+        } else {
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
+        }
+    }
+
     return (
         <div className="admin-pane">
             <div className='session-date'>
@@ -172,6 +198,14 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
                     onClick={cancelHandler}
                 >
                     {editable ? "cancel" : (isDeleting ? "confirm" : "delete")}
+                </button>
+            )}
+            {(!editable && session['count(racer_id)'] > 0 ) && (
+                <button
+                    className="club-button download-button"
+                    onClick={downloadHandler}
+                >
+                    download entries
                 </button>
             )}
         </div>

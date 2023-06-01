@@ -210,6 +210,10 @@ button.club-button, button.cancel-button {
     margin-top: 2.5rem;
 }
 
+button.download-button {
+    margin-right: 0.5rem;
+}
+
 button.cancel-button {
     margin-right: 0.5rem;
     @include red-button;

@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import AdminManageRacers from "./admins/AdminManageRacers";
+import AdminManageUsers from "./admins/AdminManageUsers";
 import InviteUser from "./admins/InviteUser";
 import ManageClubs from "./admins/ManageClubs";
 import ManageRacers from "./users/ManageRacers";
@@ -19,28 +21,8 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
 
     const tabData = [
         {
-            text: "review requests",
-            mode: ADMIN_MODES.REVIEW_REQUESTS
-        },
-        {
-            text: "invite user",
-            mode: ADMIN_MODES.INVITE_USER
-        },
-        {
-            text: "manage sessions",
-            mode: ADMIN_MODES.MANAGE_SESSION
-        },
-        {
-            text: "choice four",
-            mode: 3
-        },
-        {
             text: "manage own bookings",
             mode: ADMIN_MODES.MANAGE_OWN_BOOKINGS
-        },
-        {
-            text: "manage clubs",
-            mode: ADMIN_MODES.MANAGE_CLUBS
         },
         {
             text: "manage your racers",
@@ -49,6 +31,30 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
         {
             text: "manage your details",
             mode: ADMIN_MODES.MANAGING_OWN_DETAILS
+        },
+        {
+            text: "review requests",
+            mode: ADMIN_MODES.REVIEW_REQUESTS
+        },
+        {
+            text: "manage sessions",
+            mode: ADMIN_MODES.MANAGE_SESSION
+        },
+        {
+            text: "invite user",
+            mode: ADMIN_MODES.INVITE_USER
+        },
+        {
+            text: "manage accounts",
+            mode: ADMIN_MODES.MANAGE_ACCOUNT
+        },
+        {
+            text: "manage racers",
+            mode: ADMIN_MODES.MANAGE_RACERS
+        },
+        {
+            text: "manage clubs",
+            mode: ADMIN_MODES.MANAGE_CLUBS
         },
     ];
 
@@ -146,6 +152,12 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
                         displayMessage={displayMessage}
                         user={user}
                     />
+                )}
+                {(adminMode === ADMIN_MODES.MANAGE_ACCOUNT) && (
+                    <AdminManageUsers />
+                )}
+                {(adminMode === ADMIN_MODES.MANAGE_RACERS) && (
+                    <AdminManageRacers />
                 )}
             </div>
             <br/>
