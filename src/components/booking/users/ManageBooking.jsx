@@ -114,9 +114,15 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                 </div>
             )}
             <h4>{displayDate(nextSat)}</h4>
-            {message !== '' && (
+            {(message !== '' || userUnpaid.length > 0 ) && (
                 <div className='advice-box'>
-                    <p>{message}</p>
+                    {message !== '' && (
+                        <p>{message}</p>
+                    )}
+                    {userUnpaid.length > 0 && (
+                        <p>Please note: once paid for, a booking cannot be cancelled and refunds
+                            cannot be given.</p>
+                    )}
                 </div>
             )}
             {session && (

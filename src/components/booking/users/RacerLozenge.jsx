@@ -36,14 +36,39 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
         }
     }
 
+    const cancelHandler = async (e) => {
+        e.preventDefault();
+        if (booked && !paid) {
+            const body = {
+                user_id: racer.user_id,
+                racer_id: racer.id,
+                date
+            }
+            const res = await fetch(`/api/user/bookings`, {
+                method: "DELETE",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(body),
+            });
+            if (res.status === 200) {
+                displayMessage(MESSAGE_CLASSES.SUCCESS, `Booking cancelled`);
+                updatePane();
+                return true;
+            } else {
+                const data = await res.json();
+                displayMessage(MESSAGE_CLASSES.WARN, data.message);
+                updatePane();
+                return false;
+            }
+        }
+    }
+
     return (
-        <>
         <div className={classNames}>
             {(available > 0 && (racer.verified == true) && !booked) && (
                 <button className="booking-button"
                     onClick={buttonHandler}
                 >
-                    {booked ? "booked" : "book"}
+                    book
                 </button>
             )}
             {(!racer.verified)&& (
@@ -57,16 +82,30 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
             )}
             { booked && (
                 <div className="lozenge-container">
-                    <div className={paid ? "lozenge paid" : "lozenge unpaid"}>
-                        {paid ? "paid" : "to pay"}
-                    </div>
-                    <div className="lozenge booked">booked</div>
+                    {paid && (
+                        <>
+                            <div className="lozenge paid">
+                                paid
+                            </div>
+                            <div className="lozenge booked">booked</div>
+                        </>
+                    )}
+                    {!paid && (
+                        <>
+                            <div className="lozenge unpaid">
+                                to pay
+                            </div>
+                            <button className="booking-cancel-button"
+                                onClick={cancelHandler}
+                            >
+                                cancel
+                            </button>
+                        </>
+                    )}
                 </div>
             )}
             <div className="racer-name">{racer.first_name} {racer.last_name}</div>
         </div>
-        {/* {JSON.stringify(racer)} */}
-        </>
     )
 }
 

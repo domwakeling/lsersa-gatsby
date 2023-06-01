@@ -283,8 +283,6 @@ button.cancel-button {
 
     &.booked {
         background-color: $color-p900;
-        // background-color: $color-p300;
-        // color: $color-p900;
         border: 1px solid $color-p300;
     }
 
@@ -301,18 +299,32 @@ button.cancel-button {
         }
     }
 
-    button.booking-button {
+    button {
         float: right;
-        @include common-button;
-        @include blue-button;
         &:hover {
             @include orange-button;
         }
         &:disabled {
             @include grey-button;
         }
-        @media (max-width:470px) {
-            margin-top: 2.0rem;
+        
+        &.booking-button {
+            @include common-button;
+            @include blue-button;
+            @media (max-width:470px) {
+                margin-top: 2.0rem;
+            }
+        }
+        
+        &.booking-cancel-button {
+            @include common-button;
+            @include blue-button;
+            margin-top: 0;
+            margin-right: 1.0rem;
+            
+            @media (max-width:470px) {
+                margin-top: 0.5rem;
+            }
         }
     }
 
@@ -324,7 +336,7 @@ button.cancel-button {
     }
 
     .lozenge {
-        border-radius: 0.75rem;
+        border-radius: 1.2rem;
         padding: 0.5rem 1.0rem 0.5rem 1.0rem;
         text-align: center;
         min-width: 5.0rem;
@@ -346,12 +358,15 @@ button.cancel-button {
         }
     
         &.unpaid {
-            background-color: red;
+            background-color: $color-red;
         }
 
         &.unverified {
             background-color: $color-c500;
             color: $color-c100;
+            @media (max-width:470px) {
+                    margin: 0.75rem auto 0;
+                }
         }
 
         &.booked {

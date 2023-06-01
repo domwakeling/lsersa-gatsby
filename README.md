@@ -239,6 +239,7 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../create-checkout-session` | `POST` | Creates and stores token, sends to Stripe
 | `api/user/`    |        |
 | `.../bookings` | `POST` | Insert a booking (unpaid)
+| `.../bookings` |`DELETE`| Remove a booking (unpaid)
 | `.../login`    | `POST` | Check password, set cookie, login
 | `.../logout`   | `POST` | Expires cookie, logout
 | `.../new-account-complete` | `POST` | Complete account sign-up

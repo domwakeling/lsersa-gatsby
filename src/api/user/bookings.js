@@ -55,7 +55,43 @@ export default async function handler(req, res) {
             );
 
             // return
-            res.status(200).json({ message: 'Added new club' });
+            res.status(200).json({ message: 'Added new booking' });
+            return;
+
+        } else if (req.method === 'DELETE') {
+            // get details and build dates
+            const { racer_id, date } = req.body;
+            const session_date = date.split("T")[0];
+
+            // get the existing bookings for that session ...
+            const conn = await connect(config);
+            const bookings = await conn.execute(`
+                SELECT *
+                FROM bookings
+                WHERE session_date = ?`,
+                [session_date]);
+
+            // check that the racer is booked
+            const userBookings = bookings.rows.filter(item => item.racer_id === racer_id);
+            if (userBookings.length === 0) {
+                res.status(204).json({ message: 'Racer is not booked' });
+                return;
+            }
+
+            // check that the booking is not paid
+            if (userBookings[0].paid) {
+                res.status(204).json({ message: 'Booking is paid, cannot cancel' });
+                return;
+            }
+
+            // delete
+            const _ = await conn.execute(
+                'DELETE FROM bookings WHERE racer_id = ? AND session_date = ?',
+                [racer_id, session_date]
+            );
+
+            // return
+            res.status(200).json({ message: 'Added new booking' });
             return;
 
         } else {
