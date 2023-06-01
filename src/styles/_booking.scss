@@ -271,6 +271,11 @@ button.cancel-button {
     padding: 0.5rem 1.0rem;
     margin-bottom: 1.5rem;
 
+    @media (max-width:470px) {
+        width: calc(100% - 2.0rem);
+        min-height: 8.0rem;
+    }
+
     &.verified {
         background-color: $color-p900;
         border: 1px solid $color-p300;
@@ -286,6 +291,13 @@ button.cancel-button {
         display: inline-block;
         width: 220px;
         padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+        @media (max-width:470px) {
+            width: calc(100% - 100px - 2.0rem);
+            height: 7.0rem;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+        }
     }
 
     button.booking-button {
@@ -298,14 +310,34 @@ button.cancel-button {
         &:disabled {
             @include grey-button;
         }
+        @media (max-width:470px) {
+            margin-top: 2.0rem;
+        }
+    }
 
+    .lozenge-container {
+        @media (max-width:470px) {
+            width: 90px;
+            float: right;
+        }
     }
 
     .lozenge {
-        float: right;
-        display: inline;
         border-radius: 0.75rem;
         padding: 0.5rem 1.0rem 0.5rem 1.0rem;
+        text-align: center;
+        min-width: 5.0rem;
+
+        @media (min-width: 471px) {
+            float: right;
+            display: inline;
+        }
+
+        @media (max-width:470px) {
+            display: block;
+            width: 60px;
+            margin: 0 auto;
+        }
     
         &.paid {
             background-color: green;
@@ -317,7 +349,10 @@ button.cancel-button {
 
         &.booked {
             background-color: green;
-            margin-left: 1.0rem;
+            margin-right: 1.0rem;
+            @media (max-width:470px) {
+                margin: 0.5rem auto 0;
+            }
         }
     }
 }

@@ -37,8 +37,9 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
     }
 
     return (
+        <>
         <div className={classNames}>
-            {available > 0 && racer.verified && !booked && (
+            {(available > 0 && (racer.verified == true) && !booked) && (
                 <button className="booking-button"
                     onClick={buttonHandler}
                 >
@@ -46,15 +47,17 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
                 </button>
             )}
             { booked && (
-                <>
-                    <div className="lozenge booked">booked</div>
+                <div className="lozenge-container">
                     <div className={paid ? "lozenge paid" : "lozenge unpaid"}>
                         {paid ? "paid" : "to pay"}
                     </div>
-                </>
+                    <div className="lozenge booked">booked</div>
+                </div>
             )}
             <div className="racer-name">{racer.first_name} {racer.last_name}</div>
         </div>
+        {/* {JSON.stringify(racer)} */}
+        </>
     )
 }
 
