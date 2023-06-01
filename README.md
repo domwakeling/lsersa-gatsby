@@ -217,7 +217,9 @@ the website (provided as Gatsby functions). The database structure is:
 | Route          | Method | Comment
 | ---            | :---:  |   ---
 | `api/admin/`   |        |
-| `.../admin-new-account` | `POST` | Called from admin pane to verify account 
+| `.../admin-new-account` | `POST` | Called from admin pane to verify account
+| `.../bookings` |        |
+| `.../.../[date]`| `GET` | Gets detailed list of bookings for that date
 | `.../clubs`    | `GET`  | Gets all rows from the `clubs` table
 | `.../clubs`    | `POST` | Adds a new row to the `clubs` table
 | `.../clubs`    | `PUT`  | Updates a row in the `clubs` table

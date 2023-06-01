@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+import DateField from "../elements/DateField";
 import FreeField from "../elements/FreeField";
 import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
-import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
 import { json2csv } from "../../../lib/json2csv";
-import "react-datepicker/dist/react-datepicker.css";
+import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
 
 const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => {
-    const [date, setDate] = useState(session.date ? parseISO(session.date) : null);
+    const [date, setDate] = useState(session.date ? parseISO(session.date + "Z") : null);
     const [message, setMessage] = useState(session.message || '');
     const [maxCount, setMaxCount] = useState(session.max_count || SESSION_MAX);
     const [editable, setEditable] = useState(editing);
@@ -60,6 +59,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
 
     const deleteSession = async () => {
         const body = { date }
+        console.log(body);
         const res = await fetch(`/api/admin/sessions`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
@@ -107,7 +107,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
         if (editable) {
             // cancel an editing attempt
             setEditable(false);
-            setDate(session.date ? parseISO(session.date) : null);
+            setDate(session.date ? parseISO(session.date + "Z") : null);
             setMaxCount(session.max_count || SESSION_MAX);
             setMessage(session.message || '');
         } else if (!isDeleting) {
@@ -118,8 +118,8 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
             const result = await deleteSession();
             if (result) {
                 setIsDeleting(false);
-                updatePane();
             }
+            updatePane();
         }
     }
 
@@ -142,6 +142,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
             // set the attributes and virtually click
             a.setAttribute('download', `${session.date}-bookings.csv`);
             a.click();
+            // confirm to user
             displayMessage(MESSAGE_CLASSES.SUCCESS, 'Downloaded')
         } else {
             displayMessage(MESSAGE_CLASSES.WARN, data.message);
@@ -151,16 +152,12 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
     return (
         <div className="admin-pane">
             <div className='session-date'>
-                <label>
-                    date
-                    <DatePicker
-                        selected={date}
-                        onChange={(date) => setDate(date)}
-                        dateFormat="dd/MM/yyyy"
-                        placeholderText='dd/mm/yyyy'
-                        disabled={!editable}
-                    />
-                </label>
+                <DateField
+                    label="date"
+                    value={date}
+                    setValue={setDate}
+                    disabled={!editable}
+                />
             </div>
             <div className="racer-limit">
                 <TextField 

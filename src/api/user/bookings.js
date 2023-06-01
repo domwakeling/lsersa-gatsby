@@ -1,6 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
+import addDays from 'date-fns/addDays';
 
 const config = {
     fetch,
@@ -25,8 +26,9 @@ export default async function handler(req, res) {
             // get details and build dates
             const { racer_id, date, max_count } = req.body;
             const session_date = date.split("T")[0];
-            const expiryDate = new Date(session_date);
-            expiryDate.setDate(expiryDate.getDate() + 30); // keep bookings for 30 days after session
+            let expiryDate = new Date(session_date);
+            // add 30 days, get the ISOString and remove time (this ensures it's UTC)
+            expiryDate = addDays(expiryDate, 30).toISOString().split("T")[0];
 
             // get the existing bookings for that session ...
             const conn = await connect(config);

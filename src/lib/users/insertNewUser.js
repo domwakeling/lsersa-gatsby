@@ -1,5 +1,6 @@
 import { tokenTypes } from "../db_refs";
 import { token } from "../token";
+import AddDays from 'date-fns/addDays';
 
 const insertUser = async (conn, email, role_id, verified=false) => {
     const results = await conn.transaction(async (tx) => {
@@ -14,8 +15,9 @@ const insertUser = async (conn, email, role_id, verified=false) => {
             // insert a new ACCOUNT_REQUEST token for that user in the tokens table IF verified
             const newUserId = tryNewUser.insertId;
             const newToken = token(12);
-            const newDate = new Date();
-            newDate.setDate(newDate.getDate() + 7); // 7 days to use token
+            let newDate = new Date();
+            // add 7 days, get the ISOString and remove time (this ensures it's UTC)
+            newDate = addDays(newDate, 7).toISOString().split("T")[0];
             const tryNewToken = await tx.execute(
                 'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
                 [newUserId, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]

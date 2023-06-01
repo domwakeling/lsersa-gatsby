@@ -20,12 +20,10 @@ const insertNewRacer = async (user_id, new_racer) => {
     racerKeys.push('verified');
     racerValues.push(false);
 
-    // deal with dob issue
     const idx = racerKeys.indexOf('dob');
     if (idx >= 0) {
-        let dob_date = new Date(racerValues[idx]);
-        dob_date.setTime(dob_date.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
-        racerValues[idx] = dob_date;
+        const newDob = racerValues[idx].split("T")[0];
+        racerValues[idx] = newDob;
     }
 
     // get the strings for INSERT
@@ -65,12 +63,10 @@ const updateRacer = async (racer_id, racer) => {
     const racerKeys = Object.keys(racer);
     const racerValues = racerKeys.map(key => racer[key]);
 
-    // deal with dob issue
     const idx = racerKeys.indexOf('dob');
     if (idx >= 0) {
-        let dob_date = new Date(racerValues[idx]);
-        dob_date.setTime(dob_date.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
-        racerValues[idx] = dob_date;
+        const newDob = racerValues[idx].split("T")[0];
+        racerValues[idx] = newDob;
     }
 
     // get the strings for INSERT

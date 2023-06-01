@@ -3,6 +3,7 @@ import { connect } from '@planetscale/database';
 import { token } from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { emailResetPasswordTokenToUser } from '../../lib/mail/send_reset_token';
+import addDays from 'date-fns/addDays';
 
 const config = {
     fetch,
@@ -32,8 +33,9 @@ export default async function handler(req, res) {
 
             // insert a token
             const newToken = token(12);
-            const newDate = new Date();
-            newDate.setDate(newDate.getDate() + 7); // 7 days to use token
+            let newDate = new Date();
+            // add 7 days, get the ISOString and remove time (this ensures it's UTC)
+            newDate = addDays(newDate, 7).toISOString().split("T")[0];
             const _ = await conn.execute(
                 'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
                 [user.id, newToken, newDate, tokenTypes.PASSWORD_RESET]

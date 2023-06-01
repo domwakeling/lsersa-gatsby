@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
         try {
 
-            // check there's a token stored - if not, not valid; not going to worry about validating
+            // check there's a token stored
             const token = req.cookies.lsersaUserToken;
             if (!token || token === undefined || token === null) {
                 // error, most likely didn't find a cookie

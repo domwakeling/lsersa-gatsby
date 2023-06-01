@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import RacerLozenge from "./RacerLozenge";
 import { MONTHS, WEEKDAYS } from "../../../lib/constants";
+import addDays from 'date-fns/addDays';
 
 const ManageBookings = ({ user, racers, displayMessage}) => {
     const [session, setSession] = useState(null);
@@ -13,8 +14,8 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
 
     const nextSat =  useMemo(() => {
         let t = new Date();
-        t.setUTCHours(12, 0, 0, 0);
-        t.setDate(t.getDate() + (13 - t.getDay()) % 7);
+        t.setUTCHours(0, 0, 0, 0);
+        t = addDays(t, (13 - t.getUTCDay()) % 7);
         return t;
     }, []);
 

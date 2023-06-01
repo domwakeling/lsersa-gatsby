@@ -4,6 +4,7 @@ import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
 import { token } from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
+import addDays from 'date-fns/addDays';
 
 const config = {
     fetch,
@@ -31,10 +32,11 @@ const verifyUser = async (id, email, admin_text) => {
             params
         );
 
-        // create a new token and insert it
+        // create a new token and an expiry date, insert them
         const newToken = token(12);
-        const newDate = new Date();
-        newDate.setDate(newDate.getDate() + 7); // 7 days to use token
+        let newDate = new Date();
+        // add 7 days, get the ISOString and remove time (this ensures it's UTC)
+        newDate = addDays(newDate, 7).toISOString().split("T")[0];
         const tryNewToken = await tx.execute(
             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
             [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
@@ -52,14 +54,13 @@ const verifyUser = async (id, email, admin_text) => {
 
 const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => {
     const conn = await connect(config);
-    let cleanDate = null;
+    let dateString = null;
     if (club_expiry && club_expiry !== undefined && club_expiry !== '') {
-        cleanDate = new Date(club_expiry);
-        cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
+        dateString = club_expiry.split("T")[0];
     }
 
     const params = [
-        cleanDate,
+        dateString,
         club_id,
         concession,
         admin_text,
@@ -81,8 +82,9 @@ const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => 
 
         // create a new token and insert it
         const newToken = token(12);
-        const newDate = new Date();
-        newDate.setDate(newDate.getDate() + 7); // 7 days to use token
+        let newDate = new Date();
+        // add 7 days, get the ISOString and remove time (this ensures it's UTC)
+        newDate = addDays(newDate, 7).toISOString().split("T")[0];
         const tryNewToken = await tx.execute(
             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
             [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
@@ -133,6 +135,8 @@ export default async function handler(req, res) {
         } else if (req.method === 'POST') {
 
             const { type } = req.body;
+
+            // ** TODO: check what date is doing here
 
             if (type === 'user') {
                 const { id, email, admin_text } = req.body;

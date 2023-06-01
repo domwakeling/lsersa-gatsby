@@ -5,8 +5,7 @@ import { MESSAGE_CLASSES } from "../../../lib/constants";
 import GenderSelection from "../elements/GenderSelection";
 import ClubSelection from "../elements/ClubSelection";
 import TwoSegment from "../elements/TwoSegment";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DateField from "../elements/DateField";
 import parseISO from 'date-fns/parseISO';
 
 const RacerRequest = ({ racer, updateRequests, displayMessage, clubs }) => {
@@ -14,7 +13,7 @@ const RacerRequest = ({ racer, updateRequests, displayMessage, clubs }) => {
     const [clubId, setClubId] = useState(racer.club_id || undefined);
     const [deleting, setDeleting] = useState(false);
     const [concession, setConcession] = useState(racer.concession || false);
-    const [clubExpiry, setClubExpiry] = useState(racer.club_expiry ? parseISO(racer.club_expiry) : null);
+    const [clubExpiry, setClubExpiry] = useState(racer.club_expiry ? parseISO(racer.club_expiry + "Z") : null);
 
     const segmentHandler = (label) => {
         setConcession(label === "yes" ? true : false);
@@ -109,15 +108,11 @@ const RacerRequest = ({ racer, updateRequests, displayMessage, clubs }) => {
                 clubs={clubs}
             />
             <div className='date-selection'>
-                <label>
-                    renewal date
-                    <DatePicker
-                        selected={clubExpiry}
-                        onChange={(date) => setClubExpiry(date)}
-                        dateFormat="dd/MM/yyyy"
-                        placeholderText='dd/mm/yyyy'
-                    />
-                </label>
+                <DateField
+                    label="renewal date"
+                    value={clubExpiry}
+                    setValue={setClubExpiry}
+                />
             </div>
             {racer.user_text && racer.user_text !== '' && (
                 <FreeField

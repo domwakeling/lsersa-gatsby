@@ -4,15 +4,14 @@ import TextField from '../elements/TextField';
 import { MESSAGE_CLASSES } from '../../../lib/constants';
 import GenderSelection from '../elements/GenderSelection';
 import ClubSelection from '../elements/ClubSelection';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DateField from '../elements/DateField';
 import parseISO from 'date-fns/parseISO';
 
 const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, user }) => {
 
     const [firstName, setFirstName] = useState(racer.first_name);
     const [lastName, setLastName] = useState(racer.last_name);
-    const [dob, setDob] = useState(racer.dob ? parseISO(racer.dob) : null);
+    const [dob, setDob] = useState(racer.dob ? parseISO(racer.dob + "Z") : null);
     const [clubId, setClubId] = useState(racer.club_id);
     const [genderId, setGenderId] = useState(racer.gender_id);
     const [userText, setUserText] = useState(racer.user_text || '')
@@ -109,7 +108,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
             setEditable(false);
             setFirstName(racer.first_name);
             setLastName(racer.last_name);
-            setDob(racer.dob ? parseISO(racer.dob) : null);
+            setDob(racer.dob ? parseISO(racer.dob + "Z") : null);
             setClubId(racer.club_id);
             setGenderId(racer.gender_id);
             setUserText(racer.user_text)
@@ -139,16 +138,12 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 disabled={!editable}
             />
             <div className='date-selection'>
-                <label>
-                    date of birth
-                    <DatePicker
-                        selected={dob}
-                        onChange={(date) => setDob(date)}
-                        dateFormat="dd/MM/yyyy"
-                        placeholderText='dd/mm/yyyy'
-                        disabled={!editable}
-                    />
-                </label>
+                <DateField
+                    label="date of birth"
+                    value={dob}
+                    setValue={setDob}
+                    disabled={!editable}
+                />
             </div>
             <GenderSelection
                 genderId={genderId}

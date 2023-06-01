@@ -66,15 +66,16 @@ export default async function handler(req, res) {
 
         try {
             const { date, message, max_count } = req.body;
-            let cleanDate = null;
-            if (date && date !== undefined && date !== '') {
-                cleanDate = new Date(date);
-                cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
+            if (!date || date === undefined || date === '') {
+                res.status(400).json({message: 'No date provided'});
+                return;
             }
+            const dateString = date.split("T")[0];
+            
             const conn = await connect(config);
             const _ = await conn.execute(`
                 INSERT INTO sessions (date, message, max_count) VALUES (?,?,?)`,
-                [cleanDate, message, max_count]
+                [dateString, message, max_count]
             );
             
             res.status(200).json({ message: "Successfully added session" });
@@ -95,12 +96,9 @@ export default async function handler(req, res) {
 
         try {
             const { old_date, date, message, max_count } = req.body;
-            let cleanDate = new Date(date);
-            cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
-
-            let cleanOldDate = new Date(old_date);
-            cleanOldDate.setTime(cleanOldDate.getTime() + (2 * 60 * 60 * 1000));
-            const dateString = cleanOldDate.toISOString().split("T")[0];
+            let dateString = date.split("T")[0];
+            const oldDateString = old_date.split("T")[0];
+            
 
             const conn = await connect(config);
             const _ = await conn.execute(`
@@ -109,8 +107,8 @@ export default async function handler(req, res) {
                     date = ?,
                     message = ?,
                     max_count = ?
-                WHERE date = '${dateString}'`,
-                [cleanDate, message, max_count]
+                WHERE date = '${oldDateString}'`,
+                [dateString, message, max_count]
             );
 
             res.status(200).json({ message: "Successfully updated session" });
@@ -126,9 +124,7 @@ export default async function handler(req, res) {
 
         try {    
             const { date } = req.body;
-            let cleanDate = new Date(date);
-            cleanDate.setTime(cleanDate.getTime() + (2 * 60 * 60 * 1000)); // errors with summertime ... ?
-            const dateString = cleanDate.toISOString().split("T")[0];
+            const dateString = date.split("T")[0];
 
             // ** TODO ** protect deletion where there are already bookings
 
