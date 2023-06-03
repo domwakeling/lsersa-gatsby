@@ -44,11 +44,11 @@ export default async function handler(req, res) {
                     secondary_mobile,
                     admin_text,
                     COUNT(racer_id) as racer_count
-                FROM users u
-                INNER JOIN users_racers ur
+                FROM users_racers ur
+                RIGHT JOIN users u
                 ON u.id = ur.user_id
                 WHERE verified = 1
-                GROUP BY ur.user_id`
+                GROUP BY u.id`
             );
 
             // return
@@ -85,7 +85,7 @@ export default async function handler(req, res) {
                 updateValues
             );
 
-            res.status(200).json({ message: "Successfully updated racer" });
+            res.status(200).json({ message: "Successfully updated user" });
             return;
 
         } else if (req.method === 'DELETE') {

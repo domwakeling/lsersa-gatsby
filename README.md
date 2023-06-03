@@ -217,13 +217,16 @@ the website (provided as Gatsby functions). The database structure is:
 | Route          | Method | Comment
 | ---            | :---:  |   ---
 | `api/admin/`   |        |
-| `.../admin-new-account` | `POST` | Called from admin pane to verify account
+| `.../admin-new-account` | `POST` | Called from admin pane invite new email
 | `.../bookings` |        |
 | `.../.../[date]`| `GET` | Gets detailed list of bookings for that date
 | `.../clubs`    | `GET`  | Gets all rows from the `clubs` table
 | `.../clubs`    | `POST` | Adds a new row to the `clubs` table
 | `.../clubs`    | `PUT`  | Updates a row in the `clubs` table
 | `.../clubs`    |`DELETE`| Deletes a row from the `clubs` table
+| `.../racers`   | `GET`  | Get racers, user emails and clubs (for racer management)
+| `.../racers`   | `PUT`  | Update racer
+| `.../racers`   |`DELETE`| Delete racer (protected if any bookings)
 | `.../request-count` | `GET` | Returns counts of unvalidated users and racers
 | `.../requests` | `GET`  | Returns arrays of unvalidated users and racers
 | `.../requests` | `POST` | Validates a user or racer request
@@ -233,9 +236,12 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../sessions` | `PUT`  | Update a session
 | `.../sessions` |`DELETE`| delete a session
 | `.../.../[date]`| `GET` | Get session info and bookings for the date
+| `.../users`    | `GET`  | Get all users
+| `.../users`    | `PUT`  | Update user
+| `.../users`    |`DELETE`| Delete user (protected if any racers)
 | `api/get-slopes` |      |
 | `...[postcode]` | `GET` | Returns two slopes nearest the postcode
-| `api/stripe` |      |
+| `api/stripe`   |        |
 | `.../cancel-payment` | `POST` | Revokes payment token
 | `.../complete-payment` | `POST` | Updates racers to show paid and deletes token
 | `.../create-checkout-session` | `POST` | Creates and stores token, sends to Stripe

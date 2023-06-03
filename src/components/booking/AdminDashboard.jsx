@@ -165,13 +165,6 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
                 )}
             </div>
             <br/>
-            <hr/>
-            <p>Needs to be able to:</p>
-            <ul>
-                <li>make edits on someone else's account - contact details, email address etc</li>
-                <li>edit name, club and age for individual racers</li>
-                <li>Link an existing racer to a new parent account</li>
-            </ul>
         </div>
     )
 }

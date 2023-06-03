@@ -28,15 +28,15 @@ export default async function handler(req, res) {
                     racer_id,
                     user_id,
                     email,
-                    r.first_name,
-                    r.last_name,
+                    r.first_name as first_name,
+                    r.last_name as last_name,
                     dob,
                     gender_id,
                     concession,
                     club_id,
                     club_expiry,
                     user_text,
-                    r.admin_text
+                    r.admin_text as admin_text
                 FROM users_racers ur
                 LEFT JOIN racers r
                 ON ur.racer_id = r.id
@@ -44,57 +44,102 @@ export default async function handler(req, res) {
                 ON ur.user_id = u.id`
             );
 
+            const userEmails = await conn.execute ('SELECT id as user_id, email FROM users');
+
+            const clubs = await conn.execute('SELECT id, name FROM clubs');
+
             // return
-            res.status(200).json(racers.rows);
+            res.status(200).json({
+                racers: racers.rows,
+                user_emails: userEmails.rows,
+                clubs: clubs.rows
+            });
             return;
 
-        // } else if (req.method === 'POST') {
+        } else if (req.method === 'PUT') {
 
-        //     const { type } = req.body;
+            const { racer_id, user_id, updates } = req.body;
 
-        //     // ** TODO: check what date is doing here
+            const updateKeys = Object.keys(updates);
 
-        //     if (type === 'user') {
-        //         const { id, email, admin_text } = req.body;
-        //         const results = await verifyUser(id, email, admin_text);
+            if (updateKeys.length === 0 && !user_id) {
+                res.status(400).json({message: "No updates sent"});
+                return;
+            }
 
-        //         // trigger an email to the new user
-        //         const _ = await emailNewAccountTokenToUser(results.newToken, email);
+            const conn = await connect(config);
 
-        //         // done
-        //         res.status(200).json({ message: "Successfully updated user" });
-        //         return;
+            if (updateKeys.length === 0) {
+                // the only change is the user_id
+                const _ = await conn.execute(`
+                            UPDATE users_racers
+                            SET user_id = ?
+                            WHERE racer_id = ?
+                        `,
+                    [user_id, racer_id]
+                )
+                res.status(200).json({message: 'Racer user-account updated'});
+                return;
+            }
 
-        //     } else {
-        //         // type will be racer ...
-        //         const { id, club_expiry, club_id, concession, admin_text } = req.body;
-        //         const _ = await verifyRacer(id, club_expiry, club_id, concession, admin_text);
+            const updateValues = updateKeys.map(key => updates[key]);
+            const queryString = updateKeys.map(key => `${key} = ?`).join(",");
 
-        //         res.status(200).json({ message: "Successfully updated racer" });
-        //         return;
-        //     }
+            const _ = await conn.transaction(async (tx) => {
+                const tryUpdateUser = await tx.execute(`
+                        UPDATE racers
+                        SET ${queryString}
+                        WHERE id=${racer_id}
+                    `,
+                    updateValues
+                );
 
-        // } else if (req.method === 'DELETE') {
+                let tryUpdateUserRacer = {};
 
-        //     const { type } = req.body;
+                if (user_id) {
+                    tryUpdateUserRacer = await tx.execute(`
+                            UPDATE users_racers
+                            SET user_id = ?
+                            WHERE racer_id = ?
+                        `,
+                        [user_id, racer_id]
+                    )
+                }
 
-        //     if (type === 'user') {
-        //         const { id } = req.body;
-        //         const conn = await connect(config);
-        //         const _ = await conn.execute(`DELETE FROM users WHERE id = ${id}`);
+                return [
+                    tryUpdateUser,
+                    tryUpdateUserRacer
+                ]
+            })
 
-        //         res.status(200).json({ message: "Successfully deleted user" });
-        //         return;
+            res.status(200).json({ message: "Successfully updated user" });
+            return;
 
-        //     } else {
-        //         // type is going to be racer
-        //         const { id } = req.body;
-        //         const conn = await connect(config);
-        //         const _ = await conn.execute(`DELETE FROM racers WHERE id = ${id}`);
+        } else if (req.method === 'DELETE') {
 
-        //         res.status(200).json({ message: "Successfully deleted user" });
-        //         return;
-        //     }
+            const { id } = req.body;
+
+            const conn = await connect(config);
+
+            // check if there's any booking sessions for that racer
+            const bookings = await conn.execute(`SELECT racer_id FROM bookings WHERE racer_id = ${id}`);
+            if (bookings.rows.length > 0) {
+                res.status(400).json({message: 'Racer has bookings, unable to delete'});
+            }
+
+            // good to go
+            const result = await conn.transaction(async (tx) => {
+                const tryDeleteRacer = await tx.execute(`DELETE FROM racers WHERE id =${id}`);
+                const tryDeleteUserRacer = await tx.execute(`DELETE FROM users_racers WHERE racer_id = ${id}`)
+                return [
+                    tryDeleteRacer,
+                    tryDeleteUserRacer
+                ]
+            });
+
+            res.status(200).json({ message: "Successfully deleted racer" });
+            return;
+            
 
         } else {
             // method is not accepted, fail gracefully

@@ -39,15 +39,15 @@ const AdminManageUsers = ({ displayMessage }) => {
     }
 
     const refilterUsers = (currentFilter, userArray = users) => {
+        let tempArr = JSON.parse(JSON.stringify(userArray));
         if (currentFilter !== '') {
             const reg = new RegExp(currentFilter, "i");
-            let tempArr = JSON.parse(JSON.stringify(userArray));
             tempArr = tempArr.filter(user => (
                 reg.test(user.email) || reg.test(`${user.first_name} ${user.last_name}`)
             ))
             setFilteredUsers(tempArr);
         } else {
-            setFilteredUsers(users);
+            setFilteredUsers(tempArr);
         }
     }
 

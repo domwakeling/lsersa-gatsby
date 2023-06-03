@@ -1,6 +1,6 @@
 import { tokenTypes } from "../db_refs";
 import { token } from "../token";
-import AddDays from 'date-fns/addDays';
+import addDays from 'date-fns/addDays';
 
 const insertUser = async (conn, email, role_id, verified=false) => {
     const results = await conn.transaction(async (tx) => {
