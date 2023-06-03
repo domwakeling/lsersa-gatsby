@@ -29,9 +29,9 @@ export default async function handler(req, res) {
         const admin = await conn.execute(`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`);
 
         if (admin.rows.length == 0) {
-            // there are no admin users, so we need to set admin rights on this user
+            // there are no admin users, so we need to set admin rights on this user and immediately validate
             try {
-                const results = await insertUser(conn, cleanEmail, roles.ADMIN);
+                const results = await insertUser(conn, cleanEmail, roles.ADMIN, true);
                 
                 // trigger an email to the new admin
                 const _ = await emailNewAccountTokenToUser(results.newToken, email);
