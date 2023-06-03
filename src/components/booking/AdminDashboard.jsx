@@ -154,10 +154,14 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
                     />
                 )}
                 {(adminMode === ADMIN_MODES.MANAGE_ACCOUNT) && (
-                    <AdminManageUsers />
+                    <AdminManageUsers
+                        displayMessage={displayMessage}
+                    />
                 )}
                 {(adminMode === ADMIN_MODES.MANAGE_RACERS) && (
-                    <AdminManageRacers />
+                    <AdminManageRacers
+                        displayMessage={displayMessage}
+                    />
                 )}
             </div>
             <br/>

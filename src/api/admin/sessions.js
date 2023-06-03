@@ -9,6 +9,21 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
+const checkSessionHasNoRacers = async (conn, session_date) => {
+    const data = await conn.execute(`
+        SELECT date, COUNT(racer_id) as racer_count
+        FROM sessions s
+        LEFT JOIN bookings b
+        ON s.date = b.session_date
+        WHERE date = '${session_date}'
+        GROUP BY date
+    `);
+
+    if (data.rows.length === 0 || data.rows[0].racer_count === '0') return true;
+    return false;
+
+}
+
 export default async function handler(req, res) {
 
     if (req.method == 'GET') {
@@ -94,13 +109,24 @@ export default async function handler(req, res) {
     
     } else if (req.method === 'PUT') {
 
+        // ** TODO - only able to change a session date if there are no bookings ...
+
         try {
             const { old_date, date, message, max_count } = req.body;
             let dateString = date.split("T")[0];
             const oldDateString = old_date.split("T")[0];
-            
 
             const conn = await connect(config);
+
+            if (dateString !== oldDateString) {
+                // trying to change date, check there's no racers signed up
+                const noRacers = await checkSessionHasNoRacers(conn, oldDateString);
+                if (!noRacers) {
+                    res.status(400).json({message: 'There are racers booked on the session, unable to change date'});
+                    return;
+                }
+            }
+            
             const _ = await conn.execute(`
                 UPDATE sessions
                 SET
@@ -126,9 +152,15 @@ export default async function handler(req, res) {
             const { date } = req.body;
             const dateString = date.split("T")[0];
 
-            // ** TODO ** protect deletion where there are already bookings
-
             const conn = await connect(config);
+
+            // check there are no racers booked on that session
+            const noRacers = await checkSessionHasNoRacers(conn, dateString);
+            if (!noRacers) {
+                res.status(400).json({ message: 'There are racers booked on the session, unable to change date' });
+                return;
+            }
+
             const _ = await conn.execute(`DELETE FROM sessions WHERE date = '${dateString}'`);
 
             res.status(200).json({ message: "Successfully deleted session" });

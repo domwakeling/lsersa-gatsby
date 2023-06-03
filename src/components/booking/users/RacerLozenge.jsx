@@ -1,7 +1,16 @@
 import React from "react";
 import { MESSAGE_CLASSES } from "../../../lib/constants";
 
-const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, date, max_count }) => {
+const RacerLozenge = ({
+    racer,
+    available,
+    displayMessage,
+    bookings,
+    updatePane,
+    date,
+    max_count,
+    bookingAvailable = true
+}) => {
 
     const matched = bookings.filter(item => item.racer_id === racer.id) 
     const booked = matched.length > 0 ? true : false;
@@ -64,7 +73,7 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
 
     return (
         <div className={classNames}>
-            {(available > 0 && (racer.verified == true) && !booked) && (
+            {(available > 0 && (racer.verified == true) && !booked && bookingAvailable) && (
                 <button className="booking-button"
                     onClick={buttonHandler}
                 >
@@ -95,11 +104,13 @@ const RacerLozenge = ({ racer, available, displayMessage, bookings, updatePane, 
                             <div className="lozenge unpaid">
                                 to pay
                             </div>
-                            <button className="booking-cancel-button"
-                                onClick={cancelHandler}
-                            >
-                                cancel
-                            </button>
+                            {bookingAvailable && (
+                                <button className="booking-cancel-button"
+                                    onClick={cancelHandler}
+                                >
+                                    cancel
+                                </button>
+                            )}
                         </>
                     )}
                 </div>

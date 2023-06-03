@@ -14,9 +14,11 @@ const ManageClubs = ({ displayMessage}) => {
         if (res.status === 200) {
             const data = await res.json();
             setClubs(data.clubs);
+            setAddingClub(false);
         } else {
             // likely status 400, but error regardless
-            setClubs([])
+            setClubs([]);
+            setAddingClub(false);
         }
     }
 

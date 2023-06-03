@@ -37,6 +37,16 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
         margin-bottom: 1.5rem;
     }
 
+    textarea {
+        display: block;
+        width: 90%;
+        background-color: $color-c900;
+        resize: none;
+        padding: 0.1rem 1.0rem;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
     @include for-tablet-only () {
         grid-template-columns: 1fr 1fr;
     }

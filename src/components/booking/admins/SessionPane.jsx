@@ -59,7 +59,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
 
     const deleteSession = async () => {
         const body = { date }
-        console.log(body);
+        
         const res = await fetch(`/api/admin/sessions`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },

@@ -136,8 +136,6 @@ export default async function handler(req, res) {
 
             const { type } = req.body;
 
-            // ** TODO: check what date is doing here
-
             if (type === 'user') {
                 const { id, email, admin_text } = req.body;
                 const results = await verifyUser(id, email, admin_text);
@@ -174,7 +172,14 @@ export default async function handler(req, res) {
                 // type is going to be racer
                 const { id } = req.body;
                 const conn = await connect(config);
-                const _ = await conn.execute(`DELETE FROM racers WHERE id = ${id}`);
+                const results = await conn.transaction(async (tx) => {
+                    const tryDeleteRacer = await tx.execute(`DELETE FROM racers WHERE id = ${id}`);
+                    const tryDeleteJoin = await tx.execute(`DELETE FROM users_racers WHERE racer_id = ${id}`);
+                    return [
+                        tryDeleteRacer,
+                        tryDeleteJoin
+                    ]
+                });
 
                 res.status(200).json({ message: "Successfully deleted user" });
                 return;

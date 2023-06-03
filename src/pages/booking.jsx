@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Layout from "../components/Layout.jsx";
 import { MODES } from "../lib/modes.js";
 import { roles } from "../lib/db_refs.js";
@@ -31,13 +31,13 @@ const BookingPage = () => {
     const [email, setEmail] = useState("");
     const [emailValid, setEmailValid] = useState(false);
 
-    const displayMessage = (messageType, messageText) => {
+    const displayMessage = useCallback((messageType, messageText) => {
         setMessageClass(messageType)
         setMessage(messageText);
         setTimeout(() => {
             setMessage('');
         }, MESSAGE_TIME);
-    }
+    }, []);
 
     useEffect(() => {
         // hooks require that async function is defined before being called; this checks for a token

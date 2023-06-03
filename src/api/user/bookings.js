@@ -1,6 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
+import parseISO from 'date-fns/parseISO';
 import addDays from 'date-fns/addDays';
 
 const config = {
@@ -25,7 +26,18 @@ export default async function handler(req, res) {
         if (req.method === 'POST') {
             // get details and build dates
             const { racer_id, date, max_count } = req.body;
+            
             const session_date = date.split("T")[0];
+
+            // midnight (UTC/GMT) two days before => Weds night/Thurs morning for a Saturday;
+            const cutoff = addDays(parseISO(session_date + "Z"), -2);
+            const now = new Date();
+
+            if (now  > cutoff) {
+                res.status(406).json({ message: 'Booking system is closed' })
+                return
+            }
+
             let expiryDate = new Date(session_date);
             // add 30 days, get the ISOString and remove time (this ensures it's UTC)
             expiryDate = addDays(expiryDate, 30).toISOString().split("T")[0];

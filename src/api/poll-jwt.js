@@ -20,7 +20,7 @@ export default async function handler(req, res) {
                 res.status(204).json({ message: "Cookie not found" });
                 return;       
             }
-            console.log("HERE");
+
             const identifier = getIdentifierFromToken(token);
 
             if (identifier) {

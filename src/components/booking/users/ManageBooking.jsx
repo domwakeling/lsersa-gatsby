@@ -19,6 +19,9 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
         return t;
     }, []);
 
+    const nextThurs = addDays(nextSat, -2);
+    const now = new Date();
+
     const displayDate = (date) => `${WEEKDAYS[date.getDay()]} ${date.getDay()} ${MONTHS[date.getMonth()]}`
 
     const systemDate = (date) => date.toISOString().split("T")[0];
@@ -115,7 +118,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                 </div>
             )}
             <h4>{displayDate(nextSat)}</h4>
-            {(message !== '' || userUnpaid.length > 0 ) && (
+            {(message !== '' || userUnpaid.length > 0 || (now > nextThurs) ) && (
                 <div className='advice-box'>
                     {message !== '' && (
                         <p>{message}</p>
@@ -123,6 +126,10 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                     {userUnpaid.length > 0 && (
                         <p>Please note: once paid for, a booking cannot be cancelled and refunds
                             cannot be given.</p>
+                    )}
+                    {(now > nextThurs && session && session.max_count > 0) && (
+                        <p>Booking is now closed. Please ensure that any unpaid bookings are
+                            completed as soon as possible.</p>
                     )}
                 </div>
             )}
@@ -139,6 +146,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             updatePane={updateBookings}
                             date={nextSat}
                             max_count={session.max_count}
+                            bookingAvailable={now < nextThurs}
                         />
                     ))}
                 </>

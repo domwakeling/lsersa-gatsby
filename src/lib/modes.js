@@ -27,6 +27,11 @@ const USER_MODES = {
     MANAGING_DETAILS: 2
 }
 
+const MANAGE_MODES = {
+    LIST: 0,
+    DETAIL: 1
+}
+
 const COMPLETING_MODES = {
     LOADING: 0,
     INVALID_TOKEN: 1,
@@ -39,6 +44,7 @@ const COMPLETING_MODES = {
 export {
     ADMIN_MODES,
     COMPLETING_MODES,
+    MANAGE_MODES,
     MODES,
     USER_MODES
 }

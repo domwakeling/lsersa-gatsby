@@ -13,9 +13,11 @@ const ManageSessions = ({ displayMessage }) => {
         if (res.status === 200) {
             const data = await res.json();
             setSessions(data.sessions);
+            setAddingSession(false);
         } else {
             // likely status 400, but error regardless
-            setSessions([])
+            setSessions([]);
+            setAddingSession(false);
         }
     }
 
