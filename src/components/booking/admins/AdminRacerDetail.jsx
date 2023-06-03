@@ -7,6 +7,7 @@ import ClubSelection from "../elements/ClubSelection";
 import DateField from "../elements/DateField";
 import parseISO from 'date-fns/parseISO';
 import TwoSegment from "../elements/TwoSegment";
+import { STYLES } from "../../../lib/constants";
 
 const AdminRacerDetail = ({
     racer,
@@ -108,6 +109,7 @@ const AdminRacerDetail = ({
                     value={racerFirstName}
                     setValue={setRacerFirstName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <TextField
                     label="last name"
@@ -115,13 +117,15 @@ const AdminRacerDetail = ({
                     value={racerLastName}
                     setValue={setRacerLastName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
-                <div style={ checkEmail(racerEmail) ? {} : {color: "red"}}>
+                <div style={ checkEmail(racerEmail) ? {} : STYLES.redText}>
                     <EmailField 
                         label="account email"
                         placeholder="email"
                         value={racerEmail}
                         setValue={setRacerEmail}
+                        emailValid={racerEmailValid}
                         setEmailValid={setRacerEmailValid}
                         checkEnterKey={checkEnterKey}
                     />
@@ -135,6 +139,7 @@ const AdminRacerDetail = ({
                         label="date of birth"
                         value={dob}
                         setValue={setDob}
+                        required={true}
                     />
                 </div>
                 <ClubSelection
@@ -188,7 +193,8 @@ const AdminRacerDetail = ({
                 {isDeleting ? "Confirm" : "Delete"}
             </button>
             <button
-                disabled={!racerEmailValid || !checkEmail(racerEmail)}
+                disabled={(racerFirstName === '') || (racerLastName === '') || !genderId ||
+                !dob || !racerEmailValid || !checkEmail(racerEmail)}
                 onClick={handleSubmit}
             >
                 Update

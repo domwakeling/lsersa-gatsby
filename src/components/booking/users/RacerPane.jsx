@@ -128,6 +128,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 setValue={setFirstName}
                 checkEnterKey={() => { }}
                 disabled={!editable}
+                required={true}
             />
             <TextField
                 label="last name"
@@ -136,6 +137,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 setValue={setLastName}
                 checkEnterKey={() => { }}
                 disabled={!editable}
+                required={true}
             />
             <div className='date-selection'>
                 <DateField
@@ -143,6 +145,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                     value={dob}
                     setValue={setDob}
                     disabled={!editable}
+                    required={true}
                 />
             </div>
             <GenderSelection

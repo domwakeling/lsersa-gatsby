@@ -13,10 +13,17 @@ const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'September',
     'October', 'November', 'December'];
 
+const STYLES = {
+    redText: {
+        color: "red"
+    }
+}
+
 module.exports = {
     MESSAGE_CLASSES,
     MESSAGE_TIME,
     SESSION_MAX,
     WEEKDAYS,
-    MONTHS
+    MONTHS,
+    STYLES
 }

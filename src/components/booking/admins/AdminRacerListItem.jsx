@@ -19,6 +19,7 @@ const AdminRacerListItem = ({ racer, setDetailRacerId }) => {
                 <EmailField
                     label="user's email"
                     value={racer.email}
+                    emailValid={true}
                     disabled={true}
                 />
             </div>

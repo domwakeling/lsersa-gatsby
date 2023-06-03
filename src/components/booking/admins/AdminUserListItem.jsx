@@ -19,6 +19,7 @@ const AdminUserListItem = ({user, setDetailUserId }) => {
                 <EmailField
                     label="user email"
                     value={user.email}
+                    emailValid={true}
                     disabled={true}
                 />
             </div>

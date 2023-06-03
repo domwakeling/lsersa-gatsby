@@ -3,9 +3,12 @@ import EmailField from "../elements/EmailField";
 import PasswordField from "../elements/PasswordField";
 import TextField from "../elements/TextField";
 
-const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updating=false) => {
-    // for the secondary_ and emergency_ emails, it's acceptable that they're empty
-    const checkEmail = (email) => !email || (email === '' ) || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
+const UserDetail = ({
+    user,
+    emptyPasswordOk = false,
+    handleUserDetailSubmit,
+    updating = false
+}) => {
  
     const [userEmail, setUserEmail] = useState(user.email);
     const [userEmailValid, setUserEmailValid] = useState(true);
@@ -13,11 +16,11 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
     const [userLastName, setUserLastName] = useState(user.last_name || '');
     const [userMobile, setUserMobile] = useState(user.mobile || '');
     const [secondEmail, setSecondEmail] = useState(user.secondary_email || '');
-    const [secondEmailValid, setSecondEmailValid] = useState(checkEmail(user.secondary_email));
+    const [secondEmailValid, setSecondEmailValid] = useState(true);
     const [secondName, setLastName] = useState(user.secondary_name || '');
     const [secondMobile, setSecondMobile] = useState(user.secondary_mobile || '');
     const [emergencyEmail, setEmergencyEmail] = useState(user.emergency_email || '');
-    const [emergencyEmailValid, setEmergencyEmailValid] = useState(checkEmail(user.emergency_email));
+    const [emergencyEmailValid, setEmergencyEmailValid] = useState(true);
     const [emergencyName, setEmergencyName] = useState(user.emergency_name || '');
     const [emergencyMobile, setEmergencyMobile] = useState(user.emergency_mobile || '');
     const [address1, setAddress1] = useState(user.address_1 || '');
@@ -59,6 +62,16 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
         }
     };
 
+    const copyDetails = (e) => {
+        e.preventDefault();
+        let newName = userFirstName + ( userFirstName !== '' && userLastName !== '' ? ' ' : '');
+        newName = newName + userLastName;
+        setEmergencyName(newName);
+        setEmergencyEmail(userEmail);
+        setEmergencyMobile(userMobile);
+        setEmergencyEmailValid(userEmailValid);
+    }
+
     return (
         <div className="user-form">
             <h2 className="as-h3">Your details</h2>
@@ -69,6 +82,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={userFirstName}
                     setValue={setUserFirstName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <TextField
                     label="Last Name"
@@ -76,12 +90,14 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={userLastName}
                     setValue={setUserLastName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <EmailField
                     label="Email"
                     placeholder="email"
                     value={userEmail}
                     setValue={setUserEmail}
+                    emailValid={userEmailValid}
                     setEmailValid={setUserEmailValid}
                     checkEnterKey={checkEnterKey}
                 />
@@ -97,12 +113,14 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={password1}
                     setValue={setPassword1}
                     checkEnterKey={checkEnterKey}
+                    required={!updating}
                 />
                 <PasswordField
                     label="Confirm Password"
                     value={password2}
                     setValue={setPassword2}
                     checkEnterKey={checkEnterKey}
+                    required={!updating || (password1 !== password2)}
                 />
                 <TextField
                     label="Address 1"
@@ -124,6 +142,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={city}
                     setValue={setCity}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <TextField
                     label="Postcode"
@@ -134,15 +153,24 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                 />
             </div>
             {updating && (
-                <p><i>To  update password, complete the fields above, otherwise you do not need
-                    to re-enter your password to update other details.</i></p>
+                <p><i>To  update password, complete the fields above, otherwise password is not
+                    required.</i></p>
             )}
             
             <hr/>
 
+            <button
+                style={{float: "right"}}
+                disabled={((userFirstName === '') && (userLastName === '')) || (userMobile === '') ||
+                        (userEmail === '') || !userEmailValid}
+                onClick={copyDetails}
+            >
+                same as above
+            </button>
             <h2 className="as-h3">Emergency contact</h2>
             <p>Please complete this <b>even if</b> the details are the same as for the account
                 holder.</p>
+            
             <div className="user-form-columns">
                 <TextField
                     label="Name"
@@ -150,15 +178,16 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={emergencyName}
                     setValue={setEmergencyName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <EmailField
                     label="Email"
                     placeholder="email"
                     value={emergencyEmail}
                     setValue={setEmergencyEmail}
+                    emailValid={emergencyEmailValid}
                     setEmailValid={setEmergencyEmailValid}
                     checkEnterKey={checkEnterKey}
-                    emptyOk={true}
                 />
                 <TextField
                     label="Mobile"
@@ -166,6 +195,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     value={emergencyMobile}
                     setValue={setEmergencyMobile}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />            
             </div>
             <hr />
@@ -187,6 +217,7 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
                     placeholder="email"
                     value={secondEmail}
                     setValue={setSecondEmail}
+                    emailValid={secondEmailValid}
                     setEmailValid={setSecondEmailValid}
                     checkEnterKey={checkEnterKey}
                     emptyOk={true}
@@ -201,8 +232,11 @@ const UserDetail = ({user, emptyPasswordOk=false, handleUserDetailSubmit}, updat
             </div>
             <br />
             <button
-                disabled={!userEmailValid || !secondEmailValid || !emergencyEmailValid ||
-                    (emergencyMobile === '') || (password1 !== password2) || (!emptyPasswordOk && password1 === '')}
+                disabled={(userFirstName === '') || (userLastName === '') || !userEmailValid ||
+                    (userEmail === '') || !secondEmailValid || !emergencyEmailValid ||
+                    (emergencyEmail === '') || (emergencyMobile === '') || (city === '') ||
+                    (emergencyName === '') || (password1 !== password2) ||
+                    (!emptyPasswordOk && password1 === '')}
                 onClick={handleSubmit}
             >
                 Update

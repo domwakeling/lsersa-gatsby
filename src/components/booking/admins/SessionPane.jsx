@@ -156,6 +156,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
                     value={date}
                     setValue={setDate}
                     disabled={!editable}
+                    required={true}
                 />
             </div>
             <div className="racer-limit">
@@ -166,6 +167,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
                     setValue={setMaxCount}
                     checkEnterKey={() => { }}
                     disabled={!editable}
+                    required={true}
                 />
             </div>
             {!editing ? (
@@ -184,7 +186,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
             <button
                 className="club-button"
                 onClick={buttonHandler}
-                disabled={editable && (date ==='' || !date)}
+                disabled={editable && (date ==='' || !date || !maxCount)}
             >
                 {editable ? "save" : (isDeleting ? "cancel" : "edit")}
             </button>

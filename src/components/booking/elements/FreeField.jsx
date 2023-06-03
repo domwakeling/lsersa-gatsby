@@ -1,6 +1,6 @@
 import React from "react";
 
-const FreeField = ({ label, value, setValue, disabled=false }) => {
+const FreeField = ({ label, value, setValue, disabled = false }) => {
 
     const textHandler = (e) => {
         e.preventDefault();

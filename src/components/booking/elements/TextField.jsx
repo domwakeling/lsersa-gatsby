@@ -1,6 +1,15 @@
 import React from "react";
+import { STYLES } from "../../../lib/constants";
 
-const TextField = ({ label, placeholder, value, setValue, checkEnterKey, disabled}) => {
+const TextField = ({
+    label,
+    placeholder,
+    value,
+    setValue,
+    checkEnterKey,
+    disabled,
+    required = false
+}) => {
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -8,9 +17,10 @@ const TextField = ({ label, placeholder, value, setValue, checkEnterKey, disable
     }
 
     return (
-        <label>
-            {label}
+        <label style={(required && value === '') ? STYLES.redText : {}}>
+            {label}{required ? "*" : ""}
             <input
+                style={(required && value === '') ? STYLES.redText : {}}
                 type="text"
                 onChange={handleChange}
                 onKeyDown={checkEnterKey}

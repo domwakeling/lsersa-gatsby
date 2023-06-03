@@ -1,14 +1,16 @@
 import React from "react";
+import { STYLES } from "../../../lib/constants";
 
 const EmailField = ({
     label,
     placeholder,
     value,
     setValue,
+    emailValid,
     setEmailValid,
     checkEnterKey,
-    emptyOk=false,
-    disabled=false
+    emptyOk = false,
+    disabled = false,
 }) => {
 
     const handleChange = (e) => {
@@ -24,9 +26,10 @@ const EmailField = ({
     }
 
     return (
-        <label>
-            {label}
+        <label style={((!emptyOk && value === '') || !emailValid) ? STYLES.redText : {}}>
+            {label}{!emptyOk ? "*" : ""}
             <input
+                style={((!emptyOk && value === '') || !emailValid) ? STYLES.redText : {}}
                 type="email"
                 onChange={handleChange}
                 onKeyDown={checkEnterKey}

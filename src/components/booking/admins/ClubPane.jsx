@@ -139,6 +139,7 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
                 setValue={setClubName}
                 checkEnterKey={() =>{}}
                 disabled={!editable}
+                required={true}
             />
             <TextField
                 label="contact name"
@@ -153,6 +154,7 @@ const ClubPane = ({ club, editing=false, displayMessage, updatePane }) => {
                 placeholder="club name"
                 value={clubEmail}
                 setValue={setClubEmail}
+                emailValid={emailValid}
                 setEmailValid={setEmailValid}
                 checkEnterKey={() => { }}
                 emptyOk={true}

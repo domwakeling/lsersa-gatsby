@@ -11,20 +11,18 @@ const AdminUserDetail = ({
     handleUserDetailCancel,
     handleUserDetailDelete
 }) => {
-    // for the secondary_ and emergency_ emails, it's acceptable that they're empty
-    const checkEmail = (email) => !email || (email === '') || /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email);
-
+    
     const [userEmail, setUserEmail] = useState(user.email);
     const [userEmailValid, setUserEmailValid] = useState(true);
     const [userFirstName, setUserFirstName] = useState(user.first_name || '');
     const [userLastName, setUserLastName] = useState(user.last_name || '');
     const [userMobile, setUserMobile] = useState(user.mobile || '');
     const [secondEmail, setSecondEmail] = useState(user.secondary_email || '');
-    const [secondEmailValid, setSecondEmailValid] = useState(checkEmail(user.secondary_email));
+    const [secondEmailValid, setSecondEmailValid] = useState(true);
     const [secondName, setLastName] = useState(user.secondary_name || '');
     const [secondMobile, setSecondMobile] = useState(user.secondary_mobile || '');
     const [emergencyEmail, setEmergencyEmail] = useState(user.emergency_email || '');
-    const [emergencyEmailValid, setEmergencyEmailValid] = useState(checkEmail(user.emergency_email));
+    const [emergencyEmailValid, setEmergencyEmailValid] = useState(true);
     const [emergencyName, setEmergencyName] = useState(user.emergency_name || '');
     const [emergencyMobile, setEmergencyMobile] = useState(user.emergency_mobile || '');
     const [address1, setAddress1] = useState(user.address_1 || '');
@@ -89,6 +87,16 @@ const AdminUserDetail = ({
         }
     };
 
+    const copyDetails = (e) => {
+        e.preventDefault();
+        let newName = userFirstName + (userFirstName !== '' && userLastName !== '' ? ' ' : '');
+        newName = newName + userLastName;
+        setEmergencyName(newName);
+        setEmergencyEmail(userEmail);
+        setEmergencyMobile(userMobile);
+        setEmergencyEmailValid(userEmailValid);
+    }
+
     return (
         <div className="user-form">
             <h2 className="as-h3">User's details</h2>
@@ -99,6 +107,7 @@ const AdminUserDetail = ({
                     value={userFirstName}
                     setValue={setUserFirstName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <TextField
                     label="Last Name"
@@ -106,12 +115,14 @@ const AdminUserDetail = ({
                     value={userLastName}
                     setValue={setUserLastName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <EmailField
                     label="Email"
                     placeholder="email"
                     value={userEmail}
                     setValue={setUserEmail}
+                    emailValid={userEmailValid}
                     setEmailValid={setUserEmailValid}
                     checkEnterKey={checkEnterKey}
                 />
@@ -142,6 +153,7 @@ const AdminUserDetail = ({
                     value={city}
                     setValue={setCity}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <TextField
                     label="Postcode"
@@ -153,6 +165,14 @@ const AdminUserDetail = ({
             </div>
             <hr />
 
+            <button
+                style={{ float: "right" }}
+                disabled={((userFirstName === '') && (userLastName === '')) || (userMobile === '') ||
+                    (userEmail === '') || !userEmailValid}
+                onClick={copyDetails}
+            >
+                same as above
+            </button>
             <h2 className="as-h3">Emergency contact</h2>
             <p>Please complete this <b>even if</b> the details are the same as for the account
                 holder.</p>
@@ -163,15 +183,17 @@ const AdminUserDetail = ({
                     value={emergencyName}
                     setValue={setEmergencyName}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
                 <EmailField
                     label="Email"
                     placeholder="email"
                     value={emergencyEmail}
                     setValue={setEmergencyEmail}
+                    emailValid={emergencyEmailValid}
                     setEmailValid={setEmergencyEmailValid}
                     checkEnterKey={checkEnterKey}
-                    emptyOk={true}
+                    emptyOk={false}
                 />
                 <TextField
                     label="Mobile"
@@ -179,6 +201,7 @@ const AdminUserDetail = ({
                     value={emergencyMobile}
                     setValue={setEmergencyMobile}
                     checkEnterKey={checkEnterKey}
+                    required={true}
                 />
             </div>
             <hr />
@@ -197,6 +220,7 @@ const AdminUserDetail = ({
                     placeholder="email"
                     value={secondEmail}
                     setValue={setSecondEmail}
+                    emailValid={secondEmailValid}
                     setEmailValid={setSecondEmailValid}
                     checkEnterKey={checkEnterKey}
                     emptyOk={true}
@@ -237,8 +261,10 @@ const AdminUserDetail = ({
                 {isDeleting ? "Confirm" : "Delete"}
             </button>
             <button
-                disabled={!userEmailValid || !secondEmailValid || !emergencyEmailValid ||
-                    (emergencyMobile === '')}
+                disabled={(userFirstName === '') || (userLastName === '') || !userEmailValid ||
+                    (userEmail === '') || !secondEmailValid || !emergencyEmailValid ||
+                    (emergencyEmail === '') || (emergencyMobile === '') || (city === '') ||
+                    (emergencyName === '')}
                 onClick={handleSubmit}
             >
                 Update

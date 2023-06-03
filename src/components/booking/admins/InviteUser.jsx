@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import EmailField from "../elements/EmailField";
-import { MESSAGE_CLASSES, MESSAGE_TIME } from "../../../lib/constants";
+import { MESSAGE_CLASSES } from "../../../lib/constants";
 
 const InviteUser = ({ displayMessage }) => {
     const [email, setEmail] = useState('');
@@ -47,6 +47,7 @@ const InviteUser = ({ displayMessage }) => {
                     value={email}
                     setValue={setEmail}
                     placeholder="email"
+                    emailValid={emailValid}
                     setEmailValid={setEmailValid}
                     checkEnterKey={checkEnterKey}
                 />
