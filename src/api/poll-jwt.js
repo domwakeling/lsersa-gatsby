@@ -33,13 +33,15 @@ export default async function handler(req, res) {
                     res.status(200).json(results.rows[0]);
                     return;
                 } else {
-                    res.clearCookie('lsersaUserToken', { path: '/' });
+                    // set max-age = 0 to effectively delete the cookie
+                    res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
                     res.status(204).json({ message: "No valid id found" });
                     return;    
                 }
 
             } else {// there was no identifier so token invalid ... clear the cookie to be sure
-                res.clearCookie('lsersaUserToken', { path: '/' });
+                // set max-age = 0 to effectively delete the cookie
+                res.setHeader("Set-Cookie", `lsersaUserToken=null; Max-Age=0; Path=/`);
                 res.status(204).json({ message: "No id found" });
                 return;    
             }
