@@ -22,7 +22,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
     const nextThurs = addDays(nextSat, -2);
     const now = new Date();
 
-    const displayDate = (date) => `${WEEKDAYS[date.getDay()]} ${date.getDay()} ${MONTHS[date.getMonth()]}`
+    const displayDate = (date) => `${WEEKDAYS[date.getDay()]} ${date.getDate()} ${MONTHS[date.getMonth()]}`
 
     const systemDate = (date) => date.toISOString().split("T")[0];
 
