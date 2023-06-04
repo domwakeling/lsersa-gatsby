@@ -1,15 +1,15 @@
 import React from "react";
 
-const FreeField = ({ label, value, setValue, disabled = false }) => {
+const FreeField = ({ label, value, setValue, disabled = false, limited = true }) => {
 
     const textHandler = (e) => {
         e.preventDefault();
-        setValue(e.target.value.substring(0, 255));
+        setValue(limited ? e.target.value.substring(0, 255) : e.target.value);
     }
 
     return (
         <label>
-            {label} {value.length}/255
+            {label} {limited && (`${value.length}/255`)}
             <textarea
                 value={value}
                 onChange={textHandler}

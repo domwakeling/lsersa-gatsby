@@ -405,3 +405,16 @@ button.cancel-button {
         margin: 0;
     }
 }
+
+.email-para-container {
+    textarea {
+        display: block;
+        width: 90%;
+        background-color: $color-c900;
+        resize: none;
+        padding: 0.1rem 1.0rem;
+        border-radius: 0.5rem;
+        margin-bottom: 0.75rem;
+        height: 10.0rem;
+    }
+}

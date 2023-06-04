@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import AdminManageRacers from "./admins/AdminManageRacers";
 import AdminManageUsers from "./admins/AdminManageUsers";
+import AdminSendEmail from "./admins/AdminSendEmail";
 import InviteUser from "./admins/InviteUser";
 import ManageClubs from "./admins/ManageClubs";
 import ManageRacers from "./users/ManageRacers";
@@ -39,6 +40,10 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
         {
             text: "manage sessions",
             mode: ADMIN_MODES.MANAGE_SESSION
+        },
+        {
+            text: "send email",
+            mode: ADMIN_MODES.SEND_EMAIL
         },
         {
             text: "invite user",
@@ -162,6 +167,9 @@ const AdminDashboard = ({ user, setUser, displayMessage }) => {
                     <AdminManageRacers
                         displayMessage={displayMessage}
                     />
+                )}
+                {(adminMode === ADMIN_MODES.SEND_EMAIL) && (
+                    <AdminSendEmail displayMessage={displayMessage} />
                 )}
             </div>
             <br/>

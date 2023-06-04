@@ -2,7 +2,15 @@ import { sendEmail } from './send_email';
 import { htmlBlank } from './email_blank';
 
 // async..await is not allowed in global scope, must use a wrapper
-const sendShortEmail = async (emails, subject, headerText, bodyTextSent, plainBodyText=bodyTextSent) => {
+const sendLongEmail = async (emails, subject, headerText, bodyArrSent, plainBodyArr = bodyArrSent) => {
+
+    const bodyElements = bodyArrSent.map(item => (
+        `<tr>
+            <td class="row" style="padding:0;padding-bottom:16px;">
+                ${item}
+            </td>
+        </tr>`
+    )).join('\n');
 
     const bodyText = `
         <td style="padding:0;">
@@ -14,11 +22,7 @@ const sendShortEmail = async (emails, subject, headerText, bodyTextSent, plainBo
                         </h2>
                     </td>
                 </tr>
-                <tr>
-                    <td class="row" style="padding:0;padding-bottom:16px;">
-                        ${bodyTextSent}
-                    </td>
-                </tr>
+                ${bodyElements}
                 <tr>
                     <td class="row" style="padding:0;padding-bottom:16px;padding-top:32px">
                         <img style="width: 100%" src="https://lsersa.org/images/sponsor_banner_1200.png">
@@ -28,10 +32,12 @@ const sendShortEmail = async (emails, subject, headerText, bodyTextSent, plainBo
         </td>
     `
 
+    const plainElements = plainBodyArr.join("\n\n");
+
     let info = await sendEmail(
         emails,
         subject,
-        `${headerText}\n\n${plainBodyText}`,
+        `${headerText}\n\n${plainElements}`,
         htmlBlank.replace("PLACEHOLDER_SECTION", bodyText)
     )
 
@@ -39,5 +45,5 @@ const sendShortEmail = async (emails, subject, headerText, bodyTextSent, plainBo
 }
 
 export {
-    sendShortEmail
+    sendLongEmail
 }
