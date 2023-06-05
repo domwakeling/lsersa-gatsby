@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoadingSpinner from "../elements/LoadingSpinner";
 import AdminUserListItem from "./AdminUserListItem";
 import AdminUserDetail from "./AdminUserDetail";
+import { json2csv } from "../../../lib/json2csv";
 import { MESSAGE_CLASSES } from "../../../lib/constants";
 import { MANAGE_MODES } from "../../../lib/modes";
 
@@ -117,8 +118,39 @@ const AdminManageUsers = ({ displayMessage }) => {
         }
     }
 
+    const downloadHandler = async (e) => {
+        e.preventDefault();
+        const res = await fetch(`/api/admin/all-info`);
+        const data = await res.json();
+        if (res.status === 200) {
+            // data into csv
+            const csv = json2csv(data);
+            // create blob
+            const blob = new Blob([csv], { type: 'text/csv' });
+            // create object for downloading url
+            const url = window.URL.createObjectURL(blob)
+            // create a virtual anchor tag
+            const a = document.createElement('a')
+            // pass the url to virtual anchor
+            a.setAttribute('href', url)
+            // set the attributes and virtually click
+            a.setAttribute('download', `complete-account-info.csv`);
+            a.click();
+            // confirm to user
+            displayMessage(MESSAGE_CLASSES.SUCCESS, 'Downloaded')
+        } else {
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
+        }
+    }
+
     return (
         <>
+            <button
+                className="club-add-button"
+                onClick={downloadHandler}
+            >
+                Download All Info
+            </button>
             <h3>Admin Manage Users</h3>
             {isLoading && <LoadingSpinner />}
             {mode === MANAGE_MODES.LIST && !isLoading && (

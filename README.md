@@ -218,6 +218,7 @@ the website (provided as Gatsby functions). The database structure is:
 | ---            | :---:  |   ---
 | `api/admin/`   |        |
 | `.../admin-new-account` | `POST` | Called from admin pane invite new email
+| `.../all-info` | `GET`  | Gets all users and racers in large table
 | `.../bookings` |        |
 | `.../.../[date]`| `GET` | Gets detailed list of bookings for that date
 | `.../clubs`    | `GET`  | Gets all rows from the `clubs` table
