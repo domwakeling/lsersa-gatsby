@@ -44,6 +44,11 @@ button.tab-button {
         border: 1px solid $color-p300;
         background-color: lighten($color-p900, 2.5%);
 
+        &.old {
+            border-color: red;
+            background-color: lighten($color-light-red, 11%);
+        }
+
         input[type=text], input[type=email] {
             width: 90%;
         }

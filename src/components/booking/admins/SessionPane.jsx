@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DateField from "../elements/DateField";
 import FreeField from "../elements/FreeField";
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
 import { json2csv } from "../../../lib/json2csv";
@@ -132,6 +133,10 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
         }
     }
 
+    const today = new Date();
+    const daysBetween = differenceInCalendarDays(today, date);
+    const classNames = "admin-pane" + (daysBetween > 28 ? " old" : "");
+
     const downloadHandler = async (e) => {
         e.preventDefault();
         const res = await fetch(`/api/admin/bookings/${session.date}`);
@@ -158,7 +163,9 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
     }
 
     return (
-        <div className="admin-pane">
+        <div className={classNames}>
+            {classNames}
+            <br/>
             <div className='session-date'>
                 <DateField
                     label="date"

@@ -1,6 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
 const config = {
     fetch,
@@ -152,12 +153,42 @@ export default async function handler(req, res) {
             const { date } = req.body;
             const dateString = date.split("T")[0];
 
+            // check days to session
+            const sessionDate = new Date(date);
+            const today = new Date();
+            const daysBetween = differenceInCalendarDays(today, sessionDate);
+            
             const conn = await connect(config);
+
+            // if > 27 days old, can delete everything (test in the component is >28, extra day )
+            if (daysBetween > 27) {
+                const _ = await conn.transaction(async (tx) => {
+
+                    const tryBookingsDelete = await tx.execute(
+                        'DELETE FROM bookings WHERE session_date = ?',
+                        [dateString]
+                    );
+
+                    const trySessionDelete = await tx.execute(
+                        'DELETE FROM sessions WHERE date = ?',
+                        [dateString]
+                    );
+
+                    return [
+                        tryBookingsDelete,
+                        trySessionDelete
+                    ]
+                });
+
+                res.status(200).json({message: 'Successfully deleted session'});
+                return;
+            }
+
 
             // check there are no racers booked on that session
             const noRacers = await checkSessionHasNoRacers(conn, dateString);
             if (!noRacers) {
-                res.status(400).json({ message: 'There are racers booked on the session, unable to change date' });
+                res.status(400).json({ message: 'There are racers booked on the session, unable to delete it' });
                 return;
             }
 
