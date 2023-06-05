@@ -243,9 +243,17 @@ button.cancel-button {
         border-radius: 0.25rem;
         margin-bottom: 0.75rem;
         padding: 0.3rem 1.0rem 0;
+        min-height: 4.0rem;
         &:disabled {
             background-color: $color-g900;
             border: 1px solid $color-p300;
+            /* for Firefox */
+            -moz-appearance: none;
+            /* for Safari, Chrome, Opera */
+            -webkit-appearance: none;
+            /* fallback */
+            appearance: none;
+            padding-right: 3.0rem;
         }
     }
 }
@@ -410,7 +418,6 @@ button.cancel-button {
     textarea {
         display: block;
         width: 90%;
-        background-color: $color-c900;
         resize: none;
         padding: 0.1rem 1.0rem;
         border-radius: 0.5rem;

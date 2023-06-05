@@ -9,7 +9,7 @@ import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
 const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => {
     const [date, setDate] = useState(session.date ? parseISO(session.date + "Z") : null);
     const [message, setMessage] = useState(session.message || '');
-    const [maxCount, setMaxCount] = useState(session.max_count || SESSION_MAX);
+    const [maxCount, setMaxCount] = useState((!session.max_count && session.max_count !== 0) ? SESSION_MAX : session.max_count);
     const [editable, setEditable] = useState(editing);
     const [isDeleting, setIsDeleting] = useState(false);
 

@@ -40,7 +40,7 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
     textarea {
         display: block;
         width: 90%;
-        background-color: $color-c900;
+        background-color: white;
         resize: none;
         padding: 0.1rem 1.0rem;
         border-radius: 0.5rem;
@@ -53,5 +53,12 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
 
     @include for-phone-only() {
         grid-template-columns: 1fr;
+    }
+}
+
+textarea {
+    background-color: white !important;
+    &:disabled {
+        background-color: $color-g900 !important; 
     }
 }

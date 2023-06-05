@@ -29,7 +29,11 @@ const ManageRacers = ({ racers, setRacers, displayMessage, user }) => {
         if (res.status === 200) {
             const data = await res.json();
             setRacers(data.racers);
-            setAddingRacer(false);
+            if (data.racers.length === 0) {
+                setAddingRacer(true);
+            } else {
+                setAddingRacer(false);
+            }
         }
     }
 

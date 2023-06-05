@@ -149,6 +149,12 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             bookingAvailable={now < nextThurs}
                         />
                     ))}
+                    {(racers.length === 0) && (
+                        <div className="advice-box">
+                            <p>There are no racers on your account at present. Please add
+                                racers on the <b>"manage racers"</b> tab.</p>
+                        </div>
+                    )}
                 </>
             )}
         </>

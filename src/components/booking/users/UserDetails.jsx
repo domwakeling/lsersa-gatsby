@@ -108,20 +108,6 @@ const UserDetail = ({
                     setValue={setUserMobile}
                     checkEnterKey={checkEnterKey}
                 />
-                <PasswordField
-                    label="Password"
-                    value={password1}
-                    setValue={setPassword1}
-                    checkEnterKey={checkEnterKey}
-                    required={!updating}
-                />
-                <PasswordField
-                    label="Confirm Password"
-                    value={password2}
-                    setValue={setPassword2}
-                    checkEnterKey={checkEnterKey}
-                    required={!updating || (password1 !== password2)}
-                />
                 <TextField
                     label="Address 1"
                     placeholder="address 1"
@@ -152,8 +138,26 @@ const UserDetail = ({
                     checkEnterKey={checkEnterKey}
                 />
             </div>
+            <hr/>
+            <h2 className="as-h3">Security</h2>
+            <div className="user-form-columns">
+                <PasswordField
+                    label="Password"
+                    value={password1}
+                    setValue={setPassword1}
+                    checkEnterKey={checkEnterKey}
+                    required={!updating}
+                />
+                <PasswordField
+                    label="Confirm Password"
+                    value={password2}
+                    setValue={setPassword2}
+                    checkEnterKey={checkEnterKey}
+                    required={!updating || (password1 !== password2)}
+                />
+            </div>
             {updating && (
-                <p><i>To  update password, complete the fields above, otherwise password is not
+                <p><i>To  update password, complete the fields above; otherwise password is not
                     required.</i></p>
             )}
             
