@@ -241,6 +241,8 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../users`    | `GET`  | Get all users
 | `.../users`    | `PUT`  | Update user
 | `.../users`    |`DELETE`| Delete user (protected if any racers)
+| `api/automation`|       |
+| `.../delete-old-tokens` | `POST` | Deletes token with past expiry dates
 | `api/get-slopes` |      |
 | `...[postcode]` | `GET` | Returns two slopes nearest the postcode
 | `api/stripe`   |        |

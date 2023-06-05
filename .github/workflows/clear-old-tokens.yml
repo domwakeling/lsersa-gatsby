@@ -1,0 +1,12 @@
+name: Scheduled Token Clearance
+
+on:
+    schedule:
+    -   cron: 15 4 * * 2,4,6
+    # runs at 04:15 on Tuesday, Thursday, and Saturday
+
+jobs:
+    delete_old_tokens:
+        runs-on: ubuntu-latest
+        steps:
+        -   run: curl -X POST https://lsersa.org/api/automation/delete-old-tokens
