@@ -153,7 +153,6 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 setGenderId={setGenderId}
                 disabled={!editable}
             />
-            {clubId}
             <ClubSelection
                 clubId={clubId}
                 setClubId={setClubId}

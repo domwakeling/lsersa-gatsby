@@ -36,6 +36,15 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
     }
 
     const updateSession = async () => {
+        const newDateStr = date.toISOString().split("T")[0];
+        if ((newDateStr !== session.date) && (parseInt(session['count(racer_id)']) > 0)) {
+            displayMessage(MESSAGE_CLASSES.WARN, "Can't change date of a session once bookings have started");
+            return false;
+        }
+        if (maxCount < parseInt(session['count(racer_id)'])) {
+            displayMessage(MESSAGE_CLASSES.WARN, "Racer limit can't be less than current bookings");
+            return false;
+        }
         const body = {
             old_date: session.date,
             date,
