@@ -1,6 +1,12 @@
 import React from "react";
 
-const FreeField = ({ label, value, setValue, disabled = false, limited = true }) => {
+const FreeField = ({ label,
+    value,
+    setValue,
+    disabled = false,
+    limited = true,
+    singleRow = false
+}) => {
 
     const textHandler = (e) => {
         e.preventDefault();
@@ -14,6 +20,7 @@ const FreeField = ({ label, value, setValue, disabled = false, limited = true })
                 value={value}
                 onChange={textHandler}
                 disabled={disabled}
+                className={singleRow ? "single-row" : ""}
             />
         </label>
     )

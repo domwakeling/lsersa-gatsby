@@ -8,13 +8,19 @@ const AdminRacerListItem = ({ racer, setDetailRacerId }) => {
         e.preventDefault();
         setDetailRacerId(racer.racer_id);
     }
+
+    let nameStr = '' + ( racer.first_name ? racer.first_name : '' );
+    nameStr = nameStr + (racer.first_name && racer.last_name ? ' ' : '');
+    nameStr = nameStr + (racer.last_name ? racer.last_name : '');
+
     return (
         <div className="admin-pane">
             <div className="list-pane-content-holder">
                 <TextField
                     label="racer name"
-                    value={`${racer.first_name} ${racer.last_name}`}
+                    value={nameStr}
                     disabled={true}
+                    required={true}
                 />
                 <EmailField
                     label="user's email"

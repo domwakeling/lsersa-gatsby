@@ -57,7 +57,7 @@ div.postcode-form, div.booking-form, div.user-form, div.button-float-right {
 }
 
 textarea {
-    background-color: white !important;
+    background-color: $color-c900 !important;
     &:disabled {
         background-color: $color-g900 !important; 
     }

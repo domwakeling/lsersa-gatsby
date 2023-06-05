@@ -8,13 +8,19 @@ const AdminUserListItem = ({user, setDetailUserId }) => {
         e.preventDefault();
         setDetailUserId(user.id);
     }
+
+    let nameStr = '' + (user.first_name ? user.first_name : '');
+    nameStr = nameStr + (user.first_name && user.last_name ? ' ' : '');
+    nameStr = nameStr + (user.last_name ? user.last_name : '');
+
     return (
         <div className="admin-pane">
             <div className="list-pane-content-holder">
                 <TextField
                     label="user name"
-                    value={`${user.first_name} ${user.last_name}`}
+                    value={nameStr}
                     disabled={true}
+                    required={true}
                 />
                 <EmailField
                     label="user email"

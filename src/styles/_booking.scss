@@ -419,9 +419,13 @@ button.cancel-button {
         display: block;
         width: 90%;
         resize: none;
-        padding: 0.1rem 1.0rem;
+        padding: 0.75rem 1.0rem 0.1rem;
         border-radius: 0.5rem;
         margin-bottom: 0.75rem;
         height: 10.0rem;
+
+        &.single-row {
+            height: 4.0rem;
+        }
     }
 }

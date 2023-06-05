@@ -54,7 +54,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 first_name: firstName,
                 last_name: lastName,
                 dob,
-                club_id: clubId,
+                club_id: clubId || null,
                 gender_id: genderId,
                 user_text: userText
             }
@@ -153,6 +153,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 setGenderId={setGenderId}
                 disabled={!editable}
             />
+            {clubId}
             <ClubSelection
                 clubId={clubId}
                 setClubId={setClubId}

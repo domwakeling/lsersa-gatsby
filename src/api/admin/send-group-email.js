@@ -28,6 +28,11 @@ export default async function handler(req, res) {
 
             const { textElements } = req.body;
             
+            const { subject } = textElements;
+            if (!subject || subject === '') {
+                res.status(400).json({message: "Cannot send an email with no subject"});
+                return;
+            }
             const htmlArray = [];
             const textArray = [];
 
@@ -77,7 +82,7 @@ export default async function handler(req, res) {
             const emails = Array.from(new Set([...userEmails, ...secondEmails]));
 
             // send the email
-            const _ = await sendLongEmail(emails, 'Saturday Training', 'Saturday Training', htmlArray, textArray);
+            const _ = await sendLongEmail(emails, subject, subject, htmlArray, textArray);
 
             res.status(200).json({ message: 'successfully sent email'});
             return;

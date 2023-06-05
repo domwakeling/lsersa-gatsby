@@ -49,7 +49,7 @@ const AdminRacerDetail = ({
             dob: dob ? dob.toISOString().split("T")[0] : null,
             gender_id: genderId,
             concession: concession ? 1 : 0,
-            club_id: clubId,
+            club_id: clubId || null,
             club_expiry: clubExpiry ? clubExpiry.toISOString().split("T")[0] : null,
             user_text: userText,
             admin_text: adminText,

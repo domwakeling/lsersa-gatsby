@@ -15,6 +15,7 @@ const AdminSendEmail = ({ displayMessage }) => {
     stdBullets = stdBullets + "Please only put your name down if you definitely want to train\n"
     stdBullets = stdBullets + "Payments should be made through the booking system."
 
+    const [subject, setSubject] = useState('Saturday Training');
     const [text1, setText1] = useState('Hi Everyone');
     const [text2, setText2] = useState('');
     const [text3, setText3] = useState('');
@@ -25,8 +26,13 @@ const AdminSendEmail = ({ displayMessage }) => {
 
     const clickHandler = async (e) => {
         e.preventDefault();
+        if (!subject || subject === '') {
+            displayMessage(MESSAGE_CLASSES.ALERT, "Please add a subject for the email")
+            return;
+        }
         const body = {
             textElements: {
+                subject,
                 text1,
                 text2,
                 text3,
@@ -62,10 +68,18 @@ const AdminSendEmail = ({ displayMessage }) => {
             
             <div className="email-para-container">
                 <FreeField
+                    label="subject"
+                    value={subject}
+                    setValue={setSubject}
+                    limited={false}
+                    singleRow={true}
+                />
+                <FreeField
                     label="salutation"
                     value={text1}
                     setValue={setText1}
                     limited={false}
+                    singleRow={true}
                 />
                 <FreeField
                     label="special if needed"
@@ -98,12 +112,14 @@ const AdminSendEmail = ({ displayMessage }) => {
                     value={text5}
                     setValue={setText5}
                     limited={false}
+                    singleRow={true}
                 />
                 <FreeField
                     label="name"
                     value={text6}
                     setValue={setText6}
                     limited={false}
+                    singleRow={true}
                 />
             </div>
         </>
