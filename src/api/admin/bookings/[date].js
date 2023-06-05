@@ -43,7 +43,9 @@ export default async function handler(req, res) {
                     emergency_name as '4_emergency_contact',
                     emergency_mobile as '5_emergency_mobile',
                     c.name as '6_club',
-                    g.name as '7_gender'
+                    g.name as '7_gender',
+                    email as '8_email',
+                    secondary_email as '9_secondary'
                 FROM bookings b
                 LEFT JOIN racers r ON b.racer_id = r.id
                 LEFT JOIN clubs c ON r.club_id = c.id

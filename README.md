@@ -231,6 +231,7 @@ the website (provided as Gatsby functions). The database structure is:
 | `.../requests` | `GET`  | Returns arrays of unvalidated users and racers
 | `.../requests` | `POST` | Validates a user or racer request
 | `.../requests` |`DELETE`| Rejects and deletes a user or racer request
+| `.../send-group-email`|`POST`| Triggers an email to all user email/secondary emails
 | `.../sessions` | `GET`  | Returns array of all sessions
 | `.../sessions` | `POST` | Add  new session
 | `.../sessions` | `PUT`  | Update a session
