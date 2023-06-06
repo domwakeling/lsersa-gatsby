@@ -29,8 +29,9 @@ const sendEmail = async (emails, subject, messageText, messageHTML) => {
 
     } catch (error) {
         
-        console.log(error.message);
+        console.error(error.message);
         return null;
+    }
 }
 
 export {
