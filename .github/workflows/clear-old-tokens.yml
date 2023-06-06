@@ -9,4 +9,4 @@ jobs:
     delete_old_tokens:
         runs-on: ubuntu-latest
         steps:
-        -   run: curl -X POST https://lsersa.org/api/automation/delete-old-tokens
+        -   run: curl -X -d {} POST https://lsersa.org/api/automation/delete-old-tokens
