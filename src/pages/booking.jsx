@@ -67,7 +67,7 @@ const BookingPage = () => {
         const res = await fetch(`/api/user/logout`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({}),
+            body: JSON.stringify({user_email: user.email}),
         });
         if (res.status !== 200) {
             const data = await res.json();
