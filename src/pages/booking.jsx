@@ -64,7 +64,11 @@ const BookingPage = () => {
 
     const logOutHandler = async (e) => {
         e.preventDefault();
-        const res = await fetch(`/api/user/logout`, { method: "POST" });
+        const res = await fetch(`/api/user/logout`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({}),
+        });
         if (res.status !== 200) {
             const data = await res.json();
             displayMessage(MESSAGE_CLASSES.WARN, data.message);
