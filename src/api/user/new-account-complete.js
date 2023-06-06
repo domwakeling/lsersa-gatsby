@@ -75,8 +75,11 @@ const verifyNewUserAccount = async (token, userData) => {
             params
         );
         
-        // delete the access token
-        const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
+        // delete the access token (and any redundant access tokens for that user)
+        const tryDeleteToken = await tx.execute(
+            `DELETE FROM tokens WHERE user_id = ? AND type_id = ?`,
+            [userData.id, tokenTypes.ACCOUNT_REQUEST]
+        );
         
         return {
             tryNewUser,

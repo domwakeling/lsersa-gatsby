@@ -41,8 +41,11 @@ const verifyNewUserAccount = async (token, id, password) => {
             params
         );
 
-        // delete the access token
-        const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
+        // delete all password-reset tokens for that user
+        const tryDeleteToken = await tx.execute(
+            `DELETE FROM tokens WHERE user_id = ? AND type_id = ?`,
+            [id, tokenTypes.PASSWORD_RESET]
+        );
 
         return {
             tryNewUser,
