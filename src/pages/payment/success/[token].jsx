@@ -7,9 +7,8 @@ import { COMPLETING_MODES } from "../../../lib/modes";
 const PaymentSuccess = ({ params }) => {
     const [mode, setMode] = useState(COMPLETING_MODES.LOADING);
 
-    // on load, check to see if the token is valid and if so set paid ...
+    // on load, check to see if the token is valid paymentPending token and if so set paid ...
     useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a token
         async function completePaymentForToken() {
             const res = await fetch(`/api/stripe/complete-payment`, {
                 method: "POST",

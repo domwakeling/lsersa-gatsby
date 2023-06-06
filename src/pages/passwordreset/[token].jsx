@@ -12,9 +12,8 @@ const ResetPassword = ({ params }) => {
 
     const token = params.token;
 
-    // on load, check to see if the token is valid and if so retrieve user info ...
+    // on load, check to see if the token is valid passwordReset and if so retrieve user info ...
     useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a token
         async function retrieveUserFromToken() {
             const res = await fetch(`/api/user/reset-password-complete/${token}/`);
             if (res.status === 200) {

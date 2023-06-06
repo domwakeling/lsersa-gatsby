@@ -16,16 +16,16 @@ export default async function handler(req, res) {
 
         try {
 
-            // check there's a token stored
-            const token = req.cookies.lsersaUserToken;
-            if (!token || token === undefined || token === null) {
+            // check there's a JWT stored
+            const userJWT = req.cookies.lsersaUserToken;
+            if (!userJWT || userJWT === undefined || userJWT === null) {
                 // error, most likely didn't find a cookie
                 res.status(204).json({ message: "Cookie not found" });
                 return;
             }
 
-            // check that the token is for admin
-            const hasAdmin = verifyUserHasAdminRole(token);
+            // check that the JWT is for admin
+            const hasAdmin = verifyUserHasAdminRole(userJWT);
             if (!hasAdmin) {
                 res.status(409).json({ message: "You are not authorised" });
                 return;

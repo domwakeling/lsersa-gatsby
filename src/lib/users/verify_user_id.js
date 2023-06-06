@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdentifierFromToken } from '../jwt-methods';
+import { getIdentifierFromJWT } from '../jwt-methods';
 
 const config = {
     fetch,
@@ -9,10 +9,10 @@ const config = {
     password: process.env.DATABASE_PASSWORD
 }
 
-const verifyIdMatchesToken = async (id, userToken) => {
+const veryIdMatchesJWT = async (id, userJWT) => {
 
     try {
-        const identifier = await getIdentifierFromToken(userToken);
+        const identifier = await getIdentifierFromJWT(userJWT);
 
         const conn = await connect(config);
         const foundUsers = await conn.execute(`
@@ -40,10 +40,10 @@ const verifyIdMatchesToken = async (id, userToken) => {
 }
 
 /* verifies that the supplied JWT contains a valid identifier; no checks on the user info */
-const verifyTokenIsValid = async (userToken) => {
+const verifyJWTIsValid = async (userJWT) => {
 
     try {
-        const identifier = await getIdentifierFromToken(userToken);
+        const identifier = await getIdentifierFromJWT(userJWT);
 
         const conn = await connect(config);
         const foundUsers = await conn.execute(`
@@ -55,7 +55,7 @@ const verifyTokenIsValid = async (userToken) => {
             return false;
         }
 
-        // the token matches a real identifier, all good
+        // the JWT matches a real identifier, all good
         return true;
 
     } catch (error) {
@@ -65,6 +65,6 @@ const verifyTokenIsValid = async (userToken) => {
 }
 
 export {
-    verifyIdMatchesToken,
-    verifyTokenIsValid
+    veryIdMatchesJWT,
+    verifyJWTIsValid
 }

@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
-import { token } from '../../lib/token';
+import { tokenGenerator} from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import addDays from 'date-fns/addDays';
@@ -33,7 +33,7 @@ const verifyUser = async (id, email, admin_text) => {
         );
 
         // create a new token and an expiry date, insert them
-        const newToken = token(12);
+        const newToken = tokenGenerator(12);
         let newDate = new Date();
         // add 7 days, get the ISOString and remove time (this ensures it's UTC)
         newDate = addDays(newDate, 7).toISOString().split("T")[0];
@@ -81,7 +81,7 @@ const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => 
         );
 
         // create a new token and insert it
-        const newToken = token(12);
+        const newToken = tokenGenerator(12);
         let newDate = new Date();
         // add 7 days, get the ISOString and remove time (this ensures it's UTC)
         newDate = addDays(newDate, 7).toISOString().split("T")[0];
@@ -104,8 +104,8 @@ export default async function handler(req, res) {
 
     try {
         // check user has admin rights
-        const token = req.cookies.lsersaUserToken;
-        const hasAdmin = await verifyUserHasAdminRole(token);
+        const userJWT = req.cookies.lsersaUserToken;
+        const hasAdmin = await verifyUserHasAdminRole(userJWT);
         if (!hasAdmin) {
             res.status(401).json({ message: 'ERROR: You do not have admin access' });
             return;

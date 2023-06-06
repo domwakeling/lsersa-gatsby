@@ -1,8 +1,8 @@
 import Stripe from "stripe";
 import { connect } from '@planetscale/database';
 import { fetch } from 'undici';
-import { token } from '../../lib/token';
-import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
+import { tokenGenerator} from '../../lib/token';
+import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { tokenTypes } from "../../lib/db_refs";
 import addDays from 'date-fns/addDays';
 
@@ -27,15 +27,15 @@ export default async function handler(req, res) {
         const { id, date } = req.body; 
 
         // check that the user is self
-        const jwtToken = req.cookies.lsersaUserToken;
-        if (!jwtToken || jwtToken === undefined || jwtToken === null) {
+        const userJWT = req.cookies.lsersaUserToken;
+        if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
             res.status(204).json({ message: "Cookie not found" });
             return;
         }
 
         // check if user_id matches with stored JWT
-        const isUser = await verifyIdMatchesToken(id, jwtToken);
+        const isUser = await veryIdMatchesJWT(id, userJWT);
 
         if (!isUser) {
             // not self and not an admin
@@ -57,7 +57,7 @@ export default async function handler(req, res) {
             [session_date, false, id]
         )
 
-        const newToken = token(12);
+        const newToken = tokenGenerator(12);
 
         let newDate = new Date();
         newDate = addDays(newDate, 1).toISOString().split("T")[0]; // 1 day to use token

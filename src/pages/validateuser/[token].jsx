@@ -13,7 +13,8 @@ const ValidateUser = ({params}) => {
 
     // on load, check to see if the token is valid and if so retrieve user ...
     useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a token
+        // hooks require that async function is defined before being called
+        // on load send token to endpoint that check it's a valid accountRequest token and gets users
         async function retrieveUserFromToken() {
             const res = await fetch(`/api/user/new-account-complete/${token}/`);
             if (res.status === 200) {
@@ -30,7 +31,6 @@ const ValidateUser = ({params}) => {
             }
         }
         if (!user && mode === COMPLETING_MODES.LOADING) {
-            // send to an endpoint to see whether there's a token embedded ...
             retrieveUserFromToken();
         }
     }, [user, mode, token]);

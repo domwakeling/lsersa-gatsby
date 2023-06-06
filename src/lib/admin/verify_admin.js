@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { roles } from '../db_refs';
-import { getIdentifierFromToken } from '../jwt-methods';
+import { getIdentifierFromJWT } from '../jwt-methods';
 
 const config = {
     fetch,
@@ -13,7 +13,7 @@ const config = {
 const verifyUserHasAdminRole = async (userToken) => {
 
     try {
-        const identifier = await getIdentifierFromToken(userToken);
+        const identifier = await getIdentifierFromJWT(userToken);
 
         const conn = await connect(config);
         const foundUsers = await conn.execute(`

@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
+import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import parseISO from 'date-fns/parseISO';
 import addDays from 'date-fns/addDays';
 
@@ -15,9 +15,9 @@ export default async function handler(req, res) {
 
     try {
         // ensure that the user is changing their own entries
-        const token = req.cookies.lsersaUserToken;
+        const userJWT = req.cookies.lsersaUserToken;
         const { user_id } = req.body;
-        const validToken = await verifyIdMatchesToken(user_id, token);
+        const validToken = await veryIdMatchesJWT(user_id, userJWT);
         if (!validToken) {
             res.status(401).json({ message: 'ERROR: You do not have access' });
             return;

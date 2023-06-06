@@ -40,7 +40,7 @@ const BookingPage = () => {
     }, []);
 
     useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a token
+        // hooks require that async function is defined before being called; this checks for a JWT
         async function checkForToken() {
             const res = await fetch("/api/poll-jwt"); 
             if (res.status === 200) {
@@ -52,12 +52,12 @@ const BookingPage = () => {
                     setMode(MODES.LOGGED_IN);
                 }
             } else {
-                // no token or invalid user, go to the log-in screen
+                // no JWT or invalid user, go to the log-in screen
                 setMode(MODES.LOGGING_IN)
             }            
         }
+        
         if (!user && mode === MODES.LOADING) {
-            // send to an endpoint to see whether there's a token embedded ...
             checkForToken();
         }
     }, [user, mode]);

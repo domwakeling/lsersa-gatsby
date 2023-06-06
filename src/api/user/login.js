@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import brcypt from 'bcryptjs';
-import { createToken, MAX_AGE } from '../../lib/jwt-methods';
+import { createJWT, MAX_AGE } from '../../lib/jwt-methods';
 
 const config = {
     fetch,
@@ -48,7 +48,7 @@ export default async function handler(req, res) {
             const verified = brcypt.compareSync(password, user.password_hash);
 
             if (verified) {
-                const jwt = createToken(user.identifier);
+                const jwt = createJWT(user.identifier);
                 res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}; Path=/`);
                 res.status(200).json(user);
                 return;

@@ -25,8 +25,8 @@ export default async function handler(req, res) {
 
         try {
             // check that the user sending the request is an admin
-            const token = req.cookies.lsersaUserToken;
-            const hasAdmin = await verifyUserHasAdminRole(token);
+            const userJWT = req.cookies.lsersaUserToken;
+            const hasAdmin = await verifyUserHasAdminRole(userJWT);
             if (!hasAdmin) {
                 res.status(401).json({ message: 'ERROR: User does not have admin access' });
                 return;

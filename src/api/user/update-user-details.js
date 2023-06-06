@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { getIdentifierFromToken } from '../../lib/jwt-methods';
+import { getIdentifierFromJWT } from '../../lib/jwt-methods';
 import brcypt from 'bcryptjs';
 
 const config = {
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
             const { id, identifier, updates } = req.body;
 
             // check that there is a valid user via JWT and it's for the user being updated
-            const token = req.cookies.lsersaUserToken;
-            const storedIdentifier = getIdentifierFromToken(token);
+            const userJWT = req.cookies.lsersaUserToken;
+            const storedIdentifier = getIdentifierFromJWT(userJWT);
 
             if (identifier !== storedIdentifier) {
                 res.status(401).json({message: "ERROR: Trying to update details for a different user"});

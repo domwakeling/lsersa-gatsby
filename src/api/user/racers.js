@@ -1,7 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
-import { verifyIdMatchesToken } from '../../lib/users/verify_user_id';
+import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import { roles } from '../../lib/db_refs';
 
@@ -99,19 +99,19 @@ export default async function handler(req, res) {
         // get the id
         const {user_id} = req.body;
 
-        // get token from request
-        const token = req.cookies.lsersaUserToken;
-        if (!token || token === undefined || token === null) {
+        // get JWT from request
+        const userJWT = req.cookies.lsersaUserToken;
+        if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
             res.status(204).json({ message: "Cookie not found" });
             return;
         }
 
-        // get admin status from token
-        const hasAdmin = await verifyUserHasAdminRole(token);
+        // get admin status from userJWT
+        const hasAdmin = await verifyUserHasAdminRole(userJWT);
 
         // check if user_id matches with stored JWT
-        const isUser = await verifyIdMatchesToken(user_id, token);
+        const isUser = await veryIdMatchesJWT(user_id, userJWT);
 
         if (!isUser && !hasAdmin) {
             // not self and not an admin

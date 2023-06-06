@@ -2,7 +2,7 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
-import { createToken, MAX_AGE } from '../../lib/jwt-methods';
+import { createJWT, MAX_AGE } from '../../lib/jwt-methods';
 import { tokenTypes } from '../../lib/db_refs';
 
 const config = {
@@ -113,7 +113,7 @@ export default async function handler(req, res) {
             }
 
             // get a JWT, set it in the header, return success
-            const jwt = createToken(result.identifier);
+            const jwt = createJWT(result.identifier);
             res.setHeader("Set-Cookie", `lsersaUserToken=${jwt}; Max-Age=${MAX_AGE}; Path=/`);
             res.status(200).json({ message: "successfully verified account" });
             return;

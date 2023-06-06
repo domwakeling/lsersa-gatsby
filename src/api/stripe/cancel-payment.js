@@ -2,7 +2,7 @@ import { connect } from '@planetscale/database';
 import { fetch } from 'undici';
 import { tokenTypes } from "../../lib/db_refs";
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
-import { getIdentifierFromToken } from '../../lib/jwt-methods';
+import { getIdentifierFromJWT } from '../../lib/jwt-methods';
 
 const config = {
     fetch,
@@ -29,15 +29,15 @@ export default async function handler(req, res) {
         }
 
         // check that we have a JWT ...
-        const jwtToken = req.cookies.lsersaUserToken;
-        if (!jwtToken || jwtToken === undefined || jwtToken === null) {
+        const userJWT = req.cookies.lsersaUserToken;
+        if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
             res.status(204).json({ message: "Cookie not found" });
             return;
         }
 
         // ... and that it matches the user for the payment token
-        const storedIdentifier = await getIdentifierFromToken(jwtToken);
+        const storedIdentifier = await getIdentifierFromJWT(userJWT);
         if (user.identifier !== storedIdentifier) {
             res.status(401).json({ message: "ERROR: Trying to update details for a different user" });
             return;

@@ -1,6 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
-import { token } from '../../lib/token';
+import { tokenGenerator} from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { emailResetPasswordTokenToUser } from '../../lib/mail/send_reset_token';
 import addDays from 'date-fns/addDays';
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
             }
 
             // insert a token
-            const newToken = token(12);
+            const newToken = tokenGenerator(12);
             let newDate = new Date();
             // add 7 days, get the ISOString and remove time (this ensures it's UTC)
             newDate = addDays(newDate, 7).toISOString().split("T")[0];
@@ -43,7 +43,6 @@ export default async function handler(req, res) {
 
             // send an email
             const info = await emailResetPasswordTokenToUser(newToken, email);
-            console.log(info);
 
             //
             res.status(200).json({ message: 'Success' });

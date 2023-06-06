@@ -15,9 +15,9 @@ export default async function handler(req, res) {
 
         try {
 
-            // check there's a token stored - if not, not valid; not going to worry about validating
-            const token = req.cookies.lsersaUserToken;
-            if (!token || token === undefined || token === null) {
+            // check there's a JWT stored - if not, not valid; not going to worry about validating
+            const userJWT = req.cookies.lsersaUserToken;
+            if (!userJWT || userJWT === undefined || userJWT === null) {
                 // error, most likely didn't find a cookie
                 res.status(204).json({ message: "Cookie not found" });
                 return;

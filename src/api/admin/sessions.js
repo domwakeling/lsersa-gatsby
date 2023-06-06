@@ -54,16 +54,16 @@ export default async function handler(req, res) {
     
     // authorisation for other methods - check the requester has admin
     try {
-        // get token from request
-        const token = req.cookies.lsersaUserToken;
-        if (!token || token === undefined || token === null) {
+        // get JWT from request
+        const userJWT = req.cookies.lsersaUserToken;
+        if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
             res.status(204).json({ message: "Cookie not found" });
             return;
         }
 
-        // get admin status from token
-        const hasAdmin = await verifyUserHasAdminRole(token);
+        // get admin status from JWT
+        const hasAdmin = await verifyUserHasAdminRole(userJWT);
 
         if (!hasAdmin) {
             // not self and not an admin

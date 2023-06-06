@@ -28,7 +28,7 @@ const UserDashboard = ({user, setUser, displayMessage}) => {
     ];
 
     useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a token
+        // hooks require that async function is defined before being called
         async function getRacers() {
             const res = await fetch(`/api/user/racers/${user.id}`);
             const data = await res.json();
