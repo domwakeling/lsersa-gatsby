@@ -42,7 +42,8 @@ export default async function handler(req, res) {
             )
 
             // send an email
-            emailResetPasswordTokenToUser(newToken, email)
+            const info = await emailResetPasswordTokenToUser(newToken, email);
+            console.log(info);
 
             //
             res.status(200).json({ message: 'Success' });
