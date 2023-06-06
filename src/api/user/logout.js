@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+    
+    console.log('request received at api/user/logout');
+    console.log(req.body);
 
     try {
         if (req.method == 'POST') {
