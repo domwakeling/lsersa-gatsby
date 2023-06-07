@@ -8,14 +8,17 @@ import DateField from "../elements/DateField";
 import parseISO from 'date-fns/parseISO';
 import TwoSegment from "../elements/TwoSegment";
 import { STYLES } from "../../../lib/constants";
+import { safeDateConversion } from "../../../lib/date-handler";
 
 const AdminRacerDetail = ({
     racer,
     handleRacerDetailSubmit,
     handleRacerDetailCancel,
     handleRacerDetailDelete,
+    handleRacerAddNew,
     userEmails,
-    clubs
+    clubs,
+    addMode = false
 }) => {
     const checkEmail = (email) => {
         if (!email || email === '') return false;
@@ -24,7 +27,7 @@ const AdminRacerDetail = ({
     }
 
     const [racerEmail, setRacerEmail] = useState(racer.email || '');
-    const [racerEmailValid, setRacerEmailValid] = useState(true);
+    const [racerEmailValid, setRacerEmailValid] = useState(checkEmail(racer.email));
     const [racerFirstName, setRacerFirstName] = useState(racer.first_name || '');
     const [racerLastName, setRacerLastName] = useState(racer.last_name || '');
     const [dob, setDob] = useState(racer.dob ? parseISO(racer.dob + "Z") : null);
@@ -36,6 +39,7 @@ const AdminRacerDetail = ({
     const [adminText, setAdminText] = useState(racer.admin_text || '');
     const [isDeleting, setIsDeleting] = useState(false);
 
+
     const segmentHandler = (label) => {
         setConcession(label === "yes" ? true : false);
     }
@@ -46,11 +50,11 @@ const AdminRacerDetail = ({
         const newRacer = {
             first_name: racerFirstName,
             last_name: racerLastName,
-            dob: dob ? dob.toISOString().split("T")[0] : null,
+            dob: dob ? safeDateConversion(dob) : null,
             gender_id: genderId,
             concession: concession ? 1 : 0,
             club_id: clubId || null,
-            club_expiry: clubExpiry ? clubExpiry.toISOString().split("T")[0] : null,
+            club_expiry: clubExpiry ? safeDateConversion(clubExpiry) : null,
             user_text: userText,
             admin_text: adminText,
         };
@@ -90,6 +94,32 @@ const AdminRacerDetail = ({
         }
     }
 
+    const handleNewSubmit = (e) => {
+        e.preventDefault();
+        // gather all the the details with correct keys; don't parse dates, done in the handler
+        const newRacer = {
+            first_name: racerFirstName,
+            last_name: racerLastName,
+            dob: dob,
+            gender_id: genderId,
+            concession: concession ? 1 : 0,
+            club_id: clubId || null,
+            club_expiry: clubExpiry,
+            user_text: userText,
+            admin_text: adminText,
+        };
+        // get the user id
+        const user_id = userEmails.filter(user => user.email === racerEmail.toLowerCase())[0].user_id;
+        // start the update object & add all the key/value pairs that have changed
+        const updateInfo = {
+            user_id,
+            updates: newRacer,
+            racer_email: racerEmail
+        };
+        // send back to the AdminManageRacers pane to run the update
+        handleRacerAddNew(updateInfo);
+    }
+
     // capture <enter> key from 'search' input and divert
     const checkEnterKey = (e) => {
         if (e.keyCode === 13 && racerEmailValid) {
@@ -101,7 +131,7 @@ const AdminRacerDetail = ({
 
     return (
         <div className="user-form">
-            <h2 className="as-h3">Racer's details</h2>
+            <h2 className="as-h3">{addMode === true ? " New " : "" }Racer's details</h2>
             <div className="user-form-columns">
                 <TextField
                     label="first name"
@@ -185,20 +215,33 @@ const AdminRacerDetail = ({
             >
                 Cancel
             </button>
-            <button
-                className="cancel-button no-top-margin"
-                onClick={handleDelete}
-                disabled={racer.racer_count > 0 ? true : false}
-            >
-                {isDeleting ? "Confirm" : "Delete"}
-            </button>
-            <button
-                disabled={(racerFirstName === '') || (racerLastName === '') || !genderId ||
-                !dob || !racerEmailValid || !checkEmail(racerEmail)}
-                onClick={handleSubmit}
-            >
-                Update
-            </button>
+            {!addMode && (
+                <>
+                    <button
+                        className="cancel-button no-top-margin"
+                        onClick={handleDelete}
+                        disabled={racer.racer_count > 0 ? true : false}
+                    >
+                        {isDeleting ? "Confirm" : "Delete"}
+                    </button>
+                    <button
+                    disabled={(racerFirstName === '') || (racerLastName === '') || !genderId ||
+                    !dob || !racerEmailValid || !checkEmail(racerEmail)}
+                    onClick={handleSubmit}
+                    >
+                        Update
+                    </button>
+                </>
+            )}
+            {addMode && (
+                <button
+                    disabled={(racerFirstName === '') || (racerLastName === '') || !genderId ||
+                        !dob || !racerEmailValid || !checkEmail(racerEmail)}
+                    onClick={handleNewSubmit}
+                >
+                    Save
+                </button>
+            )}
         </div>
     )
 }

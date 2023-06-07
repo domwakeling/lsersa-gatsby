@@ -30,7 +30,8 @@ const USER_MODES = {
 
 const MANAGE_MODES = {
     LIST: 0,
-    DETAIL: 1
+    DETAIL: 1,
+    ADD: 2
 }
 
 const COMPLETING_MODES = {

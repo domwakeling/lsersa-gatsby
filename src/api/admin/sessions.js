@@ -22,8 +22,8 @@ const checkSessionHasNoRacers = async (conn, session_date) => {
 
     if (data.rows.length === 0 || data.rows[0].racer_count === '0') return true;
     return false;
-
 }
+
 
 export default async function handler(req, res) {
 
@@ -110,8 +110,6 @@ export default async function handler(req, res) {
     
     } else if (req.method === 'PUT') {
 
-        // ** TODO - only able to change a session date if there are no bookings ...
-
         try {
             const { old_date, date, message, max_count } = req.body;
             let dateString = date.split("T")[0];
@@ -183,7 +181,6 @@ export default async function handler(req, res) {
                 res.status(200).json({message: 'Successfully deleted session'});
                 return;
             }
-
 
             // check there are no racers booked on that session
             const noRacers = await checkSessionHasNoRacers(conn, dateString);

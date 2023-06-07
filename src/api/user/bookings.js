@@ -3,6 +3,7 @@ import { connect } from '@planetscale/database';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import parseISO from 'date-fns/parseISO';
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from '../../lib/date-handler';
 
 const config = {
     fetch,
@@ -39,8 +40,8 @@ export default async function handler(req, res) {
             }
 
             let expiryDate = new Date(session_date);
-            // add 30 days, get the ISOString and remove time (this ensures it's UTC)
-            expiryDate = addDays(expiryDate, 30).toISOString().split("T")[0];
+            // add 30 days
+            expiryDate = safeDateConversion(addDays(expiryDate, 30));
 
             // get the existing bookings for that session ...
             const conn = await connect(config);

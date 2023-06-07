@@ -6,6 +6,7 @@ import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
 import { json2csv } from "../../../lib/json2csv";
 import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
+import { safeDateConversion } from "../../../lib/date-handler";
 
 const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => {
     const [date, setDate] = useState(session.date ? parseISO(session.date + "Z") : null);
@@ -37,7 +38,7 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
     }
 
     const updateSession = async () => {
-        const newDateStr = date.toISOString().split("T")[0];
+        const newDateStr = safeDateConversion(date);
         if ((newDateStr !== session.date) && (parseInt(session['count(racer_id)']) > 0)) {
             displayMessage(MESSAGE_CLASSES.WARN, "Can't change date of a session once bookings have started");
             return false;

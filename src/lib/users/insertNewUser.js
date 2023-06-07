@@ -1,6 +1,7 @@
 import { tokenTypes } from "../db_refs";
 import { tokenGenerator} from "../token";
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from "../date-handler";
 
 const insertUser = async (conn, email, role_id, verified=false) => {
     const results = await conn.transaction(async (tx) => {
@@ -16,8 +17,8 @@ const insertUser = async (conn, email, role_id, verified=false) => {
             const newUserId = tryNewUser.insertId;
             const newToken = tokenGenerator(12);
             let newDate = new Date();
-            // add 7 days, get the ISOString and remove time (this ensures it's UTC)
-            newDate = addDays(newDate, 7).toISOString().split("T")[0];
+            // add 7 days
+            newDate = safeDateConversion(addDays(newDate, 7));
             const tryNewToken = await tx.execute(
                 'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
                 [newUserId, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]

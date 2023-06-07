@@ -128,8 +128,52 @@ const AdminManageRacers = ({ displayMessage }) => {
         }
     }
 
+    const handleRacerAddNew = async (update) => {
+        const res = await fetch(`/api/admin/racers`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(update),
+        });
+        if (res.status === 200) {
+            // update the user array in memory (don't want to call it back again)
+            const tempArr = JSON.parse(JSON.stringify(racers));  // ensure we have a copy
+            // construct a new racer object
+            const newRacer = {};
+            const keys = Object.keys(update.updates);
+            for (const key of keys) {
+                newRacer[key] = update.updates[key];
+            }
+            const data = await res.json();
+            newRacer.user_id = update.user_id;
+            newRacer.email = update.racer_email;
+            newRacer.racer_id = data.racer_id;
+            // add it to tempArr
+            tempArr.push(newRacer);
+            // set local racer array
+            setRacers(tempArr);
+            // run the filter again in case something has changed
+            refilterRacers(filterText, tempArr);
+            // back to list view
+            setMode(MANAGE_MODES.LIST);
+            displayMessage(MESSAGE_CLASSES.SUCCESS, "Racer added");
+        } else {
+            const data = await res.json();
+            displayMessage(MESSAGE_CLASSES.WARN, data.message);
+        }
+    }
+
+    const handleAddRacer = (e) => {
+        e.preventDefault();
+        setMode(MANAGE_MODES.ADD);
+    }
+
     return (
         <>
+            {mode !== MANAGE_MODES.ADD && (
+                <button className="club-add-button" onClick={handleAddRacer}>
+                    Add new racer
+                </button>
+            ) }
             <h3>Admin Manage Racers</h3>
             {isLoading && <LoadingSpinner />}
             {mode === MANAGE_MODES.LIST && !isLoading && (
@@ -164,6 +208,17 @@ const AdminManageRacers = ({ displayMessage }) => {
                     handleRacerDetailSubmit={handleRacerDetailSubmit}
                     handleRacerDetailCancel={handleRacerDetailCancel}
                     handleRacerDetailDelete={handleRacerDetailDelete}
+                />
+            )}
+            {mode === MANAGE_MODES.ADD && !isLoading && (
+                <AdminRacerDetail
+                    racer={{}}
+                    userEmails={userEmails}
+                    clubs={clubs}
+                    handleRacerDetailSubmit={()=>{}}
+                    handleRacerDetailCancel={handleRacerDetailCancel}
+                    handleRacerAddNew={handleRacerAddNew}
+                    addMode={true}
                 />
             )}
         </>

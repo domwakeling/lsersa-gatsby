@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         }
 
         if (req.method == 'GET') {
-
+            // get all the data
             const conn = connect(config);
             const results = await conn.execute(`
                 SELECT

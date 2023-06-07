@@ -4,6 +4,7 @@ import { tokenGenerator} from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { emailResetPasswordTokenToUser } from '../../lib/mail/send_reset_token';
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from '../../lib/date-handler';
 
 const config = {
     fetch,
@@ -34,8 +35,8 @@ export default async function handler(req, res) {
             // insert a token
             const newToken = tokenGenerator(12);
             let newDate = new Date();
-            // add 7 days, get the ISOString and remove time (this ensures it's UTC)
-            newDate = addDays(newDate, 7).toISOString().split("T")[0];
+            // add 7 days 
+            newDate = safeDateConversion(addDays(newDate, 7));
             const _ = await conn.execute(
                 'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
                 [user.id, newToken, newDate, tokenTypes.PASSWORD_RESET]

@@ -159,7 +159,12 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 clubs={clubs}
                 disabled={!editable}
             />
-            <p><i>if club is not listed, include it below</i></p>
+            {!editing && (
+                <div/>
+            )}
+            {editing && (
+                <p><i>if club is not listed, include it below</i></p>
+            )}
             <FreeField
                 label="other info"
                 value={userText}

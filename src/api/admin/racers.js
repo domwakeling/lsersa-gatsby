@@ -1,6 +1,7 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
+import { insertNewRacer } from '../../lib/users/addNewRacer';
 
 const config = {
     fetch,
@@ -56,12 +57,24 @@ export default async function handler(req, res) {
             });
             return;
 
+        } else if (req.method === 'POST') {
+            // insert a new user by admin
+
+            const { user_id, updates: new_racer } = req.body;
+
+            let result = await insertNewRacer(user_id, new_racer, true);
+
+            res.status(200).json({ message: "Successfully updated user", racer_id: parseInt(result[2]) });
+            return;
+
         } else if (req.method === 'PUT') {
+            // update a user from admin
 
             const { racer_id, user_id, updates } = req.body;
 
             const updateKeys = Object.keys(updates);
 
+            // check that there are updates in the body
             if (updateKeys.length === 0 && !user_id) {
                 res.status(400).json({message: "No updates sent"});
                 return;
@@ -82,6 +95,7 @@ export default async function handler(req, res) {
                 return;
             }
 
+            // create the params for upload and the query string for SET
             const updateValues = updateKeys.map(key => updates[key]);
             const queryString = updateKeys.map(key => `${key} = ?`).join(",");
 
@@ -116,6 +130,7 @@ export default async function handler(req, res) {
             return;
 
         } else if (req.method === 'DELETE') {
+            // delete a racer as admin
 
             const { id } = req.body;
 

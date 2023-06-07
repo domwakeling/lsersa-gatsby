@@ -1,5 +1,6 @@
 import { fetch } from 'undici';
 import { connect } from '@planetscale/database';
+import { safeDateConversion } from '../../lib/date-handler';
 
 const config = {
     fetch,
@@ -16,8 +17,7 @@ export default async function handler(req, res) {
 
             const conn = connect(config);
             
-            const today = new Date();
-            const todayString = today.toISOString().split("T")[0];
+            const todayString = safeDateConversion(new Date());
             
             const checks = await conn.execute(
                 'DELETE FROM tokens WHERE expiresAt < ?',

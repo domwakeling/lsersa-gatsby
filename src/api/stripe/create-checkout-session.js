@@ -5,6 +5,7 @@ import { tokenGenerator} from '../../lib/token';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { tokenTypes } from "../../lib/db_refs";
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from "../../lib/date-handler";
 
 const config = {
     fetch,
@@ -60,7 +61,7 @@ export default async function handler(req, res) {
         const newToken = tokenGenerator(12);
 
         let newDate = new Date();
-        newDate = addDays(newDate, 1).toISOString().split("T")[0]; // 1 day to use token
+        newDate = safeDateConversion(addDays(newDate, 1)); // 1 day to use token
 
         const racersIds = racers.rows.map(racer => racer.racer_id);
         const idPlaceholders = racersIds.map(racer => "?").join(",");

@@ -3,6 +3,7 @@ import LoadingSpinner from "../elements/LoadingSpinner";
 import RacerLozenge from "./RacerLozenge";
 import { MONTHS, WEEKDAYS } from "../../../lib/constants";
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from "../../../lib/date-handler";
 
 const ManageBookings = ({ user, racers, displayMessage}) => {
     const [session, setSession] = useState(null);
@@ -24,7 +25,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
 
     const displayDate = (date) => `${WEEKDAYS[date.getDay()]} ${date.getDate()} ${MONTHS[date.getMonth()]}`
 
-    const systemDate = (date) => date.toISOString().split("T")[0];
+    const systemDate = (date) => safeDateConversion(date);
 
     const userRacerIds = racers.map(racer => racer.id);
     const userBookings = bookings.filter(booking => userRacerIds.indexOf(booking.racer_id) >= 0);

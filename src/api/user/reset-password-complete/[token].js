@@ -4,7 +4,7 @@ import { getUserFromToken } from '../../../lib/users/get_user_from_token';
 
 export default async function handler(req, res) {
 
-    // user won't be logged in so can't user JWT
+    // user won't be logged in so can't use JWT
 
     if (req.method == 'GET') {
         // get the token and retrieve data

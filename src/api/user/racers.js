@@ -4,57 +4,13 @@ import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import { roles } from '../../lib/db_refs';
+import { insertNewRacer } from '../../lib/users/addNewRacer';
 
 const config = {
     fetch,
     host: process.env.DATABASE_HOST,
     username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD
-}
-
-const insertNewRacer = async (user_id, new_racer) => {
-
-    // set up the keys and values to insert
-    const racerKeys = Object.keys(new_racer);
-    const racerValues = racerKeys.map(key => new_racer[key]);
-    racerKeys.push('verified');
-    racerValues.push(false);
-
-    const idx = racerKeys.indexOf('dob');
-    if (idx >= 0) {
-        const newDob = racerValues[idx].split("T")[0];
-        racerValues[idx] = newDob;
-    }
-
-    // get the strings for INSERT
-    const insertStringCols = racerKeys.join(",");
-    const insertStringValues = racerKeys.map(key => '?').join(",");
-
-    // db
-    const conn = await connect(config);
-    const results = await conn.transaction(async (tx) => {
-
-        const tryInsertRacer = await tx.execute(`
-                INSERT INTO racers (${insertStringCols}) VALUES (${insertStringValues})
-            `,
-            racerValues
-        );
-        
-        const newRacerId = tryInsertRacer.insertId;
-        const tryInsertUserRacer = await tx.execute(`
-                INSERT INTO users_racers (user_id, racer_id) VALUES (${user_id}, ${newRacerId})
-            `,
-            racerValues
-        );
-
-        return [
-            tryInsertRacer,
-            tryInsertUserRacer,
-            newRacerId
-        ]
-    });
-
-    return results;
 }
 
 const updateRacer = async (racer_id, racer) => {

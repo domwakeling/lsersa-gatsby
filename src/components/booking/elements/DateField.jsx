@@ -1,8 +1,13 @@
 import React from "react";
 import DatePicker from "react-datepicker";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import enGB from "date-fns/locale/en-GB"
 import "react-datepicker/dist/react-datepicker.css";
 import addMinutes from 'date-fns/addMinutes';
 import { STYLES } from "../../../lib/constants";
+
+registerLocale('uk', enGB);
+setDefaultLocale('uk');
 
 const DateField = ({label, value, setValue, disabled = false, required = false}) => {
 

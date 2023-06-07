@@ -5,6 +5,7 @@ import { tokenGenerator} from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import addDays from 'date-fns/addDays';
+import { safeDateConversion } from '../../lib/date-handler';
 
 const config = {
     fetch,
@@ -35,8 +36,9 @@ const verifyUser = async (id, email, admin_text) => {
         // create a new token and an expiry date, insert them
         const newToken = tokenGenerator(12);
         let newDate = new Date();
-        // add 7 days, get the ISOString and remove time (this ensures it's UTC)
-        newDate = addDays(newDate, 7).toISOString().split("T")[0];
+        // add 7 days
+        newDate = safeDateConversion(addDays(newDate, 7));
+
         const tryNewToken = await tx.execute(
             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
             [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
@@ -83,15 +85,17 @@ const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => 
         // create a new token and insert it
         const newToken = tokenGenerator(12);
         let newDate = new Date();
-        // add 7 days, get the ISOString and remove time (this ensures it's UTC)
-        newDate = addDays(newDate, 7).toISOString().split("T")[0];
+        // add 7 days
+        newDate = safeDateConversion(addDays(newDate, 7));
+        
         const tryNewToken = await tx.execute(
             'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
             [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
         )
 
         return {
-            tryUpdateRacer
+            tryUpdateRacer,
+            tryNewToken
         }
     });
 
