@@ -17,15 +17,13 @@ const insertNewRacer = async (user_id, new_racer, verified=false) => {
     racerValues.push(verified);
 
     let idx = racerKeys.indexOf('dob');
-    if (idx >= 0) {
-        console.log("DOB:", racerValues[idx], typeof racerValues[idx])
+    if (idx >= 0 && racerValues[idx]) {
         const newDob = racerValues[idx].split("T")[0];
         console.log(newDob);
         racerValues[idx] = newDob;
     }
     idx = racerKeys.indexOf('club_expiry');
-    if (idx >= 0) {
-        console.log("EXP:", racerValues[idx], typeof racerValues[idx])
+    if (idx >= 0 && racerValues[idx]) {
         const newExpiry = racerValues[idx].split("T")[0];
         console.log(newExpiry);
         racerValues[idx] = newExpiry;

@@ -4,6 +4,7 @@ import AdminRacerListItem from "./AdminRacerListItem";
 import AdminRacerDetail from "./AdminRacerDetail";
 import { MESSAGE_CLASSES } from "../../../lib/constants";
 import { MANAGE_MODES } from "../../../lib/modes";
+import { safeDateConversion } from "../../../lib/date-handler";
 
 const AdminManageRacers = ({ displayMessage }) => {
     const [racers, setRacers] = useState([]);
@@ -141,7 +142,15 @@ const AdminManageRacers = ({ displayMessage }) => {
             const newRacer = {};
             const keys = Object.keys(update.updates);
             for (const key of keys) {
-                newRacer[key] = update.updates[key];
+                if (key === 'dob' || key === 'club_expiry') {
+                    if (update.updates[key]) {
+                        newRacer[key] = safeDateConversion(update.updates[key]);
+                    } else {
+                        newRacer[key] = update.updates[key];
+                    }
+                } else {
+                    newRacer[key] = update.updates[key];
+                }
             }
             const data = await res.json();
             newRacer.user_id = update.user_id;
@@ -169,7 +178,7 @@ const AdminManageRacers = ({ displayMessage }) => {
 
     return (
         <>
-            {mode !== MANAGE_MODES.ADD && (
+            {mode === MANAGE_MODES.LIST && (
                 <button className="club-add-button" onClick={handleAddRacer}>
                     Add new racer
                 </button>
