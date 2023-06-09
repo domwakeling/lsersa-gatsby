@@ -176,6 +176,10 @@ button.tab-button {
             }
             &:disabled {
                 @include grey-button;
+                &:hover {
+                    background-color: $color-g700 !important;
+                    color: $color-g700 !important;
+                }
             }
         }
 
@@ -192,7 +196,8 @@ button.tab-button {
                 background-color: $color-g700;
                 color: $color-g700;
                 &:hover {
-                    color: $color-g700;
+                    background-color: $color-g700 !important;
+                    color: $color-g700 !important;
                 }
             }
         }
@@ -206,7 +211,8 @@ button.tab-button {
                 background-color: $color-g900;
                 color: $color-g100;
                 &:hover {
-                    background-color: $color-g900;
+                    background-color: $color-g900 !important;
+                    color: $color-g100 !important;
                 }
             }
         }
