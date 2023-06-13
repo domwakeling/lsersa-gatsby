@@ -92,8 +92,6 @@ export default async function handler(req, res) {
 
             const { id } = req.body;
             const conn = await connect(config);
-            
-            console.log("DELETE request on /api/admin/users");
 
             // check we're not trying to delete a user that has racers
             const users = await conn.execute(`
@@ -102,13 +100,11 @@ export default async function handler(req, res) {
                     role_id,
                     COUNT(racer_id) as racer_count
                 FROM users u
-                INNER JOIN users_racers ur
+                LEFT JOIN users_racers ur
                 ON u.id = ur.user_id
-                WHERE u.id = ?
+                WHERE u.id = ${id}
                 GROUP BY ur.user_id
-            `, [id]);
-            
-            console.log(users);
+            `);
 
             if (users.rows.length === 0) {
                 res.status(400).json({message: 'User not recognised'});
