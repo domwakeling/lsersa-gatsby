@@ -93,7 +93,7 @@ export default async function handler(req, res) {
             const { id } = req.body;
             const conn = await connect(config);
             
-            console.log('DELETE request on /api/admin/users\nid received:", id, "\nbodyreceived:", req.body);
+            console.log("DELETE request on /api/admin/users\nid received:", id, "\nbodyreceived:", req.body);
 
             // check we're not trying to delete a user that has racers
             const users = await conn.execute(`
