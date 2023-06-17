@@ -66,7 +66,7 @@ const RacesPage = () => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>08:00</td>
+                                    <td>08:15</td>
                                     <td>Race office opens for bib issue</td>
                                 </tr>
                                 <tr>
@@ -75,22 +75,22 @@ const RacesPage = () => {
                                 </tr>
                                 <tr>
                                     <td>09:00</td>
-                                    <td>Course setting</td>
+                                    <td>Team Manager's meeting</td>
                                 </tr>
                                 <tr>
                                     <td>09:15</td>
-                                    <td>Officials meeting</td>
+                                    <td>Course setting</td>
                                 </tr>
                                 <tr>
-                                    <td>09:20</td>
+                                    <td>09:30</td>
                                     <td>Course inspection (U14 & above through full gates)</td>
                                 </tr>
                                 <tr>
-                                    <td>09:40</td>
+                                    <td>09:45</td>
                                     <td>Course inspection (U12 & below through stubby gates)</td>
                                 </tr>
                                 <tr>
-                                    <td>09:45</td>
+                                    <td>10:00</td>
                                     <td>Start first run of Individual Slalom</td>
                                 </tr>
                                 <tr>
