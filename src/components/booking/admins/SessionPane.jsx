@@ -165,7 +165,6 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
 
     return (
         <div className={classNames}>
-            {classNames}
             <br/>
             <div className='session-date'>
                 <DateField
