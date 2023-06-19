@@ -82,20 +82,8 @@ const verifyRacer = async (id, club_expiry, club_id, concession, admin_text) => 
             params
         );
 
-        // create a new token and insert it
-        const newToken = tokenGenerator(12);
-        let newDate = new Date();
-        // add 7 days
-        newDate = safeDateConversion(addDays(newDate, 7));
-        
-        const tryNewToken = await tx.execute(
-            'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
-            [id, newToken, newDate, tokenTypes.ACCOUNT_REQUEST]
-        )
-
         return {
             tryUpdateRacer,
-            tryNewToken
         }
     });
 
