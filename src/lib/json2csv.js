@@ -12,7 +12,13 @@ const json2csv = (data) => {
                 let tel = "'" + data[i][headers[j]];
                 csvRow.push(tel);
             } else {
-                csvRow.push(data[i][headers[j]]);
+                // protect against a text field that includes a comma
+                let newValue = data[i][headers[j]];
+                if(typeof newValue == typeof "") {
+                    csvRow.push(newValue.replace(/,/s, " /"))
+                } else {
+                    csvRow.push(newValue);
+                }
             }
         }
         csvRows.push(csvRow.join(","))
