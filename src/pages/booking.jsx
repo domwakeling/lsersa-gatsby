@@ -9,6 +9,7 @@ import UserDashboard from "../components/booking/UserDashboard.jsx";
 import AdminDashboard from "../components/booking/AdminDashboard.jsx";
 import LoadingSpinner from "../components/booking/elements/LoadingSpinner.jsx";
 import MessageBox from "../components/booking/elements/MessageBox.jsx";
+import HeaderComponent from "../components/head/HeaderComponent.jsx"
 import { MESSAGE_CLASSES, MESSAGE_TIME } from "../lib/constants.js";
 
 const LogOut = ({clickHandler}) => {

@@ -3,6 +3,7 @@ import { navigate } from "gatsby";
 import Layout from "../../components/Layout";
 import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
 import UserDetail from "../../components/booking/users/UserDetails";
+import HeaderComponent from "../../components/head/HeaderComponent";
 import { COMPLETING_MODES } from "../../lib/modes";
 
 const ValidateUser = ({params}) => {

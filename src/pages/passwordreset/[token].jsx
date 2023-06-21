@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import PasswordField from '../../components/booking/elements/PasswordField';
 import LoadingSpinner from "../../components/booking/elements/LoadingSpinner";
+import HeaderComponent from "../../components/head/HeaderComponent";
 import { COMPLETING_MODES } from "../../lib/modes";
 
 const ResetPassword = ({ params }) => {

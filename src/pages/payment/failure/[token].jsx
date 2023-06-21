@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 import Layout from "../../../components/Layout";
 import LoadingSpinner from "../../../components/booking/elements/LoadingSpinner";
+import HeaderComponent from "../../../components/head/HeaderComponent";
 import { COMPLETING_MODES } from "../../../lib/modes";
 
 const PaymentFailure = ({ params }) => {
