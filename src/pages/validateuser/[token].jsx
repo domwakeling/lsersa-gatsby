@@ -114,3 +114,9 @@ const ValidateUser = ({params}) => {
 }
 
 export default ValidateUser;
+
+export const Head = () => (
+    <HeaderComponent>
+        <title>Booking | LSERSA</title>
+    </HeaderComponent>
+);

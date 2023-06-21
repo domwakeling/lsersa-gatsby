@@ -65,3 +65,9 @@ const PaymentSuccess = ({ params }) => {
 }
 
 export default PaymentSuccess;
+
+export const Head = () => (
+    <HeaderComponent>
+        <title>Booking | LSERSA</title>
+    </HeaderComponent>
+);

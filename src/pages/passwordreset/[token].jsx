@@ -139,3 +139,9 @@ const ResetPassword = ({ params }) => {
 }
 
 export default ResetPassword;
+
+export const Head = () => (
+    <HeaderComponent>
+        <title>Booking | LSERSA</title>
+    </HeaderComponent>
+);

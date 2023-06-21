@@ -67,3 +67,9 @@ const PaymentFailure = ({ params }) => {
 }
 
 export default PaymentFailure;
+
+export const Head = () => (
+    <HeaderComponent>
+        <title>Booking | LSERSA</title>
+    </HeaderComponent>
+);

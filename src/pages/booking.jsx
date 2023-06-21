@@ -144,3 +144,9 @@ const BookingPage = () => {
 }
 
 export default BookingPage;
+
+export const Head = () => (
+    <HeaderComponent>
+        <title>Booking | LSERSA</title>
+    </HeaderComponent>
+);
