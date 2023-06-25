@@ -101,8 +101,8 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser })
                     Log In
                 </button>
             </div>
-            <p>If you don't have an account, you need to <Link to="#" onClick={setSignIn}>create one</Link>.</p>
             <p><Link to="#" onClick={setPasswordReset}>Forgotten password</Link>?</p>
+            <p class="larger">If you don't have an account, you need to <Link to="#" onClick={setSignIn}>create one</Link>.</p>
             {loading && <LoadingSpinner />}
             {message !== '' && (
                 <div className="advice-box">
