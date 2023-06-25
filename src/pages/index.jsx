@@ -35,7 +35,7 @@ const HomePage = () => {
                     <div className="row">
                         <h2>More about ...</h2>
                         <div className="panel-container">
-                            <PanelCard url="/training/">
+                            <PanelCard url="/booking/">
                                 <h3>Booking</h3>
                                 <p>Regional Training session</p>
                             </PanelCard>
