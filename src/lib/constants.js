@@ -10,8 +10,8 @@ const SESSION_MAX = 30;
 
 const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'September',
-    'October', 'November', 'December'];
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+                'September', 'October', 'November', 'December'];
 
 const STYLES = {
     redText: {
