@@ -36,16 +36,17 @@ export default async function handler(req, res) {
             const conn = await connect(config);
             const bookings = await conn.execute(`
                 SELECT
-                    r.first_name as '0_first_name',
-                    r.last_name as '1_last_name',
-                    paid as '2_paid',
-                    token as '3_payment_ref',
-                    emergency_name as '4_emergency_contact',
-                    emergency_mobile as '5_emergency_mobile',
-                    c.name as '6_club',
-                    g.name as '7_gender',
-                    email as '8_email',
-                    secondary_email as '9_secondary'
+                    r.first_name as '00_first_name',
+                    r.last_name as '01_last_name',
+                    paid as '02_paid',
+                    token as '03_payment_ref',
+                    emergency_name as '04_emergency_contact',
+                    emergency_mobile as '05_emergency_mobile',
+                    c.name as '06_club',
+                    g.name as '07_gender',
+                    email as '08_email',
+                    secondary_email as '09_secondary',
+                    dob as '10_date_of_birth'
                 FROM bookings b
                 LEFT JOIN racers r ON b.racer_id = r.id
                 LEFT JOIN clubs c ON r.club_id = c.id
