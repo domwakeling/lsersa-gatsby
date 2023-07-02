@@ -1,4 +1,4 @@
-import { sendEmail } from './send_email';
+import nodemailer from 'nodemailer';
 import { htmlBlank } from './email_blank';
 
 // async..await is not allowed in global scope, must use a wrapper
@@ -34,14 +34,41 @@ const sendLongEmail = async (emails, subject, headerText, bodyArrSent, plainBody
 
     const plainElements = plainBodyArr.join("\n\n");
 
-    let info = await sendEmail(
-        emails,
-        subject,
-        `${headerText}\n\n${plainElements}`,
-        htmlBlank.replace("PLACEHOLDER_SECTION", bodyText)
-    )
+    const messageText = `${headerText}\n\n${plainElements}`;
 
-    return info;
+    const messageHTML = htmlBlank.replace("PLACEHOLDER_SECTION", bodyText);
+
+    try {
+
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: process.env.EMAIL_SMTP,
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            auth: {
+                user: process.env.EMAIL_ADDRESS,
+                pass: process.env.EMAIL_PASSWORD,
+            },
+        });
+
+        // send mail with defined transport object
+        let info = await transporter.sendMail({
+            from: `"LSERSA Booking System" <${process.env.EMAIL_ADDRESS}>`, // sender address
+            to: `${process.env.EMAIL_ADDRESS}`,
+            bcc: emails.join(", "), // list of receivers; this will go as bcc
+            subject: subject, // Subject line
+            text: messageText, // plain text body
+            html: messageHTML // html body
+        });
+
+        return info;
+
+    } catch (error) {
+
+        console.error(error.message);
+        return null;
+    }
+
 }
 
 export {
