@@ -144,7 +144,8 @@ const AboutPage = () => {
                             </tbody>
                         </table>
                     </div>
-                    <p>Please follow the link for <a href={`/minutes/${meetingYear}`}>meeting minutes</a>.</p>
+                    <p>Please follow the link for <Link to={`/minutes/${meetingYear}`}>meeting minutes</Link>.</p>
+                    <p>A list of  <Link to="/policies/">regional policies</Link> is also available.</p>
                 </div>
                 <div className="row">
                     <hr />

@@ -38,7 +38,7 @@ const ClubsPage = () => {
                     text="LOCAL"
                     text2="CLUBS"
                     imageUrl="hero/hero_clubs.png"
-                    imageAlt="Slub teams metalists"
+                    imageAlt="Club teams metalists"
                 />
                 <div className="row">
                     <h1>Clubs</h1>
