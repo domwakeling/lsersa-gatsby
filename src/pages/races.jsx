@@ -113,7 +113,7 @@ const RacesPage = () => {
                     <div style={{ marginBottom: "2.0rem"}}>
                         <DownloadItem
                             file_link="/resources/guidance/05_race_rules.pdf"
-                            filename="LSERSA race rules"
+                            filename="race rules & format"
                             filetype="PDF"
                         />
                         <DownloadItem

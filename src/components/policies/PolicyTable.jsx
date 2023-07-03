@@ -6,7 +6,7 @@ const PolicyElement = ({ item }) => {
         <>
             <tr>
                 <td style={{ paddingRight: "2.0rem" }}>{item.name}</td>
-                <td>
+                <td style={{ textAlign: "right"}}>
                     <DownloadItem
                         filetype="PDF"
                         filename={item.text}
