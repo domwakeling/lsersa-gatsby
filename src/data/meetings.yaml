@@ -2,6 +2,13 @@
     items:
     -   name: Committee meeting
         venue: virtual
+        date: 3 July 2023
+        docs:
+        -   url: /resources/minutes/2023/committee_230703.pdf
+            text: Minutes
+
+    -   name: Committee meeting
+        venue: virtual
         date: 17 April 2023
         docs:
         -   url: /resources/minutes/2023/committee_230417.pdf
