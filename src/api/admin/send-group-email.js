@@ -18,8 +18,9 @@ export default async function handler(req, res) {
             // ensure user has admin rights
             const userJWT = req.cookies.lsersaUserToken;
             const hasAdmin = await verifyUserHasAdminRole(userJWT);
-            if (!hasAdmin && req.method !== 'GET') {
+            if (!hasAdmin) {
                 // without admin use we can only GET info ...
+                console.log("Trying an operation without admin status")
                 res.status(401).json({ message: 'ERROR: You do not have admin access' });
                 return;
             }
@@ -65,6 +66,7 @@ export default async function handler(req, res) {
 
             if (htmlArray.length === 0) {
                 // blank email
+                console.log("No content received, email not sent");
                 res.status(400).json({message: 'No content received, email not sent'});
                 return;
             }
@@ -80,6 +82,8 @@ export default async function handler(req, res) {
                 .map(user => user.secondary_email);
 
             const emails = Array.from(new Set([...userEmails, ...secondEmails]));
+
+            console.log('Retrieved email list:'. emails);
 
             // send the email
             const _ = await sendLongEmail(emails, subject, subject, htmlArray, textArray);

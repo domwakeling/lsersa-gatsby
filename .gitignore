@@ -7,3 +7,4 @@ _resources
 .env
 .env.development
 .vscode/
+**/test.js

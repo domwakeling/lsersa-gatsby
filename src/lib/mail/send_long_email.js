@@ -61,6 +61,7 @@ const sendLongEmail = async (emails, subject, headerText, bodyArrSent, plainBody
             html: messageHTML // html body
         });
 
+        console.log('Long email send request generated:', info)
         return info;
 
     } catch (error) {

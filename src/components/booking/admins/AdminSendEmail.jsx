@@ -6,9 +6,9 @@ const AdminSendEmail = ({ displayMessage }) => {
 
     let stdText = "If you want to take part in next Saturdays Regional Training, please read the ";
     stdText = stdText + "notes below and enter using the booking system ";
-    stdText = stdText + "(https://lsersa.org/booking) by this Wednesday evening. Please don't ";
-    stdText = stdText + "attend without booking on as we arrange coaches and sessions based on ";
-    stdText = stdText + "who has registered.";
+    stdText = stdText + "(https://lsersa.org/booking) by this Wednesday evening (booking won't be ";
+    stdText = stdText + "available after midnight Wednesday). Please don't attend without booking ";
+    stdText = stdText + "on as we arrange coaches and sessions based on who has registered.";
 
     let stdBullets = "The cost of the session is currently £22\n";
     stdBullets = stdBullets + "Session is 9 - 11am as usual\n";
@@ -21,7 +21,7 @@ const AdminSendEmail = ({ displayMessage }) => {
     const [text3, setText3] = useState('');
     const [text4, setText4] = useState(stdText);
     const [bulletText, setBulletText] = useState(stdBullets);
-    const [text5, setText5] = useState('All the best');
+    const [text5, setText5] = useState('Thanks and best');
     const [text6, setText6] = useState('Andy');
 
     const clickHandler = async (e) => {
