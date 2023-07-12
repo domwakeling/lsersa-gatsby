@@ -42,6 +42,7 @@ const Navbar = () => {
 
     return (
         <nav id="main-nav">
+            <Link class="skip-link" href='#main'>Skip to content</Link>
             <div className="container" ref={setMenuWrapperRef}>
                 <div className="row">
                     <button

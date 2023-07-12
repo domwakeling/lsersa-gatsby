@@ -11,8 +11,9 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navbar />
-            {/* <ToastContainer align="right" position="top" /> */}
-            {children}
+            <main id="main">
+                {children}
+            </main>
             <Footer />
         </>
     );
