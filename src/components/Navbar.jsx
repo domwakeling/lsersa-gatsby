@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Link className="brand" to="/">
                             <StaticImage
                                 src="../images/logos/lsersa_white.png"
-                                alt="LSERSA"
+                                alt="LSERSA skier logo"
                                 layout="fixed"
                                 width={35}
                                 className="brand-image"
