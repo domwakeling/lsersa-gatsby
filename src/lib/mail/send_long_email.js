@@ -51,6 +51,8 @@ const sendLongEmail = async (emails, subject, headerText, bodyArrSent, plainBody
             },
         });
 
+        console.log('transporter ready for use');
+
         // send mail with defined transport object
         let info = await transporter.sendMail({
             from: `"LSERSA Booking System" <${process.env.EMAIL_ADDRESS}>`, // sender address

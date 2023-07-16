@@ -83,11 +83,6 @@ export default async function handler(req, res) {
 
             const emails = Array.from(new Set([...userEmails, ...secondEmails]));
 
-            console.log('Retrieved email list:', emails);
-
-            res.status(200).json({ message: 'successfully sent email' });
-            return;
-
             // send the email
             const _ = await sendLongEmail(emails, subject, subject, htmlArray, textArray);
 
