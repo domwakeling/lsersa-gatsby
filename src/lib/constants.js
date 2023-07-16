@@ -19,7 +19,10 @@ const STYLES = {
     }
 }
 
+const EMAIL_BATCH_SIZE = 40;
+
 module.exports = {
+    EMAIL_BATCH_SIZE,
     MESSAGE_CLASSES,
     MESSAGE_TIME,
     SESSION_MAX,

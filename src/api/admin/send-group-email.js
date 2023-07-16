@@ -2,6 +2,7 @@ import { fetch } from 'undici';
 import { connect } from '@planetscale/database'; 
 import { sendLongEmail } from "../../lib/mail/send_long_email";
 import { verifyUserHasAdminRole } from "../../lib/admin/verify_admin";
+import { EMAIL_BATCH_SIZE } from '../../lib/constants';
 
 const config = {
     fetch,
@@ -27,7 +28,7 @@ export default async function handler(req, res) {
 
             // parse the text into an html array and a plain-text array
 
-            const { textElements } = req.body;
+            const { textElements, iteration } = req.body;
             
             const { subject } = textElements;
             if (!subject || subject === '') {
@@ -81,8 +82,12 @@ export default async function handler(req, res) {
                 .filter(user => (user.secondary_email && user.secondary_email !== ''))
                 .map(user => user.secondary_email);
 
-            const emails = Array.from(new Set([...userEmails, ...secondEmails]));
+            let emails = Array.from(new Set([...userEmails, ...secondEmails])).sort();
 
+            const firstEmailIdx = iteration * EMAIL_BATCH_SIZE;
+            const lastEmailIdx = (iteration + 1 ) * EMAIL_BATCH_SIZE;
+            emails = emails.slice(firstEmailIdx, lastEmailIdx);
+            
             // send the email
             const _ = await sendLongEmail(emails, subject, subject, htmlArray, textArray);
 
@@ -95,7 +100,6 @@ export default async function handler(req, res) {
             res.status(500).json({ message: error.message });
             return;
         }
-
 
     } else {
         // method is not acceptable, fail gracefully

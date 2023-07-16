@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FreeField from "../elements/FreeField";
-import { MESSAGE_CLASSES } from "../../../lib/constants";
+import { EMAIL_BATCH_SIZE, MESSAGE_CLASSES } from "../../../lib/constants";
 
 const AdminSendEmail = ({ displayMessage }) => {
 
@@ -40,18 +40,42 @@ const AdminSendEmail = ({ displayMessage }) => {
                 bulletText,
                 text5,
                 text6
-            }
+            },
+            iteration: 0
         }
-        const res = await fetch(`/api/admin/send-group-email`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body),
-        });
-        if (res.status === 200) {
-            displayMessage(MESSAGE_CLASSES.SUCCESS, `Email sent`);
-        } else {
-            const data = await res.json();
-            displayMessage(MESSAGE_CLASSES.WARN, data.message);
+        try {
+            // get the count of emails
+            const resCount = await fetch('/api/admin/email-count');
+            const dataCount = await resCount.json();
+            if (resCount.status !== 200) {
+                // there was a problem, throw an error
+                throw dataCount;
+            }
+            const emailCount = dataCount.emailCount;
+            const cycleCount = Math.ceil(emailCount / EMAIL_BATCH_SIZE);
+
+            // send batches
+            let i = 0;
+            while (i < cycleCount) {
+
+                body.iteration = i;
+                const res = await fetch(`/api/admin/send-group-email`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+                if (res.status === 200) {
+                    displayMessage(MESSAGE_CLASSES.SUCCESS, `Emails sent, batch ${i+1} of ${cycleCount}`);
+                } else {
+                    const data = await res.json();
+                    throw data;
+                }
+                i = i + 1;
+            }
+
+        } catch (error) {
+            console.log("error caught")
+            displayMessage(MESSAGE_CLASSES.WARN, error.message);
         }
     }
 
