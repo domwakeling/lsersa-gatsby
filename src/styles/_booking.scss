@@ -440,3 +440,11 @@ button.cancel-button {
         }
     }
 }
+
+a.dolwen-logo {
+    &:hover {
+        &::before {
+            height: 0;
+        }
+    }
+}
