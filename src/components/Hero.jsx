@@ -42,6 +42,7 @@ const Hero = ({
                             image={imgData.filter(node => node.path === imageUrl)[0].image}
                             alt={imageAlt}
                             className="hero_image"
+                            loading="eager"
                         />
                         <div className="hero-shade" style={{ backgroundColor : imageShade }} />
                         <div className="hero-text" style={{ borderColor: textColor }}>
