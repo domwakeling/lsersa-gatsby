@@ -16,7 +16,7 @@
             venue: Bowles
             date: Saturday 2nd September
             url: https://www.skiresults.co.uk/events/1317
-            status: Entries
+            status: Results
         -   name: Race 4
             venue: Chatham
             date: Saturday 23rd September
@@ -80,8 +80,8 @@
     -   series: Regional Competitions
         races:        
         -   name: Tri-Regional
-            venue: tbc
-            date: tbc
+            venue: Chatham
+            date: Saturday 14th October
             url: null
             status: Info to follow
 
