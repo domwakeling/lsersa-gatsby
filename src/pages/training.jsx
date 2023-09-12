@@ -41,12 +41,19 @@ const TrainingPage = () => {
                     <div className="row">
                         <h2>Everyone Welcome</h2>
                         <p>The regional training sessions are open to all skiers, no club affiliation or
-                            membership is required. We cater for all skiing abilities, so if you want to
-                            try ski racing, but are unsure of your ability level, this is the perfect
-                            session to give it a go. Our coaches are very supportive of new trainees and
-                            will make sure you can progress at your own pace. If you are still unsure,
-                            why not come along to a session just to watch and then have a chat with the
-                            coaches afterwards.</p>
+                            membership is required. We cater for all skiing abilities, the only stipulations
+                            being:</p>
+                        <ul>
+                            <li>racers should wear appropriate clothing and protective equipment</li>
+                            <li>racers need to be able to perform controlled rounded turns from anywhere
+                                on the slope</li>
+                            <li>racres need to able to use the lifts unaided</li>
+                        </ul>
+                        <p>So if you want to try ski racing, but are unsure of your ability level, this is
+                            the perfect session to give it a go. Our coaches are very supportive of new
+                            trainees and will make sure you can progress at your own pace. If you are still
+                            unsure, why not come along to a session just to watch and then have a chat with
+                            the coaches afterwards.</p>
                     </div>
                 </div>
             </div>
