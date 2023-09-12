@@ -47,7 +47,7 @@ const TrainingPage = () => {
                             <li>racers should wear appropriate clothing and protective equipment</li>
                             <li>racers need to be able to perform controlled rounded turns from anywhere
                                 on the slope</li>
-                            <li>racres need to able to use the lifts unaided</li>
+                            <li>racers need to able to use the lifts unaided</li>
                         </ul>
                         <p>So if you want to try ski racing, but are unsure of your ability level, this is
                             the perfect session to give it a go. Our coaches are very supportive of new
