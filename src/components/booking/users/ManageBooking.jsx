@@ -122,8 +122,15 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             cannot be given.</p>
                     )}
                     {(now > nextThurs && session && session.max_count > 0) && (
-                        <p>Booking is now closed. Please ensure that any unpaid bookings are
+                        <p>Online booking is now closed. Please ensure that any unpaid bookings are
                             completed as soon as possible.</p>
+                    )}
+                    {(now > nextThurs && session && session.max_count > 0) && (
+                        <p>If you would like to enquire whether any space may still be available for
+                            the session, please email
+                            {" "}
+                            <a href="mailto:regionalcoach@lsersa.org">the head coach</a>
+                            . If a space is available you will be notified and sent a payment link.</p>
                     )}
                 </div>
             )}
