@@ -32,13 +32,16 @@ const HomePage = () => {
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
                 { (today <= meetingDate ) && (
-                    <div className="advice-box">
-                        <h2>Notice of AGM.</h2>
-                        <p>The LSERSA AGM is being held on Monday 20th November at 7.00pm at Chatham Ski Centre.</p>
-                        <p>If anyone has any proposals they wish to have raised at the AGM can they please submit
-                            these to Lindsay Ayton in writing by 5th November.</p>
-                        <p>LSERSA meetings are open to all members.</p>
-                    </div>
+                    <>
+                        <div className="advice-box">
+                            <h2 className="as-h3">Notice of AGM.</h2>
+                            <p>The LSERSA AGM is being held on Monday 20th November at 7.00pm at Chatham Ski Centre.</p>
+                            <p>If anyone has any proposals they wish to have raised at the AGM can they please submit
+                                these to Lindsay Ayton in writing by 5th November.</p>
+                            <p>LSERSA meetings are open to all members.</p>
+                        </div>
+                        <br />
+                    </>
                 )}
             </div>
 
