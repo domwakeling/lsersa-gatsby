@@ -21,12 +21,12 @@
             venue: Chatham
             date: Saturday 23rd September
             url: https://www.skiresults.co.uk/events/1318
-            status: Entries
+            status: Results
         -   name: Race 5
             venue: Chatham
             date: Saturday 7th October
             url: https://www.skiresults.co.uk/events/1319
-            status: Entries
+            status: Results
             
     -   series: Club Nationals
         races:        
@@ -47,12 +47,12 @@
             venue: Chatham
             date: Saturday 1st July
             url: https://gbski.com/competition.php?ID=1255
-            status: GBSki website
+            status: Results (on GBSki)
         -   name: Race 5
             venue: Chatham
             date: Sunday 2nd July
             url: https://gbski.com/competition.php?ID=1255
-            status: GBSki website
+            status: Results (on GBSki)
 
     -   series: School Competitions
         races: 
@@ -82,16 +82,16 @@
         -   name: Tri-Regional
             venue: Chatham
             date: Saturday 14th October
-            url: null
-            status: Info to follow
+            url: https://gbski.com/competition.php?ID=1372
+            status: GBSki website
 
     -   series: Other Competitions
         races:        
         -   name: Night Race
             venue: Chatham
             date: Saturday 4th November
-            url: null
-            status: Entry information to follow
+            url: https://skiresults.co.uk/events/1320
+            status: Entries
                
 -   year: 2022
     events: 
