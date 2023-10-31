@@ -35,9 +35,29 @@ const HomePage = () => {
                     <>
                         <div className="advice-box">
                             <h2 className="as-h3">Notice of AGM.</h2>
-                            <p>The LSERSA AGM is being held on Monday 20th November at 7.00pm at Chatham Ski Centre.</p>
-                            <p>If anyone has any proposals they wish to have raised at the AGM can they please submit
-                                these to Lindsay Ayton in writing by 5th November.</p>
+                            <p>The LSERSA AGM is being held on Monday 20th November at 7.00pm at
+                                Chatham Ski Centre.</p>
+                            <p>There are several committee members who have stepped down this year
+                                and we encourage members of affiliated clubs to stand for one of the
+                                vacant positions, listed below. The committee meet approx 4 times a
+                                year. Some of the positions require attendance and help at the
+                                LSERSA Regional races throughout the year.</p>
+                            <p>Those interested should contact Lindsay Ayton directly if they wish
+                                to be nominated for a committee position; all nominations to be
+                                received by midnight on 4th November 2023.  We do hope that some of
+                                our members will be happy to volunteer to be part of the team
+                                helping our racers in the region.</p>
+                            <p>Open positions:</p>
+                            <ul>
+                                <li>Regional Secretary</li>
+                                <li>Marketing and Sponsorship</li>
+                                <li>Regional Welfare Officer</li>
+                                <li>Chief of Calcs/Timing</li>
+                                <li>Equipment Officer</li>
+                                <li>Assistant Equipment Office</li>
+                            </ul>
+                            <p>If anyone has any proposals they wish to have raised at the AGM can
+                                they please submit these to Lindsay Ayton in writing by 5th November.</p>
                             <p>LSERSA meetings are open to all members.</p>
                         </div>
                         <br />

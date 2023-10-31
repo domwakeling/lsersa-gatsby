@@ -1,6 +1,13 @@
 -   year: 2023
     events:         
     -   series: LSERSA Summer Series
+        overall:
+        -   name: Overall Fastest Female
+            url: https://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/2350
+        -   name: Overall Fastest Male
+            url: https://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/2351
+        -   name: Overall Club
+            url: https://www.skiresults.co.uk/series/lsersa-club-performances/ranking/2349
         races:        
         -   name: Race 1
             venue: Chatham
@@ -98,11 +105,11 @@
     -   series: LSERSA Summer Series
         overall:
         -   name: Overall Fastest Female
-            url: http://www.skiresults.co.uk/series/lsersa-fastest-female/
+            url: https://www.skiresults.co.uk/series/lsersa-fastest-female/ranking/2211
         -   name: Overall Fastest Male
-            url: http://www.skiresults.co.uk/series/lsersa-fastest-male/
+            url: https://www.skiresults.co.uk/series/lsersa-fastest-male/ranking/2212
         -   name: Overall Club
-            url: http://www.skiresults.co.uk/series/lsersa-club-performances/
+            url: https://www.skiresults.co.uk/series/lsersa-club-performances/ranking/2210
         races: 
         -   name: Race 1
             venue: Chatham

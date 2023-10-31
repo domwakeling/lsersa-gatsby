@@ -73,7 +73,7 @@ const RacerLozenge = ({
 
     return (
         <div className={classNames}>
-            {(available > 0 && (racer.verified == true) && !booked && bookingAvailable) && (
+            {(available > 0 && (racer.verified === true) && !booked && bookingAvailable) && (
                 <button className="booking-button"
                     onClick={buttonHandler}
                 >
