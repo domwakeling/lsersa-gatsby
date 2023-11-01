@@ -73,6 +73,10 @@ const RacerLozenge = ({
 
     return (
         <div className={classNames}>
+            available: {JSON.stringify(available)}
+            racer: {JSON.stringify(racer)}
+            booked: {JSON.stringify(booked)}
+            bookingAvailable: {JSON.stringify(bookingAvailable)}
             {(available > 0 && (racer.verified === true) && !booked && bookingAvailable) && (
                 <button className="booking-button"
                     onClick={buttonHandler}
