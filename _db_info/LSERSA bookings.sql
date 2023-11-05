@@ -84,7 +84,8 @@ CREATE TABLE `clubs` (
 CREATE TABLE `sessions` (
   `date` date UNIQUE PRIMARY KEY NOT NULL,
   `max_count` integer,
-  `message` varchar(255)
+  `message` varchar(255),
+  'restricted' boolean
 );
 
 CREATE INDEX `users_index_0` ON `users` (`email`);

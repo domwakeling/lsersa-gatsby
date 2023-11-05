@@ -21,6 +21,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
     }, []);
 
     const nextThurs = addDays(nextSat, -2);
+    const nextTues = addDays(nextSat, -4);
     const now = new Date();
 
     const displayDate = (date) => `${WEEKDAYS[date.getDay()]} ${date.getDate()} ${MONTHS[date.getMonth()]}`
@@ -134,6 +135,17 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                     )}
                 </div>
             )}
+            {(session && session.restricted && (now < nextTues) ) && (
+                <div>
+                    {(message !== '' || userUnpaid.length > 0 || (now > nextThurs)) && (<br />)}
+                    <div className='advice-box' >
+                        <p>Entry for this session will be restricted to racers who are registered
+                            with a LSERSA club until Tuesday morning, at which point remaining
+                            places will be open to all.
+                        </p>
+                    </div>
+                </div>
+            )}
             {session && (
                 <>
                     <p><b>Spaces available: {available} / {session.max_count}</b></p>
@@ -147,6 +159,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             updatePane={updateBookings}
                             date={nextSat}
                             max_count={session.max_count}
+                            restricted={session.restricted}
                             bookingAvailable={now < nextThurs}
                         />
                     ))}

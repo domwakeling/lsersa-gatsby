@@ -4,6 +4,7 @@ import FreeField from "../elements/FreeField";
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import parseISO from 'date-fns/parseISO';
 import TextField from "../elements/TextField";
+import TwoSegment from "../elements/TwoSegment";
 import { json2csv } from "../../../lib/json2csv";
 import { MESSAGE_CLASSES, SESSION_MAX } from "../../../lib/constants";
 import { safeDateConversion } from "../../../lib/date-handler";
@@ -12,14 +13,20 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
     const [date, setDate] = useState(session.date ? parseISO(session.date + "Z") : null);
     const [message, setMessage] = useState(session.message || '');
     const [maxCount, setMaxCount] = useState((!session.max_count && session.max_count !== 0) ? SESSION_MAX : session.max_count);
+    const [restricted, setRestricted] = useState(session.restricted || false);
     const [editable, setEditable] = useState(editing);
     const [isDeleting, setIsDeleting] = useState(false);
+
+    const segmentHandler = (label) => {
+        setRestricted(label === "yes" ? true : false);
+    }
 
     const newSession = async () => {
         const body = {
             date,
             message,
-            max_count: maxCount
+            max_count: maxCount,
+            restricted
         }
         const res = await fetch(`/api/admin/sessions`, {
             method: "POST",
@@ -51,7 +58,8 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
             old_date: session.date,
             date,
             message,
-            max_count: maxCount
+            max_count: maxCount,
+            restricted
         }
         const res = await fetch(`/api/admin/sessions`, {
             method: "PUT",
@@ -186,6 +194,15 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
                     required={true}
                 />
             </div>
+            <TwoSegment
+                label="restricted"
+                leftLabel="yes"
+                rightLabel="no"
+                segmentMinWidth="50px"
+                activeSegment={restricted ? "left" : "right"}
+                reportClick={segmentHandler}
+                disabled={!editable}
+            />
             {!editing ? (
                 <p>{session['count(racer_id)']} racers entered</p>
             ) : (

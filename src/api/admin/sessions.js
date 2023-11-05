@@ -33,7 +33,7 @@ export default async function handler(req, res) {
         try {
             const conn = await connect(config);
             const sessions = await conn.execute(`
-                SELECT date, max_count, message, COUNT(racer_id)
+                SELECT date, max_count, message, restricted, COUNT(racer_id)
                 FROM sessions s
                 LEFT JOIN bookings b
                 ON s.date = b.session_date
@@ -81,7 +81,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
 
         try {
-            const { date, message, max_count } = req.body;
+            const { date, message, max_count, restricted } = req.body;
             if (!date || date === undefined || date === '') {
                 res.status(400).json({message: 'No date provided'});
                 return;
@@ -90,8 +90,8 @@ export default async function handler(req, res) {
             
             const conn = await connect(config);
             const _ = await conn.execute(`
-                INSERT INTO sessions (date, message, max_count) VALUES (?,?,?)`,
-                [dateString, message, max_count]
+                INSERT INTO sessions (date, message, max_count, restricted) VALUES (?,?,?)`,
+                [dateString, message, max_count, restricted]
             );
             
             res.status(200).json({ message: "Successfully added session" });
@@ -111,7 +111,7 @@ export default async function handler(req, res) {
     } else if (req.method === 'PUT') {
 
         try {
-            const { old_date, date, message, max_count } = req.body;
+            const { old_date, date, message, max_count, restricted } = req.body;
             let dateString = date.split("T")[0];
             const oldDateString = old_date.split("T")[0];
 
@@ -131,9 +131,10 @@ export default async function handler(req, res) {
                 SET
                     date = ?,
                     message = ?,
-                    max_count = ?
+                    max_count = ?,
+                    restricted = ?
                 WHERE date = '${oldDateString}'`,
-                [dateString, message, max_count]
+                [dateString, message, max_count, restricted]
             );
 
             res.status(200).json({ message: "Successfully updated session" });

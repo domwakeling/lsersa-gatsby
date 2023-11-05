@@ -9,6 +9,7 @@ const RacerLozenge = ({
     updatePane,
     date,
     max_count,
+    restricted,
     bookingAvailable = true
 }) => {
 
@@ -25,13 +26,15 @@ const RacerLozenge = ({
                 user_id: racer.user_id,
                 racer_id: racer.id,
                 date,
-                max_count
+                max_count,
+                restricted
             }
             const res = await fetch(`/api/user/bookings`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body),
             });
+
             if (res.status === 200) {
                 displayMessage(MESSAGE_CLASSES.SUCCESS, `Booking added`);
                 updatePane();
