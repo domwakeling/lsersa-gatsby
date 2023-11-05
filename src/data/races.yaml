@@ -97,8 +97,8 @@
         -   name: Night Race
             venue: Chatham
             date: Saturday 4th November
-            url: https://skiresults.co.uk/events/1320
-            status: Entries
+            url: /resources/races/2023/chatham_night_race_2023.pdf
+            status: Results
                
 -   year: 2022
     events: 
