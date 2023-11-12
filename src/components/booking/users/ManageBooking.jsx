@@ -135,9 +135,10 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                     )}
                 </div>
             )}
-            {(session && session.restricted && (now < nextTues) ) && (
+            {(session && session.restricted && (now < nextTues) ) ? (
                 <div>
                     {(message !== '' || userUnpaid.length > 0 || (now > nextThurs)) && (<br />)}
+                    {/* <p>test here</p> */}
                     <div className='advice-box' >
                         <p>Entry for this session will be restricted to racers who are registered
                             with a LSERSA club until Tuesday morning, at which point remaining
@@ -145,6 +146,8 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                         </p>
                     </div>
                 </div>
+            ) : (
+                ''
             )}
             {session && (
                 <>
