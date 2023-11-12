@@ -12,6 +12,34 @@ footer {
         margin-right: auto;
     }
 
+    #dolwen-footer {
+        margin-top: 1.3rem;
+        font-size: 1.4rem;
+        height: 2.6rem;
+
+        a {
+            &:hover {
+                // color: $color_p500;
+                text-decoration: none;
+        
+                &::before {
+                    content: '';
+                    background-color: transparentize($color_c500, 0.35);
+                    position: absolute;
+                    left: 0;
+                    bottom: 3px;
+                    width: 100%;
+                    height: 0.7rem;
+                    z-index: -1;
+                }
+            }
+        }
+
+        @include for-phone-only {
+            display: none;
+        }
+    }
+
     #social-media {
         
         .social-link {

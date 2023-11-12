@@ -90,7 +90,7 @@ export default async function handler(req, res) {
             
             const conn = await connect(config);
             const _ = await conn.execute(`
-                INSERT INTO sessions (date, message, max_count, restricted) VALUES (?,?,?)`,
+                INSERT INTO sessions (date, message, max_count, restricted) VALUES (?,?,?,?)`,
                 [dateString, message, max_count, restricted]
             );
             

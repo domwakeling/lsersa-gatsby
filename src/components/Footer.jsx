@@ -34,6 +34,12 @@ const Footer = () => {
                 <div className="container footer-container">
                     <p className="smaller">&copy;1998-{year} LSERSA, all rights reserved</p>
                     <div id="spreader" />
+                    <div id="dolwen-footer">
+                        website by <a href="https://www.dolwensolutions.com/" target="_dolwen">
+                            Dolwen Solutions
+                        </a>
+                    </div>
+                    <div id="spreader" />
                     <div id="social-media">
                         <a href="https://www.facebook.com/LSERSA/" className="social-link" target="_fb">
                             {/* style={{ textDecoration: "none", marginRight: "10px" }} */}

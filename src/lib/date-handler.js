@@ -12,7 +12,6 @@ const convertDateObject = (dateObj) => {
 
 const safeDateConversion = (date) => {
     // take a date and **ensure** it generates dateString yyyy-mm-dd
-    console.log('Running safeDateConversion with', date)
     try {
     
         if (typeof date === typeof {}) {
