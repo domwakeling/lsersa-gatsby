@@ -91,3 +91,20 @@
         }
     }
 }
+
+span.info-icon {
+    position: absolute;
+    margin-top: 0.1rem;
+    margin-left: 0.5rem;
+    width: 20px;
+    height: 17px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: #05081E;
+    color: #FFE282;
+    text-align: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0rem;
+    line-height: 1.6rem;
+    border-radius: 50%;
+}
