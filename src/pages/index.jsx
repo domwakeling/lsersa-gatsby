@@ -20,13 +20,13 @@ const HomePage = () => {
     const today = new Date();
     const meetingDate = new Date('2023-11-20');
 
-    const rwoString = `
-        <ul>
-            <li>Establish, develop and support regional snowsports' approach to safeguarding all
-                people, including children, young people and vulnerable adults at the regional level
-            </li>
-        </ul>
-    `
+    // const rwoString = `
+    //     <ul>
+    //         <li>Establish, develop and support regional snowsports' approach to safeguarding all
+    //             people, including children, young people and vulnerable adults at the regional level
+    //         </li>
+    //     </ul>
+    // `
 
     // const raceChairString = `
     //     <ul>
@@ -51,37 +51,37 @@ const HomePage = () => {
     //     </ul>
     // `
 
-    const calcsString = `
-        <ul>
-            <li>Deal with all aspects of timing and race result calculation on the day at races</li>
-            <li>Understand and use the appropriate software(s)(e.g.SkiPro, SkiResults) to keep times
-                and competition up-to-date during the race day</li>
-        </ul>
+    // const calcsString = `
+    //     <ul>
+    //         <li>Deal with all aspects of timing and race result calculation on the day at races</li>
+    //         <li>Understand and use the appropriate software(s)(e.g.SkiPro, SkiResults) to keep times
+    //             and competition up-to-date during the race day</li>
+    //     </ul>
         
-    `
+    // `
     
-    const equipString = `
-        <ul>
-            <li>Liaise with race equipment providers to ensure adequate equipment is available for
-            races, including race gates, timing, radio equipment, other accessories</li>
-        </ul>
-    `
+    // const equipString = `
+    //     <ul>
+    //         <li>Liaise with race equipment providers to ensure adequate equipment is available for
+    //         races, including race gates, timing, radio equipment, other accessories</li>
+    //     </ul>
+    // `
 
-    const assistEquipString = `
-        <ul>
-            <li>Support equipment officer in the provision of equipment for LSERSA races and
-                sanctioned training sessions</li>
-        </ul>
-    `
+    // const assistEquipString = `
+    //     <ul>
+    //         <li>Support equipment officer in the provision of equipment for LSERSA races and
+    //             sanctioned training sessions</li>
+    //     </ul>
+    // `
 
-    const marketString = `
-        <ul>
-            <li>develop relationships with relevant partners supporting access to snowsports
-                participation and competition</li>
-            <li>raise the profile of regional activities and sponsors through the use of marketing,
-                PR and other means available(e.g.raffle, race - day presence, social media etc)</li>
-        </ul>
-    `
+    // const marketString = `
+    //     <ul>
+    //         <li>develop relationships with relevant partners supporting access to snowsports
+    //             participation and competition</li>
+    //         <li>raise the profile of regional activities and sponsors through the use of marketing,
+    //             PR and other means available(e.g.raffle, race - day presence, social media etc)</li>
+    //     </ul>
+    // `
 
     return (
         <Layout>
@@ -118,53 +118,58 @@ const HomePage = () => {
                                 </li>
                                 <li>
                                     Marketing and Sponsorship
-                                    {" "}
+                                    {/* {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
+                                        data-tooltip-place="top-start"
                                         data-tooltip-html={marketString}
                                     >
                                         i
-                                    </span>
+                                    </span> */}
                                 </li>
                                 <li>
                                     Regional Welfare Officer
-                                    {" "}
+                                    {/* {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
+                                        data-tooltip-place="top-start"
                                         data-tooltip-html={rwoString}
                                     >
                                         i
-                                    </span>
+                                    </span> */}
                                 </li>
                                 <li>
                                     Chief of Calcs/Timing
-                                    {" "}
+                                    {/* {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
+                                        data-tooltip-place="top-start"
                                         data-tooltip-html={calcsString}
                                     >
                                         i
-                                    </span>
+                                    </span> */}
                                 </li>
                                 <li>
                                     Equipment Officer
-                                    {" "}
+                                    {/* {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
+                                        data-tooltip-place="top-start"
                                         data-tooltip-html={equipString}
                                     >
                                         i
-                                    </span>
+                                    </span> */}
                                 </li>
                                 <li>
                                     Assistant Equipment Office
-                                    {" "}
+                                    {/* {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
+                                        data-tooltip-place="top-start"
                                         data-tooltip-html={assistEquipString}
                                     >
                                         i
-                                    </span>
+                                    </span> */}
                                 </li>
                             </ul>
                             {/* <p>If anyone has any proposals they wish to have raised at the AGM can
@@ -175,6 +180,7 @@ const HomePage = () => {
                         <Tooltip
                             id="lsersa-tooltip"
                             style={{
+                                width: "1000px",
                                 maxWidth: "90%",
                                 backgroundColor: "#172A95",
                                 fontSize: '1.8rem',
