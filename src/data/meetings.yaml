@@ -1,5 +1,19 @@
 -   year: 2023
     items:
+    -   name: AGM
+        venue: Chatham
+        date: 20 November 2023
+        docs:
+        -   url: /resources/minutes/2023/agm_231120.pdf
+            text: Minutes
+
+    -   name: Committee meeting
+        venue: Chatham
+        date: 20 November 2023
+        docs:
+        -   url: /resources/minutes/2023/committee_231120.pdf
+            text: Minutes
+
     -   name: Committee meeting
         venue: virtual
         date: 3 July 2023
