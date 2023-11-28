@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 
 const HomePage = () => {
     const imgQueryData = useSponsorImages();
@@ -17,8 +17,8 @@ const HomePage = () => {
         image: getImage(node)
     }));
 
-    const today = new Date();
-    const meetingDate = new Date('2023-11-20');
+    // const today = new Date();
+    // const meetingDate = new Date('2023-11-20');
 
     // const rwoString = `
     //     <ul>
@@ -95,7 +95,7 @@ const HomePage = () => {
                     <p>In addition to providing Regional Race Training and organising the LSERSA
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
-                { (today <= meetingDate ) && (
+                {/* { (today <= meetingDate ) && (
                     <>
                         <div className="advice-box">
                             <h2 className="as-h3">Notice of AGM.</h2>
@@ -106,11 +106,11 @@ const HomePage = () => {
                                 vacant positions, listed below. The committee meet approx 4 times a
                                 year. Some of the positions require attendance and help at the
                                 LSERSA Regional races throughout the year.</p>
-                            {/* <p>Those interested should contact Lindsay Ayton directly if they wish
+                            <p>Those interested should contact Lindsay Ayton directly if they wish
                                 to be nominated for a committee position; all nominations to be
                                 received by midnight on 4th November 2023.  We do hope that some of
                                 our members will be happy to volunteer to be part of the team
-                                helping our racers in the region.</p> */}
+                                helping our racers in the region.</p>
                             <p>Open positions:</p>
                             <ul>
                                 <li>
@@ -118,62 +118,62 @@ const HomePage = () => {
                                 </li>
                                 <li>
                                     Marketing and Sponsorship
-                                    {/* {" "}
+                                    {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
                                         data-tooltip-place="top-start"
                                         data-tooltip-html={marketString}
                                     >
                                         i
-                                    </span> */}
+                                    </span>
                                 </li>
                                 <li>
                                     Regional Welfare Officer
-                                    {/* {" "}
+                                    {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
                                         data-tooltip-place="top-start"
                                         data-tooltip-html={rwoString}
                                     >
                                         i
-                                    </span> */}
+                                    </span>
                                 </li>
                                 <li>
                                     Chief of Calcs/Timing
-                                    {/* {" "}
+                                    {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
                                         data-tooltip-place="top-start"
                                         data-tooltip-html={calcsString}
                                     >
                                         i
-                                    </span> */}
+                                    </span>
                                 </li>
                                 <li>
                                     Equipment Officer
-                                    {/* {" "}
+                                    {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
                                         data-tooltip-place="top-start"
                                         data-tooltip-html={equipString}
                                     >
                                         i
-                                    </span> */}
+                                    </span>
                                 </li>
                                 <li>
                                     Assistant Equipment Office
-                                    {/* {" "}
+                                    {" "}
                                     <span className="info-icon"
                                         data-tooltip-id="lsersa-tooltip"
                                         data-tooltip-place="top-start"
                                         data-tooltip-html={assistEquipString}
                                     >
                                         i
-                                    </span> */}
+                                    </span>
                                 </li>
                             </ul>
-                            {/* <p>If anyone has any proposals they wish to have raised at the AGM can
-                                they please submit these to Lindsay Ayton in writing by 5th November.</p> */}
+                            <p>If anyone has any proposals they wish to have raised at the AGM can
+                                they please submit these to Lindsay Ayton in writing by 5th November.</p>
                             <p>LSERSA meetings are open to all members.</p>
                         </div>
                         <br />
@@ -189,7 +189,7 @@ const HomePage = () => {
                             }}
                         />
                     </>
-                )}
+                )} */}
             </div>
 
             <div className="banner col-p900 bg-p300">
