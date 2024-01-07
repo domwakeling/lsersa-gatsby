@@ -1,0 +1,19 @@
+-   year: '2023-24'
+    overall: /resources/points/2023_24/overall_2023_24.pdf
+    months:
+    -   name: November 23
+        link: /resources/points/2023_24/results_2311.pdf
+    -   name: December 23
+        link: /resources/points/2023_24/results_2312.pdf
+
+-   year: '2022-23'
+    overall: /resources/points/2022_23/overall_2022_23.pdf
+
+-   year: '2021-22'
+    overall: /resources/points/2021_22/overall_2021_22.pdf
+
+-   year: '2019-20'
+    overall: /resources/points/2019_20/overall_2019_20.pdf
+
+-   year: '2018-19'
+    overall: /resources/points/2018_19/overall_2018_19.pdf

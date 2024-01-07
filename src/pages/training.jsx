@@ -3,6 +3,52 @@ import Layout from "../components/Layout.jsx";
 import { Link } from "gatsby";
 import Hero from "../components/Hero.jsx";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
+import pointsData from '../data/training.yaml';
+
+const LatestTrainingSession = ({ data }) => {
+    return (
+        <table>
+            <tbody>
+                <tr>
+                    <td className="subtitle" style={{ minWidth: "160px" }}>Overall</td>
+                    <td style={{ minWidth: "160px" }}>
+                        <a className="race-link" href={data.overall} target="_offsite">Standings</a>
+                    </td>
+                </tr>
+                {
+                    data.months && data.months.length > 0 && data.months.map(month => (
+                        <tr>
+                            <td style={{ minWidth: "160px" }}>{month.name}</td>
+                            <td style={{ minWidth: "160px" }}>
+                                <a className="race-link" href={month.link} target="_offsite">Result</a>
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+
+    )
+}
+
+
+const TrainingTableRow = ({ item, idx }) => {
+    return (
+        <>
+            { idx > 0 ? (
+                <tr>
+                    <td style={{ minWidth: "160px" }}>{item.year}</td>
+                    <td style={{ minWidth: "160px" }}>
+                        <a className="race-link" href={item.overall} target="_offsite">Standings</a>
+                    </td>
+                </tr>
+            ) : (
+                ''
+            )}
+        </>
+    )
+}
+
 
 const TrainingPage = () => {
     return (
@@ -81,6 +127,23 @@ const TrainingPage = () => {
                         results, and 3 sessions must be attended to post an overall score and to be
                         eligible for the overall trophies.</p>
                 </div>
+
+                <h3>{pointsData[0].year} Season</h3>
+                <LatestTrainingSession data={pointsData[0]} />
+
+                <br />
+
+                <h3>Previous Seasons</h3>
+                <table>
+                    <tbody>
+                        {
+                            pointsData.map((item, idx_i) => (
+                                <TrainingTableRow key={idx_i} item={item} idx={idx_i} />
+                            ))
+                        }
+                    </tbody>
+                </table>
+
             </div>
 
         </Layout>
