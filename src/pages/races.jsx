@@ -128,14 +128,17 @@ const RacesPage = () => {
             <div className="banner col-p900 bg-p300">
                 <div className="container">
                     <div className="row">
-                        <h2 id="concussion_guidance">Concussion Guidance</h2>
-                        <p>The safety and well being of racers is a priority for racers participating in
-                            LSERSA races, so please take the time to read the <a target="_download"
-                            href="/resources/guidance/if_in_doubt_sit_them_out.pdf">guidance</a> but more
-                            importantly adhere to the minimum 21 day exclusion period recommended. The
-                            severity of a concussion injury should not be underestimated and it is
-                            important individuals, parents, schools and clubs work together to ensure
-                            guidance is followed.</p>
+                        <h2>Code Of Conduct</h2>
+                        <p>We wish to remind all racers, coaches, parents and spectators that appropriate
+                            personal conduct is expected at all LSERSA events. Whilst a competitive
+                            atmosphere is to be encouraged, inappropriate or unsportsmanlike behaviour will
+                            not be tolerated and can ultimately lead to sanctions, including suspension from
+                            LSERSA events.</p>
+                        <p>Examples of such behaviour include: equipment abuse, swearing,
+                            aggressive behaviour, discrimination of any form, heated arguments, disrespect
+                            shown to any official or volunteer.</p>
+                        <p>All LSERSA events are "family friendly" environments with appropriate
+                            behaviour to be demonstrated at all times.</p>
                     </div>
                 </div>
             </div>
@@ -145,21 +148,17 @@ const RacesPage = () => {
                 </div>
             </div>
 
-            
             <div className="container">
                 <div className="row">
                     <br />
-                    <h2>Personal Conduct</h2>
-                    <p>We wish to remind all racers, coaches, parents and spectators that appropriate
-                        personal conduct is expected at all LSERSA events. Whilst a competitive
-                        atmosphere is to be encouraged, inappropriate or unsportsmanlike behaviour will
-                        not be tolerated and can ultimately lead to sanctions, including suspension from
-                        LSERSA events.</p>
-                    <p>Examples of such behaviour include: equipment abuse, swearing,
-                        aggressive behaviour, discrimination of any form, heated arguments, disrespect
-                        shown to any official or volunteer.</p>
-                    <p>All LSERSA events are "family friendly" environments with appropriate
-                        behaviour to be demonstrated at all times.</p>
+                    <h2 id="concussion_guidance">Concussion Guidance</h2>
+                    <p>The safety and well being of racers is a priority for racers participating in
+                        LSERSA races, so please take the time to read the <a target="_download"
+                            href="/resources/guidance/if_in_doubt_sit_them_out.pdf">guidance</a> but more
+                        importantly adhere to the minimum 21 day exclusion period recommended. The
+                        severity of a concussion injury should not be underestimated and it is
+                        important individuals, parents, schools and clubs work together to ensure
+                        guidance is followed.</p>
                 </div>
             
                 <div className="row">
