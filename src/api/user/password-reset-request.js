@@ -25,10 +25,15 @@ export default async function handler(req, res) {
             const conn = await connect(config);
             const users = await conn.execute(`SELECT * FROM users WHERE email = '${cleanEmail}'`);
 
+            if (users.rows.length == 0) {
+                res.status(404).json({ message: 'Email not found.' });
+                return;
+            }
+            
             const user = users.rows[0];
 
-            if (!user == undefined) {
-                res.status(404).json({ message: 'Email not found.' });
+            if (!user.verified) {
+                res.status(404).json({ message: 'User account awaiting verification.' });
                 return;
             }
 

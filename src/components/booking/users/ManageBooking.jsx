@@ -151,8 +151,10 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
             )}
             {session && (
                 <>
-                    {(now < nextThurs) && (
+                    {(now < nextThurs) ? (
                         <p><b>Spaces available: {available} / {session.max_count}</b></p>
+                    ) : (
+                        <br/>
                     )}
                     { racers.map((racer, idx) => (
                         <RacerLozenge

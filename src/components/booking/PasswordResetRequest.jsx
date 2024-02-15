@@ -24,7 +24,12 @@ const PasswordResetRequest = ({ email, setEmail, emailValid, setEmailValid, setM
             setEmail('');
             setMessage(`An email has been sent with instructions to reset your password.`);
         } else {
-            setMessage('There was an issue - please try again.')
+            const body = await res.json();
+            if (body.message) {
+                setMessage(body.message);
+            } else {
+                setMessage('There was an issue - please try again.');
+            }
         }
     }
 
