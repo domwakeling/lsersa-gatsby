@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
     // query to get social images with their relative path
@@ -35,14 +35,21 @@ const Footer = () => {
                     <p className="smaller">&copy;1998-{year} LSERSA, all rights reserved</p>
                     <div id="spreader" />
                     <div id="dolwen-footer">
-                        website by <a href="https://www.dolwensolutions.com/" target="_dolwen">
-                            Dolwen Solutions
+                        website by&nbsp;
+                    </div>
+                    <div className="ds-img-wrapper">
+                        <a href="https://www.dolwensolutions.com/" target="_dolwen" className="ds-img-wrapper-link">
+                            <StaticImage
+                                src="../images/logos/dolwen_solutions.png"
+                                alt="Dolwen Solutions logo"
+                                width={120}
+                                className="ds-img"
+                                />
                         </a>
                     </div>
                     <div id="spreader" />
                     <div id="social-media">
                         <a href="https://www.facebook.com/LSERSA/" className="social-link" target="_fb">
-                            {/* style={{ textDecoration: "none", marginRight: "10px" }} */}
                             <GatsbyImage
                                 image={imgData.filter(node => /fb/.test(node.path))[0].image}
                                 alt="Facebook"
@@ -50,12 +57,29 @@ const Footer = () => {
                             />
                         </a>
                         <a href="https://www.instagram.com/lsersa_uk/" className="social-link" target="_insta">
-                            {/* style={{ textDecoration: "none" }} */}
                             <GatsbyImage
                                 image={imgData.filter(node => /inst/.test(node.path))[0].image}
                                 alt="Instagram"
                                 className="social-media-icon"
                             />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="clearfix" />
+
+                <div className="phone-only container footer-container">
+                    <div id="dolwen-footer-phone-only">
+                        Website by&nbsp;
+                    </div>
+                    <div className="ds-img-wrapper-phone-only">
+                        <a href="https://www.dolwensolutions.com/" target="_dolwen" className="ds-img-wrapper-link">
+                            <StaticImage
+                                src="../images/logos/dolwen_solutions.png"
+                                alt="Dolwen Solutions logo"
+                                width={80}
+                                className="ds-img"
+                                />
                         </a>
                     </div>
                 </div>
