@@ -75,9 +75,9 @@ const Footer = () => {
                     <div className="ds-img-wrapper-phone-only">
                         <a href="https://www.dolwensolutions.com/" target="_dolwen" className="ds-img-wrapper-link">
                             <StaticImage
-                                src="../images/logos/dolwen_solutions.png"
+                                src="../images/logos/dolwen_solutions_small.png"
                                 alt="Dolwen Solutions logo"
-                                width={80}
+                                width={90}
                                 className="ds-img"
                                 />
                         </a>
