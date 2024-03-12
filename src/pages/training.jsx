@@ -86,9 +86,10 @@ const TrainingPage = () => {
                 <div className="container">
                     <div className="row">
                         <h2>Everyone Welcome</h2>
-                        <p>The regional training sessions are open to all skiers, no club affiliation or
-                            membership is required. We cater for all skiing abilities, the only stipulations
-                            being:</p>
+                        <p>The regional training sessions are open to all skiers. You will need to
+                            be a member of a Snowsport England affiliated race club, but you can
+                            come for some taster sessions if you haven't officially joined a club yet. 
+                            We cater for all skiing abilities, the only stipulations being:</p>
                         <ul>
                             <li>racers should wear appropriate clothing and protective equipment</li>
                             <li>racers need to be able to perform controlled rounded turns from anywhere
