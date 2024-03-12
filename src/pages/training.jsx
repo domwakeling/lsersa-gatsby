@@ -89,12 +89,16 @@ const TrainingPage = () => {
                         <p>The regional training sessions are open to all skiers. You will need to
                             be a member of a Snowsport England affiliated race club, but you can
                             come for some taster sessions if you haven't officially joined a club yet. 
-                            We cater for all skiing abilities, the only stipulations being:</p>
+                            We cater for a wide range of abilities, the only stipulations being:</p>
                         <ul>
                             <li>racers should wear appropriate clothing and protective equipment</li>
                             <li>racers need to be able to perform controlled rounded turns from anywhere
                                 on the slope</li>
                             <li>racers need to able to use the lifts unaided</li>
+                            <li>racer/parents/guardians should be aware that, although we run our
+                                sessions with safety as our first priority, participants will be
+                                skiing through slalom gates which does involve an additional element
+                                of risk over and above free skiing</li>
                         </ul>
                         <p>So if you want to try ski racing, but are unsure of your ability level, this is
                             the perfect session to give it a go. Our coaches are very supportive of new
