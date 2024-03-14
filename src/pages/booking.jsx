@@ -25,68 +25,72 @@ const LogOut = ({clickHandler}) => {
 }
 
 const BookingPage = () => {
-    const [user, setUser] = useState(null);
-    const [mode, setMode] = useState(MODES.LOADING);
-    const [message, setMessage] = useState('');
-    const [messageClass, setMessageClass] = useState('');
-    const [email, setEmail] = useState("");
-    const [emailValid, setEmailValid] = useState(false);
+    // const [user, setUser] = useState(null);
+    // const [mode, setMode] = useState(MODES.LOADING);
+    // const [message, setMessage] = useState('');
+    // const [messageClass, setMessageClass] = useState('');
+    // const [email, setEmail] = useState("");
+    // const [emailValid, setEmailValid] = useState(false);
 
-    const displayMessage = useCallback((messageType, messageText) => {
-        setMessageClass(messageType)
-        setMessage(messageText);
-        setTimeout(() => {
-            setMessage('');
-        }, MESSAGE_TIME);
-    }, []);
+    // const displayMessage = useCallback((messageType, messageText) => {
+    //     setMessageClass(messageType)
+    //     setMessage(messageText);
+    //     setTimeout(() => {
+    //         setMessage('');
+    //     }, MESSAGE_TIME);
+    // }, []);
 
-    useEffect(() => {
-        // hooks require that async function is defined before being called; this checks for a JWT
-        async function checkForToken() {
-            const res = await fetch("/api/poll-jwt"); 
-            if (res.status === 200) {
-                const data = await res.json();
-                setUser(data);
-                if(data.role_id === roles.ADMIN) {
-                    setMode(MODES.ADMIN);
-                } else {
-                    setMode(MODES.LOGGED_IN);
-                }
-            } else {
-                // no JWT or invalid user, go to the log-in screen
-                setMode(MODES.LOGGING_IN)
-            }            
-        }
+    // useEffect(() => {
+    //     // hooks require that async function is defined before being called; this checks for a JWT
+    //     async function checkForToken() {
+    //         const res = await fetch("/api/poll-jwt"); 
+    //         if (res.status === 200) {
+    //             const data = await res.json();
+    //             setUser(data);
+    //             if(data.role_id === roles.ADMIN) {
+    //                 setMode(MODES.ADMIN);
+    //             } else {
+    //                 setMode(MODES.LOGGED_IN);
+    //             }
+    //         } else {
+    //             // no JWT or invalid user, go to the log-in screen
+    //             setMode(MODES.LOGGING_IN)
+    //         }            
+    //     }
         
-        if (!user && mode === MODES.LOADING) {
-            checkForToken();
-        }
-    }, [user, mode]);
+    //     if (!user && mode === MODES.LOADING) {
+    //         checkForToken();
+    //     }
+    // }, [user, mode]);
 
-    const logOutHandler = async (e) => {
-        e.preventDefault();
-        const body = {
-            user_email: user.email
-        }
-        const res = await fetch(`/api/user/logout`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(body),
-        });
-        if (res.status !== 200) {
-            const data = await res.json();
-            displayMessage(MESSAGE_CLASSES.WARN, data.message);
-        }
-        setUser(null);
-        setMode(MODES.LOGGING_IN);
-    }
+    // const logOutHandler = async (e) => {
+    //     e.preventDefault();
+    //     const body = {
+    //         user_email: user.email
+    //     }
+    //     const res = await fetch(`/api/user/logout`, {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(body),
+    //     });
+    //     if (res.status !== 200) {
+    //         const data = await res.json();
+    //         displayMessage(MESSAGE_CLASSES.WARN, data.message);
+    //     }
+    //     setUser(null);
+    //     setMode(MODES.LOGGING_IN);
+    // }
 
     return (
         <Layout>
             <div className="container">
                 <div className="row">
                     <h1>Training Booking</h1>
-                    {mode === MODES.LOADING && (
+                    <div className="advice-box">
+                        <p className="larger">The booking system is undergoing planned maintenance.</p>
+                    </div>
+                    <br/>
+                    {/* {mode === MODES.LOADING && (
                         <LoadingSpinner />
                     )}
                     {mode === MODES.ADMIN && (
@@ -136,9 +140,9 @@ const BookingPage = () => {
                             setEmailValid={setEmailValid}
                             setMode={setMode}
                         />
-                    )}
+                    )} */}
                 </div>
-                <MessageBox message={message} messageClass={messageClass} />
+                {/* <MessageBox message={message} messageClass={messageClass} /> */}
             </div>
         </Layout>
     )
