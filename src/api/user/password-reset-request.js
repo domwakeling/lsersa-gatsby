@@ -1,17 +1,9 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { tokenGenerator} from '../../lib/token';
 import { tokenTypes } from '../../lib/db_refs';
 import { emailResetPasswordTokenToUser } from '../../lib/mail/send_reset_token';
 import addDays from 'date-fns/addDays';
 import { safeDateConversion } from '../../lib/date-handler';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -22,15 +14,14 @@ export default async function handler(req, res) {
             const cleanEmail = email.toLowerCase();
 
             // look for a stored hash
-            const conn = await connect(config);
-            const users = await conn.execute(`SELECT * FROM users WHERE email = '${cleanEmail}'`);
+            const users = await sql`SELECT * FROM users WHERE email = ${cleanEmail}`;
 
-            if (users.rows.length == 0) {
+            if (users.length == 0) {
                 res.status(404).json({ message: 'Email not found.' });
                 return;
             }
             
-            const user = users.rows[0];
+            const user = users[0];
 
             if (!user.verified) {
                 res.status(404).json({ message: 'User account awaiting verification.' });
@@ -42,10 +33,20 @@ export default async function handler(req, res) {
             let newDate = new Date();
             // add 7 days 
             newDate = safeDateConversion(addDays(newDate, 7));
-            const _ = await conn.execute(
-                'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
-                [user.id, newToken, newDate, tokenTypes.PASSWORD_RESET]
-            )
+            const _ = await sql`
+                INSERT INTO tokens (
+                    user_id,
+                    token,
+                    expires_at,
+                    type_id
+                )
+                VALUES (
+                    ${user.id},
+                    ${newToken},
+                    ${newDate},
+                    ${tokenTypes.PASSWORD_RESET}
+                )
+            `;
 
             // send an email
             const info = await emailResetPasswordTokenToUser(newToken, email);

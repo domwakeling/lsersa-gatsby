@@ -1,13 +1,4 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
-
+import sql from '../../../lib/db';
 
 export default async function handler(req, res) {
 
@@ -25,20 +16,20 @@ export default async function handler(req, res) {
 
             // get information
             const { date } = req.params;
-            const conn = await connect(config);
-            const session = await conn.execute(`SELECT * FROM sessions WHERE date = '${date}'`);
+            
+            const session = await sql`SELECT * FROM sessions WHERE date = ${date}`;
 
             // if no session, exit
-            if (session.rows.length === 0) {
+            if (session.length === 0) {
                 res.status(204).json({message: 'Session not found'});
                 return;
             }
 
             // get bookings
-            const bookings = await conn.execute(`SELECT * FROM bookings WHERE session_date = '${date}'`)
+            const bookings = await sql`SELECT * FROM bookings WHERE session_date = ${date}`;
             const data = {
-                session: session.rows[0],
-                bookings: bookings.rows
+                session: session[0],
+                bookings: bookings
             }
             
             // return data

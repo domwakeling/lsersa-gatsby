@@ -1,23 +1,15 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import brcypt from 'bcryptjs';
 import { createJWT, MAX_AGE } from '../../lib/jwt-methods';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const getPasswordHashForEmail = async (email) => {
 
     try {
-        const conn = await connect(config);
-        const result = await conn.execute(`SELECT * FROM users WHERE email = '${email}'`);
+        const result = await sql`SELECT * FROM users WHERE email = ${email}`;
 
-        if (result && result.rows && result.rows.length > 0) {
-            return result.rows[0];
+        if (result && result.length > 0) {
+            return result[0];
         }
 
         return null;

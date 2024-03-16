@@ -1,14 +1,6 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { getIdentifierFromJWT } from '../../lib/jwt-methods';
 import brcypt from 'bcryptjs';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -40,36 +32,25 @@ export default async function handler(req, res) {
                 return;
             }
 
-            // construct a partial for the query string, and a params
-            const columns = [];
-            const params = [];
-
-            keys.forEach(key => {
-                const newColumn = `${key} = ?`;
-                columns.push(newColumn);
-                params.push(updates[key]);
-            });
-
-            const query = columns.join(", ");
-
             // try to update the user
-            const conn = await connect(config);
-            const tryUpdateUser = await conn.execute(`
-                    UPDATE users
-                    SET ${query}
-                    WHERE id=${id}`,
-                params
-            );
+            const tryUpdateUser = await sql`
+                UPDATE users
+                SET ${
+                    sql(updates, keys)
+                }
+                WHERE id=${id}
+                RETURNING *
+            `;
             
             // if for some reason this hasn't worked, error out ...
-            if (!tryUpdateUser || tryUpdateUser.rowsAffected !== 1) {
+            if (!tryUpdateUser || tryUpdateUser.length !== 1) {
                 res.status(500).json({message: 'ERROR: Changes not saved'});
                 return;
             }
 
             // retrieve the updated user
-            const updatedUsers = await conn.execute(`SELECT * FROM users WHERE id = ${id}`);
-            const newUser = updatedUsers.rows[0];
+            const updatedUsers = await sql`SELECT * FROM users WHERE id = ${id}`;
+            const newUser = updatedUsers[0];
             
             res.status(200).json({message: "all great", newUser});
             return;

@@ -1,15 +1,7 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database'; 
+import sql from "../../lib/db";
 import { sendLongEmail } from "../../lib/mail/send_long_email";
 import { verifyUserHasAdminRole } from "../../lib/admin/verify_admin";
 import { EMAIL_BATCH_SIZE } from '../../lib/constants';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -73,12 +65,10 @@ export default async function handler(req, res) {
             }
 
             // need to get all main and secondary emails, and ensure no duplicates ...
-            const conn = await connect(config);
+            const users = await sql`SELECT email, secondary_email FROM users`;
 
-            const users = await conn.execute('SELECT email, secondary_email FROM users');
-
-            const userEmails = users.rows.map(user => user.email);
-            const secondEmails = users.rows
+            const userEmails = users.map(user => user.email);
+            const secondEmails = users
                 .filter(user => (user.secondary_email && user.secondary_email !== ''))
                 .map(user => user.secondary_email);
 

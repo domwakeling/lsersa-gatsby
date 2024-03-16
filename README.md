@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/658d902f-c687-4c02-9058-5be539a76000/deploy-status)](https://app.netlify.com/sites/lsersa/deploys)
 
 2023 re-build of the LSERSA website using [Gatsby](https://www.gatsbyjs.com/),
-[PlanetScale](https://planetscale.com/) and [Netlify](https://www.netlify.com/), with
+[Supabase](https://supabase.com/) and [Netlify](https://www.netlify.com/), with
 [Stripe](https://stripe.com/en-gb) integration for payments.
 
 ## Index
@@ -38,7 +38,7 @@ Netlify app 'behind the scenes'.
 
 *This is the approach taken for the Bowles website re-build from 2016, which worked well.*
 
-![stack flow diagram](./static/stack-design.png)
+![stack flow diagram](./static/stack-design2.png)
 
 [⥣ back to index](#index)
 
@@ -205,7 +205,7 @@ The general flow of the booking system is:
 
 ### Database
 
-The backend for the booking system is a MySQL database on PlanetScale, accessed by API routes on
+The backend for the booking system is a PostgreSQL database on Supabase, accessed by API routes on
 the website (provided as Gatsby functions). The database structure is:
 
 ![database schema diagram](./_db_info/LSERSA%20booking%20schema.png)

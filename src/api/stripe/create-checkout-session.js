@@ -1,18 +1,10 @@
 import Stripe from "stripe";
-import { connect } from '@planetscale/database';
-import { fetch } from 'undici';
+import sql from "../../lib/db";
 import { tokenGenerator} from '../../lib/token';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { tokenTypes } from "../../lib/db_refs";
 import addDays from 'date-fns/addDays';
 import { safeDateConversion } from "../../lib/date-handler";
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -46,50 +38,59 @@ export default async function handler(req, res) {
 
         // get racers that are booked and awaiting payment
         const session_date = date.split("T")[0];
-        const conn = await connect(config);
-        const racers = await conn.execute(`
+
+        const racers = await sql`
             SELECT b.racer_id, paid, user_id, id, concession
             FROM bookings b
             LEFT JOIN users_racers ur
             ON b.racer_id = ur.racer_id
             LEFT JOIN racers r
             ON b.racer_id = r.id
-            WHERE session_date = ? AND paid = ? AND user_id = ?`,
-            [session_date, false, id]
-        )
+            WHERE session_date = ${session_date} AND paid = ${false} AND user_id = ${id}
+        `;
 
         const newToken = tokenGenerator(12);
 
         let newDate = new Date();
         newDate = safeDateConversion(addDays(newDate, 1)); // 1 day to use token
+        
+        const racersIds = racers.map(racer => racer.racer_id);
 
-        const racersIds = racers.rows.map(racer => racer.racer_id);
-        const idPlaceholders = racersIds.map(racer => "?").join(",");
 
-        const results = await conn.transaction(async (tx) => {
+        const _ = await sql.begin(async sql => {
+        
             // insert the token
-            const tryNewToken = await tx.execute(
-                'INSERT INTO tokens (user_id, token, expiresAt, type_id) VALUES (?,?,?,?)',
-                [id, newToken, newDate, tokenTypes.PAYMENT_PENDING]
-            );
+            const tryNewToken = await sql`
+                INSERT INTO tokens (
+                    user_id,
+                    token,
+                    expires_at,
+                    type_id
+                )
+                VALUES (
+                    ${id},
+                    ${newToken},
+                    ${newDate},
+                    ${tokenTypes.PAYMENT_PENDING}
+                )
+            `;
 
             // update bookings by adding token to those who are being paid for
-            const trySetToken = await tx.execute(`
+            const trySetToken = await sql`
                 UPDATE bookings
-                SET token = ?
-                WHERE racer_id IN (${idPlaceholders})`,
-                [newToken, ... racersIds]
-            );
+                SET token = ${newToken}
+                WHERE racer_id IN ${ sql(racersIds) }
+            `;
 
             return [
-                tryNewToken,
+                tryNewToken, 
                 trySetToken
             ]
         });
 
         // set up line items based on the racers we're booking
-        const full_price = racers.rows.filter(r => r.concession === 0).length;
-        const reduced_price = racers.rows.filter(r => r.concession !== 0).length;
+        const full_price = racers.filter(r => r.concession === 0).length;
+        const reduced_price = racers.filter(r => r.concession !== 0).length;
         const line_items = [];
         if (full_price > 0) {
             line_items.push({

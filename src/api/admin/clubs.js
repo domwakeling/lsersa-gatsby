@@ -1,13 +1,5 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -23,21 +15,29 @@ export default async function handler(req, res) {
 
         if (req.method === 'GET') {
             // get all clubs
-            const conn = await connect(config);
-            const clubs = await conn.execute('SELECT * FROM clubs');
+            const clubs = await sql`SELECT * FROM clubs`;
             
             // return
-            res.status(200).json({ message: 'success', clubs: clubs.rows });
+            res.status(200).json({ message: 'success', clubs });
             return;
 
         } else if (req.method === 'POST') {
             // insert a new club
             const {name, contact_name, contact_email, affiliated} = req.body;
-            const conn = await connect(config);
-            const _ = await conn.execute(
-                'INSERT INTO clubs (name, contact_name, contact_email, affiliated) VALUES (?,?,?,?)',
-                [name, contact_name, contact_email, affiliated]
-            )
+            const _ = await sql`
+                INSERT INTO clubs (
+                    name,
+                    contact_name,
+                    contact_email,
+                    affiliated
+                )
+                VALUES (
+                    ${name},
+                    ${contact_name},
+                    ${contact_email},
+                    ${affiliated}
+                )
+            `;
 
             // return
             res.status(200).json({ message: 'Added new club'});
@@ -46,17 +46,17 @@ export default async function handler(req, res) {
         } else if (req.method === 'PUT') {
             // update a club
             const { id, name, contact_name, contact_email, affiliated } = req.body;
-            const conn = await connect(config);
-            const _ = await conn.execute(`
-                    UPDATE clubs
-                    SET
-                        name = ?,
-                        contact_name = ?,
-                        contact_email = ?,
-                        affiliated = ?
-                    WHERE id = ${ id }`,
-                [name, contact_name, contact_email, affiliated]
-            )
+            
+            const _ = await sql`
+                UPDATE clubs
+                SET
+                    name = ${name},
+                    contact_name = ${contact_name},
+                    contact_email = ${contact_email},
+                    affiliated = ${affiliated}
+                WHERE
+                    id = ${ id }
+            `;
 
             // return
             res.status(200).json({ message: 'Updated clubs' });
@@ -65,17 +65,22 @@ export default async function handler(req, res) {
         } else if (req.method === 'DELETE') {
             // delete a club
             const { id } = req.body;
-            const conn = await connect(config);
             
             // are there any racers aligned to that club?
-            const racers = await conn.execute(`SELECT COUNT(club_id) FROM racers WHERE club_id = ${id};`);
-            if(racers.rows[0]['count(club_id)'] > 0) {
+            const racers = await sql`
+                SELECT
+                COUNT(club_id) AS "count(club_id)"
+                FROM racers
+                WHERE club_id = ${id}
+            `;
+
+            if(racers[0]['count(club_id)'] > 0) {
                 res.status(400).json({ message: "ERROR: there are racers associated with that club" });
                 return;
             };
 
             // no racers, so go ahead and delete
-            const _ = await conn.execute(`DELETE FROM clubs WHERE id = ${id}`);
+            const _ = await sql`DELETE FROM clubs WHERE id = ${id}`;
             
             // return
             res.status(200).json({ message: "Deleted club" });

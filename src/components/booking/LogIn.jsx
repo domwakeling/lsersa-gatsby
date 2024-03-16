@@ -38,7 +38,7 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser })
         setLoading(false);
 
         if (res.status === 200) {
-            const data = await res.json();    
+            const data = await res.json();
             setUser(data);
             if (data.role_id === roles.ADMIN) {
                 setMode(MODES.ADMIN);
@@ -48,6 +48,8 @@ const LogIn = ({ email, setEmail, emailValid, setEmailValid, setMode, setUser })
 
         } else {
             // likely status 400, but error regardless
+            const data = await res.json();
+            if (data.message) console.info("ERROR INFO:", data.message);
             setMessage(`There was a problem signing in. Please try again.`);
         }
     }

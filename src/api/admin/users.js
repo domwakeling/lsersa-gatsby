@@ -1,14 +1,6 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import { roles } from '../../lib/db_refs';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -23,8 +15,7 @@ export default async function handler(req, res) {
 
         if (req.method == 'GET') {
             // get info
-            const conn = await connect(config);
-            const users = await conn.execute(`
+            const users = await sql`
                 SELECT
                     u.id,
                     email,
@@ -43,16 +34,16 @@ export default async function handler(req, res) {
                     secondary_email,
                     secondary_mobile,
                     admin_text,
-                    COUNT(racer_id) as racer_count
+                    COUNT(racer_id) as "racer_count"
                 FROM users_racers ur
                 RIGHT JOIN users u
                 ON u.id = ur.user_id
-                WHERE verified = 1
-                GROUP BY u.id`
-            );
+                WHERE verified = ${true}
+                GROUP BY u.id
+            `;
 
             // return
-            res.status(200).json(users.rows);
+            res.status(200).json(users);
             return;
 
         } else if (req.method === 'PUT') {
@@ -60,16 +51,12 @@ export default async function handler(req, res) {
             const { id, updates } = req.body;
 
             const updateKeys = Object.keys(updates);
-            const updateValues = updateKeys.map(key => updates[key]);
-            const queryString = updateKeys.map(key => `${key} = ?`).join(",");
-
-            const conn = await connect(config);
 
             // check that we're not removing the last admin user ...
             if (updateKeys.indexOf('role_id') >= 0 && updates['role_id'] !== roles.ADMIN) {
                 // we're changing role FROM admin
-                const adminUsers = await conn.execute(`SELECT * FROM users WHERE role_id = ${roles.ADMIN}`);
-                if (adminUsers.rows.length === 1 && adminUsers.rows[0].id === id) {
+                const adminUsers = await sql`SELECT * FROM users WHERE role_id = ${roles.ADMIN}`;
+                if (adminUsers.length === 1 && adminUsers[0].id === id) {
                     // we're trying to remove the only admin user
                     res.status(400).json({ message: `You cannot remove admin status from the only
                         admin user; please give admin rights to another user and try again` });
@@ -77,13 +64,13 @@ export default async function handler(req, res) {
                 }
             }
 
-            const _ = await conn.execute(`
-                    UPDATE users
-                    SET ${queryString}
-                    WHERE id=${id}
-                `,
-                updateValues
-            );
+            const _ = await sql`
+                UPDATE users
+                SET ${
+                    sql(updates, updateKeys)
+                }
+                WHERE id=${id}
+            `;
 
             res.status(200).json({ message: "Successfully updated user" });
             return;
@@ -91,27 +78,26 @@ export default async function handler(req, res) {
         } else if (req.method === 'DELETE') {
 
             const { id } = req.body;
-            const conn = await connect(config);
 
             // check we're not trying to delete a user that has racers
-            const users = await conn.execute(`
+            const users = await sql`
                 SELECT
                     u.id,
                     role_id,
-                    COUNT(racer_id) as racer_count
+                    COUNT(racer_id) as "racer_count"
                 FROM users u
                 LEFT JOIN users_racers ur
                 ON u.id = ur.user_id
                 WHERE u.id = ${id}
-                GROUP BY ur.user_id
-            `);
+                GROUP BY u.id
+            `;
 
-            if (users.rows.length === 0) {
+            if (users.length === 0) {
                 res.status(400).json({message: 'User not recognised'});
                 return;
             }
 
-            if (users.rows[0].racer_count > 0) {
+            if (users[0].racer_count > 0) {
                 res.status(400).json({ message: `There are racers linked to that user; allocate them
                     to a different user and try again` });
                 return;
@@ -119,10 +105,10 @@ export default async function handler(req, res) {
 
             // check that we're not trying to delete the only remaining admin
 
-            if (users.rows[0].role_id === roles.ADMIN) {
+            if (users[0].role_id === roles.ADMIN) {
                 // the user has admin
-                const adminUsers = await conn.execute(`SELECT * FROM users WHERE role_id = ${roles.ADMIN}`);
-                if (adminUsers.rows.length === 1 && adminUsers.rows[0].id === id) {
+                const adminUsers = await sql`SELECT * FROM users WHERE role_id = ${roles.ADMIN}`;
+                if (adminUsers.length === 1 && adminUsers[0].id === id) {
                     // we're trying to remove the only admin user
                     res.status(400).json({
                         message: `You cannot delete the only admin user; please give admin rights to
@@ -132,7 +118,7 @@ export default async function handler(req, res) {
             }
             
             // user exists, no racers, not (the only) admin
-            const _ = await conn.execute(`DELETE FROM users WHERE id = ${id}`);
+            const _ = await sql`DELETE FROM users WHERE id = ${id}`;
 
             res.status(200).json({ message: "Successfully deleted user" });
             return;

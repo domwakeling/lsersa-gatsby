@@ -1,16 +1,8 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { roles } from '../../lib/db_refs';
 import { emailNewAccountTokenToUser } from '../../lib/mail/send_signup_token';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import insertUser from '../../lib/users/insertNewUser';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -25,13 +17,13 @@ export default async function handler(req, res) {
 
         const email = req.body.email;
         const cleanEmail = email.toLowerCase();
-        const conn = await connect(config);
-        const admin = await conn.execute(`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`);
 
-        if (admin.rows.length == 0) {
+        const admin = await sql`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`;
+
+        if (admin.length == 0) {
             // there are no admin users, so we need to set admin rights on this user and immediately validate
             try {
-                const results = await insertUser(conn, cleanEmail, roles.ADMIN, true);
+                const results = await insertUser(sql, cleanEmail, roles.ADMIN, true);
                 
                 // trigger an email to the new admin
                 const _ = await emailNewAccountTokenToUser(results.newToken, email);
@@ -48,6 +40,7 @@ export default async function handler(req, res) {
                     return;
                 };
                 // otherwise generic error message
+                console.log(error);
                 res.status(500).json({ message: "Server error: bad request" });
                 return;
             }
@@ -55,11 +48,11 @@ export default async function handler(req, res) {
         } else {
             // we have one or more admin users, so progress as usual
             try {
-                let _ = await insertUser(conn, cleanEmail, roles.USER);
+                let _ = await insertUser(sql, cleanEmail, roles.USER);
 
                 // trigger an email to the admins
                 _ = await sendShortEmail(
-                    admin.rows.map(item => item.email),
+                    admin.map(item => item.email),
                     "New User Request",
                     "New User Request",
                     `A user has requested a new account be created, please log in to the admin

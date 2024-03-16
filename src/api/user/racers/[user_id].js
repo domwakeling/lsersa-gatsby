@@ -1,14 +1,6 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../../lib/db';
 import { verifyUserHasAdminRole } from '../../../lib/admin/verify_admin';
 import { veryIdMatchesJWT } from '../../../lib/users/verify_user_id';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -40,16 +32,15 @@ export default async function handler(req, res) {
             }
 
             // get the racers for the user
-            const conn = connect(config);
-            const racers = await conn.execute(`
+            const racers = await sql`
                 SELECT *
                 FROM users_racers ur
                 INNER JOIN racers ra
                 ON ur.racer_id = ra.id
                 WHERE ur.user_id = ${user_id}
-            `);
+            `;
 
-            res.status(200).json({racers: racers.rows});
+            res.status(200).json({racers: racers});
             return;
 
         } catch (error) {

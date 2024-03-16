@@ -1,26 +1,16 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
+import sql from "../../lib/db";
 
 export default async function handler(req, res) {
     // not protecting this route
     
     if (req.method == 'GET') {
-        const conn = await connect(config);
-        
         try {
-            const users = await conn.execute('SELECT id FROM users WHERE verified = FALSE');
-            const racers = await conn.execute('SELECT id FROM racers WHERE verified = FALSE');
+            const users = await sql`SELECT id FROM users WHERE verified = FALSE`;
+            const racers = await sql`SELECT id FROM racers WHERE verified = FALSE`;
 
             res.status(200).json({
-                users: users.rows.length,
-                racers: racers.rows.length
+                users: users.length,
+                racers: racers.length
             });
             return;
 
@@ -32,7 +22,7 @@ export default async function handler(req, res) {
         }
 
     } else {
-        // method is not POST, fail gracefully
+        // method is not GET, fail gracefully
         res.status(405).json({ message: "ERROR: method not allowed" });
         return;
     }

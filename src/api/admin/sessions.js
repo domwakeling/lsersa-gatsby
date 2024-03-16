@@ -1,26 +1,19 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
-const checkSessionHasNoRacers = async (conn, session_date) => {
-    const data = await conn.execute(`
-        SELECT date, COUNT(racer_id) as racer_count
+const checkSessionHasNoRacers = async (session_date) => {
+    const data = await sql(`
+        SELECT date, COUNT(racer_id) as "racer_count"
         FROM sessions s
         LEFT JOIN bookings b
         ON s.date = b.session_date
-        WHERE date = '${session_date}'
+        WHERE date = ${session_date}
         GROUP BY date
     `);
 
-    if (data.rows.length === 0 || data.rows[0].racer_count === '0') return true;
+    if (data.length === 0 || data[0].racer_count === '0') return true;
     return false;
 }
 
@@ -31,16 +24,15 @@ export default async function handler(req, res) {
         // no protection on the GET route - needed by non-admin and doesn't reveal personal info
 
         try {
-            const conn = await connect(config);
-            const sessions = await conn.execute(`
-                SELECT date, max_count, message, restricted, COUNT(racer_id)
+            const sessions = await sql`
+                SELECT date, max_count, message, restricted, COUNT(racer_id) AS "count(racer_id)"
                 FROM sessions s
                 LEFT JOIN bookings b
                 ON s.date = b.session_date
-                GROUP BY date;`
-            );
+                GROUP BY date;
+            `;
 
-            res.status(200).json({sessions: sessions.rows});
+            res.status(200).json({sessions: sessions});
             return;
 
         } catch (error) {
@@ -88,11 +80,20 @@ export default async function handler(req, res) {
             }
             const dateString = date.split("T")[0];
             
-            const conn = await connect(config);
-            const _ = await conn.execute(`
-                INSERT INTO sessions (date, message, max_count, restricted) VALUES (?,?,?,?)`,
-                [dateString, message, max_count, restricted]
-            );
+            const _ = await sql`
+                INSERT INTO sessions (
+                    date, 
+                    message, 
+                    max_count, 
+                    restricted
+                )
+                VALUES (
+                    ${dateString},
+                    ${message},
+                    ${max_count},
+                    ${restricted}
+                )
+            `;
             
             res.status(200).json({ message: "Successfully added session" });
             return;
@@ -115,27 +116,24 @@ export default async function handler(req, res) {
             let dateString = date.split("T")[0];
             const oldDateString = old_date.split("T")[0];
 
-            const conn = await connect(config);
-
             if (dateString !== oldDateString) {
                 // trying to change date, check there's no racers signed up
-                const noRacers = await checkSessionHasNoRacers(conn, oldDateString);
+                const noRacers = await checkSessionHasNoRacers(oldDateString);
                 if (!noRacers) {
                     res.status(400).json({message: 'There are racers booked on the session, unable to change date'});
                     return;
                 }
             }
             
-            const _ = await conn.execute(`
+            const _ = await sql`
                 UPDATE sessions
                 SET
-                    date = ?,
-                    message = ?,
-                    max_count = ?,
-                    restricted = ?
-                WHERE date = '${oldDateString}'`,
-                [dateString, message, max_count, restricted]
-            );
+                    date = ${dateString},
+                    message = ${message},
+                    max_count = ${max_count},
+                    restricted = ${restricted}
+                WHERE date = ${oldDateString}
+            `;
 
             res.status(200).json({ message: "Successfully updated session" });
             return;
@@ -156,27 +154,24 @@ export default async function handler(req, res) {
             const sessionDate = new Date(date);
             const today = new Date();
             const daysBetween = differenceInCalendarDays(today, sessionDate);
-            
-            const conn = await connect(config);
 
             // if > 27 days old, can delete everything (test in the component is >28, extra day )
             if (daysBetween > 27) {
-                const _ = await conn.transaction(async (tx) => {
 
-                    const tryBookingsDelete = await tx.execute(
-                        'DELETE FROM bookings WHERE session_date = ?',
-                        [dateString]
-                    );
+                const _ = await sql.begin(async sql => {
+                    const tryBookingsDelete = await sql`
+                        DELETE FROM bookings WHERE session_date = ${dateString}
+                    `;
 
-                    const trySessionDelete = await tx.execute(
-                        'DELETE FROM sessions WHERE date = ?',
-                        [dateString]
-                    );
+                    const trySessionDelete = await sql`
+                        DELETE FROM sessions WHERE date = ${dateString}
+                    `;
 
                     return [
                         tryBookingsDelete,
                         trySessionDelete
-                    ]
+                    ];
+
                 });
 
                 res.status(200).json({message: 'Successfully deleted session'});
@@ -184,13 +179,13 @@ export default async function handler(req, res) {
             }
 
             // check there are no racers booked on that session
-            const noRacers = await checkSessionHasNoRacers(conn, dateString);
+            const noRacers = await checkSessionHasNoRacers(dateString);
             if (!noRacers) {
                 res.status(400).json({ message: 'There are racers booked on the session, unable to delete it' });
                 return;
             }
 
-            const _ = await conn.execute(`DELETE FROM sessions WHERE date = '${dateString}'`);
+            const _ = await sql`DELETE FROM sessions WHERE date = ${dateString}`;
 
             res.status(200).json({ message: "Successfully deleted session" });
             return;

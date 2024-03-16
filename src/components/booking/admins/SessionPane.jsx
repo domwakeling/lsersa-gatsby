@@ -46,7 +46,9 @@ const SessionPane = ({ session, editing=false, displayMessage, updatePane }) => 
 
     const updateSession = async () => {
         const newDateStr = safeDateConversion(date);
-        if ((newDateStr !== session.date) && (parseInt(session['count(racer_id)']) > 0)) {
+        const dateStr = safeDateConversion(session.date).split("T")[0];
+        
+        if ((newDateStr !== dateStr) && (parseInt(session['count(racer_id)']) > 0)) {
             displayMessage(MESSAGE_CLASSES.WARN, "Can't change date of a session once bookings have started");
             return false;
         }

@@ -1,31 +1,22 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../db';
 import { getIdentifierFromJWT } from '../jwt-methods';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const veryIdMatchesJWT = async (id, userJWT) => {
 
     try {
         const identifier = await getIdentifierFromJWT(userJWT);
 
-        const conn = await connect(config);
-        const foundUsers = await conn.execute(`
-            SELECT id, identifier FROM users WHERE identifier = '${identifier}'
-        `);
+        const foundUsers = await sql`
+            SELECT id, identifier FROM users WHERE identifier = ${identifier}
+        `;
 
         // if the identifier doesn't exist, return empty
-        if (foundUsers.rows.length == 0) {
+        if (foundUsers.length == 0) {
             return false;
         }
 
         // check if the id matches the identifier
-        const foundUser = foundUsers.rows[0];
+        const foundUser = foundUsers[0];
         if (foundUser.id != id) {
             return false;
         }
@@ -45,13 +36,12 @@ const verifyJWTIsValid = async (userJWT) => {
     try {
         const identifier = await getIdentifierFromJWT(userJWT);
 
-        const conn = await connect(config);
-        const foundUsers = await conn.execute(`
-            SELECT identifier, role_id FROM users WHERE identifier = '${identifier}'
-        `);
+        const foundUsers = await sql`
+            SELECT identifier, role_id FROM users WHERE identifier = ${identifier}
+        `;
 
         // if the identifier doesn't exist, return empty
-        if (foundUsers.rows.length == 0) {
+        if (foundUsers.length == 0) {
             return false;
         }
 

@@ -1,23 +1,14 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import { sendShortEmail } from '../../lib/mail/send_short_email';
 import { roles } from '../../lib/db_refs';
 import { insertNewRacer } from '../../lib/users/addNewRacer';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
-
 const updateRacer = async (racer_id, racer) => {
 
     // set up the keys and values to insert
     const racerKeys = Object.keys(racer);
-    const racerValues = racerKeys.map(key => racer[key]);
 
     const idx = racerKeys.indexOf('dob');
     if (idx >= 0) {
@@ -25,24 +16,15 @@ const updateRacer = async (racer_id, racer) => {
         racerValues[idx] = newDob;
     }
 
-    // get the strings for INSERT
-    const insertStringCols = racerKeys.map(key => `${key} = ?`).join(",");
-
     // db
-    const conn = await connect(config);
-    const results = await conn.transaction(async (tx) => {
-        const tryUpdateRacer = await tx.execute(`
-                UPDATE racers
-                SET ${insertStringCols}
-                WHERE id = ${racer_id}
-            `,
-            racerValues
-        );
-
-        return [
-            tryUpdateRacer
-        ]
-    });
+    const results = await sql`
+        UPDATE racers
+        SET ${
+            sql(racer, racerKeys)
+        }
+        WHERE id = ${racer_id}
+        RETURNING *
+    `;
 
     return results;
 }
@@ -90,10 +72,9 @@ export default async function handler(req, res) {
             let _ = await insertNewRacer(user_id, new_racer);
 
             // send email to admins
-            const conn = await connect(config);
-            const admin = await conn.execute(`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`);
+            const admin = await sql`SELECT email FROM users WHERE role_id = ${roles.ADMIN}`;
             _ = await sendShortEmail(
-                admin.rows.map(item => item.email),
+                admin.map(item => item.email),
                 "New Racer Request",
                 "New Racer Request",
                 `A user has requested a new racer be approved, please log in to the admin

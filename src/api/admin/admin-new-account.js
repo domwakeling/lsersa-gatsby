@@ -1,16 +1,8 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { roles } from '../../lib/db_refs';
 import insertUser from '../../lib/users/insertNewUser';
 import { adminEmailNewAccountTokenToUser } from '../../lib/mail/admin_send_signup_token';
 import { verifyUserHasAdminRole } from '../../lib/admin/verify_admin';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -33,9 +25,8 @@ export default async function handler(req, res) {
             }
             
             // insert the user
-            const conn = await connect(config);
             const { email } = req.body;
-            let results = await insertUser(conn, email, roles.USER, true);
+            let results = await insertUser(sql, email, roles.USER, true);
 
             // trigger an email to the user
             let _ = await adminEmailNewAccountTokenToUser(

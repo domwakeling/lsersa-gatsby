@@ -1,20 +1,13 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
 import { createJWT, MAX_AGE } from '../../lib/jwt-methods';
 import { tokenTypes } from '../../lib/db_refs';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const verifyNewUserAccount = async (token, userData) => {
     // re-check that the token is valid and relates to this user
-    const checkUser = await getUserFromToken (token, tokenTypes.ACCOUNT_REQUEST);
+    const checkUser = await getUserFromToken(token, tokenTypes.ACCOUNT_REQUEST);
     
     // if it's null or an empty array, something was wrong with the token
     if (checkUser == null || checkUser == []) {
@@ -29,69 +22,47 @@ const verifyNewUserAccount = async (token, userData) => {
     // user matches so prepare to update; last element of params is the verified status
     const hashedPassword = brcypt.hashSync(userData.password, 10);
     const cleanEmail = userData.email.toLowerCase();
-    const params = [
-        cleanEmail,
-        hashedPassword,
-        userData.first_name,
-        userData.last_name,
-        userData.address_1,
-        userData.address_2,
-        userData.mobile,
-        userData.city,
-        userData.postcode,
-        userData.emergency_name,
-        userData.emergency_email,
-        userData.emergency_mobile,
-        userData.secondary_name,
-        userData.secondary_email,
-        userData.secondary_mobile,
-        true
-    ];
 
-    const conn = await connect(config);
-    const results = await conn.transaction(async (tx) => {
+    const results = await sql.begin(async sql => {
         // update the record
         
-        const tryNewUser = await tx.execute(`
+        const tryNewUser = await sql`
             UPDATE users
             SET
-                email = ?,
-                password_hash = ?,
-                first_name = ?,
-                last_name = ?,
-                address_1 = ?,
-                address_2 = ?,
-                mobile = ?,
-                city = ?,
-                postcode = ?,
-                emergency_name = ?,
-                emergency_email = ?,
-                emergency_mobile = ?,
-                secondary_name = ?,
-                secondary_email = ?,
-                secondary_mobile = ?,
-                verified = ?
-            WHERE id=${userData.id}`,
-            params
-        );
+                email = ${cleanEmail},
+                password_hash = ${hashedPassword},
+                first_name = ${userData.first_name},
+                last_name = ${userData.last_name},
+                address_1 = ${userData.address_1},
+                address_2 = ${userData.address_2},
+                mobile = ${userData.mobile},
+                city = ${userData.city},
+                postcode = ${userData.postcode},
+                emergency_name = ${userData.emergency_name},
+                emergency_email = ${userData.emergency_email},
+                emergency_mobile = ${userData.emergency_mobile},
+                secondary_name = ${userData.secondary_name},
+                secondary_email = ${userData.secondary_email},
+                secondary_mobile = ${userData.secondary_mobile},
+                verified = ${true}
+            WHERE id=${userData.id}
+        `;
         
         // delete the access token (and any redundant access tokens for that user)
-        const tryDeleteToken = await tx.execute(
-            `DELETE FROM tokens WHERE user_id = ? AND type_id = ?`,
-            [userData.id, tokenTypes.ACCOUNT_REQUEST]
-        );
-        
-        return {
+        const tryDeleteToken = await sql`
+            DELETE FROM tokens WHERE user_id = ${userData.id} AND type_id = ${tokenTypes.ACCOUNT_REQUEST}
+        `;
+
+        return [
             tryNewUser,
             tryDeleteToken
-        }
+        ]
     });
-
-
+        
     return {
         results,
         identifier: checkUser.identifier
-    };
+    }
 }
 
 export default async function handler(req, res) {

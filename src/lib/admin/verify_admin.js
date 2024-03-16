@@ -1,32 +1,23 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { roles } from '../db_refs';
 import { getIdentifierFromJWT } from '../jwt-methods';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const verifyUserHasAdminRole = async (userToken) => {
 
     try {
         const identifier = await getIdentifierFromJWT(userToken);
 
-        const conn = await connect(config);
-        const foundUsers = await conn.execute(`
-            SELECT identifier, role_id FROM users WHERE identifier = '${identifier}'
-        `);
+        const foundUsers = await sql`
+            SELECT identifier, role_id FROM users WHERE identifier = ${identifier}
+        `;
 
         // if the identifier doesn't exist, return empty
-        if (foundUsers.rows.length == 0) {
+        if (foundUsers.length == 0) {
             return false;
         }
 
         // if the found user doesn't have ADMIN, false
-        const foundUser = foundUsers.rows[0];
+        const foundUser = foundUsers[0];
         if (foundUser.role_id != roles.ADMIN) {
             return false;
         }

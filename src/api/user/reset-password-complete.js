@@ -1,15 +1,8 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import brcypt from 'bcryptjs';
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
 import { tokenTypes } from '../../lib/db_refs';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 const verifyNewUserAccount = async (token, id, password) => {
     // re-check that the token is valid and relates to this user
@@ -27,25 +20,21 @@ const verifyNewUserAccount = async (token, id, password) => {
 
     // user matches so prepare to update; last element of params is the verified status
     const hashedPassword = brcypt.hashSync(password, 10);
-    const params = [hashedPassword];
 
-    const conn = await connect(config);
-    const results = await conn.transaction(async (tx) => {
+    const results = await sql.begin(async sql => {
         // update the record
 
-        const tryNewUser = await tx.execute(`
+        const tryNewUser = await sql`
             UPDATE users
             SET
-                password_hash = ?
-            WHERE id=${id}`,
-            params
-        );
+                password_hash = ${hashedPassword}
+            WHERE id=${id}
+        `;
 
         // delete all password-reset tokens for that user
-        const tryDeleteToken = await tx.execute(
-            `DELETE FROM tokens WHERE user_id = ? AND type_id = ?`,
-            [id, tokenTypes.PASSWORD_RESET]
-        );
+        const tryDeleteToken = await sql`
+            DELETE FROM tokens WHERE user_id = ${id} AND type_id = ${tokenTypes.PASSWORD_RESET}
+        `;
 
         return {
             tryNewUser,
@@ -56,6 +45,7 @@ const verifyNewUserAccount = async (token, id, password) => {
     return {
         results
     };
+
 }
 
 export default async function handler(req, res) {

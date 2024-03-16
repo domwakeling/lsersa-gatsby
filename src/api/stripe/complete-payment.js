@@ -1,15 +1,8 @@
-import { connect } from '@planetscale/database';
-import { fetch } from 'undici';
+import sql from "../../lib/db";
 import { tokenTypes } from "../../lib/db_refs";
 import { getUserFromToken } from '../../lib/users/get_user_from_token';
 import { getIdentifierFromJWT } from '../../lib/jwt-methods';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -44,24 +37,25 @@ export default async function handler(req, res) {
         }
 
         // token is valid, correct user, so we can confirm the payments ...
-        const conn = await connect(config);
-        const results = await conn.transaction(async (tx) => {
-                
+        
+        const _ = await sql.begin(async sql => {
+
             // set paid = true for relevant racers
-            const tryUpdateBookings = await tx.execute(`
+            const tryUpdateBookings = await sql`
                 UPDATE bookings
-                SET paid = ?
-                WHERE token = ?`,
-                [true, token]
-            );
+                SET paid = ${true}
+                WHERE token = ${token}
+                RETURNING *
+            `;
 
             // delete the token
-            const tryDeleteToken = await tx.execute(`DELETE FROM tokens WHERE token = '${token}'`);
-                
+            const tryDeleteToken = await sql`DELETE FROM tokens WHERE token = ${token} RETURNING *`;
+
             return [
                 tryUpdateBookings,
                 tryDeleteToken
             ]
+
         });
 
         res.status(200).json({ message: 'Payment successful' });

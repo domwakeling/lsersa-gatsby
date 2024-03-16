@@ -1,60 +1,54 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
+import sql from '../../lib/db';
 
 const insertNewRacer = async (user_id, new_racer, verified=false) => {
 
     // set up the keys and values to insert
+    new_racer.verified = verified;
     const racerKeys = Object.keys(new_racer);
-    const racerValues = racerKeys.map(key => new_racer[key]);
-    racerKeys.push('verified');
-    racerValues.push(verified);
 
     let idx = racerKeys.indexOf('dob');
-    if (idx >= 0 && racerValues[idx]) {
-        const newDob = racerValues[idx].split("T")[0];
+    if (idx >= 0 && new_racer['dob']) {
+        const newDob = new_racer['dob'].split("T")[0];
         console.log(newDob);
-        racerValues[idx] = newDob;
-    }
-    idx = racerKeys.indexOf('club_expiry');
-    if (idx >= 0 && racerValues[idx]) {
-        const newExpiry = racerValues[idx].split("T")[0];
-        console.log(newExpiry);
-        racerValues[idx] = newExpiry;
+        new_racer['dob'] = newDob;
     }
 
-    // get the strings for INSERT
-    const insertStringCols = racerKeys.join(",");
-    const insertStringValues = racerKeys.map(key => '?').join(",");
+    idx = racerKeys.indexOf('club_expiry');
+    if (idx >= 0 && new_racer['club_expiry']) {
+        const newExpiry = new_racer['club_expiry'].split("T")[0];
+        console.log(newExpiry);
+        new_racer['club_expiry'] = newExpiry;
+    }
 
     // db
-    const conn = await connect(config);
-    const results = await conn.transaction(async (tx) => {
+    const results = await sql.begin(async sql => {
 
-        const tryInsertRacer = await tx.execute(`
-                INSERT INTO racers (${insertStringCols}) VALUES (${insertStringValues})
-            `,
-            racerValues
-        );
+        const tryInsertRacer = await sql`
+            INSERT INTO racers ${
+                sql(new_racer, racerKeys)
+                }
+            RETURNING *
+        `;
 
-        const newRacerId = tryInsertRacer.insertId;
-        const tryInsertUserRacer = await tx.execute(`
-                INSERT INTO users_racers (user_id, racer_id) VALUES (${user_id}, ${newRacerId})
-            `,
-            racerValues
-        );
+        const newRacerId = tryInsertRacer[0].id;
+        const tryInsertUserRacer = await sql`
+            INSERT INTO users_racers (
+                user_id,
+                racer_id
+            )
+            VALUES (
+                ${user_id},
+                ${newRacerId}
+            )
+            RETURNING *
+        `;
 
         return [
             tryInsertRacer,
             tryInsertUserRacer,
             newRacerId
         ]
+
     });
 
     return results;

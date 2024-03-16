@@ -1,16 +1,9 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../lib/db';
 import { veryIdMatchesJWT } from '../../lib/users/verify_user_id';
 import parseISO from 'date-fns/parseISO';
 import addDays from 'date-fns/addDays';
 import { safeDateConversion } from '../../lib/date-handler';
 
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 export default async function handler(req, res) {
 
@@ -44,21 +37,20 @@ export default async function handler(req, res) {
             expiryDate = safeDateConversion(addDays(expiryDate, 30));
 
             // get the existing bookings for that session ...
-            const conn = await connect(config);
-            const bookings = await conn.execute(`
+            const bookings = await sql`
                 SELECT *
                 FROM bookings
-                WHERE session_date = ?`,
-                [session_date]);
+                WHERE session_date = ${session_date}
+            `;
             
             // check that there are spaces
-            if (bookings.rows.length >= max_count) {
+            if (bookings.length >= max_count) {
                 res.status(204).json({message: 'No spaces available'});
                 return;
             }
 
             // check that the racer doesn't already have a space
-            if (bookings.rows.filter(item => item.racer_id === racer_id).length > 0) {
+            if (bookings.filter(item => item.racer_id === racer_id).length > 0) {
                 res.status(204).json({ message: 'Racer is already booked' });
                 return;
             }
@@ -74,20 +66,18 @@ export default async function handler(req, res) {
                     let lsersa_club = false;
 
                     // does the racer have a club?
-                    const racers = await conn.execute(
-                        'SELECT * FROM racers WHERE id = ?',
-                        [racer_id]
-                    );
+                    const racers = await sql`
+                        SELECT * FROM racers WHERE id = ${racer_id}
+                    `;
                     
                     // if racer has a club, is it lsersa?
-                    if (racers.rows.length > 0 && racers.rows[0].club_id && racers.rows[0].club_id > 0) {
+                    if (racers.length > 0 && racers[0].club_id && racers[0].club_id > 0) {
 
-                        const clubs = await conn.execute(
-                            'SELECT * FROM clubs WHERE id = ?',
-                            [racers.rows[0].club_id]
-                        );
+                        const clubs = await sql`
+                            SELECT * FROM clubs WHERE id = ${racers[0].club_id}
+                        `;
 
-                        if (clubs.rows.length > 0 && clubs.rows[0].affiliated) {
+                        if (clubs.length > 0 && clubs[0].affiliated) {
                             lsersa_club = true;
                         }
 
@@ -104,10 +94,20 @@ export default async function handler(req, res) {
             }
 
             // insert
-            const _ = await conn.execute(
-                'INSERT INTO bookings (session_date, racer_id, paid, expiresAt) VALUES (?,?,?,?)',
-                [session_date, racer_id, false, expiryDate]
-            );
+            const _ = await sql`
+                INSERT INTO bookings (
+                    session_date,
+                    racer_id,
+                    paid,
+                    expires_at
+                )
+                VALUES (
+                    ${session_date},
+                    ${racer_id},
+                    ${false},
+                    ${expiryDate}
+                )
+            `;
 
             // return
             res.status(200).json({ message: 'Added new booking' });
@@ -119,15 +119,14 @@ export default async function handler(req, res) {
             const session_date = date.split("T")[0];
 
             // get the existing bookings for that session ...
-            const conn = await connect(config);
-            const bookings = await conn.execute(`
+            const bookings = await sql`
                 SELECT *
                 FROM bookings
-                WHERE session_date = ?`,
-                [session_date]);
+                WHERE session_date = ${session_date}
+            `;
 
             // check that the racer is booked
-            const userBookings = bookings.rows.filter(item => item.racer_id === racer_id);
+            const userBookings = bookings.filter(item => item.racer_id === racer_id);
             if (userBookings.length === 0) {
                 res.status(204).json({ message: 'Racer is not booked' });
                 return;
@@ -140,10 +139,9 @@ export default async function handler(req, res) {
             }
 
             // delete
-            const _ = await conn.execute(
-                'DELETE FROM bookings WHERE racer_id = ? AND session_date = ?',
-                [racer_id, session_date]
-            );
+            const _ = await sql`
+                DELETE FROM bookings WHERE racer_id = ${racer_id} AND session_date = ${session_date}
+            `;
 
             // return
             res.status(200).json({ message: 'Added new booking' });

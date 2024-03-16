@@ -1,13 +1,5 @@
-import { fetch } from 'undici';
-import { connect } from '@planetscale/database';
+import sql from '../../../lib/db';
 import { verifyUserHasAdminRole } from '../../../lib/admin/verify_admin';
-
-const config = {
-    fetch,
-    host: process.env.DATABASE_HOST,
-    username: process.env.DATABASE_USERNAME,
-    password: process.env.DATABASE_PASSWORD
-}
 
 
 export default async function handler(req, res) {
@@ -33,30 +25,30 @@ export default async function handler(req, res) {
 
             // get booking information
             const { date } = req.params;
-            const conn = await connect(config);
-            const bookings = await conn.execute(`
+            const bookings = await sql`
                 SELECT
-                    r.first_name as '00_first_name',
-                    r.last_name as '01_last_name',
-                    paid as '02_paid',
-                    token as '03_payment_ref',
-                    emergency_name as '04_emergency_contact',
-                    emergency_mobile as '05_emergency_mobile',
-                    c.name as '06_club',
-                    g.name as '07_gender',
-                    email as '08_email',
-                    secondary_email as '09_secondary',
-                    dob as '10_date_of_birth'
+                    r.first_name as "00_first_name",
+                    r.last_name as "01_last_name",
+                    paid as "02_paid",
+                    token as "03_payment_ref",
+                    emergency_name as "04_emergency_contact",
+                    emergency_mobile as "05_emergency_mobile",
+                    c.name as "06_club",
+                    g.name as "07_gender",
+                    email as "08_email",
+                    secondary_email as "09_secondary",
+                    dob as "10_date_of_birth"
                 FROM bookings b
                 LEFT JOIN racers r ON b.racer_id = r.id
                 LEFT JOIN clubs c ON r.club_id = c.id
                 LEFT JOIN genders g ON r.gender_id = g.id
                 LEFT JOIN users_racers ur ON r.id = ur.racer_id
                 LEFT JOIN users u ON ur.user_id = u.id
-                WHERE session_date = '${date}'`);
+                WHERE session_date = ${date}
+            `;
 
             // return data
-            res.status(200).json(bookings.rows);
+            res.status(200).json(bookings);
             return;
 
         } catch (error) {
