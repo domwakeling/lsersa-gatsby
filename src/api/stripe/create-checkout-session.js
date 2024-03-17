@@ -89,8 +89,8 @@ export default async function handler(req, res) {
         });
 
         // set up line items based on the racers we're booking
-        const full_price = racers.filter(r => r.concession === 0).length;
-        const reduced_price = racers.filter(r => r.concession !== 0).length;
+        const full_price = racers.filter(r => r.concession == false ? true : false).length;
+        const reduced_price = racers.filter(r => r.concession == true ? true : false).length;
         const line_items = [];
         if (full_price > 0) {
             line_items.push({
