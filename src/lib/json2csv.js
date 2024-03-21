@@ -12,9 +12,16 @@ const json2csv = (data) => {
                 let tel = "'" + data[i][headers[j]];
                 csvRow.push(tel);
             } else {
-                // protect against a text field that includes a comma
                 let newValue = data[i][headers[j]];
-                if(typeof newValue == typeof "") {
+                // special case for dates which are stored as date strings
+                if (/(?:dob)|(?:date)$/.test(headers[j])) {
+                    if (newValue == null) {
+                        csvRow.push(newValue);
+                    } else {
+                        csvRow.push(newValue.replace(/^(\d{4})-(\d{2})-(\d{2}).*$/, "$3/$2/$1"))
+                    }
+                // protect against a text field that includes a comma
+                } else if(typeof newValue == typeof "") {
                     csvRow.push(newValue.replace(/,/s, " /"))
                 } else {
                     csvRow.push(newValue);
