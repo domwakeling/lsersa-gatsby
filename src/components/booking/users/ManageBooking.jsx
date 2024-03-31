@@ -164,7 +164,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             displayMessage={displayMessage}
                             bookings={bookings}
                             updatePane={updateBookings}
-                            date={nextSat}
+                            date={systemDate(nextSat)}
                             max_count={session.max_count}
                             restricted={session.restricted}
                             bookingAvailable={now < nextThurs}

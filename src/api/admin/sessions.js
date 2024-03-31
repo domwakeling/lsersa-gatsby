@@ -4,14 +4,14 @@ import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
 
 const checkSessionHasNoRacers = async (session_date) => {
-    const data = await sql(`
+    const data = await sql`
         SELECT date, COUNT(racer_id) as "racer_count"
         FROM sessions s
         LEFT JOIN bookings b
         ON s.date = b.session_date
         WHERE date = ${session_date}
         GROUP BY date
-    `);
+    `;
 
     if (data.length === 0 || data[0].racer_count === '0') return true;
     return false;
