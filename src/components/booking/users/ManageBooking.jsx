@@ -98,7 +98,7 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
             {(userUnpaid.length > 0 && !isWaiting) && (
                 <form id="payment-form" method="post" action="/api/stripe/create-checkout-session">
                     <input name="id" type="hidden" readOnly value={user.id} />
-                    <input name="date" type="hidden" readOnly value={nextSat.toISOString()} />
+                    <input name="date" type="hidden" readOnly value={systemDate(nextSat)} />
                     <button
                         onClick={clickHandler}
                         className="club-add-button"
