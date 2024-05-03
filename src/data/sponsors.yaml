@@ -1,28 +1,28 @@
--   name: Huski
-    url: http://www.hu.ski/
-    img: sponsors/huski.png
-    target: _huski
-    copy: >
-        <p>Huski is a new generation food and drink company. Our team of talented chefs
-            prepare everything in our professional, in-house kitchen creating delicious
-            dishes so that you don't have to. Then we'll deliver your food to wherever you
-            are in the French Alps, leaving you to focus on enjoying your skiing holiday.</p>
-        <ul>
-            <li>Great quality food - prepared by our own professional chefs using recipes
-                fine tuned over the years</li>
-            <li>Value for money - cheaper than buying the same ingredients from the
-                supermarket</li>
-            <li>Convenience - no shopping, no cooking, no cleaning</li>
-            <li>Kid friendly meals - no concerns over funky french food that your kids won't
-                eat</li>
-            <li>One stop shop - you can order wine, beer, breakfast and essentials to be
-                delivered with your order</li>
-            <li>Delivery to ski resorts across France</li>
-            <li>Order up to 24 hours before delivery</li>
-            <li>Native english speakers to support you every step of the way</li>
-        </ul>
-        <p>Contact us via <a href="https://www.hu.ski/" target="_huski">our website</a>,
-            <a href="mailto:orders@hu.ski">email us</a> or call Phone: +33 (0)47 904 1536</p>
+# -   name: Huski
+#     url: http://www.hu.ski/
+#     img: sponsors/huski.png
+#     target: _huski
+#     copy: >
+#         <p>Huski is a new generation food and drink company. Our team of talented chefs
+#             prepare everything in our professional, in-house kitchen creating delicious
+#             dishes so that you don't have to. Then we'll deliver your food to wherever you
+#             are in the French Alps, leaving you to focus on enjoying your skiing holiday.</p>
+#         <ul>
+#             <li>Great quality food - prepared by our own professional chefs using recipes
+#                 fine tuned over the years</li>
+#             <li>Value for money - cheaper than buying the same ingredients from the
+#                 supermarket</li>
+#             <li>Convenience - no shopping, no cooking, no cleaning</li>
+#             <li>Kid friendly meals - no concerns over funky french food that your kids won't
+#                 eat</li>
+#             <li>One stop shop - you can order wine, beer, breakfast and essentials to be
+#                 delivered with your order</li>
+#             <li>Delivery to ski resorts across France</li>
+#             <li>Order up to 24 hours before delivery</li>
+#             <li>Native english speakers to support you every step of the way</li>
+#         </ul>
+#         <p>Contact us via <a href="https://www.hu.ski/" target="_huski">our website</a>,
+#             <a href="mailto:orders@hu.ski">email us</a> or call Phone: +33 (0)47 904 1536</p>
 
 -   name: Maison Sport
     url: https://maisonsport.com/
@@ -80,15 +80,15 @@
         <p>Contact them on 01634 814 168 or
             <a href="mailto:mail@skishack.co.uk">mail@skishack.co.uk</a>.</p>
 
--   name: MindTonic Therapy
-    url: http://www.mindtonictherapy.com/
-    img: sponsors/mindtonic.png
-    target: _mindtonic
-    copy: >
-        <p>Natalie is recognised as the UK's leading performance sleep coach and regarded as
-            a leading Human Recovery innovator in elite sport.</p>
-        <p>You can contact her at
-            <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
+# -   name: MindTonic Therapy
+#     url: http://www.mindtonictherapy.com/
+#     img: sponsors/mindtonic.png
+#     target: _mindtonic
+#     copy: >
+#         <p>Natalie is recognised as the UK's leading performance sleep coach and regarded as
+#             a leading Human Recovery innovator in elite sport.</p>
+#         <p>You can contact her at
+#             <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
 
 -   name: Racer Ready
     url: https://www.racer-ready.co.uk/
@@ -106,13 +106,13 @@
             the news website - see <a href="https://www.racer-ready.co.uk/join-us"
             target="_racer">the website</a> for more details.</p>
 
--   name: Snow Shepherd
-    url: https://www.snowshepherd.co.uk/
-    img: sponsors/snowshepherd.png
-    target: _shepherd
-    copy: >
-        <p>Snow Shepherd are the leading UK supplier and manufacturer of leather ski gloves, from
-            the classic Lifty glove to their Antarctic Expedition Gloves. Their gloves are made using
-            high quality same-batch leather, waterproof and breathable membranes, and insulation
-            that really works, ensuring the gloves work for you whether you're ripping down a
-            mountain, climbing one, or using them for your 9-5 job.</p>
+# -   name: Snow Shepherd
+#     url: https://www.snowshepherd.co.uk/
+#     img: sponsors/snowshepherd.png
+#     target: _shepherd
+#     copy: >
+#         <p>Snow Shepherd are the leading UK supplier and manufacturer of leather ski gloves, from
+#             the classic Lifty glove to their Antarctic Expedition Gloves. Their gloves are made using
+#             high quality same-batch leather, waterproof and breathable membranes, and insulation
+#             that really works, ensuring the gloves work for you whether you're ripping down a
+#             mountain, climbing one, or using them for your 9-5 job.</p>
