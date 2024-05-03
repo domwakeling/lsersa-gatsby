@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
+import WhatsAppLink from "../components/WhatsAppLink.jsx";
 // import { Tooltip } from "react-tooltip";
 
 const HomePage = () => {
@@ -16,9 +17,6 @@ const HomePage = () => {
         path: node.relativePath,
         image: getImage(node)
     }));
-
-    // const today = new Date();
-    // const meetingDate = new Date('2023-11-20');
 
     // const rwoString = `
     //     <ul>
@@ -94,6 +92,9 @@ const HomePage = () => {
                         governing body.</p>
                     <p>In addition to providing Regional Race Training and organising the LSERSA
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
+                </div>
+                <div className="row">
+                    <WhatsAppLink />
                 </div>
                 {/* { (today <= meetingDate ) && (
                     <>

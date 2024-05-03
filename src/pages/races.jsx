@@ -6,6 +6,7 @@ import RaceTable from "../components/races/RaceTable.jsx";
 import RaceYearList from "../components/races/RaceYearList.jsx";
 import DownloadItem from "../components/DownloadItem.jsx";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
+import WhatsAppLink from "../components/WhatsAppLink.jsx";
 
 const RacesPage = () => {
     return (
@@ -18,6 +19,8 @@ const RacesPage = () => {
                     imageAlt="End of year trophies"
                 />
                 <div className="row">
+
+                    <WhatsAppLink />
 
                     <div className="right-column-race">
                         <h2 className="as-h3" style={{ textAlign: "center" }}>Archives</h2>
@@ -66,12 +69,20 @@ const RacesPage = () => {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>08:15</td>
+                                    <td>07:45</td>
+                                    <td>Car park opens</td>
+                                </tr>
+                                <tr>
+                                    <td>08:05</td>
                                     <td>Race office opens for bib issue</td>
                                 </tr>
                                 <tr>
-                                    <td>08:30</td>
-                                    <td>Open practice</td>
+                                    <td>08:15</td>
+                                    <td>Open practice U12/U10/U8</td>
+                                </tr>
+                                <tr>
+                                    <td>08:45</td>
+                                    <td>Open practice U14 and above</td>
                                 </tr>
                                 <tr>
                                     <td>09:00</td>
@@ -86,20 +97,41 @@ const RacesPage = () => {
                                     <td>Course inspection (U14 & above through full gates)</td>
                                 </tr>
                                 <tr>
-                                    <td>09:45</td>
+                                    <td>09:50</td>
                                     <td>Course inspection (U12 & below through stubby gates)</td>
                                 </tr>
                                 <tr>
-                                    <td>10:00</td>
+                                    <td>10:15</td>
                                     <td>Start first run of Individual Slalom</td>
                                 </tr>
                                 <tr>
+                                    <td>12:15 (approx)</td>
+                                    <td>Head to Heads, U12 and below</td>
+                                </tr>
+                                <tr>
                                     <td></td>
-                                    <td> - then head-to-heads, team events and prize-giving</td>
+                                    <td>Head to Heads, U14 and above</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Mini Club Teams, U12 and below, teams of 3, max 3 teams per club *</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Fun teams *</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Club Teams, teams of 5, max 3 teams per club *</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Prize giving</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    <p><em>* Racers may only compete in <strong>one</strong> team event</em></p>
                     <p>Trophies are awarded at each event for top three in age group, based on combined
                         best two times from the individual slalom runs.</p>
                     <p>There are also overall trophies for each group for the season. This is based on
