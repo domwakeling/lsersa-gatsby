@@ -17,6 +17,7 @@ export default async function handler(req, res) {
         const { token } = req.body;
         const user = await getUserFromToken(token, tokenTypes.PAYMENT_PENDING);
         if (!user || user == []) {
+            console.log("Booking token not recognised:", token)
             res.status(404).json({ message: 'Token not found' });
             return;
         }
@@ -25,6 +26,7 @@ export default async function handler(req, res) {
         const userJWT = req.cookies.lsersaUserToken;
         if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
+            console.log("JWT not found")
             res.status(204).json({ message: "Cookie not found" });
             return;
         }
@@ -32,6 +34,7 @@ export default async function handler(req, res) {
         // ... and that it matches the user for the payment token
         const storedIdentifier = await getIdentifierFromJWT(userJWT);
         if (user.identifier !== storedIdentifier) {
+            console.log("JWT does not match booking token user")
             res.status(401).json({ message: "ERROR: Trying to update details for a different user" });
             return;
         }
