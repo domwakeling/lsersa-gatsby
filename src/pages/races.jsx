@@ -51,8 +51,9 @@ const RacesPage = () => {
                         race entry as well as our results.</p>
 
                     <div className="advice-box">
-                        <p>Race entries close at 7pm on the Wednesday prior to race day so please ensure
-                            you complete your entry before this deadline to avoid disappointment.</p>
+                        <p>Race entries close at 7pm on the Wednesday prior to race day, or when we
+                            reach 115 entries, so please ensure you complete your entry early to
+                            avoid disappointment.</p>
                         <p>Race entries may stay open for a limited time after this at an additional fee
                             dependent on numbers, but this is solely at the discretion of the committee
                             and once entries are finally closed, no more racers will be accepted.</p>
