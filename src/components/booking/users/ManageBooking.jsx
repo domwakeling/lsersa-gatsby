@@ -127,11 +127,9 @@ const ManageBookings = ({ user, racers, displayMessage}) => {
                             completed as soon as possible.</p>
                     )}
                     {(now > nextThurs && session && session.max_count > 0) && (
-                        <p>If you would like to enquire whether any space may still be available for
-                            the session, please email
-                            {" "}
-                            <a href="mailto:regionalcoach@lsersa.org">the head coach</a>
-                            . If a space is available you will be notified and sent a payment link.</p>
+                        <p>If any spaces become available, an email will be sent to invite further
+                            bookings. Please don't attend training if you haven't booked, as we
+                            arrange sessions and coaches around the confirmed numbers.</p>
                     )}
                 </div>
             )}
