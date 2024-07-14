@@ -11,12 +11,12 @@
             venue: Chatham
             date: Sunday 9th June
             url: https://skiresults.co.uk/events/1472
-            status: Enter
+            status: Results
         -   name: Race 3
             venue: Bowles
             date: Saturday 13th July
             url: https://skiresults.co.uk/events/1473
-            status: Enter
+            status: Results
         -   name: Race 4
             venue: Brentwood
             date: Saturday 31st August
@@ -34,7 +34,7 @@
             venue: Chatham
             date: Saturday 8th June
             url: https://gbski.com/competition.php?ID=1527
-            status: More info
+            status: Results
 
     -   series: School Competitions
         races: 
