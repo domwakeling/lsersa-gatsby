@@ -26,7 +26,7 @@
             venue: Chatham
             date: Saturday 5th October
             url: https://skiresults.co.uk/events/1475
-            status: Enter
+            status: Results
     
     -   series: Club Nationals
         races:
@@ -60,7 +60,7 @@
             venue: Chatham
             date: Saturday 9th November
             url: https://www.skiresults.co.uk/events/1533
-            status: Entries open
+            status: Entries closed
 
 -   year: 2023
     events:         
