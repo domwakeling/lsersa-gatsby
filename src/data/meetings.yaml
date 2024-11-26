@@ -1,3 +1,20 @@
+-   year: 2024
+    items:
+    -   name: AGM
+        venue: Bowles
+        date: 19 November 2024
+        docs:
+        -   url: /resources/minutes/2024/agm_241119.pdf
+            text: Minutes
+
+    -   name: Committee meeting
+        venue: Bowles
+        date: 19 November 2024
+        docs:
+        -   url: /resources/minutes/2024/committee_241119.pdf
+            text: Minutes
+
+
 -   year: 2023
     items:
     -   name: AGM
