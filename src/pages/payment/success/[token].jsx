@@ -7,6 +7,7 @@ import { COMPLETING_MODES } from "../../../lib/modes";
 
 const PaymentSuccess = ({ params }) => {
     const [mode, setMode] = useState(COMPLETING_MODES.LOADING);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     // on load, check to see if the token is valid paymentPending token and if so set paid ...
     useEffect(() => {
@@ -22,7 +23,9 @@ const PaymentSuccess = ({ params }) => {
                 navigate("/booking/");
 
             } else {
-                // likely status 400, but error regardless
+                // likely status 400, but error regardless; currently sending the error message to screen
+                const data = await res.json();
+                setErrorMessage(data.message);
                 setMode(COMPLETING_MODES.SUBMIT_BAD);
             }
         }
@@ -53,9 +56,15 @@ const PaymentSuccess = ({ params }) => {
 
                     {mode === COMPLETING_MODES.SUBMIT_BAD && (
                         <div className="advice-box">
+                            {/* <p>There was a problem completing your payment; this appears to have
+                                been in the booking system rather than with Stripe so your payment
+                                has likely gone through. Please contact the coaching team.</p> */}
                             <p>There was a problem completing your payment; this appears to have
                                 been in the booking system rather than with Stripe so your payment
-                                has likely gone through. Please contact the coaching team.</p>
+                                has likely gone through.</p>
+                            <p>Please take a screenshot of this page (including the message below)
+                                and email to the coaching team.</p>
+                            <p>{errorMessage}</p>
                         </div>
                     )}
 

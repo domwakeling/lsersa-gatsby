@@ -8,3 +8,4 @@ _resources
 .env.development
 .vscode/
 **/test.js
+src/pages/test.jsx

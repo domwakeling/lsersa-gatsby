@@ -16,9 +16,9 @@ export default async function handler(req, res) {
         // check that the token exists, is correct type, and get the user
         const { token } = req.body;
         const user = await getUserFromToken(token, tokenTypes.PAYMENT_PENDING);
-        if (!user || user == []) {
+        if (!user || user.length == 0) {
             console.log("Booking token not recognised:", token)
-            res.status(404).json({ message: 'Token not found' });
+            res.status(404).json({ message: `404 ERROR Token not found: ${token}`});
             return;
         }
 
@@ -26,8 +26,7 @@ export default async function handler(req, res) {
         const userJWT = req.cookies.lsersaUserToken;
         if (!userJWT || userJWT === undefined || userJWT === null) {
             // error, most likely didn't find a cookie
-            console.log("JWT not found")
-            res.status(204).json({ message: "Cookie not found" });
+            res.status(404).json({ message: "404 ERROR JWT security token not found" });
             return;
         }
 
@@ -35,7 +34,7 @@ export default async function handler(req, res) {
         const storedIdentifier = await getIdentifierFromJWT(userJWT);
         if (user.identifier !== storedIdentifier) {
             console.log("JWT does not match booking token user")
-            res.status(401).json({ message: "ERROR: Trying to update details for a different user" });
+            res.status(401).json({ message: "404 ERROR Trying to update details for a different user" });
             return;
         }
 
@@ -66,7 +65,7 @@ export default async function handler(req, res) {
 
     } catch (error) {
         console.log(error.message);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: `500 ERROR: ${error.message}` });
         return;
     }
 };
