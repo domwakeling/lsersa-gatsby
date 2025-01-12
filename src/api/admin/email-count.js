@@ -5,6 +5,8 @@ export default async function handler(req, res) {
 
     if (req.method === 'GET') {
 
+        console.log('called GET admin/email-count');
+
         try {
             // ensure user has admin rights
             const userJWT = req.cookies.lsersaUserToken;
@@ -26,6 +28,8 @@ export default async function handler(req, res) {
 
             const emails = Array.from(new Set([...userEmails, ...secondEmails])).sort();
             const emailCount = emails.length;
+
+            console.log(`returning {emailCount: ${emailCount} }`)
 
             res.status(200).json({ emailCount: emailCount });
             return;

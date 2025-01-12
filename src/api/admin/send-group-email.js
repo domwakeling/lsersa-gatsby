@@ -7,6 +7,8 @@ export default async function handler(req, res) {
 
     if (req.method === 'POST') {
 
+        console.log('called POST admin/send-group-email');
+
         try {
             // ensure user has admin rights
             const userJWT = req.cookies.lsersaUserToken;
@@ -21,6 +23,7 @@ export default async function handler(req, res) {
             // parse the text into an html array and a plain-text array
 
             const { textElements, iteration } = req.body;
+            console.log(`iteration ${iteration}`)
             
             const { subject } = textElements;
             if (!subject || subject === '') {
@@ -65,7 +68,9 @@ export default async function handler(req, res) {
             }
 
             // need to get all main and secondary emails, and ensure no duplicates ...
+            console.log('Getting emails from DB');
             const users = await sql`SELECT email, secondary_email FROM users`;
+            console.log('Got emails from DB');
 
             const userEmails = users.map(user => user.email);
             const secondEmails = users
@@ -79,7 +84,9 @@ export default async function handler(req, res) {
             emails = emails.slice(firstEmailIdx, lastEmailIdx);
             
             // send the email
+            console.log('Sending emails');
             const _ = await sendLongEmail(emails, subject, subject, htmlArray, textArray);
+            console.log('Sent emails');
 
             res.status(200).json({ message: 'successfully sent email'});
             return;

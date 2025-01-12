@@ -53,6 +53,7 @@ const AdminSendEmail = ({ displayMessage }) => {
             }
             const emailCount = dataCount.emailCount;
             const cycleCount = Math.ceil(emailCount / EMAIL_BATCH_SIZE);
+            console.log(`Got email count: total ${emailCount}  will be sent in ${cycleCount} batches`)
 
             // send batches
             let i = 0;
@@ -65,6 +66,7 @@ const AdminSendEmail = ({ displayMessage }) => {
                     body: JSON.stringify(body),
                 });
                 if (res.status === 200) {
+                    console.log(`Emails sent, batch ${i + 1} of ${cycleCount}`)
                     displayMessage(MESSAGE_CLASSES.SUCCESS, `Emails sent, batch ${i+1} of ${cycleCount}`);
                 } else {
                     const data = await res.json();
@@ -75,6 +77,7 @@ const AdminSendEmail = ({ displayMessage }) => {
 
         } catch (error) {
             console.log("error caught")
+            console.log(error.message);
             displayMessage(MESSAGE_CLASSES.WARN, error.message);
         }
     }
