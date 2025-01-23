@@ -5,33 +5,28 @@
         -   name: Race 1
             venue: Chatham
             date: Saturday 3rd May
-            # url: https://skiresults.co.uk/events/1471
-            url:
-            status: Not open yet
+            url: https://skiresults.co.uk/events/1471
+            status: Entries open
         -   name: Race 2
             venue: Bowles
             date: Saturday 5th July
-            # url: https://skiresults.co.uk/events/1472
-            url:
-            status: Not open yet
+            url: https://skiresults.co.uk/events/1472
+            status: Entries open
         -   name: Race 3
             venue: Chatham
             date: Saturday 19th July
-            # url: https://skiresults.co.uk/events/1473
-            url:
-            status: Not open yet
+            url: https://skiresults.co.uk/events/1473
+            status: Entries open
         -   name: Race 4
             venue: Brentwood
             date: Saturday 6th September
-            # url: https://skiresults.co.uk/events/1474
-            url:
-            status: Not open yet
+            url: https://skiresults.co.uk/events/1474
+            status: Entries open
         -   name: Race 5
             venue: Chatham
             date: Saturday 27th September
-            # url: https://skiresults.co.uk/events/1475
-            url:
-            status: Not open yet
+            url: https://skiresults.co.uk/events/1475
+            status: Entries open
     
     -   series: Club Nationals
         races:
