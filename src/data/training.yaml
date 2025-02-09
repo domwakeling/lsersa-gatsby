@@ -1,6 +1,8 @@
 -   year: '2024-25'
     overall: /resources/points/2024_25/overall_2024_25.pdf
     months:
+    -   name: February 25
+        link: /resources/points/2024_25/results_2502.pdf
     -   name: January 25
         link: /resources/points/2024_25/results_2501.pdf
     -   name: December 24
