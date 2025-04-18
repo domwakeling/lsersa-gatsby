@@ -4,18 +4,27 @@ import { EMAIL_BATCH_SIZE, MESSAGE_CLASSES } from "../../../lib/constants";
 
 const AdminSendEmail = ({ displayMessage }) => {
 
-    let stdText = "If you want to take part in next Saturdays Regional Training, please read the ";
+    let stdText = "If you want to take part in next Saturday's Regional Training, please read the ";
     stdText = stdText + "notes below and enter using the booking system ";
-    stdText = stdText + "(https://lsersa.org/booking) by this Wednesday evening (booking won't be ";
-    stdText = stdText + "available after midnight Wednesday). Please don't attend without booking ";
-    stdText = stdText + "on as we arrange coaches and sessions based on who has registered.";
+    stdText = stdText + "(https://lsersa.org/booking). Places are limited to a maximum of XX for ";
+    stdText = stdText + "this session on a first come first served basis as usual. Booking won't be ";
+    stdText = stdText + "available once all places are taken OR after midnight Wednesday. Booking ";
+    stdText = stdText + "is restricted to LSERSA club members until midnight Monday evening and ";
+    stdText = stdText + "then open to all from then on. Please don't attend without booking on.";
 
-    let stdBullets = "The cost of the session is currently £22\n";
+    let stdBullets = "Please pay at the same time as booking on via the booking system\n";
+    stdBullets = stdBullets + "The cost of the session is currently £22\n";
     stdBullets = stdBullets + "Session is 9 - 11am as usual\n";
     stdBullets = stdBullets + "Please only put your name down if you definitely want to train\n"
-    stdBullets = stdBullets + "Payments should be made through the booking system."
+    stdBullets = stdBullets + "Ski racing is a sport which carries a heightened risk of injury ";
+    stdBullets = stdBullets + "relative to many other sports. By booking and participating in ";
+    stdBullets = stdBullets + "these sessions, athletes/parents/guardians are agreeing that they ";
+    stdBullets = stdBullets + "fully understand this aspect of the sport and do so entirely at ";
+    stdBullets = stdBullets + "their own risk. If you have any doubts regarding this, please ";
+    stdBullets = stdBullets + "contact us at regionalcoach@lsersa.org and we will address any ";
+    stdBullets = stdBullets + "concerns or queries with you"
 
-    const [subject, setSubject] = useState('Saturday Training');
+    const [subject, setSubject] = useState('LSERSA Regional Race Training Saturday');
     const [text1, setText1] = useState('Hi Everyone');
     const [text2, setText2] = useState('');
     const [text3, setText3] = useState('');
