@@ -60,7 +60,7 @@ const ManageRacers = ({ racers, setRacers, displayMessage, user }) => {
                                 club_id: undefined,
                                 user_text: ''
                             }}
-                            editing={true}
+                            newRacerFlag={true}
                             displayMessage={displayMessage}
                             updatePane={updateRacers}
                             clubs={clubs}

@@ -7,7 +7,7 @@ import ClubSelection from '../elements/ClubSelection';
 import DateField from '../elements/DateField';
 import parseISO from 'date-fns/parseISO';
 
-const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, user }) => {
+const RacerPane = ({ racer, newRacerFlag = false, displayMessage, updatePane, clubs, user }) => {
 
     const [firstName, setFirstName] = useState(racer.first_name);
     const [lastName, setLastName] = useState(racer.last_name);
@@ -15,7 +15,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
     const [clubId, setClubId] = useState(racer.club_id);
     const [genderId, setGenderId] = useState(racer.gender_id);
     const [userText, setUserText] = useState(racer.user_text || '')
-    const [editable, setEditable] = useState(editing);
+    const [editable, setEditable] = useState(newRacerFlag);
 
     const newRacer = async () => {
         const body = {
@@ -76,7 +76,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
 
     const buttonHandler = async (e) => {
         e.preventDefault();
-        if (editing) {
+        if (newRacerFlag) {
             // saving a new racer
             const result = await newRacer();
             if (result) {
@@ -157,12 +157,12 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
                 clubId={clubId}
                 setClubId={setClubId}
                 clubs={clubs}
-                disabled={!editable}
+                disabled={!editable || !newRacerFlag}
             />
-            {!editing && (
+            {!newRacerFlag && (
                 <div/>
             )}
-            {editing && (
+            {newRacerFlag && (
                 <p><i>if club is not listed, include it below</i></p>
             )}
             <FreeField
@@ -179,7 +179,7 @@ const RacerPane = ({ racer, editing = false, displayMessage, updatePane, clubs, 
             >
                 {editable ? "save" : "edit"}
             </button>
-            {!editing && (
+            {!newRacerFlag && (
                 <button
                     className="cancel-button"
                     onClick={cancelHandler}

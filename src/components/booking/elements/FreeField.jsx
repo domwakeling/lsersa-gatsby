@@ -15,7 +15,7 @@ const FreeField = ({ label,
 
     return (
         <label>
-            {label} {limited && (`${value.length}/255`)}
+            {label} {limited && (`${(value && value.length) ? value.length : 0}/255`)}
             <textarea
                 value={value}
                 onChange={textHandler}
