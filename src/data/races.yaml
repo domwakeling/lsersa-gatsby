@@ -64,11 +64,11 @@
 
     -   series: Other Competitions
         races:        
-        -   name: Night Race
+        -   name: Alpine 100
             venue: Chatham
-            date: Saturday 8th November
-            url: https://www.skiresults.co.uk/events/1533
-            status: Results
+            date: Sunday 15th June
+            url: https://www.skiresults.co.uk/events/1718
+            status: Entries
 
 -   year: 2024
     events:
