@@ -90,21 +90,21 @@
 #         <p>You can contact her at
 #             <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
 
--   name: Racer Ready
-    url: https://www.racer-ready.co.uk/
-    img: sponsors/racerready.png
-    target: _racer
-    copy: >
-        <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
-            sport. They cover from grassroots up to the Olympic Games and have been doing
-            this since 2000.</p>
-        <p>Racer Ready provide pictures from many racers through both summer and winter
-            through their <a href="https://racerready.zenfolio.com/"
-            target="_racerready">picture website</a>. Pictures can be bought as single
-            shots, or you can take a monthly subscription that allows access to all pictures
-            in the folder for personal use. The monthly subscription also gives access to
-            the news website - see <a href="https://www.racer-ready.co.uk/join-us"
-            target="_racer">the website</a> for more details.</p>
+# -   name: Racer Ready
+#     url: https://www.racer-ready.co.uk/
+#     img: sponsors/racerready.png
+#     target: _racer
+#     copy: >
+#         <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
+#             sport. They cover from grassroots up to the Olympic Games and have been doing
+#             this since 2000.</p>
+#         <p>Racer Ready provide pictures from many racers through both summer and winter
+#             through their <a href="https://racerready.zenfolio.com/"
+#             target="_racerready">picture website</a>. Pictures can be bought as single
+#             shots, or you can take a monthly subscription that allows access to all pictures
+#             in the folder for personal use. The monthly subscription also gives access to
+#             the news website - see <a href="https://www.racer-ready.co.uk/join-us"
+#             target="_racer">the website</a> for more details.</p>
 
 # -   name: Snow Shepherd
 #     url: https://www.snowshepherd.co.uk/
