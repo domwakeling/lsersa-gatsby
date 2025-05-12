@@ -55,8 +55,10 @@ export default async function handler(req, res) {
                     admin.map(item => item.email),
                     "New User Request",
                     "New User Request",
+                    `A user has requested a new account be created, please log in to the
+                        <a href="${process.env.ROOT_URL}/booking/">admin dashboard</a> to review.`,
                     `A user has requested a new account be created, please log in to the admin
-                        dashboard to review`
+                        dashboard to review.`
                 );
                 
                 // trigger an email to the user

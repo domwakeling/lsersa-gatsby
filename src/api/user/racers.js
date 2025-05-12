@@ -76,9 +76,11 @@ export default async function handler(req, res) {
             _ = await sendShortEmail(
                 admin.map(item => item.email),
                 "New Racer Request",
-                "New Racer Request",
+                "New Racer Request", 
+                `A user has requested a new racer be approved, please log in to the 
+                    <a href="${process.env.ROOT_URL}/booking/">admin dashboard</a> to review.`,
                 `A user has requested a new racer be approved, please log in to the admin
-                        dashboard to review`
+                    dashboard to review`
             );
 
             res.status(200).json({message: 'success'})
