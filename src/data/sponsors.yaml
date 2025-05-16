@@ -116,3 +116,13 @@
 #             high quality same-batch leather, waterproof and breathable membranes, and insulation
 #             that really works, ensuring the gloves work for you whether you're ripping down a
 #             mountain, climbing one, or using them for your 9-5 job.</p>
+
+-   name: Infini-Ski
+    url: https://www.infini.ski/
+    img: sponsors/infiniski.png
+    target: _infiniski
+    copy: >
+        <p>InfiniSki is a not-for-profit virtual skiing platform that accurately simulates the
+            feeling of being on an actual ski slope. Once strapped in, the large screen instantly
+            becomes your focus as you use your body to navigate the course, feeling every bump and
+            contour of the slope.</p>
