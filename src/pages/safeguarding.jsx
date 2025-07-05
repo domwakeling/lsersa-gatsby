@@ -183,6 +183,17 @@ const SafeguardingPage = () => {
                                         >Link</a>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        Ann Craft Trust
+                                    </td>
+                                    <td>
+                                        <a className="race-link"
+                                            href="https://www.anncrafttrust.org/"
+                                            target="_offsite"
+                                        >Link</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
