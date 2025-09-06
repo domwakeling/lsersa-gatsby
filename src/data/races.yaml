@@ -16,12 +16,12 @@
             venue: Chatham
             date: Saturday 19th July
             url: https://skiresults.co.uk/events/1610
-            status: Entries open
+            status: Results
         -   name: Race 4
             venue: Brentwood
             date: Saturday 6th September
             url: https://skiresults.co.uk/events/1611
-            status: Entries open
+            status: Results
         -   name: Race 5
             venue: Chatham
             date: Saturday 27th September
@@ -34,7 +34,7 @@
             venue: Chatham
             date: Saturday 14th June
             url: https://gbski.com/competition.php?ID=1637
-            status: Entries
+            status: Results
     
     -   series: All England
         races: 
@@ -42,7 +42,7 @@
             venue: Chatham
             date: 23rd & 24th August
             url: https://gbski.com/competition.php?ID=1626
-            status: Entries
+            status: Results
 
     -   series: School Competitions
         races: 
@@ -68,7 +68,7 @@
             venue: Chatham
             date: Sunday 15th June
             url: https://www.skiresults.co.uk/events/1718
-            status: Entries
+            status: Postponed
 
 -   year: 2024
     events:
