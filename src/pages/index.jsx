@@ -1,4 +1,5 @@
 import React from "react"
+import { useState } from "react";
 import Hero from "../components/Hero.jsx";
 import Layout from "../components/Layout.jsx";
 import sponsorData from '../data/sponsors.yaml';
@@ -17,6 +18,9 @@ const HomePage = () => {
         path: node.relativePath,
         image: getImage(node)
     }));
+
+    const [today] = useState(new Date());
+    const meetingDate = new Date("10 November 2025 21:30")
 
     // const rwoString = `
     //     <ul>
@@ -96,27 +100,44 @@ const HomePage = () => {
                 <div className="row">
                     <WhatsAppLink />
                 </div>
-                {/* { (today <= meetingDate ) && (
+                { (today <= meetingDate ) && (
                     <>
                         <div className="advice-box">
                             <h2 className="as-h3">Notice of AGM.</h2>
-                            <p>The LSERSA AGM is being held on Monday 20th November at 7.00pm at
-                                Chatham Ski Centre.</p>
+                            <p>The LSERSA AGM is being held on Monday 10th November at 7.00pm at
+                                Bowles.</p>
                             <p>There are several committee members who have stepped down this year
                                 and we encourage members of affiliated clubs to stand for one of the
-                                vacant positions, listed below. The committee meet approx 4 times a
+                                vacant positions - listed below. The committee meet approx 4 times a
                                 year. Some of the positions require attendance and help at the
                                 LSERSA Regional races throughout the year.</p>
+                            <p>Without the roles being filled LSERSA will be unable to run regional
+                                races, please do consider volunteering.</p>
                             <p>Those interested should contact Lindsay Ayton directly if they wish
                                 to be nominated for a committee position; all nominations to be
-                                received by midnight on 4th November 2023.  We do hope that some of
+                                received by midnight on 26th October 2025  We do hope that some of
                                 our members will be happy to volunteer to be part of the team
                                 helping our racers in the region.</p>
                             <p>Open positions:</p>
+
                             <ul>
-                                <li>
-                                    Regional Secretary
-                                </li>
+                                <li>Regional Secretary</li>
+                                <li>Chair of Race Committee</li>
+                                <li>Race Secretary</li>
+                                <li>Regional Welfare Officer</li>
+                                <li>Marketing and Sponsorship</li>
+                                <li>Equipment Officer</li>
+                                <li>Athletes' Representative</li>
+                                <li>SSCD/Adaptive Skiing Representative</li>
+                            </ul>
+
+                            <p>If anyone has any proposals they wish to have raised at the AGM can
+                                they please let email Lindsay these in writing by midnight on 27th
+                                October 2025.</p>
+
+                            <p>LSERSA meetings are open to all members.</p>
+
+                            {/* <ul>
                                 <li>
                                     Marketing and Sponsorship
                                     {" "}
@@ -128,57 +149,11 @@ const HomePage = () => {
                                         i
                                     </span>
                                 </li>
-                                <li>
-                                    Regional Welfare Officer
-                                    {" "}
-                                    <span className="info-icon"
-                                        data-tooltip-id="lsersa-tooltip"
-                                        data-tooltip-place="top-start"
-                                        data-tooltip-html={rwoString}
-                                    >
-                                        i
-                                    </span>
-                                </li>
-                                <li>
-                                    Chief of Calcs/Timing
-                                    {" "}
-                                    <span className="info-icon"
-                                        data-tooltip-id="lsersa-tooltip"
-                                        data-tooltip-place="top-start"
-                                        data-tooltip-html={calcsString}
-                                    >
-                                        i
-                                    </span>
-                                </li>
-                                <li>
-                                    Equipment Officer
-                                    {" "}
-                                    <span className="info-icon"
-                                        data-tooltip-id="lsersa-tooltip"
-                                        data-tooltip-place="top-start"
-                                        data-tooltip-html={equipString}
-                                    >
-                                        i
-                                    </span>
-                                </li>
-                                <li>
-                                    Assistant Equipment Office
-                                    {" "}
-                                    <span className="info-icon"
-                                        data-tooltip-id="lsersa-tooltip"
-                                        data-tooltip-place="top-start"
-                                        data-tooltip-html={assistEquipString}
-                                    >
-                                        i
-                                    </span>
-                                </li>
-                            </ul>
-                            <p>If anyone has any proposals they wish to have raised at the AGM can
-                                they please submit these to Lindsay Ayton in writing by 5th November.</p>
-                            <p>LSERSA meetings are open to all members.</p>
+                            </ul> */}
+                                
                         </div>
                         <br />
-                        <Tooltip
+                        {/* <Tooltip
                             id="lsersa-tooltip"
                             style={{
                                 width: "1000px",
@@ -188,9 +163,9 @@ const HomePage = () => {
                                 padding: '0.25rem 2rem 0.25rem 0rem',
                                 borderRadius: '0.5rem'
                             }}
-                        />
+                        /> */}
                     </>
-                )} */}
+                )}
             </div>
 
             <div className="banner col-p900 bg-p300">

@@ -26,7 +26,7 @@
             venue: Chatham
             date: Saturday 27th September
             url: https://skiresults.co.uk/events/1612
-            status: Entries open
+            status: Results
     
     -   series: Club Nationals
         races:
@@ -64,11 +64,11 @@
 
     -   series: Other Competitions
         races:        
-        -   name: Alpine 100
+        -   name: Night Race
             venue: Chatham
-            date: Sunday 15th June
-            url: https://www.skiresults.co.uk/events/1718
-            status: Postponed
+            date: Saturday 8th November
+            url: https://www.skiresults.co.uk/events/1720
+            status: Entries open
 
 -   year: 2024
     events:
