@@ -34,12 +34,12 @@
             venue: Chatham
             date: Saturday 27th June
             url: https://gbski.com/competition.php?ID=1866
-            status: Results
+            status: Entries
         -   name: Alpine100 Club National
             venue: Chatham
             date: Sunday 28th June
             url: https://gbski.com/competition.php?ID=1865
-            status: Results
+            status: Entries
 
     -   series: School Competitions
         races: 
