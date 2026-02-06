@@ -1,3 +1,67 @@
+-   year: 2026
+    events:
+    -   series: LSERSA Summer Series
+        races:
+        -   name: Race 1
+            venue: Chatham
+            date: Saturday 2nd May
+            url: https://skiresults.co.uk/events/1785
+            status: Entries open
+        -   name: Race 2
+            venue: Bowles
+            date: Saturday 23rd May
+            url: https://skiresults.co.uk/events/1786
+            status: Entries open
+        -   name: Race 3
+            venue: Chatham
+            date: Saturday 13th June
+            url: https://skiresults.co.uk/events/1787
+            status: Entries open
+        -   name: Race 4
+            venue: Brentwood
+            date: Saturday 29th August
+            url: https://skiresults.co.uk/events/1788
+            status: Entries open
+        -   name: Race 5
+            venue: Chatham
+            date: Saturday 3rd October
+            url: https://skiresults.co.uk/events/1789
+            status: Entries open
+    
+    -   series: Club Nationals
+        races:
+        -   name: Chatham Club National
+            venue: Chatham
+            date: Saturday 27th June
+            url: https://gbski.com/competition.php?ID=1866
+            status: Results
+        -   name: Alpine100 Club National
+            venue: Chatham
+            date: Sunday 28th June
+            url: https://gbski.com/competition.php?ID=1865
+            status: Results
+
+    -   series: School Competitions
+        races: 
+        -   name: Kent Schools
+            venue: Chatham
+            date: Sunday 10th May
+            url: https://preciseracing.co.uk/kent-schools-championship/
+            status: More info
+        -   name: Surrey Schools
+            venue: Aldershot
+            date: Sunday 15th November
+            url: https://preciseracing.co.uk/surrey-schools-championship/
+            status: More info
+
+    -   series: Other Competitions
+        races:        
+        -   name: Night Race
+            venue: Chatham
+            date: Saturday 7th November
+            url: https://preciseracing.co.uk/the-night-race/
+            status: More info
+
 -   year: 2025
     events:
     -   series: LSERSA Summer Series
