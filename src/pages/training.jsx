@@ -68,7 +68,7 @@ const TrainingPage = () => {
                     </div>
 
                     <p>The sessions are run by our experienced team of coaches, led by Andrew Atkinson
-                        and Jim Gibb, and are &pound;22 per racer. Training covers technique, race
+                        and Jim Gibb, and are &pound;25 per racer. Training covers technique, race
                         tactics, skills and drills, and includes stubby and full gate courses.</p>
                     <p>Please join the LSERSA facebook group to get regular updates, and email <a
                         href="mailto:regionalcoach@lsersa.org">Andy Atkinson</a> (Head Coach) for

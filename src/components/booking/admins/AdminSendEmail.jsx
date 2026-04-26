@@ -13,7 +13,7 @@ const AdminSendEmail = ({ displayMessage }) => {
     stdText = stdText + "then open to all from then on. Please don't attend without booking on.";
 
     let stdBullets = "Please pay at the same time as booking on via the booking system\n";
-    stdBullets = stdBullets + "The cost of the session is currently £22\n";
+    stdBullets = stdBullets + "The cost of the session is currently £25\n";
     stdBullets = stdBullets + "Session is 9 - 11am as usual\n";
     stdBullets = stdBullets + "Please only put your name down if you definitely want to train\n"
     stdBullets = stdBullets + "Ski racing is a sport which carries a heightened risk of injury ";
