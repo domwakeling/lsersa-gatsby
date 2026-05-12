@@ -1,3 +1,21 @@
+-   year: 2025
+    items:
+    -   name: AGM
+        venue: Bowles
+        date: 10 November 2025
+        docs:
+        -   url: /resources/minutes/2025/agm_251110.pdf
+            text: Minutes
+        -   url: /resources/minutes/2025/agm_251110_addendum.pdf
+            text: Addendum
+
+    -   name: Committee meeting
+        venue: Bowles
+        date: 11 November 2025
+        docs:
+        -   url: /resources/minutes/2025/committee_251110.pdf
+            text: Minutes
+
 -   year: 2024
     items:
     -   name: AGM
