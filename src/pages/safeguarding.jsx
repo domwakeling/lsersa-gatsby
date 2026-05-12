@@ -4,8 +4,11 @@ import Hero from "../components/Hero.jsx";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import policyData from '../data/safeguarding-policies.yaml';
 import DownloadItem from "../components/DownloadItem.jsx";
+import committeeData from '../data/committee.yaml';
 
 const SafeguardingPage = () => {
+
+    const cwoName = committeeData.filter(i => i.role === "Regional Welfare Officer")[0].name;
 
     return (
         <Layout>
@@ -24,7 +27,7 @@ const SafeguardingPage = () => {
                         safeguarding the welfare of children, young people and adults who engage in
                         all Snowsports activities.</p>
 
-                    <p>Emma Hill is the Welfare Officer for LSERSA and is available to discuss any
+                    <p>{cwoName} is the Welfare Officer for LSERSA and is available to discuss any
                         concerns or worries you may have. Contact her in-person at training and race
                         days, or <a href="mailto:cwo@lsersa.org">via email</a>.</p>
 
