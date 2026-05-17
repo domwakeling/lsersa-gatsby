@@ -7,8 +7,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import HeaderComponent from "../components/head/HeaderComponent.jsx";
 import PanelCard from "../components/PanelCard.jsx";
 import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
-import WhatsAppLink from "../components/WhatsAppLink.jsx";
-// import { Tooltip } from "react-tooltip";
+import AGMNotice from "../components/AGMNotice.jsx";
+import raceData from '../data/races.yaml';
 
 const HomePage = () => {
     const imgQueryData = useSponsorImages();
@@ -20,70 +20,7 @@ const HomePage = () => {
     }));
 
     const [today] = useState(new Date());
-    const meetingDate = new Date("10 November 2025 21:30")
-
-    // const rwoString = `
-    //     <ul>
-    //         <li>Establish, develop and support regional snowsports' approach to safeguarding all
-    //             people, including children, young people and vulnerable adults at the regional level
-    //         </li>
-    //     </ul>
-    // `
-
-    // const raceChairString = `
-    //     <ul>
-    //         <li>Check and organise race dates coordinating with SSE / gbski and other regions</li>
-    //         <li>Liaise with Snowsports South iro combined region weekend to avoid clashes and
-    //             maximise attendance and minimise travel for families</li>
-    //         <li>Liaise and coordinate with other regions iro tri regional and any other combined race
-    //             events(specifically Snowsport South and ERSA)</li>
-    //         <li>Contact ski centres to negotiate ski race day costs including health and safety,
-    //             first aid, timings and car park</li>
-    //         <li>Organise pre season and post season race committee meetings</li>
-    //         <li>Organise conference calls prior to each race to ensure equipment / timings / race
-    //             entry system / bibs / organising officials are in place for different race locations</li>
-    //         <li>Organise debrief after each race to discuss what worked well and improvements required</li>
-    //         <li>Organise inter-regional events/team entries on behalf of LSERSA</li>
-    //         <li>Chair race committee on race days iro any protests</li>
-    //         <li>Work closely with Race Secretary and Equipment Officer to ensure smooth running of races</li>
-    //         <li>Attend LSERSA races and take an active role on the day and encourage other parents
-    //             to volunteer</li>
-    //         <li>Organise one officials course annually</li>
-    //         <li>Attend LSERSA meetings</li>
-    //     </ul>
-    // `
-
-    // const calcsString = `
-    //     <ul>
-    //         <li>Deal with all aspects of timing and race result calculation on the day at races</li>
-    //         <li>Understand and use the appropriate software(s)(e.g.SkiPro, SkiResults) to keep times
-    //             and competition up-to-date during the race day</li>
-    //     </ul>
-        
-    // `
-    
-    // const equipString = `
-    //     <ul>
-    //         <li>Liaise with race equipment providers to ensure adequate equipment is available for
-    //         races, including race gates, timing, radio equipment, other accessories</li>
-    //     </ul>
-    // `
-
-    // const assistEquipString = `
-    //     <ul>
-    //         <li>Support equipment officer in the provision of equipment for LSERSA races and
-    //             sanctioned training sessions</li>
-    //     </ul>
-    // `
-
-    // const marketString = `
-    //     <ul>
-    //         <li>develop relationships with relevant partners supporting access to snowsports
-    //             participation and competition</li>
-    //         <li>raise the profile of regional activities and sponsors through the use of marketing,
-    //             PR and other means available(e.g.raffle, race - day presence, social media etc)</li>
-    //     </ul>
-    // `
+    const meetingDate = new Date("10 November 2025 21:30");
 
     return (
         <Layout>
@@ -93,77 +30,15 @@ const HomePage = () => {
                     <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
                     <p>Welcome to the London &amp; South East Regional Snowsports Association, LSERSA. We
                         are a regional association affiliated with Snowsport England, the national
-                        governing body.</p>
+                        governing body.<span style={{color: "#fff !important"}}>{today.toISOString()}</span></p>
                     <p>In addition to providing Regional Race Training and organising the LSERSA
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
-                <div className="row">
-                    <WhatsAppLink />
-                </div>
+                
                 { (today <= meetingDate ) && (
                     <>
-                        <div className="advice-box">
-                            <h2 className="as-h3">Notice of AGM.</h2>
-                            <p>The LSERSA AGM is being held on Monday 10th November at 7.00pm at
-                                Bowles.</p>
-                            <p>There are several committee members who have stepped down this year
-                                and we encourage members of affiliated clubs to stand for one of the
-                                vacant positions - listed below. The committee meet approx 4 times a
-                                year. Some of the positions require attendance and help at the
-                                LSERSA Regional races throughout the year.</p>
-                            <p>Without the roles being filled LSERSA will be unable to run regional
-                                races, please do consider volunteering.</p>
-                            <p>Those interested should contact Lindsay Ayton directly if they wish
-                                to be nominated for a committee position; all nominations to be
-                                received by midnight on 26th October 2025  We do hope that some of
-                                our members will be happy to volunteer to be part of the team
-                                helping our racers in the region.</p>
-                            <p>Open positions:</p>
-
-                            <ul>
-                                <li>Regional Secretary</li>
-                                <li>Chair of Race Committee</li>
-                                <li>Race Secretary</li>
-                                <li>Regional Welfare Officer</li>
-                                <li>Marketing and Sponsorship</li>
-                                <li>Equipment Officer</li>
-                                <li>Athletes' Representative</li>
-                                <li>SSCD/Adaptive Skiing Representative</li>
-                            </ul>
-
-                            <p>If anyone has any proposals they wish to have raised at the AGM can
-                                they please let email Lindsay these in writing by midnight on 27th
-                                October 2025.</p>
-
-                            <p>LSERSA meetings are open to all members.</p>
-
-                            {/* <ul>
-                                <li>
-                                    Marketing and Sponsorship
-                                    {" "}
-                                    <span className="info-icon"
-                                        data-tooltip-id="lsersa-tooltip"
-                                        data-tooltip-place="top-start"
-                                        data-tooltip-html={marketString}
-                                    >
-                                        i
-                                    </span>
-                                </li>
-                            </ul> */}
-                                
-                        </div>
+                        <AGMNotice />
                         <br />
-                        {/* <Tooltip
-                            id="lsersa-tooltip"
-                            style={{
-                                width: "1000px",
-                                maxWidth: "90%",
-                                backgroundColor: "#172A95",
-                                fontSize: '1.8rem',
-                                padding: '0.25rem 2rem 0.25rem 0rem',
-                                borderRadius: '0.5rem'
-                            }}
-                        /> */}
                     </>
                 )}
             </div>

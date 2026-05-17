@@ -29,7 +29,7 @@ const SafeguardingPage = () => {
 
                     <p>{cwoName} is the Welfare Officer for LSERSA and is available to discuss any
                         concerns or worries you may have. Contact her in-person at training and race
-                        days, or <a href="mailto:cwo@lsersa.org">via email</a>.</p>
+                        days, or <a href="mailto:lsersawelfare@gmail.com">via email</a>.</p>
 
                 </div>
             </div>
