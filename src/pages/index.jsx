@@ -19,6 +19,19 @@ const HomePage = () => {
         image: getImage(node)
     }));
 
+    const thisYear = raceData[0].year;
+
+    const lsersaRaces = raceData[0]
+                        .events
+                        .filter(d => /LSERSA/.test(d.series))[0].races
+                        .map(r => ({
+                            name: r.name,
+                            venue: r.venue,
+                            date: new Date(r.date.match(/(\d{1,2})\w* (\w*)/).slice(1).join(" ") + ` ${thisYear} UTC`),
+                            url: r.url
+                        }));
+
+    // because it's state, this will refresh every time the page is rendered
     const [today] = useState(new Date());
     const meetingDate = new Date("10 November 2025 21:30");
 
@@ -30,7 +43,7 @@ const HomePage = () => {
                     <h1 className="underlined">London &amp; South East Regional Snowsports Association</h1>
                     <p>Welcome to the London &amp; South East Regional Snowsports Association, LSERSA. We
                         are a regional association affiliated with Snowsport England, the national
-                        governing body.<span style={{color: "#fff !important"}}>{today.toISOString()}</span></p>
+                        governing body.</p>
                     <p>In addition to providing Regional Race Training and organising the LSERSA
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
