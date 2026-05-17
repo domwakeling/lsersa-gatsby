@@ -9,6 +9,7 @@ import PanelCard from "../components/PanelCard.jsx";
 import { useSponsorImages } from "../lib/hooks/use-sponsor-images.js";
 import AGMNotice from "../components/AGMNotice.jsx";
 import raceData from '../data/races.yaml';
+import RaceToday from "../components/RaceToday.jsx";
 
 const HomePage = () => {
     const imgQueryData = useSponsorImages();
@@ -21,19 +22,23 @@ const HomePage = () => {
 
     const thisYear = raceData[0].year;
 
-    const lsersaRaces = raceData[0]
-                        .events
-                        .filter(d => /LSERSA/.test(d.series))[0].races
-                        .map(r => ({
-                            name: r.name,
-                            venue: r.venue,
-                            date: new Date(r.date.match(/(\d{1,2})\w* (\w*)/).slice(1).join(" ") + ` ${thisYear} UTC`),
-                            url: r.url
-                        }));
-
     // because it's state, this will refresh every time the page is rendered
     const [today] = useState(new Date());
-    const meetingDate = new Date("10 November 2025 21:30");
+    const meetingDate = new Date("10 November 2025 21:30 UTC");
+    const lsersaRaceToday = raceData[0]
+        .events
+        .filter(d => /LSERSA/.test(d.series))[0].races
+        .map(r => ({
+            name: r.name,
+            venue: r.venue,
+            date: new Date(r.date.match(/(\d{1,2})\w* (\w*)/).slice(1).join(" ") + ` ${thisYear} UTC`),
+            url: r.url
+        }))
+        .filter(r => (
+            r.date.getDate() === today.getDate()
+            && r.date.getMonth() === today.getMonth()
+            && r.date.getFullYear() === today.getFullYear()
+        ));
 
     return (
         <Layout>
@@ -47,6 +52,13 @@ const HomePage = () => {
                     <p>In addition to providing Regional Race Training and organising the LSERSA
                         Summer Race Series, our aim is to encourage participation in all snowsports.</p>
                 </div>
+
+                {(lsersaRaceToday.length > 0 ) && (
+                    <>
+                        <RaceToday raceInfo={lsersaRaceToday[0]} />
+                        <br />
+                    </>
+                )}
                 
                 { (today <= meetingDate ) && (
                     <>
