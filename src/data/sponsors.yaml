@@ -43,17 +43,6 @@
             <a href="https://maisonsport.com/" target="_maisonsport">their website</a>
             today!</p>
 
--   name: Precise Racing
-    url: http://preciseracing.co.uk/
-    img: sponsors/precise.png
-    target: _precise
-    copy: >
-        <p>Precise Racing offer an elite snow-training programme that has been carefully
-            planned to suit enthusiastic young skiers with their development.</p>
-        <p>Alongside their snow-training programme they also offer a number of open training
-            camps at various locations in the UK, and run the Kent and Surrey school ski
-            championships.</p>
-
 -   name: Fidelity Integrated Systems
     url: http://www.fidelityintegrated.com/
     img: sponsors/fidelity.png
@@ -67,6 +56,48 @@
             an installation or on-going maintenance,  then please contact them for a chat or
             advice on 0844 800 9960 or
             <a href="mailto:sales@fidelityintegrated.com">sales@fidelityintegrated.com</a>.</p>
+
+-   name: Ski Bartlett
+    url: https://www.skibartlett.com/
+    img: sponsors/bartlett.png
+    target: _bartlett
+    copy: >
+        <p>Established in 1965, Ski Bartlett is one of the UK's most popular independent specialist
+          ski shops. We stock one of the largest ranges of skis, boots, clothing and equipment
+          available in the UK and cater for every ability level, age and style of skier.</p>
+        <p>Whether your passion is racing, freestyle, freeride, touring, telemark or recreational
+          skiing, we can custom fit you with a boot to suit your style. Find out more by visiting
+          <a href="https://www.skibartlett.com/" target="_bartlett">our website</a>.</p>
+
+-   name: G M Media
+    url: https://www.instagram.com/gm.media.uk/
+    img: sponsors/gmmedia.png
+    target: _gmmedia
+    copy: >
+        <p>Company promotions & open days.</p>
+        <p>Promotional materials and apparel.</p>
+        <p>Graphics and social media.</p>
+
+-   name: Smart Build Kent
+    url: https://www.instagram.com/sbk111444/
+    img: sponsors/smartbuildkent.png
+    target: _smartbuildkent
+    copy: >
+        <p>Dream homes and rooms brought to life.</p>
+        <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
+        <p>Make your ideas come to life.</p>
+
+-   name: Precise Racing
+    url: http://preciseracing.co.uk/
+    img: sponsors/precise.png
+    target: _precise
+    copy: >
+        <p>Precise Racing offer an elite snow-training programme that has been carefully
+            planned to suit enthusiastic young skiers with their development.</p>
+        <p>Alongside their snow-training programme they also offer a number of open training
+            camps at various locations in the UK, and run the Kent and Surrey school ski
+            championships.</p>
+
 
 -   name: Ski Shack
     url: https://skishack.co.uk/
@@ -90,22 +121,6 @@
 #         <p>You can contact her at
 #             <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
 
-# -   name: Racer Ready
-#     url: https://www.racer-ready.co.uk/
-#     img: sponsors/racerready.png
-#     target: _racer
-#     copy: >
-#         <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
-#             sport. They cover from grassroots up to the Olympic Games and have been doing
-#             this since 2000.</p>
-#         <p>Racer Ready provide pictures from many racers through both summer and winter
-#             through their <a href="https://racerready.zenfolio.com/"
-#             target="_racerready">picture website</a>. Pictures can be bought as single
-#             shots, or you can take a monthly subscription that allows access to all pictures
-#             in the folder for personal use. The monthly subscription also gives access to
-#             the news website - see <a href="https://www.racer-ready.co.uk/join-us"
-#             target="_racer">the website</a> for more details.</p>
-
 # -   name: Snow Shepherd
 #     url: https://www.snowshepherd.co.uk/
 #     img: sponsors/snowshepherd.png
@@ -126,3 +141,19 @@
             feeling of being on an actual ski slope. Once strapped in, the large screen instantly
             becomes your focus as you use your body to navigate the course, feeling every bump and
             contour of the slope.</p>
+
+-   name: Racer Ready
+    url: https://www.racer-ready.co.uk/
+    img: sponsors/racerready.png
+    target: _racer
+    copy: >
+        <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
+            sport. They cover from grassroots up to the Olympic Games and have been doing
+            this since 2000.</p>
+        <p>Racer Ready provide pictures from many racers through both summer and winter
+            through their <a href="https://racerready.zenfolio.com/"
+            target="_racerready">picture website</a>. Pictures can be bought as single
+            shots, or you can take a monthly subscription that allows access to all pictures
+            in the folder for personal use. The monthly subscription also gives access to
+            the news website - see <a href="https://www.racer-ready.co.uk/join-us"
+            target="_racer">the website</a> for more details.</p>
