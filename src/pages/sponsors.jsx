@@ -45,7 +45,7 @@ const SponsorsPage = () => {
                     <h2>Partners</h2>
                     <p>Principal partners who support the Summer Race Series and regional
                         programmes.</p>
-                    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
+                    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 1024: 2 }}>
                         <Masonry gutter="20px">
                             {
                                 sponsorData
@@ -75,7 +75,7 @@ const SponsorsPage = () => {
                     <h2>Supporters</h2>
                     <p>Organisations that help us deliver training, events and media across the
                         region.</p>
-                    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 600: 2 }}>
+                    <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 1050: 4 }}>
                         <Masonry gutter="20px">
                             {
                                 sponsorData

@@ -1,39 +1,3 @@
-# -   name: Huski
-#     url: http://www.hu.ski/
-#     img: sponsors/huski.png
-#     target: _huski
-#     copy: >
-#         <p>Huski is a new generation food and drink company. Our team of talented chefs
-#             prepare everything in our professional, in-house kitchen creating delicious
-#             dishes so that you don't have to. Then we'll deliver your food to wherever you
-#             are in the French Alps, leaving you to focus on enjoying your skiing holiday.</p>
-#         <ul>
-#             <li>Great quality food - prepared by our own professional chefs using recipes
-#                 fine tuned over the years</li>
-#             <li>Value for money - cheaper than buying the same ingredients from the
-#                 supermarket</li>
-#             <li>Convenience - no shopping, no cooking, no cleaning</li>
-#             <li>Kid friendly meals - no concerns over funky french food that your kids won't
-#                 eat</li>
-#             <li>One stop shop - you can order wine, beer, breakfast and essentials to be
-#                 delivered with your order</li>
-#             <li>Delivery to ski resorts across France</li>
-#             <li>Order up to 24 hours before delivery</li>
-#             <li>Native english speakers to support you every step of the way</li>
-#         </ul>
-#         <p>Contact us via <a href="https://www.hu.ski/" target="_huski">our website</a>,
-#             <a href="mailto:orders@hu.ski">email us</a> or call Phone: +33 (0)47 904 1536</p>
-
--   name: Maison Sport
-    url: https://maisonsport.com/
-    img: sponsors/maisonsport.png
-    target: _maisonsport
-    type: partner
-    copy: >
-        <p>Maison Sport is the industry leading booking platform for ski and snowboard lessons. The
-        founding team are ex-British ski team members, with private and group lessons across more
-        than 420 European resorts.</p>
-
 -   name: Fidelity Integrated Systems
     url: http://www.fidelityintegrated.com/
     img: sponsors/fidelity.png
@@ -44,79 +8,6 @@
             integrated security and fire systems for businesses and large residential estates using
             the latest technology from industry leading manufacturers.</p>
 
--   name: Ski Bartlett
-    url: https://www.skibartlett.com/
-    img: sponsors/bartlett.png
-    target: _bartlett
-    type: supporter
-    copy: >
-        <p>Established in 1965, Ski Bartlett is one of the UK's most popular independent specialist
-          ski shops. We stock one of the largest ranges of skis, boots, clothing and equipment
-          available in the UK and cater for every ability level, age and style of skier.</p>
-        <p>Whether your passion is racing, freestyle, freeride, touring, telemark or recreational
-          skiing, we can custom fit you with a boot to suit your style. Find out more by visiting
-          <a href="https://www.skibartlett.com/" target="_bartlett">our website</a>.</p>
-
--   name: G M Media
-    url: https://www.instagram.com/gm.media.uk/
-    img: sponsors/gmmedia.png
-    target: _gmmedia
-    type: supporter
-    copy: >
-        <p>Company promotions & open days.</p>
-        <p>Promotional materials and apparel.</p>
-        <p>Graphics and social media.</p>
-
--   name: Smart Build Kent
-    url: https://www.instagram.com/sbk111444/
-    img: sponsors/smartbuildkent.png
-    target: _smartbuildkent
-    type: supporter
-    copy: >
-        <p>Dream homes and rooms brought to life.</p>
-        <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
-        <p>Make your ideas come to life.</p>
-
--   name: Precise Racing
-    url: http://preciseracing.co.uk/
-    img: sponsors/precise.png
-    target: _precise
-    type: partner
-    copy: >
-        <p>Precise Racing offer an elite snow-training programme carefully planned for enthusiastic
-        young skiers. They also run open training camps across the UK and the Kent and Surrey school
-        ski championships.</p>
-
--   name: Ski Shack
-    url: https://skishack.co.uk/
-    img: sponsors/skishack.png
-    target: _skishack
-    type: partner
-    copy: >
-        <p>The Ski Shack is a friendly family-run business supplying clothing, equipment and
-        servicing for skiing and snowboarding, with a passion for snow sports and fantastic quality
-        products at great prices.</p>
-
-# -   name: MindTonic Therapy
-#     url: http://www.mindtonictherapy.com/
-#     img: sponsors/mindtonic.png
-#     target: _mindtonic
-#     copy: >
-#         <p>Natalie is recognised as the UK's leading performance sleep coach and regarded as
-#             a leading Human Recovery innovator in elite sport.</p>
-#         <p>You can contact her at
-#             <a href="mailto:hello@mindtonictherapy.com">hello@mindtonictherapy.com</a>.</p>
-
-# -   name: Snow Shepherd
-#     url: https://www.snowshepherd.co.uk/
-#     img: sponsors/snowshepherd.png
-#     target: _shepherd
-#     copy: >
-#         <p>Snow Shepherd are the leading UK supplier and manufacturer of leather ski gloves, from
-#             the classic Lifty glove to their Antarctic Expedition Gloves. Their gloves are made using
-#             high quality same-batch leather, waterproof and breathable membranes, and insulation
-#             that really works, ensuring the gloves work for you whether you're ripping down a
-#             mountain, climbing one, or using them for your 9-5 job.</p>
 
 -   name: Infini-Ski
     url: https://www.infini.ski/
@@ -128,6 +19,39 @@
             feeling of being on an actual ski slope. Once strapped in, the large screen instantly
             becomes your focus as you use your body to navigate the course, feeling every bump and
             contour of the slope.</p>
+
+
+-   name: Precise Racing
+    url: http://preciseracing.co.uk/
+    img: sponsors/precise.png
+    target: _precise
+    type: partner
+    copy: >
+        <p>Precise Racing offer an elite snow-training programme carefully planned for enthusiastic
+        young skiers. They also run open training camps across the UK and the Kent and Surrey school
+        ski championships.</p>
+
+
+-   name: Maison Sport
+    url: https://maisonsport.com/
+    img: sponsors/maisonsport.png
+    target: _maisonsport
+    type: partner
+    copy: >
+        <p>Maison Sport is the industry leading booking platform for ski and snowboard lessons. The
+        founding team are ex-British ski team members, with private and group lessons across more
+        than 420 European resorts.</p>
+
+-   name: Ski Shack
+    url: https://skishack.co.uk/
+    img: sponsors/skishack.png
+    target: _skishack
+    type: partner
+    copy: >
+        <p>The Ski Shack is a friendly family-run business supplying clothing, equipment and
+        servicing for skiing and snowboarding, with a passion for snow sports and fantastic quality
+        products at great prices.</p>
+
 
 -   name: Racer Ready
     url: https://www.racer-ready.co.uk/
@@ -145,3 +69,38 @@
             in the folder for personal use. The monthly subscription also gives access to
             the news website - see <a href="https://www.racer-ready.co.uk/join-us"
             target="_racer">the website</a> for more details.</p>
+
+-   name: Ski Bartlett
+    url: https://www.skibartlett.com/
+    img: sponsors/bartlett.png
+    target: _bartlett
+    type: supporter
+    copy: >
+        <p>Established in 1965, Ski Bartlett is one of the UK's most popular independent specialist
+          ski shops. We stock one of the largest ranges of skis, boots, clothing and equipment
+          available in the UK and cater for every ability level, age and style of skier.</p>
+        <p>Whether your passion is racing, freestyle, freeride, touring, telemark or recreational
+          skiing, we can custom fit you with a boot to suit your style. Find out more by visiting
+          <a href="https://www.skibartlett.com/" target="_bartlett">our website</a>.</p>
+
+
+-   name: G M Media
+    url: https://www.instagram.com/gm.media.uk/
+    img: sponsors/gmmedia.png
+    target: _gmmedia
+    type: supporter
+    copy: >
+        <p>Company promotions & open days.</p>
+        <p>Promotional materials and apparel.</p>
+        <p>Graphics and social media.</p>
+        
+
+-   name: Smart Build Kent
+    url: https://www.instagram.com/sbk111444/
+    img: sponsors/smartbuildkent.png
+    target: _smartbuildkent
+    type: supporter
+    copy: >
+        <p>Dream homes and rooms brought to life.</p>
+        <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
+        <p>Make your ideas come to life.</p>
