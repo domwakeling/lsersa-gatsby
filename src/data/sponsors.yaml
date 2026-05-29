@@ -28,39 +28,27 @@
     url: https://maisonsport.com/
     img: sponsors/maisonsport.png
     target: _maisonsport
+    type: partner
     copy: >
-        <p>Maison Sport is the industry leading booking platform for ski and snowboard
-            lessons. The founding team are all ex-British ski team members and fully
-            qualified ski instructors. Maison Sport currently operates in over 420 resorts
-            across Europe and has over 1,000 highly rated, independent instructors on their
-            platform, as well as ski school group lessons in many of Europe's most
-            popular resorts.</p>
-        <p>Maison Sport offers private lessons with independent instructors, as well as high
-            quality ski school group lessons for adult and children, which have a maximum of
-            just 6 skiers per group. Maison Sport provides its' customers with the
-            ability to choose their instructor based off individual instructor profiles
-            and trusted reviews left by previous customers. Find out more by visiting
-            <a href="https://maisonsport.com/" target="_maisonsport">their website</a>
-            today!</p>
+        <p>Maison Sport is the industry leading booking platform for ski and snowboard lessons. The
+        founding team are ex-British ski team members, with private and group lessons across more
+        than 420 European resorts.</p>
 
 -   name: Fidelity Integrated Systems
     url: http://www.fidelityintegrated.com/
     img: sponsors/fidelity.png
     target: _fidelity
+    type: partner
     copy: >
-        <p>Fidelity Integrated Systems specialises in designing and  installing high
-            quality, fully integrated security and fire  systems for businesses and large
-            residential estates using the  latest technology from industry leading
-            manufacturers.</p>
-        <p>If you have a query regarding a building that you occupy or manage that requires
-            an installation or on-going maintenance,  then please contact them for a chat or
-            advice on 0844 800 9960 or
-            <a href="mailto:sales@fidelityintegrated.com">sales@fidelityintegrated.com</a>.</p>
+        <p>Fidelity Integrated Systems specialises in designing and installing high quality, fully
+            integrated security and fire systems for businesses and large residential estates using
+            the latest technology from industry leading manufacturers.</p>
 
 -   name: Ski Bartlett
     url: https://www.skibartlett.com/
     img: sponsors/bartlett.png
     target: _bartlett
+    type: supporter
     copy: >
         <p>Established in 1965, Ski Bartlett is one of the UK's most popular independent specialist
           ski shops. We stock one of the largest ranges of skis, boots, clothing and equipment
@@ -73,6 +61,7 @@
     url: https://www.instagram.com/gm.media.uk/
     img: sponsors/gmmedia.png
     target: _gmmedia
+    type: supporter
     copy: >
         <p>Company promotions & open days.</p>
         <p>Promotional materials and apparel.</p>
@@ -82,6 +71,7 @@
     url: https://www.instagram.com/sbk111444/
     img: sponsors/smartbuildkent.png
     target: _smartbuildkent
+    type: supporter
     copy: >
         <p>Dream homes and rooms brought to life.</p>
         <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
@@ -91,25 +81,21 @@
     url: http://preciseracing.co.uk/
     img: sponsors/precise.png
     target: _precise
+    type: partner
     copy: >
-        <p>Precise Racing offer an elite snow-training programme that has been carefully
-            planned to suit enthusiastic young skiers with their development.</p>
-        <p>Alongside their snow-training programme they also offer a number of open training
-            camps at various locations in the UK, and run the Kent and Surrey school ski
-            championships.</p>
-
+        <p>Precise Racing offer an elite snow-training programme carefully planned for enthusiastic
+        young skiers. They also run open training camps across the UK and the Kent and Surrey school
+        ski championships.</p>
 
 -   name: Ski Shack
     url: https://skishack.co.uk/
     img: sponsors/skishack.png
     target: _skishack
+    type: partner
     copy: >
         <p>The Ski Shack is a friendly family-run business supplying clothing, equipment and
-            servicing tools for Skiing and Snowboarding. They are passionate about snow
-            sports and are dedicated to providing fantastic quality products at great
-            prices.</p>
-        <p>Contact them on 01634 814 168 or
-            <a href="mailto:mail@skishack.co.uk">mail@skishack.co.uk</a>.</p>
+        servicing for skiing and snowboarding, with a passion for snow sports and fantastic quality
+        products at great prices.</p>
 
 # -   name: MindTonic Therapy
 #     url: http://www.mindtonictherapy.com/
@@ -136,6 +122,7 @@
     url: https://www.infini.ski/
     img: sponsors/infiniski.png
     target: _infiniski
+    type: partner
     copy: >
         <p>InfiniSki is a not-for-profit virtual skiing platform that accurately simulates the
             feeling of being on an actual ski slope. Once strapped in, the large screen instantly
@@ -146,6 +133,7 @@
     url: https://www.racer-ready.co.uk/
     img: sponsors/racerready.png
     target: _racer
+    type: supporter
     copy: >
         <p>Racer Ready is a news and picture media outlet that focuses on competitive winter
             sport. They cover from grassroots up to the Olympic Games and have been doing
