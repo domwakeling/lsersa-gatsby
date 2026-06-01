@@ -86,23 +86,23 @@
           <a href="https://www.skibartlett.com/" target="_bartlett">our website</a>.</p>
 
 
--   name: G M Media
-    url: https://www.instagram.com/gm.media.uk/
-    img: sponsors/gmmedia.png
-    target: _gmmedia
-    type: supporter
-    copy: >
-        <p>Company promotions & open days.</p>
-        <p>Promotional materials and apparel.</p>
-        <p>Graphics and social media.</p>
+# -   name: G M Media
+#     url: https://www.instagram.com/gm.media.uk/
+#     img: sponsors/gmmedia.png
+#     target: _gmmedia
+#     type: supporter
+#     copy: >
+#         <p>Company promotions & open days.</p>
+#         <p>Promotional materials and apparel.</p>
+#         <p>Graphics and social media.</p>
         
 
--   name: Smart Build Kent
-    url: https://www.instagram.com/sbk111444/
-    img: sponsors/smartbuildkent.png
-    target: _smartbuildkent
-    type: supporter
-    copy: >
-        <p>Dream homes and rooms brought to life.</p>
-        <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
-        <p>Make your ideas come to life.</p>
+# -   name: Smart Build Kent
+#     url: https://www.instagram.com/sbk111444/
+#     img: sponsors/smartbuildkent.png
+#     target: _smartbuildkent
+#     type: supporter
+#     copy: >
+#         <p>Dream homes and rooms brought to life.</p>
+#         <p>Maintenance, renovations, upgrades to your home. A new kitchen or bathroom.</p>
+#         <p>Make your ideas come to life.</p>
